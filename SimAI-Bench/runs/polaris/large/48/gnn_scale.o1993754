@@ -1,0 +1,156 @@
+
+Lmod is automatically replacing "nvhpc/23.9" with "gcc-native/12.3".
+
+
+Lmod is automatically replacing "PrgEnv-nvhpc/8.5.0" with "PrgEnv-gnu/8.5.0".
+
+
+Due to MODULEPATH changes, the following have been reloaded:
+  1) cray-mpich/8.1.28
+
+Loaded modules:
+
+Currently Loaded Modules:
+  1) libfabric/1.15.2.0       9) cray-pmi/6.1.13
+  2) craype-network-ofi      10) cray-pals/1.3.4
+  3) perftools-base/23.12.0  11) cray-libpals/1.3.4
+  4) darshan/3.4.4           12) craype-x86-milan
+  5) gcc-native/12.3         13) PrgEnv-gnu/8.5.0
+  6) craype/2.7.30           14) cray-hdf5-parallel/1.12.2.9
+  7) cray-dsmml/0.2.2        15) conda/2024-04-29
+  8) cray-mpich/8.1.28
+
+ 
+
+
+Torch versions
+gpytorch                     1.11
+pytorch-lightning            2.2.3
+torch                        2.1.0+cu121
+torch-cluster                1.6.3+pt21cu121
+torch_geometric              2.5.3
+torch-tb-profiler            0.4.3
+torchaudio                   2.1.0+cu121
+torchinfo                    1.8.0
+torchmetrics                 1.3.2
+torchvision                  0.16.0+cu121
+torchviz                     0.0.2
+
+Number of nodes: 12
+Number of ML ranks per node: 4
+Number of ML total ranks: 48
+
+Running script /eagle/datascience/balin/Nek/GNN/GNN/SimAI-Bench/main.py
+with arguments --device=cuda --iterations=50 --problem_size=large
+Hello from rank 0/48, local rank 0 on x3003c0s13b0n0
+Hello from rank 1/48, local rank 1 on x3003c0s13b0n0
+Hello from rank 24/48, local rank 0 on x3003c0s25b0n0
+Hello from rank 25/48, local rank 1 on x3003c0s25b0n0
+Hello from rank 40/48, local rank 0 on x3003c0s37b0n0
+Hello from rank 2/48, local rank 2 on x3003c0s13b0n0
+Hello from rank 12/48, local rank 0 on x3003c0s19b1n0
+Hello from rank 26/48, local rank 2 on x3003c0s25b0n0
+Hello from rank 41/48, local rank 1 on x3003c0s37b0n0
+Hello from rank 28/48, local rank 0 on x3003c0s25b1n0
+Hello from rank 42/48, local rank 2 on x3003c0s37b0n0
+Hello from rank 3/48, local rank 3 on x3003c0s13b0n0
+Hello from rank 8/48, local rank 0 on x3003c0s19b0n0
+Hello from rank 43/48, local rank 3 on x3003c0s37b0n0
+Hello from rank 27/48, local rank 3 on x3003c0s25b0n0
+Hello from rank 44/48, local rank 0 on x3003c0s37b1n0
+Hello from rank 4/48, local rank 0 on x3003c0s13b1n0
+Hello from rank 20/48, local rank 0 on x3003c0s1b1n0
+Hello from rank 32/48, local rank 0 on x3003c0s31b0n0
+Hello from rank 5/48, local rank 1 on x3003c0s13b1n0
+Hello from rank 9/48, local rank 1 on x3003c0s19b0n0
+Hello from rank 13/48, local rank 1 on x3003c0s19b1n0
+Hello from rank 21/48, local rank 1 on x3003c0s1b1n0
+Hello from rank 33/48, local rank 1 on x3003c0s31b0n0
+Hello from rank 36/48, local rank 0 on x3003c0s31b1n0
+Hello from rank 45/48, local rank 1 on x3003c0s37b1n0
+Hello from rank 6/48, local rank 2 on x3003c0s13b1n0
+Hello from rank 10/48, local rank 2 on x3003c0s19b0n0
+Hello from rank 14/48, local rank 2 on x3003c0s19b1n0
+Hello from rank 22/48, local rank 2 on x3003c0s1b1n0
+Hello from rank 34/48, local rank 2 on x3003c0s31b0n0
+Hello from rank 37/48, local rank 1 on x3003c0s31b1n0
+Hello from rank 7/48, local rank 3 on x3003c0s13b1n0
+Hello from rank 11/48, local rank 3 on x3003c0s19b0n0
+Hello from rank 23/48, local rank 3 on x3003c0s1b1n0
+Hello from rank 29/48, local rank 1 on x3003c0s25b1n0
+Hello from rank 35/48, local rank 3 on x3003c0s31b0n0
+Hello from rank 38/48, local rank 2 on x3003c0s31b1n0
+Hello from rank 46/48, local rank 2 on x3003c0s37b1n0
+Hello from rank 15/48, local rank 3 on x3003c0s19b1n0
+Hello from rank 16/48, local rank 0 on x3003c0s1b0n0
+Hello from rank 30/48, local rank 2 on x3003c0s25b1n0
+Hello from rank 47/48, local rank 3 on x3003c0s37b1n0
+Hello from rank 17/48, local rank 1 on x3003c0s1b0n0
+Hello from rank 39/48, local rank 3 on x3003c0s31b1n0
+Hello from rank 18/48, local rank 2 on x3003c0s1b0n0
+Hello from rank 31/48, local rank 3 on x3003c0s25b1n0
+Hello from rank 19/48, local rank 3 on x3003c0s1b0n0
+
+Loaded data and model with 163491 parameters
+
+Running on device: cuda 
+
+
+Starting training loop ... 
+[0]: avg_loss = 2.905444e-02
+[1]: avg_loss = 2.028294e-02
+[2]: avg_loss = 1.405028e-02
+[3]: avg_loss = 1.162094e-02
+[4]: avg_loss = 1.186721e-02
+[5]: avg_loss = 1.150140e-02
+[6]: avg_loss = 1.104900e-02
+[7]: avg_loss = 1.084145e-02
+[8]: avg_loss = 1.089202e-02
+[9]: avg_loss = 1.067766e-02
+[10]: avg_loss = 1.052016e-02
+[11]: avg_loss = 1.046029e-02
+[12]: avg_loss = 1.040872e-02
+[13]: avg_loss = 1.040592e-02
+[14]: avg_loss = 1.040229e-02
+[15]: avg_loss = 1.045112e-02
+[16]: avg_loss = 1.040561e-02
+[17]: avg_loss = 1.037733e-02
+[18]: avg_loss = 1.037349e-02
+[19]: avg_loss = 1.037524e-02
+[20]: avg_loss = 1.037813e-02
+[21]: avg_loss = 1.037707e-02
+[22]: avg_loss = 1.037437e-02
+[23]: avg_loss = 1.037029e-02
+[24]: avg_loss = 1.036712e-02
+[25]: avg_loss = 1.036632e-02
+[26]: avg_loss = 1.036710e-02
+[27]: avg_loss = 1.036461e-02
+[28]: avg_loss = 1.036606e-02
+[29]: avg_loss = 1.036693e-02
+[30]: avg_loss = 1.036418e-02
+[31]: avg_loss = 1.036203e-02
+[32]: avg_loss = 1.036166e-02
+[33]: avg_loss = 1.036279e-02
+[34]: avg_loss = 1.036403e-02
+[35]: avg_loss = 1.036374e-02
+[36]: avg_loss = 1.036185e-02
+[37]: avg_loss = 1.036039e-02
+[38]: avg_loss = 1.036065e-02
+[39]: avg_loss = 1.036173e-02
+[40]: avg_loss = 1.036210e-02
+[41]: avg_loss = 1.036165e-02
+[42]: avg_loss = 1.036100e-02
+[43]: avg_loss = 1.036044e-02
+[44]: avg_loss = 1.036020e-02
+[45]: avg_loss = 1.036050e-02
+[46]: avg_loss = 1.036085e-02
+[47]: avg_loss = 1.036053e-02
+[48]: avg_loss = 1.036003e-02
+[49]: avg_loss = 1.035962e-02
+
+Summary of performance data:
+training_loop [s] : min = 4.845263e+01 , max = 4.886842e+01 , avg = 4.857718e+01 , std = 7.384730e-02 
+train_tot [s] : min = 3.492748e+01 , max = 4.489250e+01 , avg = 4.467052e+01 , std = 1.421196e+00 
+train_iter [s] : min = 7.124085e-01 , max = 1.013796e+00 , avg = 9.116433e-01 , std = 4.236569e-02 
+throughput_iter [s] : min = 9.863919e+05 , max = 1.403689e+06 , avg = 1.099623e+06 , std = 5.861193e+04 
+Average parallel training throughout [nodes/s] : 5.278188e+07
