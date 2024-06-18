@@ -1,0 +1,124 @@
+
+Due to MODULEPATH changes, the following have been reloaded:
+  1) gcc/12.2.0             5) mpich-config/collective-tuning/1024
+  2) gmp/6.2.1-pcxzkau      6) mpich/icc-all-pmix-gpu/20231026
+  3) mpc/1.3.1-dfagrna      7) oneapi/eng-compiler/2024.04.15.002
+  4) mpfr/4.2.0-w7v7yjv
+
+The following have been reloaded with a version change:
+  1) intel_compute_runtime/release/821.36 => intel_compute_runtime/release/775.20
+  2) spack-pe-gcc/0.7.0-24.086.0 => spack-pe-gcc/0.6.1-23.275.2
+
+     [1;96mUMD: agama-ci-devel-803.29 successfully loaded:[0m
+     [1;96mUMD: graphics-compute-runtime/agama-ci-devel-803.29 [0m
+
+The following have been reloaded with a version change:
+  1) oneapi/eng-compiler/2024.04.15.002 => oneapi/release/2024.04.15.001
+
+Loaded modules:
+
+Currently Loaded Modules:
+  1) libfabric/1.15.2.0
+  2) cray-pals/1.3.3
+  3) cray-libpals/1.3.3
+  4) spack-pe-gcc/0.6.1-23.275.2
+  5) gmp/6.2.1-pcxzkau
+  6) mpfr/4.2.0-w7v7yjv
+  7) mpc/1.3.1-dfagrna
+  8) gcc/12.2.0
+  9) mpich/icc-all-pmix-gpu/20231026
+ 10) mpich-config/collective-tuning/1024
+ 11) oneapi/release/2024.04.15.001
+ 12) graphics-compute-runtime/agama-ci-devel-803.29
+ 13) frameworks/2024.04.15.002
+
+ 
+
+
+Torch versions
+
+[notice] A new release of pip is available: 23.0.1 -> 24.0
+[notice] To update, run: pip install --upgrade pip
+intel-extension-for-pytorch        2.1.30+xpu
+torch                              2.1.0.post2+cxx11.abi
+torch-cluster                      1.6.1
+torch_geometric                    2.5.3
+torch-scatter                      2.1.1
+torchvision                        0.16.0.post2+cxx11.abi
+
+Number of nodes: 1
+Number of ML ranks per node: 1
+Number of ML total ranks: 1
+
+Running script /gila/Aurora_deployment/balin/Nek/GNN/GNN/SimAI-Bench/main.py
+with arguments --device=xpu --iterations=50 --problem_size=large
+?RANK= 0 LOCAL_RANK= 0 gpu= 0.0?
+Hello from rank 0/1, local rank 0 on x1921c2s4b0n0
+
+Loaded data and model with 163491 parameters
+
+Running on device: xpu 
+
+2024:06:18-17:51:47:(101985) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:18-17:51:48:(101985) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+
+Starting training loop ... 
+[0]: avg_loss = 1.208585e-02
+[1]: avg_loss = 1.199901e-02
+[2]: avg_loss = 1.193309e-02
+[3]: avg_loss = 1.187298e-02
+[4]: avg_loss = 1.181728e-02
+[5]: avg_loss = 1.177229e-02
+[6]: avg_loss = 1.172858e-02
+[7]: avg_loss = 1.168418e-02
+[8]: avg_loss = 1.164286e-02
+[9]: avg_loss = 1.160350e-02
+[10]: avg_loss = 1.156500e-02
+[11]: avg_loss = 1.152784e-02
+[12]: avg_loss = 1.149450e-02
+[13]: avg_loss = 1.146144e-02
+[14]: avg_loss = 1.143043e-02
+[15]: avg_loss = 1.140342e-02
+[16]: avg_loss = 1.137691e-02
+[17]: avg_loss = 1.135003e-02
+[18]: avg_loss = 1.132320e-02
+[19]: avg_loss = 1.129732e-02
+[20]: avg_loss = 1.127248e-02
+[21]: avg_loss = 1.124767e-02
+[22]: avg_loss = 1.122353e-02
+[23]: avg_loss = 1.119950e-02
+[24]: avg_loss = 1.117574e-02
+[25]: avg_loss = 1.115268e-02
+[26]: avg_loss = 1.113130e-02
+[27]: avg_loss = 1.111070e-02
+[28]: avg_loss = 1.108945e-02
+[29]: avg_loss = 1.106778e-02
+[30]: avg_loss = 1.104584e-02
+[31]: avg_loss = 1.102567e-02
+[32]: avg_loss = 1.100634e-02
+[33]: avg_loss = 1.098714e-02
+[34]: avg_loss = 1.096919e-02
+[35]: avg_loss = 1.095041e-02
+[36]: avg_loss = 1.093129e-02
+[37]: avg_loss = 1.091333e-02
+[38]: avg_loss = 1.089563e-02
+[39]: avg_loss = 1.087805e-02
+[40]: avg_loss = 1.086059e-02
+[41]: avg_loss = 1.084352e-02
+[42]: avg_loss = 1.082704e-02
+[43]: avg_loss = 1.081036e-02
+[44]: avg_loss = 1.079420e-02
+[45]: avg_loss = 1.077841e-02
+[46]: avg_loss = 1.076275e-02
+[47]: avg_loss = 1.074710e-02
+[48]: avg_loss = 1.073160e-02
+[49]: avg_loss = 1.071634e-02
+
+Summary of performance data:
+training_loop [s] : min = 4.560791e+01 , max = 4.560791e+01 , avg = 4.560791e+01 , std = 0.000000e+00 
+train_tot [s] : min = 3.481045e+00 , max = 3.481045e+00 , avg = 3.481045e+00 , std = 0.000000e+00 
+train_iter [s] : min = 6.853787e-02 , max = 7.308677e-02 , avg = 7.104173e-02 , std = 1.242659e-03 
+throughput_iter [s] : min = 1.368237e+07 , max = 1.459047e+07 , avg = 1.408062e+07 , std = 2.509383e+05 
+[WARNING] yaksa: 2 leaked handle pool objects
+Average parallel training throughout [nodes/s] : 1.408062e+07
+2024:06:18-17:52:33:(101985) |CCL_WARN| MPI_Finalize has been called before CCL finalization

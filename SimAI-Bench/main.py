@@ -13,12 +13,22 @@ from mpi4py import MPI
 from mpipartition import Partition
 
 import torch
+try: 
+    import intel_extension_for_pytorch as ipex
+except ModuleNotFoundError as e:
+    pass
+
 import torch.optim as optim
-import torch.distributed as dist
-from torch.nn.parallel import DistributedDataParallel as DDP
 from torch_geometric.loader import DataLoader
 from torch_geometric.data import Data
 from torch_geometric.nn import knn_graph
+
+import torch.distributed as dist
+from torch.nn.parallel import DistributedDataParallel as DDP
+try:
+    import oneccl_bindings_for_pytorch as ccl
+except ModuleNotFoundError as e:
+    pass
 
 import gnn
 
@@ -132,7 +142,7 @@ def count_weights(model) -> int:
     n_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
     return n_params
 
-def train(args, model, data, comm) -> dict:
+def train(args, model, optimizer, loss_fn, data, comm) -> dict:
     """ Train the GNN model
     """
     rank = comm.Get_rank()
@@ -142,32 +152,47 @@ def train(args, model, data, comm) -> dict:
         'train_tot': 0.0,
         'train_iter': [],
         'throughput_iter': [],
+        'forward_pass': [],
+        'loss': [],
+        'backward_pass': [],
+        'optimizer_step': []
     }
-
-    # Set up optimizer and loss
-    optimizer = optim.Adam(model.parameters(), lr=args.learning_rate*size)
-    loss_fn = torch.nn.MSELoss()
 
     # Loop over iterations
     if rank==0:
         print('\nStarting training loop ... ', flush=True)
     num_graph_nodes = data.x.shape[0]
     model.train()
-    tic_l = perf_counter()
+    start = perf_counter()
     for iteration in range(args.iterations):
         tic_t = perf_counter()
+
         optimizer.zero_grad()
+
+        tic_f = perf_counter()
         pred = model(data.x, data.edge_index, data.pos)
+        toc_f = perf_counter()
+
+        tic_l = perf_counter()
         loss = loss_fn(pred, data.y)
+        toc_l = perf_counter()
+
+        tic_b = perf_counter()
         loss.backward()
+        toc_b = perf_counter()
+
+        tic_o = perf_counter()
         optimizer.step()
+        toc_o = perf_counter()
+
         toc_t = perf_counter()
 
-        if args.device=='xpu':
-            dist.reduce(loss, 0, op=dist.ReduceOp.SUM)
-            if rank==0: loss /= size
-        else:
-            dist.reduce(loss, 0, op=dist.ReduceOp.AVG)
+        if size>1:
+            if args.device=='xpu':
+                dist.reduce(loss, 0, op=dist.ReduceOp.SUM)
+                if rank==0: loss /= size
+            else:
+                dist.reduce(loss, 0, op=dist.ReduceOp.AVG)
         if rank==0:
             print(f'[{iteration}]: avg_loss = {loss:>4e}', flush=True)
 
@@ -176,34 +201,48 @@ def train(args, model, data, comm) -> dict:
             times['train_tot'] += t_train
             times['train_iter'].append(t_train)
             times['throughput_iter'].append(num_graph_nodes/t_train)
+            times['forward_pass'].append(toc_f-tic_f)
+            times['loss'].append(toc_l-tic_l)
+            times['backward_pass'].append(toc_b-tic_b)
+            times['optimizer_step'].append(toc_o-tic_o)
 
-    toc_l = perf_counter()
-    times['training_loop'] = toc_l - tic_l 
+    end = perf_counter()
+    times['training_loop'] = end - start 
 
     return times
 
 def print_fom(comm, times):
     """ Calculate and print performance FOM
     """
+    rank = comm.Get_rank()
+    size = comm.Get_size()
     time_stats = {}
     for key, val in times.items():
         if type(val)==list:
-            collected_arr = np.zeros((len(val)*comm.Get_size()))
-            comm.Gather(np.array(val),collected_arr,root=0)
+            if size>1:
+                collected_arr = np.zeros((len(val)*size))
+                comm.Gather(np.array(val),collected_arr,root=0)
+            else:
+                collected_arr = np.array(val)
             avg = np.mean(collected_arr)
             std = np.std(collected_arr)
             minn = np.amin(collected_arr); min_loc = [minn, 0]
             maxx = np.amax(collected_arr); max_loc = [maxx, 0]
             summ = np.sum(collected_arr)
         else:
-            summ = comm.allreduce(np.array(val), op=MPI_OPS["sum"])
-            avg = summ / comm.Get_size()
-            tmp = np.power(np.array(val - avg),2)
-            std = comm.allreduce(tmp, op=MPI_OPS["sum"])
-            std = std / comm.Get_size()
-            std = np.sqrt(std)
-            min_loc = comm.allreduce((val,comm.Get_rank()), op=MPI_OPS["min"])
-            max_loc = comm.allreduce((val,comm.Get_rank()), op=MPI_OPS["max"])
+            if size>1:
+                summ = comm.allreduce(np.array(val), op=MPI_OPS["sum"])
+                avg = summ / size
+                tmp = np.power(np.array(val - avg),2)
+                std = comm.allreduce(tmp, op=MPI_OPS["sum"])
+                std = std / size
+                std = np.sqrt(std)
+                min_loc = comm.allreduce((val,comm.Get_rank()), op=MPI_OPS["min"])
+                max_loc = comm.allreduce((val,comm.Get_rank()), op=MPI_OPS["max"])
+            else:
+                avg = summ = val
+                std = 0.
+                min_loc = max_loc = [val, 0]
         stats = {
                 "avg": avg,
                 "std": std,
@@ -214,11 +253,14 @@ def print_fom(comm, times):
         time_stats[key] = stats
 
     # Average parallel training throughout
-    sum_across_ranks = np.zeros((len(times['throughput_iter'])))
-    comm.Reduce(np.array(times['throughput_iter']),sum_across_ranks,op=MPI_OPS["sum"])
-    avg_par_throughput = np.mean(sum_across_ranks)
+    if size>1:
+        sum_across_ranks = np.zeros((len(times['throughput_iter'])))
+        comm.Reduce(np.array(times['throughput_iter']),sum_across_ranks,op=MPI_OPS["sum"])
+        avg_par_throughput = np.mean(sum_across_ranks)
+    else:
+        avg_par_throughput = np.mean(np.array(times['throughput_iter']))
 
-    if comm.rank==0:
+    if rank==0:
         print('\nSummary of performance data:')
         for key, val in time_stats.items():
             stats_string = f": min = {val['min'][0]:>6e} , " + \
@@ -249,32 +291,22 @@ if __name__ == '__main__':
     parser.add_argument('--learning_rate', default=0.0001, type=float, help='Optimizer learning rate')
     args = parser.parse_args()
 
-    # Intel imports
-    if args.device=='xpu':
-        try:
-            import intel_extension_for_pytorch as ipex
-        except ModuleNotFoundError as e:
-            if rank==0: print(e, flush=True)
-        try:
-            import oneccl_bindings_for_pytorch as ccl
-        except ModuleNotFoundError as e:
-            if rank==0: print(e, flush=True)
-
     # Initialize Torch Distributed
-    os.environ['RANK'] = str(rank)
-    os.environ['WORLD_SIZE'] = str(size)
-    master_addr = socket.gethostname() if rank == 0 else None
-    master_addr = comm.bcast(master_addr, root=0)
-    os.environ['MASTER_ADDR'] = master_addr
-    os.environ['MASTER_PORT'] = str(2345)
-    if (args.device=='cpu'): backend = 'gloo'
-    elif (args.device=='cuda'): backend = 'nccl'
-    elif (args.device=='xpu'): backend = 'ccl'
-    dist.init_process_group(backend,
-                            rank=int(rank),
-                            world_size=int(size),
-                            init_method='env://',
-                            timeout=datetime.timedelta(seconds=120))
+    if size>1:
+        os.environ['RANK'] = str(rank)
+        os.environ['WORLD_SIZE'] = str(size)
+        master_addr = socket.gethostname() if rank == 0 else None
+        master_addr = comm.bcast(master_addr, root=0)
+        os.environ['MASTER_ADDR'] = master_addr
+        os.environ['MASTER_PORT'] = str(2345)
+        if (args.device=='cpu'): backend = 'gloo'
+        elif (args.device=='cuda'): backend = 'nccl'
+        elif (args.device=='xpu'): backend = 'ccl'
+        dist.init_process_group(backend,
+                                rank=int(rank),
+                                world_size=int(size),
+                                init_method='env://',
+                                timeout=datetime.timedelta(seconds=120))
 
     # Load model and data
     data = generate_data(args, comm)
@@ -301,23 +333,33 @@ if __name__ == '__main__':
                    f"Assert failed: xpu_id={xpu_id} and {torch.xpu.device_count()} available devices"
             torch.xpu.set_device(xpu_id)
         else:
-            print(f"[{comm.rank}]: no XPU devices available, xpu.device_count={torch.xpu.device_count()}", flush=True)
+            print(f"[{rank}]: no XPU devices available, xpu.device_count={torch.xpu.device_count()}", flush=True)
     if (args.device != 'cpu'):
         model.to(device)
         data = data.to(device)
     if (rank == 0):
         print(f"Running on device: {args.device} \n", flush=True)
 
+    # Set up optimizer and loss
+    optimizer = optim.Adam(model.parameters(), lr=args.learning_rate*size)
+    loss_fn = torch.nn.MSELoss()
+    if args.device!='cpu':
+        loss_fn.to(device)
+    if args.device=='xpu':
+        model, optimizer = ipex.optimize(model, optimizer=optimizer)
+
     # Wrap model with DDP
-    model = DDP(model) 
+    if size>1:
+        model = DDP(model) 
 
     # Perform training
-    times = train(args, model, data, comm)
+    times = train(args, model, optimizer, loss_fn, data, comm)
 
     # Calculate and print FOM
     if args.iterations>1:
         print_fom(comm, times)
 
     # Finalize
-    dist.destroy_process_group()
+    if size>1:
+        dist.destroy_process_group()
     MPI.Finalize()
