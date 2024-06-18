@@ -9,8 +9,8 @@
 #PBS -A datascience
 ##PBS -q prod
 ##PBS -q preemptable
-#PBS -q debug-scaling
-##PBS -q debug
+##PBS -q debug-scaling
+#PBS -q debug
 #PBS -V
 ##PBS -m be
 ##PBS -M rbalin@anl.gov
@@ -35,7 +35,7 @@ echo Number of ML ranks per node: $PROCS_PER_NODE
 echo Number of ML total ranks: $PROCS
 echo
 
-EXE=./main.py
+EXE=/eagle/datascience/balin/Nek/GNN/GNN/SimAI-Bench/main.py
 ARGS="--device=cuda --iterations=50 --problem_size=large"
 echo Running script $EXE
 echo with arguments $ARGS

@@ -213,14 +213,20 @@ def print_fom(comm, times):
         }
         time_stats[key] = stats
 
+    # Average parallel training throughout
+    sum_across_ranks = np.zeros((len(times['throughput_iter'])))
+    comm.Reduce(np.array(times['throughput_iter']),sum_across_ranks,op=MPI_OPS["sum"])
+    avg_par_throughput = np.mean(sum_across_ranks)
+
     if comm.rank==0:
         print('\nSummary of performance data:')
         for key, val in time_stats.items():
-            stats_string = f": min = {val['min'][0]:>8e} , " + \
-                           f"max = {val['max'][0]:>8e} , " + \
-                           f"avg = {val['avg']:>8e} , " + \
-                           f"std = {val['std']:>8e} "
+            stats_string = f": min = {val['min'][0]:>6e} , " + \
+                           f"max = {val['max'][0]:>6e} , " + \
+                           f"avg = {val['avg']:>6e} , " + \
+                           f"std = {val['std']:>6e} "
             print(f"{key} [s] " + stats_string, flush=True) 
+        print(f"Average parallel training throughout [nodes/s] : {avg_par_throughput:>6e}")
 
 
 if __name__ == '__main__':

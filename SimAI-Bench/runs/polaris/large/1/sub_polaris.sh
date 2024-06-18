@@ -9,8 +9,8 @@
 #PBS -A datascience
 ##PBS -q prod
 ##PBS -q preemptable
-#PBS -q debug-scaling
-##PBS -q debug
+##PBS -q debug-scaling
+#PBS -q debug
 #PBS -V
 ##PBS -m be
 ##PBS -M rbalin@anl.gov
@@ -27,7 +27,7 @@ pip list | grep torch
 echo
 
 NODES=$(cat $PBS_NODEFILE | wc -l)
-PROCS_PER_NODE=4
+PROCS_PER_NODE=1
 PROCS=$((NODES * PROCS_PER_NODE))
 JOBID=$(echo $PBS_JOBID | awk '{split($1,a,"."); print a[1]}')
 echo Number of nodes: $NODES
@@ -35,7 +35,7 @@ echo Number of ML ranks per node: $PROCS_PER_NODE
 echo Number of ML total ranks: $PROCS
 echo
 
-EXE=./main.py
+EXE=/eagle/datascience/balin/Nek/GNN/GNN/SimAI-Bench/main.py
 ARGS="--device=cuda --iterations=50 --problem_size=large"
 echo Running script $EXE
 echo with arguments $ARGS
