@@ -23,7 +23,7 @@ pip list | grep torch
 echo
 
 NODES=$(cat $PBS_NODEFILE | wc -l)
-PROCS_PER_NODE=4
+PROCS_PER_NODE=12
 PROCS=$((NODES * PROCS_PER_NODE))
 JOBID=$(echo $PBS_JOBID | awk '{split($1,a,"."); print a[1]}')
 echo Number of nodes: $NODES

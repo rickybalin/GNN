@@ -1,0 +1,202 @@
+
+Due to MODULEPATH changes, the following have been reloaded:
+  1) gcc/12.2.0             5) mpich-config/collective-tuning/1024
+  2) gmp/6.2.1-pcxzkau      6) mpich/icc-all-pmix-gpu/20231026
+  3) mpc/1.3.1-dfagrna      7) oneapi/eng-compiler/2024.04.15.002
+  4) mpfr/4.2.0-w7v7yjv
+
+The following have been reloaded with a version change:
+  1) intel_compute_runtime/release/821.36 => intel_compute_runtime/release/775.20
+  2) spack-pe-gcc/0.7.0-24.086.0 => spack-pe-gcc/0.6.1-23.275.2
+
+     [1;96mUMD: agama-ci-devel-803.29 successfully loaded:[0m
+     [1;96mUMD: graphics-compute-runtime/agama-ci-devel-803.29 [0m
+
+The following have been reloaded with a version change:
+  1) oneapi/eng-compiler/2024.04.15.002 => oneapi/release/2024.04.15.001
+
+Loaded modules:
+
+Currently Loaded Modules:
+  1) libfabric/1.15.2.0
+  2) cray-pals/1.3.3
+  3) cray-libpals/1.3.3
+  4) spack-pe-gcc/0.6.1-23.275.2
+  5) gmp/6.2.1-pcxzkau
+  6) mpfr/4.2.0-w7v7yjv
+  7) mpc/1.3.1-dfagrna
+  8) gcc/12.2.0
+  9) mpich/icc-all-pmix-gpu/20231026
+ 10) mpich-config/collective-tuning/1024
+ 11) oneapi/release/2024.04.15.001
+ 12) graphics-compute-runtime/agama-ci-devel-803.29
+ 13) frameworks/2024.04.15.002
+
+ 
+
+
+Torch versions
+
+[notice] A new release of pip is available: 23.0.1 -> 24.0
+[notice] To update, run: pip install --upgrade pip
+intel-extension-for-pytorch        2.1.30+xpu
+torch                              2.1.0.post2+cxx11.abi
+torch-cluster                      1.6.1
+torch_geometric                    2.5.3
+torch-scatter                      2.1.1
+torchvision                        0.16.0.post2+cxx11.abi
+
+Number of nodes: 1
+Number of ML ranks per node: 12
+Number of ML total ranks: 12
+
+Running with arguments:
+--device=xpu --iterations=50 --problem_size=large
+?RANK= 6 LOCAL_RANK= 6 gpu= 3.0?
+?RANK= 10 LOCAL_RANK= 10 gpu= 5.0?
+?RANK= 0 LOCAL_RANK= 0 gpu= 0.0?
+?RANK= 1 LOCAL_RANK= 1 gpu= 0.1?
+?RANK= 8 LOCAL_RANK= 8 gpu= 4.0?
+?RANK= 11 LOCAL_RANK= 11 gpu= 5.1?
+?RANK= 3 LOCAL_RANK= 3 gpu= 1.1?
+?RANK= 2 LOCAL_RANK= 2 gpu= 1.0?
+?RANK= 9 LOCAL_RANK= 9 gpu= 4.1?
+?RANK= 4 LOCAL_RANK= 4 gpu= 2.0?
+?RANK= 7 LOCAL_RANK= 7 gpu= 3.1?
+?RANK= 5 LOCAL_RANK= 5 gpu= 2.1?
+Hello from rank 0/12, local rank 0 on x1921c2s5b0n0
+Hello from rank 1/12, local rank 1 on x1921c2s5b0n0
+Hello from rank 2/12, local rank 2 on x1921c2s5b0n0
+Hello from rank 3/12, local rank 3 on x1921c2s5b0n0
+Hello from rank 4/12, local rank 4 on x1921c2s5b0n0
+Hello from rank 5/12, local rank 5 on x1921c2s5b0n0
+Hello from rank 6/12, local rank 6 on x1921c2s5b0n0
+Hello from rank 7/12, local rank 7 on x1921c2s5b0n0
+Hello from rank 8/12, local rank 8 on x1921c2s5b0n0
+Hello from rank 9/12, local rank 9 on x1921c2s5b0n0
+Hello from rank 10/12, local rank 10 on x1921c2s5b0n0
+Hello from rank 11/12, local rank 11 on x1921c2s5b0n0
+
+Loaded data and model with 163491 parameters
+
+Running on device: xpu 
+
+2024:06:18-14:39:00:( 8272) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:18-14:39:00:( 8263) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:18-14:39:00:( 8264) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:18-14:39:00:( 8265) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:18-14:39:00:( 8266) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:18-14:39:00:( 8267) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:18-14:39:00:( 8268) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:18-14:39:00:( 8269) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:18-14:39:00:( 8270) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:18-14:39:00:( 8271) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:18-14:39:00:( 8273) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:18-14:39:00:( 8274) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:18-14:39:01:( 8263) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:18-14:39:01:( 8264) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:18-14:39:01:( 8265) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:18-14:39:01:( 8266) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:18-14:39:01:( 8267) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:18-14:39:01:( 8268) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:18-14:39:01:( 8269) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:18-14:39:01:( 8270) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:18-14:39:01:( 8271) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:18-14:39:01:( 8272) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:18-14:39:01:( 8273) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:18-14:39:01:( 8274) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:18-14:39:01:( 8264) |CCL_WARN| comm_dev_uuids is not sub-vector of node_dev_uuids, comm_dev_uuids size 12, node_dev_uuids size 1, this may happen due to narrow device affinity mask (0.1)
+2024:06:18-14:39:01:( 8264) |CCL_WARN| number of result device uuids does not match number of ranks per host, result size 1, host_rank_info_vec size 12, this may happen due to narrow device affinity mask (0.1)
+2024:06:18-14:39:01:( 8265) |CCL_WARN| comm_dev_uuids is not sub-vector of node_dev_uuids, comm_dev_uuids size 12, node_dev_uuids size 1, this may happen due to narrow device affinity mask (1.0)
+2024:06:18-14:39:01:( 8265) |CCL_WARN| number of result device uuids does not match number of ranks per host, result size 1, host_rank_info_vec size 12, this may happen due to narrow device affinity mask (1.0)
+2024:06:18-14:39:01:( 8268) |CCL_WARN| comm_dev_uuids is not sub-vector of node_dev_uuids, comm_dev_uuids size 12, node_dev_uuids size 1, this may happen due to narrow device affinity mask (2.1)
+2024:06:18-14:39:01:( 8268) |CCL_WARN| number of result device uuids does not match number of ranks per host, result size 1, host_rank_info_vec size 12, this may happen due to narrow device affinity mask (2.1)
+2024:06:18-14:39:01:( 8273) |CCL_WARN| comm_dev_uuids is not sub-vector of node_dev_uuids, comm_dev_uuids size 12, node_dev_uuids size 1, this may happen due to narrow device affinity mask (5.0)
+2024:06:18-14:39:01:( 8273) |CCL_WARN| number of result device uuids does not match number of ranks per host, result size 1, host_rank_info_vec size 12, this may happen due to narrow device affinity mask (5.0)
+2024:06:18-14:39:01:( 8263) |CCL_WARN| comm_dev_uuids is not sub-vector of node_dev_uuids, comm_dev_uuids size 12, node_dev_uuids size 1, this may happen due to narrow device affinity mask (0.0)
+2024:06:18-14:39:01:( 8263) |CCL_WARN| number of result device uuids does not match number of ranks per host, result size 1, host_rank_info_vec size 12, this may happen due to narrow device affinity mask (0.0)
+2024:06:18-14:39:01:( 8266) |CCL_WARN| comm_dev_uuids is not sub-vector of node_dev_uuids, comm_dev_uuids size 12, node_dev_uuids size 1, this may happen due to narrow device affinity mask (1.1)
+2024:06:18-14:39:01:( 8266) |CCL_WARN| number of result device uuids does not match number of ranks per host, result size 1, host_rank_info_vec size 12, this may happen due to narrow device affinity mask (1.1)
+2024:06:18-14:39:01:( 8267) |CCL_WARN| comm_dev_uuids is not sub-vector of node_dev_uuids, comm_dev_uuids size 12, node_dev_uuids size 1, this may happen due to narrow device affinity mask (2.0)
+2024:06:18-14:39:01:( 8267) |CCL_WARN| number of result device uuids does not match number of ranks per host, result size 1, host_rank_info_vec size 12, this may happen due to narrow device affinity mask (2.0)
+2024:06:18-14:39:01:( 8269) |CCL_WARN| comm_dev_uuids is not sub-vector of node_dev_uuids, comm_dev_uuids size 12, node_dev_uuids size 1, this may happen due to narrow device affinity mask (3.0)
+2024:06:18-14:39:01:( 8269) |CCL_WARN| number of result device uuids does not match number of ranks per host, result size 1, host_rank_info_vec size 12, this may happen due to narrow device affinity mask (3.0)
+2024:06:18-14:39:01:( 8270) |CCL_WARN| comm_dev_uuids is not sub-vector of node_dev_uuids, comm_dev_uuids size 12, node_dev_uuids size 1, this may happen due to narrow device affinity mask (3.1)
+2024:06:18-14:39:01:( 8270) |CCL_WARN| number of result device uuids does not match number of ranks per host, result size 1, host_rank_info_vec size 12, this may happen due to narrow device affinity mask (3.1)
+2024:06:18-14:39:01:( 8271) |CCL_WARN| comm_dev_uuids is not sub-vector of node_dev_uuids, comm_dev_uuids size 12, node_dev_uuids size 1, this may happen due to narrow device affinity mask (4.0)
+2024:06:18-14:39:01:( 8271) |CCL_WARN| number of result device uuids does not match number of ranks per host, result size 1, host_rank_info_vec size 12, this may happen due to narrow device affinity mask (4.0)
+2024:06:18-14:39:01:( 8272) |CCL_WARN| comm_dev_uuids is not sub-vector of node_dev_uuids, comm_dev_uuids size 12, node_dev_uuids size 1, this may happen due to narrow device affinity mask (4.1)
+2024:06:18-14:39:01:( 8272) |CCL_WARN| number of result device uuids does not match number of ranks per host, result size 1, host_rank_info_vec size 12, this may happen due to narrow device affinity mask (4.1)
+2024:06:18-14:39:01:( 8274) |CCL_WARN| comm_dev_uuids is not sub-vector of node_dev_uuids, comm_dev_uuids size 12, node_dev_uuids size 1, this may happen due to narrow device affinity mask (5.1)
+2024:06:18-14:39:01:( 8274) |CCL_WARN| number of result device uuids does not match number of ranks per host, result size 1, host_rank_info_vec size 12, this may happen due to narrow device affinity mask (5.1)
+
+Starting training loop ... 
+[0]: avg_loss = 1.917519e-02
+[1]: avg_loss = 1.785973e-02
+[2]: avg_loss = 1.655628e-02
+[3]: avg_loss = 1.538602e-02
+[4]: avg_loss = 1.437493e-02
+[5]: avg_loss = 1.352229e-02
+[6]: avg_loss = 1.284500e-02
+[7]: avg_loss = 1.238921e-02
+[8]: avg_loss = 1.211634e-02
+[9]: avg_loss = 1.196835e-02
+[10]: avg_loss = 1.189772e-02
+[11]: avg_loss = 1.178558e-02
+[12]: avg_loss = 1.160814e-02
+[13]: avg_loss = 1.141480e-02
+[14]: avg_loss = 1.125215e-02
+[15]: avg_loss = 1.113714e-02
+[16]: avg_loss = 1.106543e-02
+[17]: avg_loss = 1.102627e-02
+[18]: avg_loss = 1.100983e-02
+[19]: avg_loss = 1.100737e-02
+[20]: avg_loss = 1.101014e-02
+[21]: avg_loss = 1.101098e-02
+[22]: avg_loss = 1.099861e-02
+[23]: avg_loss = 1.097811e-02
+[24]: avg_loss = 1.094594e-02
+[25]: avg_loss = 1.091301e-02
+[26]: avg_loss = 1.088308e-02
+[27]: avg_loss = 1.086188e-02
+[28]: avg_loss = 1.084619e-02
+[29]: avg_loss = 1.083694e-02
+[30]: avg_loss = 1.083151e-02
+[31]: avg_loss = 1.082683e-02
+[32]: avg_loss = 1.082097e-02
+[33]: avg_loss = 1.081395e-02
+[34]: avg_loss = 1.080733e-02
+[35]: avg_loss = 1.080157e-02
+[36]: avg_loss = 1.079846e-02
+[37]: avg_loss = 1.079573e-02
+[38]: avg_loss = 1.079193e-02
+[39]: avg_loss = 1.078772e-02
+[40]: avg_loss = 1.078289e-02
+[41]: avg_loss = 1.077868e-02
+[42]: avg_loss = 1.077461e-02
+[43]: avg_loss = 1.077092e-02
+[44]: avg_loss = 1.076530e-02
+[45]: avg_loss = 1.076043e-02
+[46]: avg_loss = 1.075651e-02
+[47]: avg_loss = 1.075097e-02
+[48]: avg_loss = 1.074701e-02
+[49]: avg_loss = 1.074165e-02
+
+Summary of performance data:
+training_loop [s] : min = 7.198820e+01 , max = 7.199293e+01 , avg = 7.199046e+01 , std = 1.464761e-03 
+train_tot [s] : min = 4.315078e+01 , max = 4.344252e+01 , avg = 4.340795e+01 , std = 7.793087e-02 
+train_iter [s] : min = 8.754915e-01 , max = 1.150535e+00 , avg = 8.858765e-01 , std = 3.653989e-02 
+throughput_iter [s] : min = 8.691609e+05 , max = 1.142216e+06 , avg = 1.130314e+06 , std = 3.610258e+04 
+[WARNING] yaksa: 2 leaked handle pool objects
+[WARNING] yaksa: 2 leaked handle pool objects
+[WARNING] yaksa: 2 leaked handle pool objects
+[WARNING] yaksa: 2 leaked handle pool objects
+[WARNING] yaksa: 2 leaked handle pool objects
+[WARNING] yaksa: 2 leaked handle pool objects
+[WARNING] yaksa: 2 leaked handle pool objects
+[WARNING] yaksa: 2 leaked handle pool objects
+[WARNING] yaksa: 2 leaked handle pool objects
+[WARNING] yaksa: 2 leaked handle pool objects
+[WARNING] yaksa: 2 leaked handle pool objects
+[WARNING] yaksa: 2 leaked handle pool objects
+2024:06:18-14:40:29:( 8263) |CCL_WARN| MPI_Finalize has been called before CCL finalization

@@ -23,7 +23,7 @@ import torch.distributions as tdist
 from torch.profiler import profile, record_function, ProfilerActivity
 
 import torch.distributed as dist
-#import torch.distributed.nn_mod_1 as distnn
+#import torch.distributed.nn_mod as distnn
 import torch.distributed.nn as distnn
 import torch.nn as nn
 import torch.optim as optim
@@ -38,6 +38,16 @@ import torch_geometric
 from torch_geometric.data import Data
 import torch_geometric.utils as utils
 import torch_geometric.nn as tgnn
+
+# Intel extensions
+try:
+    import intel_extension_for_pytorch as ipex
+except ModuleNotFoundError as e:
+    pass
+try:
+    import oneccl_bindings_for_pytorch as ccl
+except ModuleNotFoundError as e:
+    pass
 
 # Models
 import gnn
@@ -62,18 +72,32 @@ try:
     RANK = MPI.COMM_WORLD.Get_rank()
     COMM = MPI.COMM_WORLD
 
-    WITH_CUDA = torch.cuda.is_available()
+    try:
+        WITH_CUDA = torch.cuda.is_available()
+    except:
+        WITH_CUDA = False
+        if RANK == 0: print('Found no CUDA devices', flush=True)
+        pass
 
-    # # Override gpu utilization
-    # WITH_CUDA = False
+    try:
+        WITH_XPU = torch.xpu.is_available()
+    except:
+        WITH_XPU = False
+        if RANK == 0: print('Found no XPU devices', flush=True)
+        pass
 
-    DEVICE = 'gpu' if WITH_CUDA else 'cpu'
-    if DEVICE == 'gpu':
-        #DEVICE_ID = 'cuda:0' 
-        #DEVICE_ID = 'cuda' 
-        DEVICE_ID = LOCAL_RANK if torch.cuda.device_count()>1 else 0
+    if WITH_CUDA:
+        DEVICE = torch.device('cuda')
+        N_DEVICES = torch.cuda.device_count()
+        DEVICE_ID = LOCAL_RANK if N_DEVICES>1 else 0
         torch.cuda.set_device(DEVICE_ID)
+    elif WITH_XPU:
+        DEVICE = torch.device('xpu')
+        N_DEVICES = torch.xpu.device_count()
+        DEVICE_ID = LOCAL_RANK if N_DEVICES>1 else 0
+        torch.xpu.set_device(DEVICE_ID)
     else:
+        DEVICE = torch.device('cpu')
         DEVICE_ID = 'cpu'
 
     # pytorch will look for these
@@ -105,7 +129,8 @@ def init_process_group(
 ) -> None:
     if WITH_CUDA:
         backend = 'nccl' if backend is None else str(backend)
-
+    elif WITH_XPU:
+        backend = 'ccl' if backend is None else str(backend)
     else:
         backend = 'gloo' if backend is None else str(backend)
 
@@ -179,7 +204,8 @@ class Trainer:
         if scaler is None:
             self.scaler = None
         #self.device = 'gpu' if torch.cuda.is_available() else 'cpu'
-        self.device = 'gpu' if WITH_CUDA else 'cpu'
+        #self.device = 'gpu' if WITH_CUDA or WITH_XPU else 'cpu'
+        self.device = DEVICE
         self.backend = self.cfg.backend
         if WITH_DDP:
             init_process_group(RANK, SIZE, backend=self.backend)
@@ -208,8 +234,8 @@ class Trainer:
 
         # ~~~~ Build model and move to gpu 
         self.model = self.build_model()
-        if self.device == 'gpu':
-            self.model.cuda()
+        if WITH_CUDA or WITH_XPU:
+            self.model.to(self.device)
         self.model.to(TORCH_FLOAT_DTYPE)
 
         if RANK == 0: log.info('Done with build_model')
@@ -353,6 +379,7 @@ class Trainer:
     def setup_torch(self):
         torch.manual_seed(self.cfg.seed)
         np.random.seed(self.cfg.seed)
+        torch.set_num_threads(1)
 
     def halo_swap(self, input_tensor, buff_send, buff_recv):
         """
@@ -415,8 +442,8 @@ class Trainer:
         return mask_send, mask_recv 
 
     def build_buffers(self, n_features):
-        buff_send = [torch.tensor([], device=DEVICE_ID)] * SIZE
-        buff_recv = [torch.tensor([], device=DEVICE_ID)] * SIZE
+        buff_send = [torch.tensor([], device=DEVICE)] * SIZE
+        buff_recv = [torch.tensor([], device=DEVICE)] * SIZE
         n_max = 0
         
         if SIZE > 1: 
@@ -426,20 +453,20 @@ class Trainer:
             for i in self.neighboring_procs:
                 n_nodes_to_exchange[i] = len(self.mask_send[i])
             n_max = n_nodes_to_exchange.max()
-            if WITH_CUDA: 
-                n_max = n_max.cuda()
+            if WITH_CUDA or WITH_XPU: 
+                n_max = n_max.to(self.device)
             dist.all_reduce(n_max, op=dist.ReduceOp.MAX)
             n_max = int(n_max)
 
             # fill the buffers -- make all buffer sizes the same (required for all_to_all) 
             if self.cfg.halo_swap_mode == "all_to_all":
                 for i in range(SIZE): 
-                    buff_send[i] = torch.empty([n_max, n_features], dtype=TORCH_FLOAT_DTYPE, device=DEVICE_ID) 
-                    buff_recv[i] = torch.empty([n_max, n_features], dtype=TORCH_FLOAT_DTYPE, device=DEVICE_ID)
+                    buff_send[i] = torch.empty([n_max, n_features], dtype=TORCH_FLOAT_DTYPE, device=DEVICE) 
+                    buff_recv[i] = torch.empty([n_max, n_features], dtype=TORCH_FLOAT_DTYPE, device=DEVICE)
             elif self.cfg.halo_swap_mode == "send_recv":
                 for i in self.neighboring_procs:
-                    buff_send[i] = torch.empty([int(n_nodes_to_exchange[i]), n_features], dtype=TORCH_FLOAT_DTYPE, device=DEVICE_ID) 
-                    buff_recv[i] = torch.empty([int(n_nodes_to_exchange[i]), n_features], dtype=TORCH_FLOAT_DTYPE, device=DEVICE_ID)
+                    buff_send[i] = torch.empty([int(n_nodes_to_exchange[i]), n_features], dtype=TORCH_FLOAT_DTYPE, device=DEVICE) 
+                    buff_recv[i] = torch.empty([int(n_nodes_to_exchange[i]), n_features], dtype=TORCH_FLOAT_DTYPE, device=DEVICE)
 
             #for i in self.neighboring_procs:
             #    buff_send[i] = torch.empty([len(self.mask_send[i]), n_features], dtype=torch.float32, device=DEVICE_ID) 
@@ -464,9 +491,9 @@ class Trainer:
         n_nodes = torch.tensor(input_tensor.shape[0])
         n_features = torch.tensor(input_tensor.shape[1])
 
-        n_nodes_procs = list(torch.empty([1], dtype=torch.int64, device=DEVICE_ID)) * SIZE
-        if WITH_CUDA:
-            n_nodes = n_nodes.cuda()
+        n_nodes_procs = list(torch.empty([1], dtype=torch.int64, device=DEVICE)) * SIZE
+        if WITH_CUDA or WITH_XPU:
+            n_nodes = n_nodes.to(self.device)
         dist.all_gather(n_nodes_procs, n_nodes)
 
         gather_list = None
@@ -475,7 +502,7 @@ class Trainer:
             for i in range(SIZE):
                 gather_list[i] = torch.empty([n_nodes_procs[i], n_features], 
                                              dtype=dtype,
-                                             device=DEVICE_ID)
+                                             device=DEVICE)
         dist.gather(input_tensor, gather_list, dst=0)
         return gather_list
 
@@ -762,16 +789,16 @@ class Trainer:
     def train_step(self, data: DataBatch) -> Tensor:
         loss = torch.tensor([0.0])
         self.timers['dataTransfer'][self.timer_step] = time.time()
-        if WITH_CUDA:
-            data.x = data.x.cuda() 
-            data.y = data.y.cuda()
-            data.edge_index = data.edge_index.cuda()
-            data.edge_weight = data.edge_weight.cuda()
-            data.edge_attr = data.edge_attr.cuda()
-            data.batch = data.batch.cuda() if data.batch is not None else None
-            data.halo_info = data.halo_info.cuda()
-            data.node_degree = data.node_degree.cuda()
-            loss = loss.cuda()
+        if WITH_CUDA or WITH_XPU:
+            data.x = data.x.to(self.device) 
+            data.y = data.y.to(self.device)
+            data.edge_index = data.edge_index.to(self.device)
+            data.edge_weight = data.edge_weight.to(self.device)
+            data.edge_attr = data.edge_attr.to(self.device)
+            data.batch = data.batch.to(self.device) if data.batch is not None else None
+            data.halo_info = data.halo_info.to(self.device)
+            data.node_degree = data.node_degree.to(self.device)
+            loss = loss.to(self.device)
         self.timers['dataTransfer'][self.timer_step] = time.time() - self.timers['dataTransfer'][self.timer_step]
         
         self.optimizer.zero_grad()
@@ -862,16 +889,16 @@ class Trainer:
     def train_step_verification(self, data: DataBatch) -> Tensor:
         loss = torch.tensor([0.0])
         
-        if WITH_CUDA:
-            data.x = data.x.cuda() 
-            data.y = data.y.cuda()
-            data.edge_index = data.edge_index.cuda()
-            data.edge_weight = data.edge_weight.cuda()
-            data.edge_attr = data.edge_attr.cuda()
-            data.batch = data.batch.cuda() if data.batch is not None else None
-            data.halo_info = data.halo_info.cuda()
-            data.node_degree = data.node_degree.cuda()
-            loss = loss.cuda()
+        if WITH_CUDA or WITH_XPU:
+            data.x = data.x.to(self.device) 
+            data.y = data.y.to(self.device)
+            data.edge_index = data.edge_index.to(self.device)
+            data.edge_weight = data.edge_weight.to(self.device)
+            data.edge_attr = data.edge_attr.to(self.device)
+            data.batch = data.batch.to(self.device) if data.batch is not None else None
+            data.halo_info = data.halo_info.to(self.device)
+            data.node_degree = data.node_degree.to(self.device)
+            loss = loss.to(self.device)
                     
         self.optimizer.zero_grad()
         
@@ -1008,16 +1035,16 @@ class Trainer:
                 # log.info(f"\t[RANK {RANK}] -- step {idx}")
 
                 loss = torch.tensor([0.0])
-                if WITH_CUDA:
-                    data.x = data.x.cuda() 
-                    data.y = data.y.cuda()
-                    data.edge_index = data.edge_index.cuda()
-                    data.edge_weight = data.edge_weight.cuda()
-                    data.edge_attr = data.edge_attr.cuda()
-                    data.batch = data.batch.cuda() if data.batch is not None else None
-                    data.halo_info = data.halo_info.cuda()
-                    data.node_degree = data.node_degree.cuda()
-                    loss = loss.cuda()
+                if WITH_CUDA or WITH_XPU:
+                    data.x = data.x.to(self.device) 
+                    data.y = data.y.to(self.device)
+                    data.edge_index = data.edge_index.to(self.device)
+                    data.edge_weight = data.edge_weight.to(self.device)
+                    data.edge_attr = data.edge_attr.to(self.device)
+                    data.batch = data.batch.to(self.device) if data.batch is not None else None
+                    data.halo_info = data.halo_info.to(self.device)
+                    data.node_degree = data.node_degree.to(self.device)
+                    loss = loss.to(self.device)
 
                 self.optimizer.zero_grad()
 
@@ -1084,10 +1111,10 @@ class Trainer:
         running_loss = torch.tensor(0.)
         #count = torch.tensor(0.)
 
-        if WITH_CUDA:
-            running_loss = running_loss.cuda()
-            #count = count.cuda()
-            num_batches_cuda = num_batches.cuda()
+        if WITH_CUDA or WITH_XPU:
+            running_loss = running_loss.to(self.device)
+            #count = count.to(self.device)
+            num_batches_gpu = num_batches.to(self.device)
 
         #train_sampler = self.data['train']['sampler']
         #train_sampler.set_epoch(epoch)
@@ -1125,7 +1152,7 @@ class Trainer:
 
         # divide running loss by number of batches
         #running_loss = running_loss / count
-        running_loss = running_loss / num_batches_cuda
+        running_loss = running_loss / num_batches_gpu
         loss_avg = metric_average(running_loss)
 
         return {'loss': loss_avg, 'batch_times': batch_times}
@@ -1133,9 +1160,9 @@ class Trainer:
     def test(self) -> dict:
         running_loss = torch.tensor(0.)
         count = torch.tensor(0.)
-        if WITH_CUDA:
-            running_loss = running_loss.cuda()
-            count = count.cuda()
+        if WITH_CUDA or WITH_XPU:
+            running_loss = running_loss.to(self.device)
+            count = count.to(self.device)
         self.model.eval()
         test_loader = self.data['test']['loader']
 
@@ -1299,7 +1326,7 @@ def train(cfg: DictConfig) -> None:
     
  
     if RANK == 0:
-        if WITH_CUDA:
+        if WITH_CUDA or WITH_XPU:
             trainer.model.to('cpu')
         if not os.path.exists(cfg.model_dir):
             os.makedirs(cfg.model_dir)
@@ -1365,7 +1392,7 @@ def train_profile(cfg: DictConfig) -> None:
 @hydra.main(version_base=None, config_path='./conf', config_name='config')
 def main(cfg: DictConfig) -> None:
     if cfg.verbose:
-        print(f'Hello from rank {RANK}/{SIZE}, local rank {LOCAL_RANK}, on device {DEVICE}:{DEVICE_ID} out of {torch.cuda.device_count()}.', flush=True)
+        print(f'Hello from rank {RANK}/{SIZE}, local rank {LOCAL_RANK}, on device {DEVICE}:{DEVICE_ID} out of {N_DEVICES}.', flush=True)
     
     if RANK == 0:
         print('\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
