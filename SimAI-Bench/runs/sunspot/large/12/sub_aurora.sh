@@ -6,7 +6,8 @@
 #PBS -k doe
 #PBS -j oe
 #PBS -A Aurora_deployment
-#PBS -q workq
+##PBS -q workq
+#PBS -q debug
 #PBS -V
 ##PBS -m be
 ##PBS -M rbalin@anl.gov
@@ -31,13 +32,12 @@ echo Number of ML ranks per node: $PROCS_PER_NODE
 echo Number of ML total ranks: $PROCS
 echo
 
-EXE=./main.py
-GPU_AFFINITY=./affinity_aurora.sh
+EXE=/gila/Aurora_deployment/balin/Nek/GNN/GNN/SimAI-Bench/main.py
+GPU_AFFINITY=/gila/Aurora_deployment/balin/Nek/GNN/GNN/SimAI-Bench/affinity_aurora.sh
 ARGS="--device=xpu --iterations=50 --problem_size=large"
 echo Running script $EXE
 echo with arguments $ARGS
-#mpiexec --pmi=pmix -n $PROCS --ppn $PROCS_PER_NODE --cpu-bind=list:1-7:8-15:16-23:24-31:32-39:40-47:52-59:60-67:68-75:76-83:84-91:92-99 $GPU_AFFINITY python $EXE ${ARGS}
-mpiexec --pmi=pmix -n $PROCS --ppn $PROCS_PER_NODE --cpu-bind=list:1-7:8-15:16-23:24-31:32-39:40-47:52-59:60-67:68-75:76-83:84-91:92-99 python $EXE ${ARGS}
+mpiexec --pmi=pmix -n $PROCS --ppn $PROCS_PER_NODE --cpu-bind=list:1-7:8-15:16-23:24-31:32-39:40-47:52-59:60-67:68-75:76-83:84-91:92-99 $GPU_AFFINITY python $EXE ${ARGS}
 
 
 

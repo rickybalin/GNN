@@ -2,7 +2,7 @@
 #PBS -S /bin/bash
 #PBS -N gnn_scale
 #PBS -l walltime=00:30:00
-#PBS -l select=1
+#PBS -l select=4
 #PBS -k doe
 #PBS -j oe
 #PBS -A Aurora_deployment
@@ -31,8 +31,8 @@ echo Number of ML ranks per node: $PROCS_PER_NODE
 echo Number of ML total ranks: $PROCS
 echo
 
-EXE=./main.py
-GPU_AFFINITY=./affinity_aurora.sh
+EXE=/gila/Aurora_deployment/balin/Nek/GNN/GNN/SimAI-Bench/main.py
+GPU_AFFINITY=/gila/Aurora_deployment/balin/Nek/GNN/GNN/SimAI-Bench/affinity_aurora.sh
 ARGS="--device=xpu --iterations=50 --problem_size=large"
 echo Running script $EXE
 echo with arguments $ARGS
