@@ -1,0 +1,120 @@
+
+Lmod is automatically replacing "nvhpc/23.9" with "gcc-native/12.3".
+
+
+Lmod is automatically replacing "PrgEnv-nvhpc/8.5.0" with "PrgEnv-gnu/8.5.0".
+
+
+Due to MODULEPATH changes, the following have been reloaded:
+  1) cray-mpich/8.1.28
+
+Loaded modules:
+
+Currently Loaded Modules:
+  1) libfabric/1.15.2.0       9) cray-pmi/6.1.13
+  2) craype-network-ofi      10) cray-pals/1.3.4
+  3) perftools-base/23.12.0  11) cray-libpals/1.3.4
+  4) darshan/3.4.4           12) craype-x86-milan
+  5) gcc-native/12.3         13) PrgEnv-gnu/8.5.0
+  6) craype/2.7.30           14) cray-hdf5-parallel/1.12.2.9
+  7) cray-dsmml/0.2.2        15) conda/2024-04-29
+  8) cray-mpich/8.1.28
+
+ 
+
+
+Torch versions
+gpytorch                     1.11
+pytorch-lightning            2.2.3
+torch                        2.1.0+cu121
+torch-cluster                1.6.3+pt21cu121
+torch_geometric              2.5.3
+torch-tb-profiler            0.4.3
+torchaudio                   2.1.0+cu121
+torchinfo                    1.8.0
+torchmetrics                 1.3.2
+torchvision                  0.16.0+cu121
+torchviz                     0.0.2
+
+Number of nodes: 3
+Number of ML ranks per node: 4
+Number of ML total ranks: 12
+
+Running script /eagle/datascience/balin/Nek/GNN/GNN/SimAI-Bench/main.py
+with arguments --device=cuda --iterations=50 --problem_size=large
+Hello from rank 0/12, local rank 0 on x3005c0s37b0n0
+Hello from rank 8/12, local rank 0 on x3006c0s13b0n0
+Hello from rank 4/12, local rank 0 on x3005c0s7b1n0
+Hello from rank 9/12, local rank 1 on x3006c0s13b0n0
+Hello from rank 1/12, local rank 1 on x3005c0s37b0n0
+Hello from rank 5/12, local rank 1 on x3005c0s7b1n0
+Hello from rank 10/12, local rank 2 on x3006c0s13b0n0
+Hello from rank 11/12, local rank 3 on x3006c0s13b0n0
+Hello from rank 2/12, local rank 2 on x3005c0s37b0n0
+Hello from rank 6/12, local rank 2 on x3005c0s7b1n0
+Hello from rank 7/12, local rank 3 on x3005c0s7b1n0
+Hello from rank 3/12, local rank 3 on x3005c0s37b0n0
+
+Loaded data and model with 163491 parameters
+
+Running on device: cuda 
+
+
+Starting training loop ... 
+[0]: avg_loss = 2.217047e-02
+[1]: avg_loss = 2.100940e-02
+[2]: avg_loss = 1.990533e-02
+[3]: avg_loss = 1.889608e-02
+[4]: avg_loss = 1.784078e-02
+[5]: avg_loss = 1.685435e-02
+[6]: avg_loss = 1.610929e-02
+[7]: avg_loss = 1.545106e-02
+[8]: avg_loss = 1.458603e-02
+[9]: avg_loss = 1.371868e-02
+[10]: avg_loss = 1.284519e-02
+[11]: avg_loss = 1.192658e-02
+[12]: avg_loss = 1.114231e-02
+[13]: avg_loss = 1.060011e-02
+[14]: avg_loss = 1.051364e-02
+[15]: avg_loss = 1.079286e-02
+[16]: avg_loss = 1.103304e-02
+[17]: avg_loss = 1.100019e-02
+[18]: avg_loss = 1.080300e-02
+[19]: avg_loss = 1.058497e-02
+[20]: avg_loss = 1.045044e-02
+[21]: avg_loss = 1.042729e-02
+[22]: avg_loss = 1.049000e-02
+[23]: avg_loss = 1.056614e-02
+[24]: avg_loss = 1.060180e-02
+[25]: avg_loss = 1.058779e-02
+[26]: avg_loss = 1.054228e-02
+[27]: avg_loss = 1.048866e-02
+[28]: avg_loss = 1.044379e-02
+[29]: avg_loss = 1.041300e-02
+[30]: avg_loss = 1.039790e-02
+[31]: avg_loss = 1.039787e-02
+[32]: avg_loss = 1.040861e-02
+[33]: avg_loss = 1.042504e-02
+[34]: avg_loss = 1.043787e-02
+[35]: avg_loss = 1.043938e-02
+[36]: avg_loss = 1.042819e-02
+[37]: avg_loss = 1.041029e-02
+[38]: avg_loss = 1.039312e-02
+[39]: avg_loss = 1.038416e-02
+[40]: avg_loss = 1.038498e-02
+[41]: avg_loss = 1.039150e-02
+[42]: avg_loss = 1.039792e-02
+[43]: avg_loss = 1.040035e-02
+[44]: avg_loss = 1.039836e-02
+[45]: avg_loss = 1.039425e-02
+[46]: avg_loss = 1.038850e-02
+[47]: avg_loss = 1.038333e-02
+[48]: avg_loss = 1.038017e-02
+[49]: avg_loss = 1.037913e-02
+
+Summary of performance data:
+training_loop [s] : min = 4.830361e+01 , max = 4.852469e+01 , avg = 4.833198e+01 , std = 5.849453e-02 
+train_tot [s] : min = 3.492585e+01 , max = 4.417576e+01 , avg = 4.339614e+01 , std = 2.553899e+00 
+train_iter [s] : min = 7.123136e-01 , max = 9.382455e-01 , avg = 8.856355e-01 , std = 5.750555e-02 
+throughput_iter [s] : min = 1.065819e+06 , max = 1.403876e+06 , avg = 1.134865e+06 , std = 8.833322e+04 
+Average parallel training throughout [nodes/s] : 1.361838e+07
