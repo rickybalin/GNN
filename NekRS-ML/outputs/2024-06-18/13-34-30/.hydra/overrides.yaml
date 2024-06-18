@@ -1,0 +1,2 @@
+- backend=nccl
+- halo_swap_mode=all_to_all

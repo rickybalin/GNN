@@ -1,0 +1,2 @@
+- backend=nccl
+- halo_swap_mode=send_recv
