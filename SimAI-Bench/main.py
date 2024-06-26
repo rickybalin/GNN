@@ -196,7 +196,7 @@ def train(args, model, optimizer, loss_fn, data, comm) -> dict:
         if rank==0:
             print(f'[{iteration}]: avg_loss = {loss:>4e}', flush=True)
 
-        if iteration>0:
+        if iteration>1:
             t_train = toc_t - tic_t
             times['train_tot'] += t_train
             times['train_iter'].append(t_train)
@@ -216,6 +216,9 @@ def print_fom(comm, times):
     """
     rank = comm.Get_rank()
     size = comm.Get_size()
+    if rank==0:
+        print(f'\nPerformance data averaged over {size} ranks and {len(times["throughput_iter"])} iterations:',flush=True)
+
     time_stats = {}
     for key, val in times.items():
         if type(val)==list:
@@ -261,7 +264,6 @@ def print_fom(comm, times):
         avg_par_throughput = np.mean(np.array(times['throughput_iter']))
 
     if rank==0:
-        print('\nSummary of performance data:')
         for key, val in time_stats.items():
             stats_string = f": min = {val['min'][0]:>6e} , " + \
                            f"max = {val['max'][0]:>6e} , " + \
@@ -356,7 +358,7 @@ if __name__ == '__main__':
     times = train(args, model, optimizer, loss_fn, data, comm)
 
     # Calculate and print FOM
-    if args.iterations>1:
+    if args.iterations>2:
         print_fom(comm, times)
 
     # Finalize

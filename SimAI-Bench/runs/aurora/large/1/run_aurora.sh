@@ -1,17 +1,5 @@
-#!/bin/bash -l
-#PBS -S /bin/bash
-#PBS -N gnn_scale
-#PBS -l walltime=00:30:00
-#PBS -l select=1
-#PBS -k doe
-#PBS -j oe
-#PBS -A Aurora_deployment
-#PBS -q lustre_scaling
-#PBS -V
-##PBS -m be
-##PBS -M rbalin@anl.gov
+#!/bin/bash 
 
-cd $PBS_O_WORKDIR
 module load frameworks/2024.1
 source /lus/flare/projects/Aurora_deployment/balin/Nek/GNN/env/_pyg/bin/activate
 echo Loaded modules:
@@ -22,8 +10,9 @@ echo IPEX version: `python -c "import torch;import intel_extension_for_pytorch a
 echo Torch Geometric version: `python -c "import torch;import torch_geometric;print(torch_geometric.__version__)"`
 echo
 
+
 NODES=$(cat $PBS_NODEFILE | wc -l)
-PROCS_PER_NODE=12
+PROCS_PER_NODE=2
 PROCS=$((NODES * PROCS_PER_NODE))
 JOBID=$(echo $PBS_JOBID | awk '{split($1,a,"."); print a[1]}')
 echo Number of nodes: $NODES
@@ -34,7 +23,7 @@ echo
 export FI_CXI_DEFAULT_CQ_SIZE=131072
 export FI_CXI_OVFLOW_BUF_SIZE=8388608
 export FI_CXI_CQ_FILL_PERCENT=20
-export CPU_BIND="list:2-4:10-12:18-20:26-28:34-36:42-44:54-56:62-64:70-72:78-80:86-88:94-96"
+export CPU_BIND="verbose,list:2-4:10-12:18-20:26-28:34-36:42-44:54-56:62-64:70-72:78-80:86-88:94-96"
 if [[ $PROCS_PER_NODE -eq 1 ]]; then
     echo Not setting oneCCL bindings
 elif [[ $PROCS_PER_NODE -eq 2 ]]; then
@@ -49,14 +38,14 @@ elif [[ $PROCS_PER_NODE -eq 12 ]]; then
 fi
 echo
 
-EXE=./main.py
+EXE=/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/GNN/SimAI-Bench/main.py
 GPU_AFFINITY=./affinity_aurora.sh
 ARGS="--device=xpu --iterations=100 --problem_size=large"
 echo Running script $EXE
 echo with arguments $ARGS
 echo `date`
 #mpiexec --pmi=pmix -n $PROCS --ppn $PROCS_PER_NODE --cpu-bind=list:1-7:8-15:16-23:24-31:32-39:40-47:52-59:60-67:68-75:76-83:84-91:92-99 $GPU_AFFINITY python $EXE ${ARGS}
-mpiexec --pmi=pmix --envall -n $PROCS --ppn $PROCS_PER_NODE --cpu-bind=${CPU_BIND}  python $EXE ${ARGS}
+mpiexec --pmi=pmix --envall -n $PROCS --ppn $PROCS_PER_NODE --cpu-bind=${CPU_BIND}  python $EXE ${ARGS} 
 echo `date`
 
 

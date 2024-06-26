@@ -2,7 +2,7 @@
 #PBS -S /bin/bash
 #PBS -N gnn_scale
 #PBS -l walltime=00:30:00
-#PBS -l select=1
+#PBS -l select=2
 #PBS -k doe
 #PBS -j oe
 #PBS -A Aurora_deployment
@@ -49,7 +49,7 @@ elif [[ $PROCS_PER_NODE -eq 12 ]]; then
 fi
 echo
 
-EXE=./main.py
+EXE=/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/GNN/SimAI-Bench/main.py
 GPU_AFFINITY=./affinity_aurora.sh
 ARGS="--device=xpu --iterations=100 --problem_size=large"
 echo Running script $EXE
