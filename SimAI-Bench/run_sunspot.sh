@@ -1,10 +1,11 @@
 #!/bin/bash
 
-module load frameworks/2024.1
-source /lus/flare/projects/Aurora_deployment/balin/Nek/GNN/env/_pyg/bin/activate
+module use /soft/preview-modulefiles/24.086.0
+module load frameworks/2024.04.15.002
+source /gila/Aurora_deployment/balin/Nek/venv/_pyg/bin/activate
 
 NODES=$(cat $PBS_NODEFILE | wc -l)
-PROCS_PER_NODE=1
+PROCS_PER_NODE=2
 PROCS=$((NODES * PROCS_PER_NODE))
 JOBID=$(echo $PBS_JOBID | awk '{split($1,a,"."); print a[1]}')
 echo Number of nodes: $NODES

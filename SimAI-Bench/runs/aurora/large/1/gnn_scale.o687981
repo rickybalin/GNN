@@ -1,0 +1,155 @@
+Loaded modules:
+
+Currently Loaded Modules:
+  1) libfabric/1.15.2.0                     6) gmp/6.2.1-pcxzkau                11) mpich-config/collective-tuning/1024
+  2) cray-pals/1.3.3                        7) mpfr/4.2.0-w7v7yjv               12) oneapi/release/2024.1
+  3) cray-libpals/1.3.3                     8) mpc/1.3.1-dfagrna                13) frameworks/2024.1
+  4) intel_compute_runtime/release/803.29   9) gcc/12.2.0
+  5) spack-pe-gcc/0.7.0-24.086.0           10) mpich/icc-all-pmix-gpu/20231026
+
+ 
+
+
+Torch version: 2.1.0.post0+cxx11.abi
+IPEX version: 2.1.20+xpu
+Torch Geometric version: 2.5.3
+
+Number of nodes: 1
+Number of ranks per node: 2
+Number of total ranks: 2
+
+Setting oneCCL bindings for 2 ranks per node
+
+Running script /lus/flare/projects/Aurora_deployment/balin/Nek/GNN/GNN/SimAI-Bench/main.py
+with arguments --device=xpu --iterations=100 --problem_size=large
+Wed 26 Jun 2024 02:37:33 PM UTC
+cpubind:list x4704c6s7b0n0 pid 24281 rank 0 0: mask 0x1c
+cpubind:list x4704c6s7b0n0 pid 24282 rank 1 1: mask 0x1c00
+Hello from rank 0/2, local rank 0 on x4704c6s7b0n0
+Hello from rank 1/2, local rank 1 on x4704c6s7b0n0
+
+Loaded data and model with 163491 parameters
+
+Running on device: xpu 
+
+2024:06:26-14:37:40:(24281) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-14:37:40:(24282) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-14:37:40:(24281) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-14:37:40:(24282) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+
+Starting training loop ... 
+[0]: avg_loss = 2.795013e-02
+[1]: avg_loss = 2.751482e-02
+[2]: avg_loss = 2.711555e-02
+[3]: avg_loss = 2.675093e-02
+[4]: avg_loss = 2.646293e-02
+[5]: avg_loss = 2.621734e-02
+[6]: avg_loss = 2.597197e-02
+[7]: avg_loss = 2.572383e-02
+[8]: avg_loss = 2.546516e-02
+[9]: avg_loss = 2.521180e-02
+[10]: avg_loss = 2.496653e-02
+[11]: avg_loss = 2.471920e-02
+[12]: avg_loss = 2.448687e-02
+[13]: avg_loss = 2.426388e-02
+[14]: avg_loss = 2.404306e-02
+[15]: avg_loss = 2.382137e-02
+[16]: avg_loss = 2.359780e-02
+[17]: avg_loss = 2.337367e-02
+[18]: avg_loss = 2.315285e-02
+[19]: avg_loss = 2.293094e-02
+[20]: avg_loss = 2.272302e-02
+[21]: avg_loss = 2.250769e-02
+[22]: avg_loss = 2.230234e-02
+[23]: avg_loss = 2.209724e-02
+[24]: avg_loss = 2.189590e-02
+[25]: avg_loss = 2.169167e-02
+[26]: avg_loss = 2.148749e-02
+[27]: avg_loss = 2.128741e-02
+[28]: avg_loss = 2.109306e-02
+[29]: avg_loss = 2.089953e-02
+[30]: avg_loss = 2.070487e-02
+[31]: avg_loss = 2.050740e-02
+[32]: avg_loss = 2.032690e-02
+[33]: avg_loss = 2.016406e-02
+[34]: avg_loss = 2.000665e-02
+[35]: avg_loss = 1.984040e-02
+[36]: avg_loss = 1.966969e-02
+[37]: avg_loss = 1.950858e-02
+[38]: avg_loss = 1.934823e-02
+[39]: avg_loss = 1.918624e-02
+[40]: avg_loss = 1.902397e-02
+[41]: avg_loss = 1.886301e-02
+[42]: avg_loss = 1.870298e-02
+[43]: avg_loss = 1.854244e-02
+[44]: avg_loss = 1.838152e-02
+[45]: avg_loss = 1.822012e-02
+[46]: avg_loss = 1.806238e-02
+[47]: avg_loss = 1.790651e-02
+[48]: avg_loss = 1.774905e-02
+[49]: avg_loss = 1.758998e-02
+[50]: avg_loss = 1.742915e-02
+[51]: avg_loss = 1.726690e-02
+[52]: avg_loss = 1.710477e-02
+[53]: avg_loss = 1.694138e-02
+[54]: avg_loss = 1.677583e-02
+[55]: avg_loss = 1.661712e-02
+[56]: avg_loss = 1.646163e-02
+[57]: avg_loss = 1.630787e-02
+[58]: avg_loss = 1.615290e-02
+[59]: avg_loss = 1.599620e-02
+[60]: avg_loss = 1.583663e-02
+[61]: avg_loss = 1.567479e-02
+[62]: avg_loss = 1.551052e-02
+[63]: avg_loss = 1.534313e-02
+[64]: avg_loss = 1.517269e-02
+[65]: avg_loss = 1.499915e-02
+[66]: avg_loss = 1.481718e-02
+[67]: avg_loss = 1.461188e-02
+[68]: avg_loss = 1.440039e-02
+[69]: avg_loss = 1.419716e-02
+[70]: avg_loss = 1.402517e-02
+[71]: avg_loss = 1.385201e-02
+[72]: avg_loss = 1.367736e-02
+[73]: avg_loss = 1.350057e-02
+[74]: avg_loss = 1.332415e-02
+[75]: avg_loss = 1.314914e-02
+[76]: avg_loss = 1.298520e-02
+[77]: avg_loss = 1.282227e-02
+[78]: avg_loss = 1.264843e-02
+[79]: avg_loss = 1.248902e-02
+[80]: avg_loss = 1.234138e-02
+[81]: avg_loss = 1.220070e-02
+[82]: avg_loss = 1.207154e-02
+[83]: avg_loss = 1.195333e-02
+[84]: avg_loss = 1.187930e-02
+[85]: avg_loss = 1.179868e-02
+[86]: avg_loss = 1.170390e-02
+[87]: avg_loss = 1.160043e-02
+[88]: avg_loss = 1.149005e-02
+[89]: avg_loss = 1.137636e-02
+[90]: avg_loss = 1.128240e-02
+[91]: avg_loss = 1.119560e-02
+[92]: avg_loss = 1.114091e-02
+[93]: avg_loss = 1.108626e-02
+[94]: avg_loss = 1.103065e-02
+[95]: avg_loss = 1.097602e-02
+[96]: avg_loss = 1.092366e-02
+[97]: avg_loss = 1.087426e-02
+[98]: avg_loss = 1.082843e-02
+[99]: avg_loss = 1.078394e-02
+
+Summary of performance data:
+training_loop [s] : min = 8.761531e+01 , max = 8.761602e+01 , avg = 8.761567e+01 , std = 3.577625e-04 
+train_tot [s] : min = 8.584410e+01 , max = 8.586770e+01 , avg = 8.585590e+01 , std = 1.180152e-02 
+train_iter [s] : min = 8.620471e-01 , max = 8.741902e-01 , avg = 8.672313e-01 , std = 1.891860e-03 
+throughput_iter [s] : min = 1.143916e+06 , max = 1.160029e+06 , avg = 1.153100e+06 , std = 2.515856e+03 
+forward_pass [s] : min = 1.758615e-02 , max = 2.647234e-02 , avg = 1.872662e-02 , std = 1.005676e-03 
+loss [s] : min = 1.943670e-04 , max = 3.627090e-04 , avg = 2.227863e-04 , std = 2.508118e-05 
+backward_pass [s] : min = 8.368492e-01 , max = 8.470299e-01 , avg = 8.424024e-01 , std = 1.864139e-03 
+optimizer_step [s] : min = 4.946838e-03 , max = 6.125828e-03 , avg = 5.377624e-03 , std = 2.801377e-04 
+[WARNING] yaksa: 2 leaked handle pool objects
+Average parallel training throughout [nodes/s] : 2.306201e+06
+[WARNING] yaksa: 2 leaked handle pool objects
+2024:06:26-14:39:08:(24281) |CCL_WARN| MPI_Finalize has been called before CCL finalization
+Wed 26 Jun 2024 02:39:09 PM UTC
