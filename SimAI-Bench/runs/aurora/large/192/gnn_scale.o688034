@@ -1,0 +1,1259 @@
+
+The following have been reloaded with a version change:
+  1) intel_compute_runtime/release/821.36 => intel_compute_runtime/release/803.29
+  2) oneapi/eng-compiler/2024.04.15.002 => oneapi/release/2024.1
+
+Loaded modules:
+
+Currently Loaded Modules:
+  1) mpich/icc-all-pmix-gpu/20231026
+  2) mpich-config/collective-tuning/1024
+  3) libfabric/1.15.2.0
+  4) cray-pals/1.3.3
+  5) cray-libpals/1.3.3
+  6) spack-pe-gcc/0.7.0-24.086.0
+  7) gmp/6.2.1-pcxzkau
+  8) mpfr/4.2.0-w7v7yjv
+  9) mpc/1.3.1-dfagrna
+ 10) gcc/12.2.0
+ 11) intel_compute_runtime/release/803.29
+ 12) oneapi/release/2024.1
+ 13) frameworks/2024.1
+
+ 
+
+
+Torch version: 2.1.0.post0+cxx11.abi
+IPEX version: 2.1.20+xpu
+Torch Geometric version: 2.5.3
+
+Number of nodes: 32
+Number of ranks per node: 12
+Number of total ranks: 384
+
+Setting oneCCL bindings for 12 ranks per node
+
+Running script /lus/flare/projects/Aurora_deployment/balin/Nek/GNN/GNN/SimAI-Bench/main.py
+with arguments --device=xpu --iterations=100 --problem_size=large
+Wed 26 Jun 2024 03:33:33 PM UTC
+Hello from rank 0/384, local rank 0 on x4708c6s0b0n0
+Hello from rank 1/384, local rank 1 on x4708c6s0b0n0
+Hello from rank 2/384, local rank 2 on x4708c6s0b0n0
+Hello from rank 3/384, local rank 3 on x4708c6s0b0n0
+Hello from rank 4/384, local rank 4 on x4708c6s0b0n0
+Hello from rank 5/384, local rank 5 on x4708c6s0b0n0
+Hello from rank 204/384, local rank 0 on x4018c3s4b0n0
+Hello from rank 84/384, local rank 0 on x4018c2s2b0n0
+Hello from rank 205/384, local rank 1 on x4018c3s4b0n0
+Hello from rank 6/384, local rank 6 on x4708c6s0b0n0
+Hello from rank 72/384, local rank 0 on x4018c2s1b0n0
+Hello from rank 192/384, local rank 0 on x4018c3s3b0n0
+Hello from rank 312/384, local rank 0 on x4716c2s4b0n0
+Hello from rank 348/384, local rank 0 on x4716c2s7b0n0
+Hello from rank 7/384, local rank 7 on x4708c6s0b0n0
+Hello from rank 156/384, local rank 0 on x4018c3s0b0n0
+Hello from rank 193/384, local rank 1 on x4018c3s3b0n0
+Hello from rank 313/384, local rank 1 on x4716c2s4b0n0
+Hello from rank 349/384, local rank 1 on x4716c2s7b0n0
+Hello from rank 8/384, local rank 8 on x4708c6s0b0n0
+Hello from rank 96/384, local rank 0 on x4018c2s3b0n0
+Hello from rank 157/384, local rank 1 on x4018c3s0b0n0
+Hello from rank 206/384, local rank 2 on x4018c3s4b0n0
+Hello from rank 240/384, local rank 0 on x4716c1s3b0n0
+Hello from rank 314/384, local rank 2 on x4716c2s4b0n0
+Hello from rank 336/384, local rank 0 on x4716c2s6b0n0
+Hello from rank 350/384, local rank 2 on x4716c2s7b0n0
+Hello from rank 9/384, local rank 9 on x4708c6s0b0n0
+Hello from rank 120/384, local rank 0 on x4018c2s5b0n0
+Hello from rank 194/384, local rank 2 on x4018c3s3b0n0
+Hello from rank 241/384, local rank 1 on x4716c1s3b0n0
+Hello from rank 315/384, local rank 3 on x4716c2s4b0n0
+Hello from rank 337/384, local rank 1 on x4716c2s6b0n0
+Hello from rank 351/384, local rank 3 on x4716c2s7b0n0
+Hello from rank 10/384, local rank 10 on x4708c6s0b0n0
+Hello from rank 60/384, local rank 0 on x4018c2s0b0n0
+Hello from rank 121/384, local rank 1 on x4018c2s5b0n0
+Hello from rank 195/384, local rank 3 on x4018c3s3b0n0
+Hello from rank 242/384, local rank 2 on x4716c1s3b0n0
+Hello from rank 252/384, local rank 0 on x4716c1s4b0n0
+Hello from rank 276/384, local rank 0 on x4716c1s7b0n0
+Hello from rank 288/384, local rank 0 on x4716c2s0b0n0
+Hello from rank 316/384, local rank 4 on x4716c2s4b0n0
+Hello from rank 338/384, local rank 2 on x4716c2s6b0n0
+Hello from rank 352/384, local rank 4 on x4716c2s7b0n0
+Hello from rank 11/384, local rank 11 on x4708c6s0b0n0
+Hello from rank 122/384, local rank 2 on x4018c2s5b0n0
+Hello from rank 132/384, local rank 0 on x4018c2s6b0n0
+Hello from rank 158/384, local rank 2 on x4018c3s0b0n0
+Hello from rank 243/384, local rank 3 on x4716c1s3b0n0
+Hello from rank 264/384, local rank 0 on x4716c1s5b0n0
+Hello from rank 277/384, local rank 1 on x4716c1s7b0n0
+Hello from rank 289/384, local rank 1 on x4716c2s0b0n0
+Hello from rank 317/384, local rank 5 on x4716c2s4b0n0
+Hello from rank 324/384, local rank 0 on x4716c2s5b0n0
+Hello from rank 339/384, local rank 3 on x4716c2s6b0n0
+Hello from rank 353/384, local rank 5 on x4716c2s7b0n0
+Hello from rank 123/384, local rank 3 on x4018c2s5b0n0
+Hello from rank 133/384, local rank 1 on x4018c2s6b0n0
+Hello from rank 159/384, local rank 3 on x4018c3s0b0n0
+Hello from rank 196/384, local rank 4 on x4018c3s3b0n0
+Hello from rank 244/384, local rank 4 on x4716c1s3b0n0
+Hello from rank 265/384, local rank 1 on x4716c1s5b0n0
+Hello from rank 278/384, local rank 2 on x4716c1s7b0n0
+Hello from rank 290/384, local rank 2 on x4716c2s0b0n0
+Hello from rank 318/384, local rank 6 on x4716c2s4b0n0
+Hello from rank 325/384, local rank 1 on x4716c2s5b0n0
+Hello from rank 340/384, local rank 4 on x4716c2s6b0n0
+Hello from rank 354/384, local rank 6 on x4716c2s7b0n0
+Hello from rank 24/384, local rank 0 on x4708c6s3b0n0
+Hello from rank 48/384, local rank 0 on x4018c1s7b0n0
+Hello from rank 124/384, local rank 4 on x4018c2s5b0n0
+Hello from rank 144/384, local rank 0 on x4018c2s7b0n0
+Hello from rank 160/384, local rank 4 on x4018c3s0b0n0
+Hello from rank 197/384, local rank 5 on x4018c3s3b0n0
+Hello from rank 245/384, local rank 5 on x4716c1s3b0n0
+Hello from rank 266/384, local rank 2 on x4716c1s5b0n0
+Hello from rank 279/384, local rank 3 on x4716c1s7b0n0
+Hello from rank 291/384, local rank 3 on x4716c2s0b0n0
+Hello from rank 319/384, local rank 7 on x4716c2s4b0n0
+Hello from rank 326/384, local rank 2 on x4716c2s5b0n0
+Hello from rank 341/384, local rank 5 on x4716c2s6b0n0
+Hello from rank 355/384, local rank 7 on x4716c2s7b0n0
+Hello from rank 25/384, local rank 1 on x4708c6s3b0n0
+Hello from rank 36/384, local rank 0 on x4018c1s6b0n0
+Hello from rank 49/384, local rank 1 on x4018c1s7b0n0
+Hello from rank 97/384, local rank 1 on x4018c2s3b0n0
+Hello from rank 108/384, local rank 0 on x4018c2s4b0n0
+Hello from rank 125/384, local rank 5 on x4018c2s5b0n0
+Hello from rank 161/384, local rank 5 on x4018c3s0b0n0
+Hello from rank 180/384, local rank 0 on x4018c3s2b0n0
+Hello from rank 198/384, local rank 6 on x4018c3s3b0n0
+Hello from rank 246/384, local rank 6 on x4716c1s3b0n0
+Hello from rank 267/384, local rank 3 on x4716c1s5b0n0
+Hello from rank 280/384, local rank 4 on x4716c1s7b0n0
+Hello from rank 292/384, local rank 4 on x4716c2s0b0n0
+Hello from rank 320/384, local rank 8 on x4716c2s4b0n0
+Hello from rank 327/384, local rank 3 on x4716c2s5b0n0
+Hello from rank 342/384, local rank 6 on x4716c2s6b0n0
+Hello from rank 356/384, local rank 8 on x4716c2s7b0n0
+Hello from rank 372/384, local rank 0 on x4716c3s1b0n0
+Hello from rank 12/384, local rank 0 on x4708c6s2b0n0
+Hello from rank 26/384, local rank 2 on x4708c6s3b0n0
+Hello from rank 37/384, local rank 1 on x4018c1s6b0n0
+Hello from rank 50/384, local rank 2 on x4018c1s7b0n0
+Hello from rank 73/384, local rank 1 on x4018c2s1b0n0
+Hello from rank 85/384, local rank 1 on x4018c2s2b0n0
+Hello from rank 98/384, local rank 2 on x4018c2s3b0n0
+Hello from rank 109/384, local rank 1 on x4018c2s4b0n0
+Hello from rank 168/384, local rank 0 on x4018c3s1b0n0
+Hello from rank 181/384, local rank 1 on x4018c3s2b0n0
+Hello from rank 207/384, local rank 3 on x4018c3s4b0n0
+Hello from rank 216/384, local rank 0 on x4020c5s3b0n0
+Hello from rank 228/384, local rank 0 on x4716c1s2b0n0
+Hello from rank 247/384, local rank 7 on x4716c1s3b0n0
+Hello from rank 268/384, local rank 4 on x4716c1s5b0n0
+Hello from rank 281/384, local rank 5 on x4716c1s7b0n0
+Hello from rank 293/384, local rank 5 on x4716c2s0b0n0
+Hello from rank 300/384, local rank 0 on x4716c2s3b0n0
+Hello from rank 321/384, local rank 9 on x4716c2s4b0n0
+Hello from rank 328/384, local rank 4 on x4716c2s5b0n0
+Hello from rank 343/384, local rank 7 on x4716c2s6b0n0
+Hello from rank 360/384, local rank 0 on x4716c3s0b0n0
+Hello from rank 373/384, local rank 1 on x4716c3s1b0n0
+Hello from rank 13/384, local rank 1 on x4708c6s2b0n0
+Hello from rank 27/384, local rank 3 on x4708c6s3b0n0
+Hello from rank 38/384, local rank 2 on x4018c1s6b0n0
+Hello from rank 51/384, local rank 3 on x4018c1s7b0n0
+Hello from rank 74/384, local rank 2 on x4018c2s1b0n0
+Hello from rank 86/384, local rank 2 on x4018c2s2b0n0
+Hello from rank 99/384, local rank 3 on x4018c2s3b0n0
+Hello from rank 110/384, local rank 2 on x4018c2s4b0n0
+Hello from rank 126/384, local rank 6 on x4018c2s5b0n0
+Hello from rank 145/384, local rank 1 on x4018c2s7b0n0
+Hello from rank 169/384, local rank 1 on x4018c3s1b0n0
+Hello from rank 182/384, local rank 2 on x4018c3s2b0n0
+Hello from rank 199/384, local rank 7 on x4018c3s3b0n0
+Hello from rank 208/384, local rank 4 on x4018c3s4b0n0
+Hello from rank 217/384, local rank 1 on x4020c5s3b0n0
+Hello from rank 229/384, local rank 1 on x4716c1s2b0n0
+Hello from rank 248/384, local rank 8 on x4716c1s3b0n0
+Hello from rank 269/384, local rank 5 on x4716c1s5b0n0
+Hello from rank 282/384, local rank 6 on x4716c1s7b0n0
+Hello from rank 294/384, local rank 6 on x4716c2s0b0n0
+Hello from rank 322/384, local rank 10 on x4716c2s4b0n0
+Hello from rank 329/384, local rank 5 on x4716c2s5b0n0
+Hello from rank 344/384, local rank 8 on x4716c2s6b0n0
+Hello from rank 357/384, local rank 9 on x4716c2s7b0n0
+Hello from rank 361/384, local rank 1 on x4716c3s0b0n0
+Hello from rank 374/384, local rank 2 on x4716c3s1b0n0
+Hello from rank 14/384, local rank 2 on x4708c6s2b0n0
+Hello from rank 28/384, local rank 4 on x4708c6s3b0n0
+Hello from rank 39/384, local rank 3 on x4018c1s6b0n0
+Hello from rank 52/384, local rank 4 on x4018c1s7b0n0
+Hello from rank 75/384, local rank 3 on x4018c2s1b0n0
+Hello from rank 87/384, local rank 3 on x4018c2s2b0n0
+Hello from rank 100/384, local rank 4 on x4018c2s3b0n0
+Hello from rank 111/384, local rank 3 on x4018c2s4b0n0
+Hello from rank 127/384, local rank 7 on x4018c2s5b0n0
+Hello from rank 146/384, local rank 2 on x4018c2s7b0n0
+Hello from rank 162/384, local rank 6 on x4018c3s0b0n0
+Hello from rank 170/384, local rank 2 on x4018c3s1b0n0
+Hello from rank 183/384, local rank 3 on x4018c3s2b0n0
+Hello from rank 200/384, local rank 8 on x4018c3s3b0n0
+Hello from rank 209/384, local rank 5 on x4018c3s4b0n0
+Hello from rank 218/384, local rank 2 on x4020c5s3b0n0
+Hello from rank 230/384, local rank 2 on x4716c1s2b0n0
+Hello from rank 249/384, local rank 9 on x4716c1s3b0n0
+Hello from rank 270/384, local rank 6 on x4716c1s5b0n0
+Hello from rank 283/384, local rank 7 on x4716c1s7b0n0
+Hello from rank 295/384, local rank 7 on x4716c2s0b0n0
+Hello from rank 323/384, local rank 11 on x4716c2s4b0n0
+Hello from rank 330/384, local rank 6 on x4716c2s5b0n0
+Hello from rank 345/384, local rank 9 on x4716c2s6b0n0
+Hello from rank 358/384, local rank 10 on x4716c2s7b0n0
+Hello from rank 362/384, local rank 2 on x4716c3s0b0n0
+Hello from rank 375/384, local rank 3 on x4716c3s1b0n0
+Hello from rank 15/384, local rank 3 on x4708c6s2b0n0
+Hello from rank 29/384, local rank 5 on x4708c6s3b0n0
+Hello from rank 40/384, local rank 4 on x4018c1s6b0n0
+Hello from rank 53/384, local rank 5 on x4018c1s7b0n0
+Hello from rank 61/384, local rank 1 on x4018c2s0b0n0
+Hello from rank 76/384, local rank 4 on x4018c2s1b0n0
+Hello from rank 88/384, local rank 4 on x4018c2s2b0n0
+Hello from rank 101/384, local rank 5 on x4018c2s3b0n0
+Hello from rank 112/384, local rank 4 on x4018c2s4b0n0
+Hello from rank 128/384, local rank 8 on x4018c2s5b0n0
+Hello from rank 134/384, local rank 2 on x4018c2s6b0n0
+Hello from rank 147/384, local rank 3 on x4018c2s7b0n0
+Hello from rank 163/384, local rank 7 on x4018c3s0b0n0
+Hello from rank 171/384, local rank 3 on x4018c3s1b0n0
+Hello from rank 184/384, local rank 4 on x4018c3s2b0n0
+Hello from rank 201/384, local rank 9 on x4018c3s3b0n0
+Hello from rank 211/384, local rank 7 on x4018c3s4b0n0
+Hello from rank 219/384, local rank 3 on x4020c5s3b0n0
+Hello from rank 231/384, local rank 3 on x4716c1s2b0n0
+Hello from rank 250/384, local rank 10 on x4716c1s3b0n0
+Hello from rank 253/384, local rank 1 on x4716c1s4b0n0
+Hello from rank 271/384, local rank 7 on x4716c1s5b0n0
+Hello from rank 284/384, local rank 8 on x4716c1s7b0n0
+Hello from rank 296/384, local rank 8 on x4716c2s0b0n0
+Hello from rank 301/384, local rank 1 on x4716c2s3b0n0
+Hello from rank 331/384, local rank 7 on x4716c2s5b0n0
+Hello from rank 346/384, local rank 10 on x4716c2s6b0n0
+Hello from rank 359/384, local rank 11 on x4716c2s7b0n0
+Hello from rank 363/384, local rank 3 on x4716c3s0b0n0
+Hello from rank 376/384, local rank 4 on x4716c3s1b0n0
+Hello from rank 16/384, local rank 4 on x4708c6s2b0n0
+Hello from rank 30/384, local rank 6 on x4708c6s3b0n0
+Hello from rank 41/384, local rank 5 on x4018c1s6b0n0
+Hello from rank 54/384, local rank 6 on x4018c1s7b0n0
+Hello from rank 62/384, local rank 2 on x4018c2s0b0n0
+Hello from rank 77/384, local rank 5 on x4018c2s1b0n0
+Hello from rank 89/384, local rank 5 on x4018c2s2b0n0
+Hello from rank 102/384, local rank 6 on x4018c2s3b0n0
+Hello from rank 113/384, local rank 5 on x4018c2s4b0n0
+Hello from rank 129/384, local rank 9 on x4018c2s5b0n0
+Hello from rank 135/384, local rank 3 on x4018c2s6b0n0
+Hello from rank 148/384, local rank 4 on x4018c2s7b0n0
+Hello from rank 164/384, local rank 8 on x4018c3s0b0n0
+Hello from rank 172/384, local rank 4 on x4018c3s1b0n0
+Hello from rank 185/384, local rank 5 on x4018c3s2b0n0
+Hello from rank 202/384, local rank 10 on x4018c3s3b0n0
+Hello from rank 212/384, local rank 8 on x4018c3s4b0n0
+Hello from rank 220/384, local rank 4 on x4020c5s3b0n0
+Hello from rank 232/384, local rank 4 on x4716c1s2b0n0
+Hello from rank 251/384, local rank 11 on x4716c1s3b0n0
+Hello from rank 254/384, local rank 2 on x4716c1s4b0n0
+Hello from rank 272/384, local rank 8 on x4716c1s5b0n0
+Hello from rank 285/384, local rank 9 on x4716c1s7b0n0
+Hello from rank 297/384, local rank 9 on x4716c2s0b0n0
+Hello from rank 302/384, local rank 2 on x4716c2s3b0n0
+Hello from rank 332/384, local rank 8 on x4716c2s5b0n0
+Hello from rank 347/384, local rank 11 on x4716c2s6b0n0
+Hello from rank 364/384, local rank 4 on x4716c3s0b0n0
+Hello from rank 377/384, local rank 5 on x4716c3s1b0n0
+Hello from rank 17/384, local rank 5 on x4708c6s2b0n0
+Hello from rank 31/384, local rank 7 on x4708c6s3b0n0
+Hello from rank 42/384, local rank 6 on x4018c1s6b0n0
+Hello from rank 55/384, local rank 7 on x4018c1s7b0n0
+Hello from rank 63/384, local rank 3 on x4018c2s0b0n0
+Hello from rank 78/384, local rank 6 on x4018c2s1b0n0
+Hello from rank 90/384, local rank 6 on x4018c2s2b0n0
+Hello from rank 103/384, local rank 7 on x4018c2s3b0n0
+Hello from rank 114/384, local rank 6 on x4018c2s4b0n0
+Hello from rank 130/384, local rank 10 on x4018c2s5b0n0
+Hello from rank 136/384, local rank 4 on x4018c2s6b0n0
+Hello from rank 149/384, local rank 5 on x4018c2s7b0n0
+Hello from rank 165/384, local rank 9 on x4018c3s0b0n0
+Hello from rank 173/384, local rank 5 on x4018c3s1b0n0
+Hello from rank 186/384, local rank 6 on x4018c3s2b0n0
+Hello from rank 203/384, local rank 11 on x4018c3s3b0n0
+Hello from rank 213/384, local rank 9 on x4018c3s4b0n0
+Hello from rank 221/384, local rank 5 on x4020c5s3b0n0
+Hello from rank 233/384, local rank 5 on x4716c1s2b0n0
+Hello from rank 255/384, local rank 3 on x4716c1s4b0n0
+Hello from rank 273/384, local rank 9 on x4716c1s5b0n0
+Hello from rank 286/384, local rank 10 on x4716c1s7b0n0
+Hello from rank 298/384, local rank 10 on x4716c2s0b0n0
+Hello from rank 303/384, local rank 3 on x4716c2s3b0n0
+Hello from rank 333/384, local rank 9 on x4716c2s5b0n0
+Hello from rank 365/384, local rank 5 on x4716c3s0b0n0
+Hello from rank 378/384, local rank 6 on x4716c3s1b0n0
+Hello from rank 18/384, local rank 6 on x4708c6s2b0n0
+Hello from rank 32/384, local rank 8 on x4708c6s3b0n0
+Hello from rank 43/384, local rank 7 on x4018c1s6b0n0
+Hello from rank 56/384, local rank 8 on x4018c1s7b0n0
+Hello from rank 64/384, local rank 4 on x4018c2s0b0n0
+Hello from rank 79/384, local rank 7 on x4018c2s1b0n0
+Hello from rank 91/384, local rank 7 on x4018c2s2b0n0
+Hello from rank 104/384, local rank 8 on x4018c2s3b0n0
+Hello from rank 115/384, local rank 7 on x4018c2s4b0n0
+Hello from rank 131/384, local rank 11 on x4018c2s5b0n0
+Hello from rank 137/384, local rank 5 on x4018c2s6b0n0
+Hello from rank 150/384, local rank 6 on x4018c2s7b0n0
+Hello from rank 166/384, local rank 10 on x4018c3s0b0n0
+Hello from rank 174/384, local rank 6 on x4018c3s1b0n0
+Hello from rank 187/384, local rank 7 on x4018c3s2b0n0
+Hello from rank 214/384, local rank 10 on x4018c3s4b0n0
+Hello from rank 222/384, local rank 6 on x4020c5s3b0n0
+Hello from rank 234/384, local rank 6 on x4716c1s2b0n0
+Hello from rank 256/384, local rank 4 on x4716c1s4b0n0
+Hello from rank 274/384, local rank 10 on x4716c1s5b0n0
+Hello from rank 287/384, local rank 11 on x4716c1s7b0n0
+Hello from rank 299/384, local rank 11 on x4716c2s0b0n0
+Hello from rank 304/384, local rank 4 on x4716c2s3b0n0
+Hello from rank 334/384, local rank 10 on x4716c2s5b0n0
+Hello from rank 366/384, local rank 6 on x4716c3s0b0n0
+Hello from rank 379/384, local rank 7 on x4716c3s1b0n0
+Hello from rank 19/384, local rank 7 on x4708c6s2b0n0
+Hello from rank 33/384, local rank 9 on x4708c6s3b0n0
+Hello from rank 44/384, local rank 8 on x4018c1s6b0n0
+Hello from rank 57/384, local rank 9 on x4018c1s7b0n0
+Hello from rank 65/384, local rank 5 on x4018c2s0b0n0
+Hello from rank 80/384, local rank 8 on x4018c2s1b0n0
+Hello from rank 92/384, local rank 8 on x4018c2s2b0n0
+Hello from rank 105/384, local rank 9 on x4018c2s3b0n0
+Hello from rank 116/384, local rank 8 on x4018c2s4b0n0
+Hello from rank 138/384, local rank 6 on x4018c2s6b0n0
+Hello from rank 151/384, local rank 7 on x4018c2s7b0n0
+Hello from rank 167/384, local rank 11 on x4018c3s0b0n0
+Hello from rank 175/384, local rank 7 on x4018c3s1b0n0
+Hello from rank 188/384, local rank 8 on x4018c3s2b0n0
+Hello from rank 215/384, local rank 11 on x4018c3s4b0n0
+Hello from rank 223/384, local rank 7 on x4020c5s3b0n0
+Hello from rank 235/384, local rank 7 on x4716c1s2b0n0
+Hello from rank 257/384, local rank 5 on x4716c1s4b0n0
+Hello from rank 275/384, local rank 11 on x4716c1s5b0n0
+Hello from rank 305/384, local rank 5 on x4716c2s3b0n0
+Hello from rank 335/384, local rank 11 on x4716c2s5b0n0
+Hello from rank 367/384, local rank 7 on x4716c3s0b0n0
+Hello from rank 380/384, local rank 8 on x4716c3s1b0n0
+Hello from rank 20/384, local rank 8 on x4708c6s2b0n0
+Hello from rank 34/384, local rank 10 on x4708c6s3b0n0
+Hello from rank 45/384, local rank 9 on x4018c1s6b0n0
+Hello from rank 58/384, local rank 10 on x4018c1s7b0n0
+Hello from rank 66/384, local rank 6 on x4018c2s0b0n0
+Hello from rank 81/384, local rank 9 on x4018c2s1b0n0
+Hello from rank 93/384, local rank 9 on x4018c2s2b0n0
+Hello from rank 106/384, local rank 10 on x4018c2s3b0n0
+Hello from rank 117/384, local rank 9 on x4018c2s4b0n0
+Hello from rank 139/384, local rank 7 on x4018c2s6b0n0
+Hello from rank 152/384, local rank 8 on x4018c2s7b0n0
+Hello from rank 176/384, local rank 8 on x4018c3s1b0n0
+Hello from rank 189/384, local rank 9 on x4018c3s2b0n0
+Hello from rank 210/384, local rank 6 on x4018c3s4b0n0
+Hello from rank 224/384, local rank 8 on x4020c5s3b0n0
+Hello from rank 236/384, local rank 8 on x4716c1s2b0n0
+Hello from rank 258/384, local rank 6 on x4716c1s4b0n0
+Hello from rank 306/384, local rank 6 on x4716c2s3b0n0
+Hello from rank 368/384, local rank 8 on x4716c3s0b0n0
+Hello from rank 381/384, local rank 9 on x4716c3s1b0n0
+Hello from rank 21/384, local rank 9 on x4708c6s2b0n0
+Hello from rank 35/384, local rank 11 on x4708c6s3b0n0
+Hello from rank 46/384, local rank 10 on x4018c1s6b0n0
+Hello from rank 59/384, local rank 11 on x4018c1s7b0n0
+Hello from rank 67/384, local rank 7 on x4018c2s0b0n0
+Hello from rank 82/384, local rank 10 on x4018c2s1b0n0
+Hello from rank 94/384, local rank 10 on x4018c2s2b0n0
+Hello from rank 107/384, local rank 11 on x4018c2s3b0n0
+Hello from rank 118/384, local rank 10 on x4018c2s4b0n0
+Hello from rank 140/384, local rank 8 on x4018c2s6b0n0
+Hello from rank 153/384, local rank 9 on x4018c2s7b0n0
+Hello from rank 177/384, local rank 9 on x4018c3s1b0n0
+Hello from rank 190/384, local rank 10 on x4018c3s2b0n0
+Hello from rank 225/384, local rank 9 on x4020c5s3b0n0
+Hello from rank 237/384, local rank 9 on x4716c1s2b0n0
+Hello from rank 259/384, local rank 7 on x4716c1s4b0n0
+Hello from rank 307/384, local rank 7 on x4716c2s3b0n0
+Hello from rank 369/384, local rank 9 on x4716c3s0b0n0
+Hello from rank 382/384, local rank 10 on x4716c3s1b0n0
+Hello from rank 22/384, local rank 10 on x4708c6s2b0n0
+Hello from rank 47/384, local rank 11 on x4018c1s6b0n0
+Hello from rank 68/384, local rank 8 on x4018c2s0b0n0
+Hello from rank 83/384, local rank 11 on x4018c2s1b0n0
+Hello from rank 95/384, local rank 11 on x4018c2s2b0n0
+Hello from rank 119/384, local rank 11 on x4018c2s4b0n0
+Hello from rank 141/384, local rank 9 on x4018c2s6b0n0
+Hello from rank 154/384, local rank 10 on x4018c2s7b0n0
+Hello from rank 178/384, local rank 10 on x4018c3s1b0n0
+Hello from rank 191/384, local rank 11 on x4018c3s2b0n0
+Hello from rank 226/384, local rank 10 on x4020c5s3b0n0
+Hello from rank 238/384, local rank 10 on x4716c1s2b0n0
+Hello from rank 260/384, local rank 8 on x4716c1s4b0n0
+Hello from rank 308/384, local rank 8 on x4716c2s3b0n0
+Hello from rank 370/384, local rank 10 on x4716c3s0b0n0
+Hello from rank 383/384, local rank 11 on x4716c3s1b0n0
+Hello from rank 23/384, local rank 11 on x4708c6s2b0n0
+Hello from rank 69/384, local rank 9 on x4018c2s0b0n0
+Hello from rank 142/384, local rank 10 on x4018c2s6b0n0
+Hello from rank 155/384, local rank 11 on x4018c2s7b0n0
+Hello from rank 179/384, local rank 11 on x4018c3s1b0n0
+Hello from rank 227/384, local rank 11 on x4020c5s3b0n0
+Hello from rank 239/384, local rank 11 on x4716c1s2b0n0
+Hello from rank 261/384, local rank 9 on x4716c1s4b0n0
+Hello from rank 309/384, local rank 9 on x4716c2s3b0n0
+Hello from rank 371/384, local rank 11 on x4716c3s0b0n0
+Hello from rank 70/384, local rank 10 on x4018c2s0b0n0
+Hello from rank 143/384, local rank 11 on x4018c2s6b0n0
+Hello from rank 262/384, local rank 10 on x4716c1s4b0n0
+Hello from rank 310/384, local rank 10 on x4716c2s3b0n0
+Hello from rank 71/384, local rank 11 on x4018c2s0b0n0
+Hello from rank 263/384, local rank 11 on x4716c1s4b0n0
+Hello from rank 311/384, local rank 11 on x4716c2s3b0n0
+
+Loaded data and model with 163491 parameters
+
+2024:06:26-15:35:01:(34651) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(71848) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(71846) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(168323) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(168819) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(162086) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(162090) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(34650) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(168318) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(162170) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(161998) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(161994) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(168022) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(178253) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(34648) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(178751) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(163208) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(63704) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(63701) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(63693) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(168817) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(162087) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(168327) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(178744) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(161989) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(168025) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(168820) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(162115) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(144425) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(162111) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(63694) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(178249) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(162002) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(168027) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(161997) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(71851) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(167483) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(168320) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(168321) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(162120) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(163211) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(178747) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(178257) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(162091) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(145154) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(162116) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(71843) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(145157) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(71847) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(34642) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(71849) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(163202) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(145161) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(161996) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(167493) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(34640) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(161997) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(178252) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(161996) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(167482) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(161993) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(144789) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(144784) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(177899) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(161995) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(162119) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(163206) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(178255) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(144427) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(63699) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(34643) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(162118) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(162081) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(145155) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(71844) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(162168) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(178745) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(168814) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(178754) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(162085) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(34646) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(177900) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(162173) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(144785) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(161992) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(169694) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+Running on device: xpu 
+
+2024:06:26-15:35:01:(163205) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(162176) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(145156) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(168818) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(144429) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(71840) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(144432) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(168322) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(34644) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(162177) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(168822) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(145068) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(161990) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(162169) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(144503) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(144786) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(144881) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(162171) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(163203) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(169698) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(178256) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(168317) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(162172) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(144509) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(161999) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(144884) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(144835) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(177892) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(178748) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(168028) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(162114) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(168813) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(144881) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(144879) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(144886) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(168019) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(144793) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(178753) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(144890) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(178752) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(168823) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(162005) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(168812) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(177891) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(167492) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(168815) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(167490) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(144792) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(169828) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(177893) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(168319) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(163207) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(169827) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(169826) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(144826) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(168024) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(169689) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(162175) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(169825) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(162179) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(167484) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(145162) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(177895) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(145061) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(144426) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(162178) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(162174) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(169750) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(145164) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(145160) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(144510) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(144786) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(144825) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(144885) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(144833) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(178755) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(162113) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(71850) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(145062) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(169688) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(169835) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(168021) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(145158) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(145163) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(145165) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(162110) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(162089) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(144830) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(177890) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(144876) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(144880) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(144514) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(144899) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(145159) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(168821) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(144884) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(144785) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(168023) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(144895) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(144832) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(162001) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(162082) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(162092) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(162088) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(144829) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(168029) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(71842) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(34641) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:01:(144788) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(168030) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(177894) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(163210) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(63702) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(177901) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(163204) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144428) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144794) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(177896) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144795) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(63696) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(178750) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144430) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144787) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(177897) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144791) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144790) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(178250) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(168324) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(162000) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(63695) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(169696) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(34647) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(34645) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(169747) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(167486) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144511) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(169831) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(71841) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(168816) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(63703) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(162084) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(169757) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(168026) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(163212) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(63697) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(63700) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(162083) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(71845) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144435) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(178251) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(168020) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(169751) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(145060) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(177898) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(145063) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(178258) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144836) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(145070) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144781) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144938) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(145065) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144892) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(169695) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(162109) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144436) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(169758) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(145067) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(168326) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144902) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(163209) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(161995) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144831) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(169756) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(163213) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144782) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144929) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(169753) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144893) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144783) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144898) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(145069) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144830) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144776) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(145066) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144835) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(63698) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144433) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(145064) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144431) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144434) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(169749) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(178259) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144836) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(178254) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144882) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144507) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144505) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(167491) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(162004) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144833) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144506) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(169697) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144829) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(145071) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144877) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(169690) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(143685) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144828) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144887) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144883) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144777) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(143679) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(167488) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144827) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144891) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(34649) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144936) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144508) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144834) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144892) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(169693) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144827) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144775) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(162006) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(161999) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(169748) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(178248) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(143674) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(162117) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144778) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(161991) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144837) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(169692) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(169829) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(169699) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(169834) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(161988) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(167487) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144889) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(169691) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144779) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144831) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144896) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144780) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(162003) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(162112) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144882) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(169832) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(169833) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(169752) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(161998) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(169830) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(169755) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(178746) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144887) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144504) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144512) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144933) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144901) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144886) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(143678) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144934) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144885) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144888) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144935) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144894) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(169836) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144932) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144939) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(143682) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144897) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144834) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144883) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144903) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144826) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144931) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(167489) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144928) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144937) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144900) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(168325) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(143683) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(143681) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144832) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(168328) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(143677) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144513) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(143680) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(143675) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(143684) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144930) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(143676) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(167485) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(169754) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144784) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(178749) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144828) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:02:(144878) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:06:26-15:35:03:(71840) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(71843) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(71844) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(71846) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(71847) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(71848) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(71849) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(71851) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(71841) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(71842) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(71845) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(71850) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(63693) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(63694) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(63699) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(63701) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(34640) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(63704) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(169747) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(63695) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(169750) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(63696) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(63697) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(63698) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(34641) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(168817) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(63700) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(34642) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144938) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(63702) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(34643) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144929) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(63703) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(34644) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144881) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(34645) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144884) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(34646) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144826) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144890) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(162084) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144882) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(178248) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(162090) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(34647) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(178249) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(162081) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(34648) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(169688) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(178250) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(162082) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(161988) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(34649) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(169689) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(178251) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(162083) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(34650) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(169694) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(178252) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(168317) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(162085) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(34651) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(169698) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(169825) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(178253) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(162086) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(161989) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(169690) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(178254) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(162087) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(169691) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(178255) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(161990) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(178256) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(177890) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(178257) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(168318) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(177891) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(168319) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(169748) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144825) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(169749) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(168320) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(169751) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(169757) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144425) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144427) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(168022) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144429) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(169692) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(168025) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144432) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144883) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(169693) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144885) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(169695) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(178745) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144895) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144886) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(169696) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(178747) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144899) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144887) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(169697) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(169826) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(178751) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(163208) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(161991) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(167483) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144892) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144888) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(169827) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(178754) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(168027) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(163211) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(161992) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144893) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144829) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144889) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(178744) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(177892) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(168019) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(163202) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144789) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144833) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144891) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(169828) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(143679) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(178746) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(177894) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(168020) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(163203) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144784) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144876) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144835) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(169835) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(143683) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(177895) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(168021) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(163204) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(161993) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(167490) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144785) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144877) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(143685) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(177896) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(168023) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(163205) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(161994) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(167492) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144894) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144786) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(145154) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144879) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(143674) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(178748) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(177897) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(168024) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(163206) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(161995) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(167493) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144896) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144826) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144787) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144426) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(145155) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144880) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144827) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(143675) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(178749) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(177898) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(168026) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(168321) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(163207) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(161996) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(167482) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144897) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144827) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144788) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144503) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144428) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(145156) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(145060) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144881) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144828) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(169699) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(143676) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(178750) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(168028) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(168322) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(163209) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(162178) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144898) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144828) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144790) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144509) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144430) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(145157) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(145062) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144882) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144830) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(143677) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(178752) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(168029) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(168323) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(163210) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(162179) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(161996) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144900) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144829) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144791) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144510) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144431) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(145158) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(145065) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144936) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144883) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144831) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144892) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144785) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(169829) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(178753) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(168030) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(168324) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(163212) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(162168) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(161997) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(161997) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(167484) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(168819) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144901) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144830) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144792) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144504) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144433) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(145159) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(145071) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144939) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144884) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144832) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144786) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(169758) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(169830) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(143678) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(178755) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(177899) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(168325) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(163213) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(162169) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(161998) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(162001) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(167485) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(168812) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144902) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144831) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144793) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144505) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144434) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(145160) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(145061) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144928) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144885) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144834) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144775) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(169752) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(169831) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(143680) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(177900) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(168326) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(162170) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(161999) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(162002) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(167486) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(168813) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144903) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144832) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144794) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144506) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144435) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(145161) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(145063) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144930) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144886) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144836) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144776) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(169753) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(169832) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(143681) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(177901) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(168327) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(162171) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(162005) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(167487) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(168814) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144833) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144795) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144507) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144436) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(145162) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(145064) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144931) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144887) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144837) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144777) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(169754) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(169833) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(143682) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(177893) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(168328) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(162172) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(161995) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(167488) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(168815) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144834) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144508) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(145163) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(145066) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144932) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144878) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144778) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(169755) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(169834) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(143684) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(162173) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(161998) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(167489) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(168816) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144835) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144511) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(145164) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(145067) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144933) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144779) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(169756) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(169836) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(162174) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(161999) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(167491) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(168818) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144836) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144512) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(145165) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(145068) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144934) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144780) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(162175) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(162000) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(168820) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144513) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(145069) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144935) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144781) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(162176) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(162003) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(168821) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144514) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(145070) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144937) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144782) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(162177) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(162004) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(168822) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144783) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(162006) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(168823) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(144784) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(162088) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(162089) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(162091) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(162092) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(162115) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(162116) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(162120) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(162109) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(162110) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(162111) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(162112) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(162113) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(162114) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(162117) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(162118) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(162119) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(178258) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:06:26-15:35:03:(178259) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+
+Starting training loop ... 
+[0]: avg_loss = 2.585263e-02
+[1]: avg_loss = 4.692700e-02
+[2]: avg_loss = 1.233893e-02
+[3]: avg_loss = 1.289588e-02
+[4]: avg_loss = 1.062389e-02
+[5]: avg_loss = 3.300846e-02
+[6]: avg_loss = 1.309188e-02
+[7]: avg_loss = 1.633499e-02
+[8]: avg_loss = 1.605766e-02
+[9]: avg_loss = 1.438836e-02
+[10]: avg_loss = 5.370867e-02
+[11]: avg_loss = 1.196536e-02
+[12]: avg_loss = 1.132820e-02
+[13]: avg_loss = 1.106012e-02
+[14]: avg_loss = 1.077646e-02
+[15]: avg_loss = 1.046770e-02
+[16]: avg_loss = 1.075999e-02
+[17]: avg_loss = 1.091279e-02
+[18]: avg_loss = 1.093625e-02
+[19]: avg_loss = 1.102659e-02
+[20]: avg_loss = 1.092454e-02
+[21]: avg_loss = 1.072309e-02
+[22]: avg_loss = 1.041107e-02
+[23]: avg_loss = 1.069601e-02
+[24]: avg_loss = 1.042530e-02
+[25]: avg_loss = 1.042705e-02
+[26]: avg_loss = 1.050977e-02
+[27]: avg_loss = 1.054301e-02
+[28]: avg_loss = 1.078355e-02
+[29]: avg_loss = 1.051861e-02
+[30]: avg_loss = 1.050057e-02
+[31]: avg_loss = 1.049869e-02
+[32]: avg_loss = 1.156333e-02
+[33]: avg_loss = 1.056786e-02
+[34]: avg_loss = 1.070257e-02
+[35]: avg_loss = 1.051487e-02
+[36]: avg_loss = 1.050306e-02
+[37]: avg_loss = 1.049929e-02
+[38]: avg_loss = 1.046440e-02
+[39]: avg_loss = 1.043204e-02
+[40]: avg_loss = 1.039847e-02
+[41]: avg_loss = 1.038832e-02
+[42]: avg_loss = 1.039718e-02
+[43]: avg_loss = 1.043310e-02
+[44]: avg_loss = 1.045699e-02
+[45]: avg_loss = 1.044045e-02
+[46]: avg_loss = 1.040274e-02
+[47]: avg_loss = 1.037796e-02
+[48]: avg_loss = 1.037142e-02
+[49]: avg_loss = 1.037292e-02
+[50]: avg_loss = 1.038253e-02
+[51]: avg_loss = 1.039564e-02
+[52]: avg_loss = 1.039867e-02
+[53]: avg_loss = 1.039172e-02
+[54]: avg_loss = 1.038209e-02
+[55]: avg_loss = 1.037664e-02
+[56]: avg_loss = 1.037395e-02
+[57]: avg_loss = 1.036965e-02
+[58]: avg_loss = 1.036811e-02
+[59]: avg_loss = 1.036957e-02
+ping RPC timeout from x4708c6s0b0n0.hostmgmt2708.cm.aurora.alcf.anl.gov after 120s
+Wed 26 Jun 2024 03:44:29 PM UTC
