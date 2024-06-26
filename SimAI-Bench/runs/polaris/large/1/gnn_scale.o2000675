@@ -1,0 +1,112 @@
+
+Lmod is automatically replacing "nvhpc/23.9" with "gcc-native/12.3".
+
+
+Lmod is automatically replacing "PrgEnv-nvhpc/8.5.0" with "PrgEnv-gnu/8.5.0".
+
+
+Due to MODULEPATH changes, the following have been reloaded:
+  1) cray-mpich/8.1.28
+
+Loaded modules:
+
+Currently Loaded Modules:
+  1) libfabric/1.15.2.0       5) gcc-native/12.3     9) cray-pmi/6.1.13     13) PrgEnv-gnu/8.5.0
+  2) craype-network-ofi       6) craype/2.7.30      10) cray-pals/1.3.4     14) cray-hdf5-parallel/1.12.2.9
+  3) perftools-base/23.12.0   7) cray-dsmml/0.2.2   11) cray-libpals/1.3.4  15) conda/2024-04-29
+  4) darshan/3.4.4            8) cray-mpich/8.1.28  12) craype-x86-milan
+
+ 
+
+
+Torch versions
+
+[notice] A new release of pip is available: 24.0 -> 24.1
+[notice] To update, run: pip install --upgrade pip
+gpytorch                     1.11
+pytorch-lightning            2.2.3
+torch                        2.1.0+cu121
+torch-cluster                1.6.3+pt21cu121
+torch_geometric              2.5.3
+torch-tb-profiler            0.4.3
+torchaudio                   2.1.0+cu121
+torchinfo                    1.8.0
+torchmetrics                 1.3.2
+torchvision                  0.16.0+cu121
+torchviz                     0.0.2
+
+Number of nodes: 1
+Number of ML ranks per node: 1
+Number of ML total ranks: 1
+
+Running script /eagle/datascience/balin/Nek/GNN/GNN/SimAI-Bench/main.py
+with arguments --device=cuda --iterations=50 --problem_size=large
+Hello from rank 0/1, local rank 0 on x3006c0s1b0n0
+
+Loaded data and model with 163491 parameters
+
+Running on device: cuda 
+
+
+Starting training loop ... 
+[0]: avg_loss = 2.009690e-02
+[1]: avg_loss = 1.994254e-02
+[2]: avg_loss = 1.979962e-02
+[3]: avg_loss = 1.965900e-02
+[4]: avg_loss = 1.952282e-02
+[5]: avg_loss = 1.938743e-02
+[6]: avg_loss = 1.925204e-02
+[7]: avg_loss = 1.912203e-02
+[8]: avg_loss = 1.899428e-02
+[9]: avg_loss = 1.886281e-02
+[10]: avg_loss = 1.873133e-02
+[11]: avg_loss = 1.860397e-02
+[12]: avg_loss = 1.847893e-02
+[13]: avg_loss = 1.835992e-02
+[14]: avg_loss = 1.824475e-02
+[15]: avg_loss = 1.813382e-02
+[16]: avg_loss = 1.802201e-02
+[17]: avg_loss = 1.790936e-02
+[18]: avg_loss = 1.779852e-02
+[19]: avg_loss = 1.769373e-02
+[20]: avg_loss = 1.759031e-02
+[21]: avg_loss = 1.748595e-02
+[22]: avg_loss = 1.738139e-02
+[23]: avg_loss = 1.727781e-02
+[24]: avg_loss = 1.717494e-02
+[25]: avg_loss = 1.707351e-02
+[26]: avg_loss = 1.697314e-02
+[27]: avg_loss = 1.687393e-02
+[28]: avg_loss = 1.677607e-02
+[29]: avg_loss = 1.667868e-02
+[30]: avg_loss = 1.658176e-02
+[31]: avg_loss = 1.648532e-02
+[32]: avg_loss = 1.639162e-02
+[33]: avg_loss = 1.629806e-02
+[34]: avg_loss = 1.620469e-02
+[35]: avg_loss = 1.611156e-02
+[36]: avg_loss = 1.601931e-02
+[37]: avg_loss = 1.592802e-02
+[38]: avg_loss = 1.584018e-02
+[39]: avg_loss = 1.575218e-02
+[40]: avg_loss = 1.566362e-02
+[41]: avg_loss = 1.557486e-02
+[42]: avg_loss = 1.548607e-02
+[43]: avg_loss = 1.539844e-02
+[44]: avg_loss = 1.530996e-02
+[45]: avg_loss = 1.522261e-02
+[46]: avg_loss = 1.513527e-02
+[47]: avg_loss = 1.504761e-02
+[48]: avg_loss = 1.496093e-02
+[49]: avg_loss = 1.487991e-02
+
+Summary of performance data:
+training_loop [s] : min = 4.514877e+01 , max = 4.514877e+01 , avg = 4.514877e+01 , std = 0.000000e+00 
+train_tot [s] : min = 2.800510e+01 , max = 2.800510e+01 , avg = 2.800510e+01 , std = 0.000000e+00 
+train_iter [s] : min = 5.713438e-01 , max = 5.717725e-01 , avg = 5.715327e-01 , std = 1.046302e-04 
+throughput_iter [s] : min = 1.748947e+06 , max = 1.750260e+06 , avg = 1.749681e+06 , std = 3.203003e+02 
+forward_pass [s] : min = 7.728933e-03 , max = 8.432448e-03 , avg = 7.813782e-03 , std = 9.663824e-05 
+loss [s] : min = 1.247339e-04 , max = 2.630139e-04 , avg = 1.389348e-04 , std = 1.883428e-05 
+backward_pass [s] : min = 5.424018e-01 , max = 5.433128e-01 , avg = 5.430877e-01 , std = 1.428837e-04 
+optimizer_step [s] : min = 2.007002e-02 , max = 2.011560e-02 , avg = 2.009457e-02 , std = 1.201582e-05 
+Average parallel training throughout [nodes/s] : 1.749681e+06

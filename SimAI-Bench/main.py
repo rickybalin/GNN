@@ -279,8 +279,8 @@ if __name__ == '__main__':
     rank = comm.Get_rank()
     name = MPI.Get_processor_name()
     rankl = int(os.getenv("PALS_LOCAL_RANKID"))
-    comm.Barrier()
     print(f'Hello from rank {rank}/{size}, local rank {rankl} on {name}', flush=True)
+    comm.Barrier()
 
     # Parse arguments
     parser = ArgumentParser(description='GNN for ML Surrogate Modeling for CFD')

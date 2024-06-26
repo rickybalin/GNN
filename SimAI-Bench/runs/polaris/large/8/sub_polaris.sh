@@ -2,15 +2,15 @@
 #PBS -S /bin/bash
 #PBS -N gnn_scale
 #PBS -l walltime=00:30:00
-#PBS -l select=1:ncpus=64:ngpus=4
+#PBS -l select=2:ncpus=64:ngpus=4
 #PBS -l filesystems=home:eagle
 #PBS -k doe
 #PBS -j oe
 #PBS -A datascience
 ##PBS -q prod
 ##PBS -q preemptable
-#PBS -q debug-scaling
-##PBS -q debug
+##PBS -q debug-scaling
+#PBS -q debug
 #PBS -V
 ##PBS -m be
 ##PBS -M rbalin@anl.gov
@@ -48,13 +48,13 @@ echo Number of ranks per node: $PROCS_PER_NODE
 echo Number of total ranks: $PROCS
 echo
 
-EXE=./main.py
+EXE=/lus/eagle/projects/datascience/balin/Nek/GNN/GNN/SimAI-Bench/main.py
 ARGS="--device=cuda --iterations=100 --problem_size=large"
 echo Running script $EXE
 echo with arguments $ARGS
 echo
 echo `date`
-mpiexec -n $PROCS --ppn $PROCS_PER_NODE --cpu-bind=list:24:16:8:1 python $EXE ${ARGS}
+mpiexec --envall -n $PROCS --ppn $PROCS_PER_NODE --cpu-bind=list:24:16:8:1 python $EXE ${ARGS}
 echo `date`
 
 

@@ -2,7 +2,7 @@
 #PBS -S /bin/bash
 #PBS -N gnn_scale
 #PBS -l walltime=00:30:00
-#PBS -l select=1:ncpus=64:ngpus=4
+#PBS -l select=4:ncpus=64:ngpus=4
 #PBS -l filesystems=home:eagle
 #PBS -k doe
 #PBS -j oe
@@ -48,7 +48,7 @@ echo Number of ranks per node: $PROCS_PER_NODE
 echo Number of total ranks: $PROCS
 echo
 
-EXE=./main.py
+EXE=/lus/eagle/projects/datascience/balin/Nek/GNN/GNN/SimAI-Bench/main.py
 ARGS="--device=cuda --iterations=100 --problem_size=large"
 echo Running script $EXE
 echo with arguments $ARGS
