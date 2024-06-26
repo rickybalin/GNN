@@ -57,7 +57,7 @@ echo Running script $EXE
 echo with arguments $ARGS
 echo
 echo `date`
-mpiexec -n $PROCS --ppn $PROCS_PER_NODE --cpu-bind=list:24:16:8:1 python $EXE ${ARGS}
+mpiexec --envall -n $PROCS --ppn $PROCS_PER_NODE --cpu-bind=list:24:16:8:1 python $EXE ${ARGS}
 echo `date`
 
 
