@@ -3,7 +3,9 @@
 module use /soft/modulefiles
 module load conda/2024-04-29
 ##conda activate base
-conda activate /eagle/datascience/balin/SimAI-Bench/conda/clone
+##conda activate /eagle/datascience/balin/SimAI-Bench/conda/clone
+conda activate /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn
+source /lus/eagle/projects/datascience/balin/Nek/GNN/env/_pyg/bin/activate
 
 export NCCL_NET_GDR_LEVEL=PHB
 export NCCL_CROSS_NIC=1

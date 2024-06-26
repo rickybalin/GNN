@@ -18,7 +18,10 @@
 cd $PBS_O_WORKDIR
 module use /soft/modulefiles
 module load conda/2024-04-29
-conda activate /eagle/datascience/balin/SimAI-Bench/conda/clone
+##conda activate /eagle/datascience/balin/SimAI-Bench/conda/clone
+conda activate /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn
+source /lus/eagle/projects/datascience/balin/Nek/GNN/env/_pyg/bin/activate
+
 echo Loaded modules:
 module list
 echo
