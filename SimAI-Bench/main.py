@@ -281,7 +281,7 @@ if __name__ == '__main__':
     rank = comm.Get_rank()
     name = MPI.Get_processor_name()
     rankl = int(os.getenv("PALS_LOCAL_RANKID"))
-    print(f'Hello from rank {rank}/{size}, local rank {rankl} on {name}', flush=True)
+    if size<64: print(f'Hello from rank {rank}/{size}, local rank {rankl} on {name}', flush=True)
     comm.Barrier()
 
     # Parse arguments

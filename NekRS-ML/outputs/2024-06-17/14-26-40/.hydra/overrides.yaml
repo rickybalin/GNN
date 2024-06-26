@@ -1,2 +1,0 @@
-- backend=nccl
-- halo_swap_mode=none

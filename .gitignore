@@ -1,3 +1,7 @@
+# NekRS-ML
+./NekRS-ML/outputs/
+./NekRS-ML/saved_models/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

@@ -2,7 +2,19 @@
 
 module use /soft/modulefiles
 module load conda/2024-04-29
-conda activate /eagle/datascience/balin/SimAI-Bench/conda/clone
+#conda activate /eagle/datascience/balin/SimAI-Bench/conda/clone
+conda activate /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn
+source /lus/eagle/projects/datascience/balin/Nek/GNN/env/_pyg/bin/activate
+
+export NCCL_NET_GDR_LEVEL=PHB
+export NCCL_CROSS_NIC=1
+export NCCL_COLLNET_ENABLE=1
+export NCCL_NET="AWS Libfabric"
+export LD_LIBRARY_PATH=/soft/libraries/aws-ofi-nccl/v1.9.1-aws/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/soft/libraries/hwloc/lib/:$LD_LIBRARY_PATH
+export FI_CXI_DISABLE_HOST_REGISTER=1
+export FI_MR_CACHE_MONITOR=userfaultfd
+export FI_CXI_DEFAULT_CQ_SIZE=131072
 
 NODES=$(cat $PBS_NODEFILE | wc -l)
 PROCS_PER_NODE=4
@@ -13,10 +25,12 @@ echo Number of ML ranks per node: $PROCS_PER_NODE
 echo Number of ML total ranks: $PROCS
 echo
 
+#HALO_SWAP_MODE=none
+HALO_SWAP_MODE=all_to_all
+#HALO_SWAP_MODE=send_recv
+
 #mpiexec -n $PROCS --ppn $PROCS_PER_NODE --cpu-bind=list:1:8:16:24 ./set_affinity_gpu_polaris.sh python main.py backend=nccl halo_swap_mode=none 
-#mpiexec -n $PROCS --ppn $PROCS_PER_NODE --cpu-bind=list:24:16:8:1 python main.py backend=nccl halo_swap_mode=none 2>&1 | tee out.log 
-mpiexec -n $PROCS --ppn $PROCS_PER_NODE --cpu-bind=list:24:16:8:1 python main.py backend=nccl halo_swap_mode=all_to_all 2>&1 | tee out.log 
-#mpiexec -n $PROCS --ppn $PROCS_PER_NODE --cpu-bind=list:24:16:8:1 python main.py backend=nccl halo_swap_mode=send_recv 2>&1 | tee out.log 
+mpiexec -n $PROCS --ppn $PROCS_PER_NODE --cpu-bind=list:24:16:8:1 python main.py backend=nccl halo_swap_mode=$HALO_SWAP_MODE 2>&1 | tee out.log 
 
 
 

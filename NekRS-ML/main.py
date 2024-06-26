@@ -6,14 +6,26 @@ import os
 import sys
 import socket
 import logging
-
 from typing import Optional, Union, Callable
-
 import numpy as np
-
 import hydra
 import time
+from omegaconf import DictConfig, OmegaConf
+
+try:
+    #import mpi4py
+    #mpi4py.rc.initialize = False
+    from mpi4py import MPI
+    WITH_DDP = True
+except ModuleNotFoundError as e:
+    WITH_DDP = False
+    pass
+
 import torch
+try:
+    import intel_extension_for_pytorch as ipex
+except ModuleNotFoundError as e:
+    pass
 #torch.use_deterministic_algorithms(True)
 import torch.utils.data
 import torch.utils.data.distributed
@@ -21,17 +33,15 @@ from torch.cuda.amp.grad_scaler import GradScaler
 import torch.multiprocessing as mp
 import torch.distributions as tdist 
 from torch.profiler import profile, record_function, ProfilerActivity
-
-import torch.distributed as dist
-#import torch.distributed.nn_mod as distnn
-import torch.distributed.nn as distnn
 import torch.nn as nn
 import torch.optim as optim
 import torch.nn.functional as F
 from torchvision import datasets, transforms
-from omegaconf import DictConfig, OmegaConf
+
+import torch.distributed as dist
+#import torch.distributed.nn_mod as distnn
+import torch.distributed.nn as distnn
 from torch.nn.parallel import DistributedDataParallel as DDP
-Tensor = torch.Tensor
 
 # PyTorch Geometric
 import torch_geometric
@@ -58,13 +68,12 @@ import graph_plotting as gplot
 
 log = logging.getLogger(__name__)
 
+Tensor = torch.Tensor
 TORCH_FLOAT_DTYPE = torch.float32
 NP_FLOAT_DTYPE = np.float32
 
 # Get MPI:
-try:
-    from mpi4py import MPI
-    WITH_DDP = True
+if WITH_DDP:
     LOCAL_RANK = int(os.getenv("PALS_LOCAL_RANKID"))
     #LOCAL_RANK = os.environ.get('OMPI_COMM_WORLD_LOCAL_RANK', '0')
     # LOCAL_RANK = os.environ['OMPI_COMM_WORLD_LOCAL_RANK']
@@ -113,14 +122,12 @@ try:
     os.environ['MASTER_ADDR'] = MASTER_ADDR
     os.environ['MASTER_PORT'] = str(2345)
 
-except (ImportError, ModuleNotFoundError) as e:
-    WITH_DDP = False
+else:
     SIZE = 1
     RANK = 0
     LOCAL_RANK = 0
     MASTER_ADDR = 'localhost'
     log.warning('MPI Initialization failed!')
-    log.warning(e)
 
 def init_process_group(
     rank: Union[int, str],
