@@ -2,15 +2,15 @@
 #PBS -S /bin/bash
 #PBS -N gnn_scale
 #PBS -l walltime=00:30:00
-#PBS -l select=2:ncpus=64:ngpus=4
+#PBS -l select=1:ncpus=64:ngpus=4
 #PBS -l filesystems=home:eagle
 #PBS -k doe
 #PBS -j oe
 #PBS -A datascience
 ##PBS -q prod
 ##PBS -q preemptable
-##PBS -q debug-scaling
-#PBS -q debug
+#PBS -q debug-scaling
+##PBS -q debug
 #PBS -V
 ##PBS -m be
 ##PBS -M rbalin@anl.gov
@@ -18,7 +18,10 @@
 cd $PBS_O_WORKDIR
 module use /soft/modulefiles
 module load conda/2024-04-29
-conda activate /eagle/datascience/balin/SimAI-Bench/conda/clone
+##conda activate /eagle/datascience/balin/SimAI-Bench/conda/clone
+conda activate /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn
+source /lus/eagle/projects/datascience/balin/Nek/GNN/env/_pyg/bin/activate
+
 echo Loaded modules:
 module list
 echo
@@ -32,9 +35,9 @@ echo
 export NCCL_NET_GDR_LEVEL=PHB
 export NCCL_CROSS_NIC=1
 export NCCL_COLLNET_ENABLE=1
-export NCCL_NET="AWS Libfabric"
-export LD_LIBRARY_PATH=/soft/libraries/aws-ofi-nccl/v1.9.1-aws/lib:$LD_LIBRARY_PATH
-export LD_LIBRARY_PATH=/soft/libraries/hwloc/lib/:$LD_LIBRARY_PATH
+#export NCCL_NET="AWS Libfabric"
+#export LD_LIBRARY_PATH=/soft/libraries/aws-ofi-nccl/v1.9.1-aws/lib:$LD_LIBRARY_PATH
+#export LD_LIBRARY_PATH=/soft/libraries/hwloc/lib/:$LD_LIBRARY_PATH
 export FI_CXI_DISABLE_HOST_REGISTER=1
 export FI_MR_CACHE_MONITOR=userfaultfd
 export FI_CXI_DEFAULT_CQ_SIZE=131072
@@ -48,7 +51,7 @@ echo Number of ranks per node: $PROCS_PER_NODE
 echo Number of total ranks: $PROCS
 echo
 
-EXE=/lus/eagle/projects/datascience/balin/Nek/GNN/GNN/SimAI-Bench/main.py
+EXE=./main.py
 ARGS="--device=cuda --iterations=100 --problem_size=large"
 echo Running script $EXE
 echo with arguments $ARGS

@@ -1,21 +1,5 @@
-#!/bin/bash -l
-#PBS -S /bin/bash
-#PBS -N gnn_scale
-#PBS -l walltime=00:30:00
-#PBS -l select=64:ncpus=64:ngpus=4
-#PBS -l filesystems=home:eagle
-#PBS -k doe
-#PBS -j oe
-#PBS -A datascience
-#PBS -q prod
-##PBS -q preemptable
-##PBS -q debug-scaling
-##PBS -q debug
-#PBS -V
-##PBS -m be
-##PBS -M rbalin@anl.gov
+#!/bin/bash 
 
-cd $PBS_O_WORKDIR
 module use /soft/modulefiles
 module load conda/2024-04-29
 ##conda activate /eagle/datascience/balin/SimAI-Bench/conda/clone
