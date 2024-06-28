@@ -18,7 +18,10 @@
 cd $PBS_O_WORKDIR
 module use /soft/modulefiles
 module load conda/2024-04-29
-conda activate /eagle/datascience/balin/SimAI-Bench/conda/clone
+##conda activate /eagle/datascience/balin/SimAI-Bench/conda/clone
+conda activate /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn
+source /lus/eagle/projects/datascience/balin/Nek/GNN/env/_pyg/bin/activate
+
 echo Loaded modules:
 module list
 echo
@@ -32,9 +35,9 @@ echo
 export NCCL_NET_GDR_LEVEL=PHB
 export NCCL_CROSS_NIC=1
 export NCCL_COLLNET_ENABLE=1
-export NCCL_NET="AWS Libfabric"
-export LD_LIBRARY_PATH=/soft/libraries/aws-ofi-nccl/v1.9.1-aws/lib:$LD_LIBRARY_PATH
-export LD_LIBRARY_PATH=/soft/libraries/hwloc/lib/:$LD_LIBRARY_PATH
+#export NCCL_NET="AWS Libfabric"
+#export LD_LIBRARY_PATH=/soft/libraries/aws-ofi-nccl/v1.9.1-aws/lib:$LD_LIBRARY_PATH
+#export LD_LIBRARY_PATH=/soft/libraries/hwloc/lib/:$LD_LIBRARY_PATH
 export FI_CXI_DISABLE_HOST_REGISTER=1
 export FI_MR_CACHE_MONITOR=userfaultfd
 export FI_CXI_DEFAULT_CQ_SIZE=131072
@@ -54,7 +57,7 @@ echo Running script $EXE
 echo with arguments $ARGS
 echo
 echo `date`
-mpiexec -n $PROCS --ppn $PROCS_PER_NODE --cpu-bind=list:24:16:8:1 python $EXE ${ARGS}
+mpiexec --envall -n $PROCS --ppn $PROCS_PER_NODE --cpu-bind=list:24:16:8:1 python $EXE ${ARGS}
 echo `date`
 
 

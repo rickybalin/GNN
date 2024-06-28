@@ -1,0 +1,182 @@
+-bash: module: line 1: syntax error: unexpected end of file
+-bash: error importing function definition for `module'
+sh: module: line 1: syntax error: unexpected end of file
+sh: error importing function definition for `module'
+sh: module: line 1: syntax error: unexpected end of file
+sh: error importing function definition for `module'
+/bin/bash: module: line 1: syntax error: unexpected end of file
+/bin/bash: error importing function definition for `module'
+sh: module: line 1: syntax error: unexpected end of file
+sh: error importing function definition for `module'
+sh: module: line 1: syntax error: unexpected end of file
+sh: error importing function definition for `module'
+sh: module: line 1: syntax error: unexpected end of file
+sh: error importing function definition for `module'
+sh: module: line 1: syntax error: unexpected end of file
+sh: error importing function definition for `module'
+sh: module: line 1: syntax error: unexpected end of file
+sh: error importing function definition for `module'
+sh: module: line 1: syntax error: unexpected end of file
+sh: error importing function definition for `module'
+
+Lmod is automatically replacing "nvhpc/23.9" with "gcc-native/12.3".
+
+
+Lmod is automatically replacing "PrgEnv-nvhpc/8.5.0" with "PrgEnv-gnu/8.5.0".
+
+
+Due to MODULEPATH changes, the following have been reloaded:
+  1) cray-mpich/8.1.28
+
+Loaded modules:
+sh: module: line 1: syntax error: unexpected end of file
+sh: error importing function definition for `module'
+sh: module: line 1: syntax error: unexpected end of file
+sh: error importing function definition for `module'
+
+Currently Loaded Modules:
+  1) libfabric/1.15.2.0       9) cray-pmi/6.1.13
+  2) craype-network-ofi      10) cray-pals/1.3.4
+  3) perftools-base/23.12.0  11) cray-libpals/1.3.4
+  4) darshan/3.4.4           12) craype-x86-milan
+  5) gcc-native/12.3         13) PrgEnv-gnu/8.5.0
+  6) craype/2.7.30           14) cray-hdf5-parallel/1.12.2.9
+  7) cray-dsmml/0.2.2        15) conda/2024-04-29
+  8) cray-mpich/8.1.28
+
+ 
+
+
+Torch version: 2.3.0
+Torch CUDA version: 12.4
+NCCL version: (2, 20, 5)
+cuDNN version: 90100
+Torch Geometric version: 2.5.3
+
+Number of nodes: 128
+Number of ranks per node: 4
+Number of total ranks: 512
+
+Running script /lus/eagle/projects/datascience/balin/Nek/GNN/GNN/SimAI-Bench/main.py
+with arguments --device=cuda --iterations=100 --problem_size=large
+
+Fri 28 Jun 2024 04:43:06 AM UTC
+
+Loaded data and model with 163491 parameters
+
+Running on device: cuda 
+
+
+Starting training loop ... 
+[0]: avg_loss = 2.572211e-02
+[1]: avg_loss = 1.445774e+00
+[2]: avg_loss = 1.491097e-02
+[3]: avg_loss = 3.111121e-02
+[4]: avg_loss = 4.875297e-02
+[5]: avg_loss = 2.994560e-02
+[6]: avg_loss = 2.557583e-02
+[7]: avg_loss = 4.185296e-02
+[8]: avg_loss = 1.334267e-01
+[9]: avg_loss = 4.163184e-02
+[10]: avg_loss = 2.551950e-02
+[11]: avg_loss = 1.971295e-02
+[12]: avg_loss = 2.194793e-02
+[13]: avg_loss = 1.841827e-02
+[14]: avg_loss = 1.540870e-02
+[15]: avg_loss = 1.378169e-02
+[16]: avg_loss = 1.132301e-02
+[17]: avg_loss = 1.096711e-02
+[18]: avg_loss = 1.331915e-02
+[19]: avg_loss = 1.243186e-02
+[20]: avg_loss = 1.119856e-02
+[21]: avg_loss = 1.185537e-02
+[22]: avg_loss = 1.280629e-02
+[23]: avg_loss = 1.220717e-02
+[24]: avg_loss = 1.126406e-02
+[25]: avg_loss = 1.102985e-02
+[26]: avg_loss = 1.105704e-02
+[27]: avg_loss = 1.112683e-02
+[28]: avg_loss = 1.102322e-02
+[29]: avg_loss = 1.059899e-02
+[30]: avg_loss = 1.067726e-02
+[31]: avg_loss = 1.112268e-02
+[32]: avg_loss = 1.117849e-02
+[33]: avg_loss = 1.074753e-02
+[34]: avg_loss = 1.048278e-02
+[35]: avg_loss = 1.066628e-02
+[36]: avg_loss = 1.074404e-02
+[37]: avg_loss = 1.053302e-02
+[38]: avg_loss = 1.044887e-02
+[39]: avg_loss = 1.053470e-02
+[40]: avg_loss = 1.059230e-02
+[41]: avg_loss = 1.059752e-02
+[42]: avg_loss = 1.057350e-02
+[43]: avg_loss = 1.050428e-02
+[44]: avg_loss = 1.043591e-02
+[45]: avg_loss = 1.045108e-02
+[46]: avg_loss = 1.049187e-02
+[47]: avg_loss = 1.044240e-02
+[48]: avg_loss = 1.037426e-02
+[49]: avg_loss = 1.040330e-02
+[50]: avg_loss = 1.046795e-02
+[51]: avg_loss = 1.046204e-02
+[52]: avg_loss = 1.041075e-02
+[53]: avg_loss = 1.039398e-02
+[54]: avg_loss = 1.040752e-02
+[55]: avg_loss = 1.040484e-02
+[56]: avg_loss = 1.038965e-02
+[57]: avg_loss = 1.038086e-02
+[58]: avg_loss = 1.037798e-02
+[59]: avg_loss = 1.038447e-02
+[60]: avg_loss = 1.039775e-02
+[61]: avg_loss = 1.039682e-02
+[62]: avg_loss = 1.037836e-02
+[63]: avg_loss = 1.037000e-02
+[64]: avg_loss = 1.037952e-02
+[65]: avg_loss = 1.038064e-02
+[66]: avg_loss = 1.036802e-02
+[67]: avg_loss = 1.036435e-02
+[68]: avg_loss = 1.037226e-02
+[69]: avg_loss = 1.037591e-02
+[70]: avg_loss = 1.037304e-02
+[71]: avg_loss = 1.037012e-02
+[72]: avg_loss = 1.036773e-02
+[73]: avg_loss = 1.036666e-02
+[74]: avg_loss = 1.036787e-02
+[75]: avg_loss = 1.036682e-02
+[76]: avg_loss = 1.036324e-02
+[77]: avg_loss = 1.036394e-02
+[78]: avg_loss = 1.036784e-02
+[79]: avg_loss = 1.036753e-02
+[80]: avg_loss = 1.036422e-02
+[81]: avg_loss = 1.036370e-02
+[82]: avg_loss = 1.036471e-02
+[83]: avg_loss = 1.036404e-02
+[84]: avg_loss = 1.036307e-02
+[85]: avg_loss = 1.036293e-02
+[86]: avg_loss = 1.036309e-02
+[87]: avg_loss = 1.036378e-02
+[88]: avg_loss = 1.036411e-02
+[89]: avg_loss = 1.036304e-02
+[90]: avg_loss = 1.036229e-02
+[91]: avg_loss = 1.036290e-02
+[92]: avg_loss = 1.036296e-02
+[93]: avg_loss = 1.036215e-02
+[94]: avg_loss = 1.036215e-02
+[95]: avg_loss = 1.036270e-02
+[96]: avg_loss = 1.036271e-02
+[97]: avg_loss = 1.036249e-02
+[98]: avg_loss = 1.036230e-02
+[99]: avg_loss = 1.036212e-02
+
+Performance data averaged over 512 ranks and 98 iterations:
+training_loop [s] : min = 9.616399e+01 , max = 9.737413e+01 , avg = 9.633692e+01 , std = 1.200749e-01 
+train_tot [s] : min = 7.021258e+01 , max = 9.157123e+01 , avg = 9.130022e+01 , std = 9.400676e-01 
+train_iter [s] : min = 7.161417e-01 , max = 1.383464e+00 , avg = 9.316349e-01 , std = 4.511880e-02 
+throughput_iter [s] : min = 7.228235e+05 , max = 1.396372e+06 , avg = 1.075545e+06 , std = 4.516001e+04 
+forward_pass [s] : min = 7.981377e-03 , max = 6.743070e-01 , avg = 1.114589e-01 , std = 6.406234e-02 
+loss [s] : min = 1.287106e-04 , max = 1.159894e-02 , avg = 1.426037e-03 , std = 4.713365e-04 
+backward_pass [s] : min = 7.005865e-01 , max = 8.656749e-01 , avg = 8.120877e-01 , std = 2.196336e-02 
+optimizer_step [s] : min = 6.208490e-03 , max = 6.797957e-03 , avg = 6.299287e-03 , std = 1.187144e-04 
+Average parallel training throughout [nodes/s] : 5.506792e+08
+Fri 28 Jun 2024 04:45:26 AM UTC

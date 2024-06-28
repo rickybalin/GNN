@@ -9,9 +9,9 @@ source /lus/eagle/projects/datascience/balin/Nek/GNN/env/_pyg/bin/activate
 export NCCL_NET_GDR_LEVEL=PHB
 export NCCL_CROSS_NIC=1
 export NCCL_COLLNET_ENABLE=1
-export NCCL_NET="AWS Libfabric"
-export LD_LIBRARY_PATH=/soft/libraries/aws-ofi-nccl/v1.9.1-aws/lib:$LD_LIBRARY_PATH
-export LD_LIBRARY_PATH=/soft/libraries/hwloc/lib/:$LD_LIBRARY_PATH
+##export NCCL_NET="AWS Libfabric"
+##export LD_LIBRARY_PATH=/soft/libraries/aws-ofi-nccl/v1.9.1-aws/lib:$LD_LIBRARY_PATH
+##export LD_LIBRARY_PATH=/soft/libraries/hwloc/lib/:$LD_LIBRARY_PATH
 export FI_CXI_DISABLE_HOST_REGISTER=1
 export FI_MR_CACHE_MONITOR=userfaultfd
 export FI_CXI_DEFAULT_CQ_SIZE=131072
@@ -28,9 +28,15 @@ echo
 #HALO_SWAP_MODE=none
 HALO_SWAP_MODE=all_to_all
 #HALO_SWAP_MODE=send_recv
+DATA_PATH=/lus/eagle/projects/datascience/sbarwey/codes/nek/nekrs_cases/examples_v23_gnn/tgv/gnn_outputs_distributed_gnn/gnn_outputs_poly_3/
 
 #mpiexec -n $PROCS --ppn $PROCS_PER_NODE --cpu-bind=list:1:8:16:24 ./set_affinity_gpu_polaris.sh python main.py backend=nccl halo_swap_mode=none 
-mpiexec -n $PROCS --ppn $PROCS_PER_NODE --cpu-bind=list:24:16:8:1 python main.py backend=nccl halo_swap_mode=$HALO_SWAP_MODE 2>&1 | tee out.log 
+mpiexec --envall -n $PROCS --ppn $PROCS_PER_NODE --cpu-bind=list:24:16:8:1 \
+    python main.py \
+    backend=nccl \
+    halo_swap_mode=$HALO_SWAP_MODE \
+    gnn_outputs_path=$DATA_PATH \
+    2>&1 | tee out.log 
 
 
 
