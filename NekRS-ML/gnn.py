@@ -428,10 +428,9 @@ class DistributedMessagePassingLayer(torch.nn.Module):
                   SIZE):
         """
         Performs halo swap using send/receive buffers
-        uses all_to_all implementation
         """
         if SIZE > 1:
-            if self.halo_swap_mode == 'all_to_all':
+            if self.halo_swap_mode == 'all_to_all' or self.halo_swap_mode == 'all_to_all_opt':
                 # Fill send buffer
                 for i in neighboring_procs:
                     n_send = len(mask_send[i])
@@ -478,7 +477,7 @@ class DistributedMessagePassingLayer(torch.nn.Module):
             elif self.halo_swap_mode == 'none':
                 pass
             else:
-                raise ValueError("halo_swap_mode %s not valid. Valid options: all_to_all, sendrecv" %(self.halo_swap_mode))
+                raise ValueError("halo_swap_mode %s not valid. Valid options: all_to_all, all_to_all_opt, send_recv, none" %(self.halo_swap_mode))
         return input_tensor
 
 
