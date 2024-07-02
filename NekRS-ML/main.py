@@ -449,13 +449,15 @@ class Trainer:
         return mask_send, mask_recv 
 
     def build_buffers(self, n_features):
-        buff_send = [torch.tensor([], device=DEVICE)] * SIZE
-        buff_recv = [torch.tensor([], device=DEVICE)] * SIZE
+        buff_send = [torch.empty(0, device=DEVICE)] * SIZE
+        buff_recv = [torch.empty(0, device=DEVICE)] * SIZE
+        buff_send_sz = [0] * SIZE
+        buff_recv_sz = [0] * SIZE
         n_max = 0
         
         if SIZE > 1: 
 
-            # Get the maximum number of nodes that will be exchanged (required for all_to_all based halo swap)
+            # Get the maximum number of nodes that will be exchanged (required for all_to_all halo swap)
             n_nodes_to_exchange = torch.zeros(SIZE)
             for i in self.neighboring_procs:
                 n_nodes_to_exchange[i] = len(self.mask_send[i])
@@ -469,15 +471,33 @@ class Trainer:
             if self.cfg.halo_swap_mode == "all_to_all":
                 for i in range(SIZE): 
                     buff_send[i] = torch.empty([n_max, n_features], dtype=TORCH_FLOAT_DTYPE, device=DEVICE) 
+                    buff_send_sz[i] = torch.numel(buff_send[i])*buff_send[i].element_size()
                     buff_recv[i] = torch.empty([n_max, n_features], dtype=TORCH_FLOAT_DTYPE, device=DEVICE)
+                    buff_recv_sz[i] = torch.numel(buff_recv[i])*buff_recv[i].element_size()
+            elif self.cfg.halo_swap_mode == "all_to_all_opt":
+                for i in self.neighboring_procs:
+                    #buff_send[i] = torch.empty([n_max, n_features], dtype=TORCH_FLOAT_DTYPE, device=DEVICE)
+                    buff_send[i] = torch.empty([int(n_nodes_to_exchange[i]), n_features], dtype=TORCH_FLOAT_DTYPE, device=DEVICE) 
+                    buff_send_sz[i] = torch.numel(buff_send[i])*buff_send[i].element_size()
+                    #buff_recv[i] = torch.empty([n_max, n_features], dtype=TORCH_FLOAT_DTYPE, device=DEVICE) 
+                    buff_recv[i] = torch.empty([int(n_nodes_to_exchange[i]), n_features], dtype=TORCH_FLOAT_DTYPE, device=DEVICE)
+                    buff_recv_sz[i] = torch.numel(buff_recv[i])*buff_recv[i].element_size()
             elif self.cfg.halo_swap_mode == "send_recv":
                 for i in self.neighboring_procs:
                     buff_send[i] = torch.empty([int(n_nodes_to_exchange[i]), n_features], dtype=TORCH_FLOAT_DTYPE, device=DEVICE) 
+                    buff_send_sz[i] = torch.numel(buff_send[i])*buff_send[i].element_size()
                     buff_recv[i] = torch.empty([int(n_nodes_to_exchange[i]), n_features], dtype=TORCH_FLOAT_DTYPE, device=DEVICE)
+                    buff_recv_sz[i] = torch.numel(buff_recv[i])*buff_recv[i].element_size()
 
             #for i in self.neighboring_procs:
             #    buff_send[i] = torch.empty([len(self.mask_send[i]), n_features], dtype=torch.float32, device=DEVICE_ID) 
             #    buff_recv[i] = torch.empty([len(self.mask_recv[i]), n_features], dtype=torch.float32, device=DEVICE_ID)
+
+        # Print information about the buffers
+        if self.cfg.verbose: 
+            log.info('[RANK %d]: Created send and receive buffers for %s halo exchange:' %(RANK,self.cfg.halo_swap_mode))
+            log.info(f'[RANK {RANK}]: Send buffers of size {buff_send_sz}')
+            log.info(f'[RANK {RANK}]: Receive buffers of size {buff_recv_sz}')
 
         return buff_send, buff_recv, n_max 
 
@@ -596,6 +616,7 @@ class Trainer:
             self.neighboring_procs = np.unique(halo_info[:,3])
             n_nodes_local = self.data_reduced.pos.shape[0]
             n_nodes_halo = halo_info.shape[0]
+            if self.cfg.verbose: log.info(f'[RANK {RANK}]: Found {len(self.neighboring_procs)} neighboring processes: {self.neighboring_procs}')
         else:
             #print('[RANK %d] neighboring procs: ' %(RANK), self.neighboring_procs)
             halo_info = torch.Tensor([])
@@ -814,9 +835,8 @@ class Trainer:
         self.timers['bufferInit'][self.timer_step] = time.time()
         if self.cfg.halo_swap_mode != 'none':
             for i in range(SIZE):
-                self.buffer_send[i] = torch.zeros_like(self.buffer_send[i])
-            for i in range(SIZE):
-                self.buffer_recv[i] = torch.zeros_like(self.buffer_recv[i])
+                self.buffer_send[i] = torch.empty_like(self.buffer_send[i])
+                self.buffer_recv[i] = torch.empty_like(self.buffer_recv[i])
         else:
             buffer_send = None
             buffer_recv = None
@@ -1399,7 +1419,7 @@ def train_profile(cfg: DictConfig) -> None:
 @hydra.main(version_base=None, config_path='./conf', config_name='config')
 def main(cfg: DictConfig) -> None:
     if cfg.verbose:
-        print(f'Hello from rank {RANK}/{SIZE}, local rank {LOCAL_RANK}, on device {DEVICE}:{DEVICE_ID} out of {N_DEVICES}.', flush=True)
+        log.info(f'Hello from rank {RANK}/{SIZE}, local rank {LOCAL_RANK}, on device {DEVICE}:{DEVICE_ID} out of {N_DEVICES}.')
     
     if RANK == 0:
         print('\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
