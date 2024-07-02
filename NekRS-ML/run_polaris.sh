@@ -17,7 +17,7 @@ export FI_MR_CACHE_MONITOR=userfaultfd
 export FI_CXI_DEFAULT_CQ_SIZE=131072
 
 NODES=$(cat $PBS_NODEFILE | wc -l)
-PROCS_PER_NODE=4
+PROCS_PER_NODE=1
 PROCS=$((NODES * PROCS_PER_NODE))
 JOBID=$(echo $PBS_JOBID | awk '{split($1,a,"."); print a[1]}')
 echo Number of nodes: $NODES
@@ -26,16 +26,16 @@ echo Number of ML total ranks: $PROCS
 echo
 
 # Halo swap mode
-#HALO_SWAP_MODE=none
+HALO_SWAP_MODE=none
 #HALO_SWAP_MODE=all_to_all
-HALO_SWAP_MODE=all_to_all_opt
+#HALO_SWAP_MODE=all_to_all_opt
 #HALO_SWAP_MODE=send_recv
 
 # Data path strong scaling
-DATA_PATH=/lus/eagle/projects/datascience/sbarwey/codes/nek/nekrs_cases/examples_v23_gnn/tgv/gnn_outputs_distributed_gnn/gnn_outputs_poly_3/
+#DATA_PATH=/lus/eagle/projects/datascience/sbarwey/codes/nek/nekrs_cases/examples_v23_gnn/tgv/gnn_outputs_distributed_gnn/gnn_outputs_poly_3/
 
 # Data path weak scaling
-#DATA_PATH=/lus/eagle/projects/datascience/sbarwey/codes/nek/nekrs_cases/examples_v23_gnn/tgv_weak_scaling/ne_16_v2/gnn_outputs_poly_5/
+DATA_PATH=/lus/eagle/projects/datascience/sbarwey/codes/nek/nekrs_cases/examples_v23_gnn/tgv_weak_scaling/ne_16_v2/gnn_outputs_poly_5/
 
 #mpiexec -n $PROCS --ppn $PROCS_PER_NODE --cpu-bind=list:1:8:16:24 ./set_affinity_gpu_polaris.sh python main.py backend=nccl halo_swap_mode=none 
 mpiexec --envall -n $PROCS --ppn $PROCS_PER_NODE --cpu-bind=list:24:16:8:1 \
