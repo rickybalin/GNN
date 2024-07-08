@@ -85,14 +85,14 @@ if WITH_DDP:
         WITH_CUDA = torch.cuda.is_available()
     except:
         WITH_CUDA = False
-        if RANK == 0: print('Found no CUDA devices', flush=True)
+        if RANK == 0: log.warn('Found no CUDA devices')
         pass
 
     try:
         WITH_XPU = torch.xpu.is_available()
     except:
         WITH_XPU = False
-        if RANK == 0: print('Found no XPU devices', flush=True)
+        if RANK == 0: log.warn('Found no XPU devices')
         pass
 
     if WITH_CUDA:
@@ -161,7 +161,8 @@ def force_abort():
 
 def metric_average(val: Tensor):
     if (WITH_DDP):
-        dist.all_reduce(val, op=dist.ReduceOp.SUM)
+        #dist.all_reduce(val, op=dist.ReduceOp.SUM)
+        dist.reduce(val, 0, op=dist.ReduceOp.SUM)
         return val / SIZE
     return val
 
@@ -812,7 +813,7 @@ class Trainer:
                            f"max = {val['max'][0]:>6e} , " + \
                            f"avg = {val['avg']:>6e} , " + \
                            f"std = {val['std']:>6e} "
-            print(f"{key} [s] " + stats_string)
+            log.info(f"{key} [s] " + stats_string)
 
     def train_step(self, data: DataBatch) -> Tensor:
         loss = torch.tensor([0.0])
@@ -1151,7 +1152,7 @@ class Trainer:
             #loss = self.train_step_verification(data)
             start = time.time()
             loss = self.train_step(data)
-            running_loss += loss.item()
+            running_loss += loss
             t_batch = time.time() - start
             batch_times.append(t_batch)
             #count += 1 # accumulate current batch count
@@ -1182,7 +1183,7 @@ class Trainer:
         running_loss = running_loss / num_batches_gpu
         loss_avg = metric_average(running_loss)
 
-        return {'loss': loss_avg, 'batch_times': batch_times}
+        return {'loss': loss_avg.item(), 'batch_times': batch_times}
 
     def test(self) -> dict:
         running_loss = torch.tensor(0.)
@@ -1261,7 +1262,7 @@ def train(cfg: DictConfig) -> None:
         trainer.loss_hist_train[epoch-1] = train_metrics["loss"]
        
         epoch_time = t1-t0 
-        if epoch>trainer.epoch_start:
+        if epoch>trainer.epoch_start+1:
             epoch_times.append(epoch_time)
             epoch_throughput.append(n_nodes_local/epoch_time)
             batch_times.extend(train_metrics['batch_times'])
@@ -1314,16 +1315,9 @@ def train(cfg: DictConfig) -> None:
                     'loss_hist_test' : trainer.loss_hist_test}
             
             torch.save(ckpt, trainer.ckpt_path)
-        #dist.barrier()
 
     end = time.time()
 
-    rstr = f'[{RANK}] ::'
-    log.info(' '.join([
-        rstr,
-        f'Total training time: {end - start} seconds'
-    ]))
-   
     # ~~~ Print times
     epoch_stats = collect_list_times(epoch_times)
     throughput_stats = collect_list_times(epoch_throughput)
@@ -1331,24 +1325,24 @@ def train(cfg: DictConfig) -> None:
     trainer.collect_timer_stats()
     total_throughput = average_list_times(epoch_throughput)
     if RANK == 0:
-        print('\nSummary of performance data:', flush=True)
-        print(f'Total training time: {end - start}', flush=True)
+        log.info(f'\nPerformance data averaged over {SIZE} ranks, {len(epoch_times)} epochs and {len(batch_times)} iterations:')
+        log.info(f'Total training time: {end - start}')
         stats_string = f": min = {epoch_stats['min'][0]:>6e} , " + \
                            f"max = {epoch_stats['max'][0]:>6e} , " + \
                            f"avg = {epoch_stats['avg']:>6e} , " + \
                            f"std = {epoch_stats['std']:>6e} "
-        print(f"Training epoch [s] " + stats_string, flush=True)
+        log.info(f"Training epoch [s] " + stats_string)
         stats_string = f": min = {throughput_stats['min'][0]:>6e} , " + \
                            f"max = {throughput_stats['max'][0]:>6e} , " + \
                            f"avg = {throughput_stats['avg']:>6e} , " + \
                            f"std = {throughput_stats['std']:>6e} "
-        print(f"Training throughput [nodes/s] " + stats_string, flush=True)
-        print(f"Average parallel training throughout [nodes/s] : {total_throughput:>6e}")
+        log.info(f"Training throughput [nodes/s] " + stats_string)
+        log.info(f"Average parallel training throughout [nodes/s] : {total_throughput:>6e}")
         stats_string = f": min = {batch_stats['min'][0]:>6e} , " + \
                            f"max = {batch_stats['max'][0]:>6e} , " + \
                            f"avg = {batch_stats['avg']:>6e} , " + \
                            f"std = {batch_stats['std']:>6e} "
-        print(f"Training batch [s] " + stats_string, flush=True)
+        log.info(f"Training batch [s] " + stats_string)
         trainer.print_timer_stats()
     
  
