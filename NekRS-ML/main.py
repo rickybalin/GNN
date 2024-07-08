@@ -85,14 +85,14 @@ if WITH_DDP:
         WITH_CUDA = torch.cuda.is_available()
     except:
         WITH_CUDA = False
-        if RANK == 0: print('Found no CUDA devices', flush=True)
+        if RANK == 0: log.warn('Found no CUDA devices')
         pass
 
     try:
         WITH_XPU = torch.xpu.is_available()
     except:
         WITH_XPU = False
-        if RANK == 0: print('Found no XPU devices', flush=True)
+        if RANK == 0: log.warn('Found no XPU devices')
         pass
 
     if WITH_CUDA:
@@ -161,7 +161,8 @@ def force_abort():
 
 def metric_average(val: Tensor):
     if (WITH_DDP):
-        dist.all_reduce(val, op=dist.ReduceOp.SUM)
+        #dist.all_reduce(val, op=dist.ReduceOp.SUM)
+        dist.reduce(val, 0, op=dist.ReduceOp.SUM)
         return val / SIZE
     return val
 
@@ -449,13 +450,15 @@ class Trainer:
         return mask_send, mask_recv 
 
     def build_buffers(self, n_features):
-        buff_send = [torch.tensor([], device=DEVICE)] * SIZE
-        buff_recv = [torch.tensor([], device=DEVICE)] * SIZE
+        buff_send = [torch.empty(0, device=DEVICE)] * SIZE
+        buff_recv = [torch.empty(0, device=DEVICE)] * SIZE
+        buff_send_sz = [0] * SIZE
+        buff_recv_sz = [0] * SIZE
         n_max = 0
         
         if SIZE > 1: 
 
-            # Get the maximum number of nodes that will be exchanged (required for all_to_all based halo swap)
+            # Get the maximum number of nodes that will be exchanged (required for all_to_all halo swap)
             n_nodes_to_exchange = torch.zeros(SIZE)
             for i in self.neighboring_procs:
                 n_nodes_to_exchange[i] = len(self.mask_send[i])
@@ -469,15 +472,33 @@ class Trainer:
             if self.cfg.halo_swap_mode == "all_to_all":
                 for i in range(SIZE): 
                     buff_send[i] = torch.empty([n_max, n_features], dtype=TORCH_FLOAT_DTYPE, device=DEVICE) 
+                    buff_send_sz[i] = torch.numel(buff_send[i])*buff_send[i].element_size()
                     buff_recv[i] = torch.empty([n_max, n_features], dtype=TORCH_FLOAT_DTYPE, device=DEVICE)
+                    buff_recv_sz[i] = torch.numel(buff_recv[i])*buff_recv[i].element_size()
+            elif self.cfg.halo_swap_mode == "all_to_all_opt":
+                for i in self.neighboring_procs:
+                    #buff_send[i] = torch.empty([n_max, n_features], dtype=TORCH_FLOAT_DTYPE, device=DEVICE)
+                    buff_send[i] = torch.empty([int(n_nodes_to_exchange[i]), n_features], dtype=TORCH_FLOAT_DTYPE, device=DEVICE) 
+                    buff_send_sz[i] = torch.numel(buff_send[i])*buff_send[i].element_size()
+                    #buff_recv[i] = torch.empty([n_max, n_features], dtype=TORCH_FLOAT_DTYPE, device=DEVICE) 
+                    buff_recv[i] = torch.empty([int(n_nodes_to_exchange[i]), n_features], dtype=TORCH_FLOAT_DTYPE, device=DEVICE)
+                    buff_recv_sz[i] = torch.numel(buff_recv[i])*buff_recv[i].element_size()
             elif self.cfg.halo_swap_mode == "send_recv":
                 for i in self.neighboring_procs:
                     buff_send[i] = torch.empty([int(n_nodes_to_exchange[i]), n_features], dtype=TORCH_FLOAT_DTYPE, device=DEVICE) 
+                    buff_send_sz[i] = torch.numel(buff_send[i])*buff_send[i].element_size()
                     buff_recv[i] = torch.empty([int(n_nodes_to_exchange[i]), n_features], dtype=TORCH_FLOAT_DTYPE, device=DEVICE)
+                    buff_recv_sz[i] = torch.numel(buff_recv[i])*buff_recv[i].element_size()
 
             #for i in self.neighboring_procs:
             #    buff_send[i] = torch.empty([len(self.mask_send[i]), n_features], dtype=torch.float32, device=DEVICE_ID) 
             #    buff_recv[i] = torch.empty([len(self.mask_recv[i]), n_features], dtype=torch.float32, device=DEVICE_ID)
+
+        # Print information about the buffers
+        if self.cfg.verbose: 
+            log.info('[RANK %d]: Created send and receive buffers for %s halo exchange:' %(RANK,self.cfg.halo_swap_mode))
+            log.info(f'[RANK {RANK}]: Send buffers of size {buff_send_sz}')
+            log.info(f'[RANK {RANK}]: Receive buffers of size {buff_recv_sz}')
 
         return buff_send, buff_recv, n_max 
 
@@ -596,6 +617,7 @@ class Trainer:
             self.neighboring_procs = np.unique(halo_info[:,3])
             n_nodes_local = self.data_reduced.pos.shape[0]
             n_nodes_halo = halo_info.shape[0]
+            if self.cfg.verbose: log.info(f'[RANK {RANK}]: Found {len(self.neighboring_procs)} neighboring processes: {self.neighboring_procs}')
         else:
             #print('[RANK %d] neighboring procs: ' %(RANK), self.neighboring_procs)
             halo_info = torch.Tensor([])
@@ -791,7 +813,7 @@ class Trainer:
                            f"max = {val['max'][0]:>6e} , " + \
                            f"avg = {val['avg']:>6e} , " + \
                            f"std = {val['std']:>6e} "
-            print(f"{key} [s] " + stats_string)
+            log.info(f"{key} [s] " + stats_string)
 
     def train_step(self, data: DataBatch) -> Tensor:
         loss = torch.tensor([0.0])
@@ -814,9 +836,8 @@ class Trainer:
         self.timers['bufferInit'][self.timer_step] = time.time()
         if self.cfg.halo_swap_mode != 'none':
             for i in range(SIZE):
-                self.buffer_send[i] = torch.zeros_like(self.buffer_send[i])
-            for i in range(SIZE):
-                self.buffer_recv[i] = torch.zeros_like(self.buffer_recv[i])
+                self.buffer_send[i] = torch.empty_like(self.buffer_send[i])
+                self.buffer_recv[i] = torch.empty_like(self.buffer_recv[i])
         else:
             buffer_send = None
             buffer_recv = None
@@ -1131,7 +1152,7 @@ class Trainer:
             #loss = self.train_step_verification(data)
             start = time.time()
             loss = self.train_step(data)
-            running_loss += loss.item()
+            running_loss += loss
             t_batch = time.time() - start
             batch_times.append(t_batch)
             #count += 1 # accumulate current batch count
@@ -1162,7 +1183,7 @@ class Trainer:
         running_loss = running_loss / num_batches_gpu
         loss_avg = metric_average(running_loss)
 
-        return {'loss': loss_avg, 'batch_times': batch_times}
+        return {'loss': loss_avg.item(), 'batch_times': batch_times}
 
     def test(self) -> dict:
         running_loss = torch.tensor(0.)
@@ -1241,7 +1262,7 @@ def train(cfg: DictConfig) -> None:
         trainer.loss_hist_train[epoch-1] = train_metrics["loss"]
        
         epoch_time = t1-t0 
-        if epoch>trainer.epoch_start:
+        if epoch>trainer.epoch_start+1:
             epoch_times.append(epoch_time)
             epoch_throughput.append(n_nodes_local/epoch_time)
             batch_times.extend(train_metrics['batch_times'])
@@ -1294,16 +1315,9 @@ def train(cfg: DictConfig) -> None:
                     'loss_hist_test' : trainer.loss_hist_test}
             
             torch.save(ckpt, trainer.ckpt_path)
-        #dist.barrier()
 
     end = time.time()
 
-    rstr = f'[{RANK}] ::'
-    log.info(' '.join([
-        rstr,
-        f'Total training time: {end - start} seconds'
-    ]))
-   
     # ~~~ Print times
     epoch_stats = collect_list_times(epoch_times)
     throughput_stats = collect_list_times(epoch_throughput)
@@ -1311,24 +1325,24 @@ def train(cfg: DictConfig) -> None:
     trainer.collect_timer_stats()
     total_throughput = average_list_times(epoch_throughput)
     if RANK == 0:
-        print('\nSummary of performance data:', flush=True)
-        print(f'Total training time: {end - start}', flush=True)
+        log.info(f'\nPerformance data averaged over {SIZE} ranks, {len(epoch_times)} epochs and {len(batch_times)} iterations:')
+        log.info(f'Total training time: {end - start}')
         stats_string = f": min = {epoch_stats['min'][0]:>6e} , " + \
                            f"max = {epoch_stats['max'][0]:>6e} , " + \
                            f"avg = {epoch_stats['avg']:>6e} , " + \
                            f"std = {epoch_stats['std']:>6e} "
-        print(f"Training epoch [s] " + stats_string, flush=True)
+        log.info(f"Training epoch [s] " + stats_string)
         stats_string = f": min = {throughput_stats['min'][0]:>6e} , " + \
                            f"max = {throughput_stats['max'][0]:>6e} , " + \
                            f"avg = {throughput_stats['avg']:>6e} , " + \
                            f"std = {throughput_stats['std']:>6e} "
-        print(f"Training throughput [nodes/s] " + stats_string, flush=True)
-        print(f"Average parallel training throughout [nodes/s] : {total_throughput:>6e}")
+        log.info(f"Training throughput [nodes/s] " + stats_string)
+        log.info(f"Average parallel training throughout [nodes/s] : {total_throughput:>6e}")
         stats_string = f": min = {batch_stats['min'][0]:>6e} , " + \
                            f"max = {batch_stats['max'][0]:>6e} , " + \
                            f"avg = {batch_stats['avg']:>6e} , " + \
                            f"std = {batch_stats['std']:>6e} "
-        print(f"Training batch [s] " + stats_string, flush=True)
+        log.info(f"Training batch [s] " + stats_string)
         trainer.print_timer_stats()
     
  
@@ -1399,7 +1413,7 @@ def train_profile(cfg: DictConfig) -> None:
 @hydra.main(version_base=None, config_path='./conf', config_name='config')
 def main(cfg: DictConfig) -> None:
     if cfg.verbose:
-        print(f'Hello from rank {RANK}/{SIZE}, local rank {LOCAL_RANK}, on device {DEVICE}:{DEVICE_ID} out of {N_DEVICES}.', flush=True)
+        log.info(f'Hello from rank {RANK}/{SIZE}, local rank {LOCAL_RANK}, on device {DEVICE}:{DEVICE_ID} out of {N_DEVICES}.')
     
     if RANK == 0:
         print('\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
