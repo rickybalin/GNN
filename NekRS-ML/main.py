@@ -760,6 +760,7 @@ class Trainer:
         timers['optimizerStep'] = np.zeros(n_record)
         timers['dataTransfer'] = np.zeros(n_record)
         timers['bufferInit'] = np.zeros(n_record)
+        timers['collectives'] = np.zeros(n_record)
         return timers
 
     def update_timers(self):
@@ -789,7 +790,7 @@ class Trainer:
     def collect_timer_stats(self) -> None:
         self.timer_stats = {}
         for key, val in self.timers.items():
-            times = np.delete(val,0)
+            times = np.delete(val,[0,1])
             times = times[times != 0]
             collected_arr = np.zeros((times.size*SIZE))
             COMM.Gather(times,collected_arr,root=0)
@@ -820,7 +821,7 @@ class Trainer:
         self.timers['dataTransfer'][self.timer_step] = time.time()
         if WITH_CUDA or WITH_XPU:
             data.x = data.x.to(self.device) 
-            data.y = data.y.to(self.device)
+            #data.y = data.y.to(self.device)
             data.edge_index = data.edge_index.to(self.device)
             data.edge_weight = data.edge_weight.to(self.device)
             data.edge_attr = data.edge_attr.to(self.device)
@@ -1136,19 +1137,18 @@ class Trainer:
         train_loader = self.data['train']['loader']
         num_batches = torch.tensor(len(train_loader))
         batch_times = []
-        running_loss = torch.tensor(0.)
+        running_loss = torch.tensor([0.], device=self.device)
         #count = torch.tensor(0.)
 
-        if WITH_CUDA or WITH_XPU:
-            running_loss = running_loss.to(self.device)
-            #count = count.to(self.device)
-            num_batches_gpu = num_batches.to(self.device)
+        #if WITH_CUDA or WITH_XPU:
+        #    running_loss = running_loss.to(self.device)
+        #    #count = count.to(self.device)
+        #    num_batches_gpu = num_batches.to(self.device)
 
         #train_sampler = self.data['train']['sampler']
         #train_sampler.set_epoch(epoch)
 
         for bidx, data in enumerate(train_loader):
-            #batch_size = len(data)
             #loss = self.train_step_verification(data)
             start = time.time()
             loss = self.train_step(data)
@@ -1156,7 +1156,7 @@ class Trainer:
             t_batch = time.time() - start
             batch_times.append(t_batch)
             #count += 1 # accumulate current batch count
-            #self.training_iter += 1 # accumulate total training iteration
+            self.training_iter += 1 # accumulate total training iteration
 
             # Log on Rank 0:
             if bidx % self.cfg.logfreq == 0 and RANK == 0:
@@ -1164,7 +1164,7 @@ class Trainer:
                     'epoch': epoch,
                     'time[s]': t_batch,
                     'batch_loss': loss.item(),
-                    'running_loss': running_loss,
+                    'running_loss': running_loss.item(),
                 }
                 pre = [
                     f'[{RANK}]',
@@ -1180,10 +1180,13 @@ class Trainer:
 
         # divide running loss by number of batches
         #running_loss = running_loss / count
-        running_loss = running_loss / num_batches_gpu
+        #running_loss = running_loss / num_batches_gpu
+        self.timers['collectives'][self.timer_step-1] = time.time()
         loss_avg = metric_average(running_loss)
+        self.timers['collectives'][self.timer_step-1] = time.time() - self.timers['collectives'][self.timer_step-1]
+        loss_avg = loss_avg.item() / num_batches
 
-        return {'loss': loss_avg.item(), 'batch_times': batch_times}
+        return {'loss': loss_avg, 'batch_times': batch_times}
 
     def test(self) -> dict:
         running_loss = torch.tensor(0.)
@@ -1268,23 +1271,24 @@ def train(cfg: DictConfig) -> None:
             batch_times.extend(train_metrics['batch_times'])
 
         # ~~~~ Validation step
-        test_metrics = trainer.test()
+        #test_metrics = trainer.test()
+        test_metrics = {"loss": torch.tensor(0.)}
         trainer.loss_hist_test[epoch-1] = test_metrics["loss"]
         
         # ~~~~ Printing
         if RANK == 0:
-            astr = f'[TEST] loss={test_metrics["loss"]:.4e}'
-            sepstr = '-' * len(astr)
-            log.info(sepstr)
-            log.info(astr)
-            log.info(sepstr)
+            #sepstr = '-' * len(astr)
+            #log.info(sepstr)
+            #log.info(sepstr)
             summary = '  '.join([
                 '[TRAIN]',
                 f'loss={train_metrics["loss"]:.4e}',
                 f'epoch_time={epoch_time:.4g} sec'
             ])
-            log.info((sep := '-' * len(summary)))
             log.info(summary)
+            astr = f'[TEST] loss={test_metrics["loss"]:.4e}'
+            log.info(astr)
+            log.info((sep := '-' * len(summary)))
             log.info(sep)
 
         # ~~~~ Step scheduler based on validation loss

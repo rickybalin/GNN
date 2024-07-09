@@ -3,13 +3,13 @@ profile: False
 halo_test: False
 verbose: True
 seed: 12
-epochs: 50
+epochs: 100
 backend: nccl
 lr_init: 0.0001
 # momentum: 0.5
 use_noise : True
 num_threads: 0
-logfreq: 1
+logfreq: 10
 ckptfreq: 1000
 batch_size: 1
 test_batch_size: 1
@@ -17,8 +17,8 @@ fp16_allreduce: False
 restart: False
 
 # arch properties 
-hidden_channels: 8
-n_mlp_hidden_layers: 2 
+hidden_channels: 32
+n_mlp_hidden_layers: 5 
 n_messagePassing_layers: 4
 
 # Number of training rollout steps
