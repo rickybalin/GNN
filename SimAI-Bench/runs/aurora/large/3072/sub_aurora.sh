@@ -40,6 +40,7 @@ export FI_CXI_CQ_FILL_PERCENT=20
 export CCL_KVS_GET_TIMEOUT=600
 export CCL_PROCESS_LAUNCHER=pmix
 export FI_CXI_OFLOW_BUF_SIZE=20971520 # increased 2MB to 20MB
+export CCL_ATL_TRANSPORT=mpi
 
 # for latest eng. drop of oneCCL
 export CCL_KVS_MODE=mpi
