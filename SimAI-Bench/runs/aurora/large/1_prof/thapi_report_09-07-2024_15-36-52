@@ -1,0 +1,172 @@
+BACKEND_MPI | 1 Hostnames | 2 Processes | 2 Threads | 
+
+                   Name |     Time | Time(%) | Calls |  Average |     Min |      Max |         
+               MPI_Init |    5.42s |  99.32% |     2 |    2.71s |   2.71s |    2.71s |         
+           MPI_Finalize |  24.94ms |   0.46% |     2 |  12.47ms | 12.30ms |  12.63ms |         
+        MPI_Cart_create |  10.41ms |   0.19% |     2 |   5.20ms | 40.10us |  10.37ms |         
+               MPI_Recv |   1.09ms |   0.02% |    16 |  67.98us |   540ns |   1.03ms |         
+           MPI_Comm_dup | 383.45us |   0.01% |     2 | 191.73us | 53.77us | 329.68us |         
+              MPI_Bcast | 172.42us |   0.00% |    36 |   4.79us |   672ns |  60.10us |         
+            MPI_Barrier |  38.57us |   0.00% |     2 |  19.29us | 10.58us |  27.99us |         
+          MPI_Comm_free |  36.18us |   0.00% |     4 |   9.05us |  6.76us |  12.48us |         
+        MPI_Initialized |  34.78us |   0.00% |    10 |   3.48us |   180ns |  14.50us |         
+ MPI_Comm_create_keyval |  32.37us |   0.00% |     4 |   8.09us |  5.81us |  12.00us |         
+             MPI_Gather |  29.04us |   0.00% |    12 |   2.42us |   785ns |   8.89us |         
+               MPI_Send |  24.69us |   0.00% |    16 |   1.54us |   598ns |  11.79us |         
+          MPI_Comm_rank |  18.63us |   0.00% |    66 | 282.24ns |   112ns |   1.66us |         
+      MPI_Comm_get_attr |  18.12us |   0.00% |    56 | 323.54ns |   122ns |   2.17us |         
+             MPI_Reduce |  17.95us |   0.00% |     2 |   8.98us |  6.66us |  11.30us |         
+   MPI_Comm_delete_attr |  15.82us |   0.00% |     2 |   7.91us |  7.71us |   8.11us |         
+        MPI_Cartdim_get |  10.99us |   0.00% |    56 | 196.21ns |   128ns |   1.00us |         
+          MPI_Comm_size |  10.15us |   0.00% |    38 | 267.00ns |   120ns |    861ns |         
+          MPI_Cart_rank |   9.67us |   0.00% |    54 | 179.09ns |   136ns |    720ns |         
+    MPI_Comm_test_inter |   7.27us |   0.00% |    32 | 227.09ns |   118ns |    639ns |         
+MPI_Comm_set_errhandler |   7.25us |   0.00% |     6 |   1.21us |   132ns |   4.53us |         
+        MPI_Dims_create |   6.95us |   0.00% |     2 |   3.47us |  1.59us |   5.36us |         
+      MPI_Comm_set_attr |   6.25us |   0.00% |     8 | 780.88ns |   268ns |   1.35us |         
+    MPI_Type_get_extent |   4.92us |   0.00% |    21 | 234.48ns |   117ns |    931ns |         
+          MPI_Finalized |   3.11us |   0.00% |     8 | 388.25ns |   114ns |    639ns |         
+ MPI_Get_processor_name |   3.00us |   0.00% |     2 |   1.50us |  1.33us |   1.67us |         
+   MPI_Comm_free_keyval |   1.89us |   0.00% |     4 | 471.75ns |   146ns |    872ns |         
+           MPI_Cart_get |   1.87us |   0.00% |     2 | 933.50ns |   726ns |   1.14us |         
+                  Total |    5.45s | 100.00% |   467 |                                         
+
+BACKEND_OPENCL,BACKEND_ZE | 1 Hostnames | 2 Processes | 8 Threads | 
+
+                               Name |     Time | Time(%) |  Calls |  Average |      Min |      Max | Error | 
+                     zeModuleCreate |   21.26s |  96.23% |    169 | 125.82ms |  82.72us |   10.35s |     0 | 
+    zeCommandListAppendLaunchKernel | 369.35ms |   1.67% |  42994 |   8.59us |   6.28us | 352.36us |     0 | 
+                   zeEventHostReset | 117.10ms |   0.53% |  36819 |   3.18us |   1.18us |  48.45us |     0 | 
+               zeFabricVertexGetExp |  78.05ms |   0.35% |      4 |  19.51ms |    583ns |  39.04ms |     0 | 
+              zeDeviceCanAccessPeer |  73.24ms |   0.33% |   2512 |  29.16us |    144ns |  95.54us |     0 | 
+        zeContextMakeMemoryResident |  69.92ms |   0.32% |   2606 |  26.83us |   5.26us | 518.16us |     0 | 
+                    zeModuleDestroy |  32.67ms |   0.15% |    122 | 267.77us |   7.41us |  11.22ms |     0 | 
+      zeCommandListAppendMemoryCopy |  16.80ms |   0.08% |    830 |  20.24us |   8.78us |   1.53ms |     0 | 
+                   zeMemAllocDevice |  13.10ms |   0.06% |    374 |  35.03us |  13.57us | 155.67us |     0 | 
+                      zeEventCreate |   9.24ms |   0.04% |  15332 | 602.75ns |    253ns | 189.59us |     0 | 
+               zeKernelSetGroupSize |   7.44ms |   0.03% |  42994 | 172.99ns |    106ns |   8.72us |     0 | 
+                          zeMemFree |   5.32ms |   0.02% |    132 |  40.31us |   6.75us | 283.57us |     0 | 
+       zeCommandListCreateImmediate |   4.56ms |   0.02% |      6 | 760.30us | 136.85us |   1.27ms |     0 | 
+                     clBuildProgram |   4.43ms |   0.02% |      8 | 553.25us |  31.37us |   2.36ms |     0 | 
+             zeEventHostSynchronize |   4.11ms |   0.02% |    638 |   6.45us |    168ns | 783.19us |     0 | 
+            zeModuleGetNativeBinary |   3.34ms |   0.02% |      4 | 833.77us |    877ns |   1.67ms |     0 | 
+                     zeKernelCreate |   2.91ms |   0.01% |   1803 |   1.61us |    657ns |  53.43us |     0 | 
+                     zeMemAllocHost |   2.45ms |   0.01% |     32 |  76.45us |  43.05us | 107.04us |     0 | 
+                     zeEventDestroy |   2.37ms |   0.01% |   8325 | 285.20ns |    117ns |  91.95us |     0 | 
+                   zeMemAllocShared |   2.35ms |   0.01% |     72 |  32.68us |  25.50us |  60.71us |     0 | 
+         zeCommandListAppendBarrier |   1.76ms |   0.01% |     43 |  40.88us |   7.30us | 523.85us |     0 | 
+                  zeEventPoolCreate |   1.60ms |   0.01% |     48 |  33.37us |  10.10us | 170.41us |     0 | 
+              clReleaseCommandQueue |   1.37ms |   0.01% |      4 | 342.50us | 285.07us | 396.07us |     0 | 
+zeDriverGetExtensionFunctionAddress |   1.30ms |   0.01% |     38 |  34.29us |    274ns | 282.03us |     0 | 
+                   zeContextDestroy |   1.18ms |   0.01% |      4 | 296.09us | 153.91us | 438.34us |     0 | 
+  zeCommandQueueExecuteCommandLists |   1.15ms |   0.01% |     33 |  34.93us |   2.41us |  96.68us |     0 | 
+     zexDriverImportExternalPointer | 734.01us |   0.00% |      6 | 122.34us |  84.19us | 152.76us |     0 | 
+                    zeKernelDestroy | 711.14us |   0.00% |   1730 | 411.07ns |    193ns |   6.37us |     0 | 
+                 zeEventPoolDestroy | 651.24us |   0.00% |     20 |  32.56us |   7.81us |  81.82us |     0 | 
+                    clCreateContext | 356.48us |   0.00% |     44 |   8.10us |   1.83us |  24.69us |     0 | 
+        zeDeviceGetGlobalTimestamps | 349.73us |   0.00% |     66 |   5.30us |   4.62us |  17.66us |     0 | 
+               zeCommandQueueCreate | 259.21us |   0.00% |      6 |  43.20us |  19.63us |  63.07us |     0 | 
+                     clGetDeviceIDs | 204.92us |   0.00% |    126 |   2.44us |    424ns |   9.46us |    42 | 
+                zeMemCloseIpcHandle | 202.35us |   0.00% |      3 |  67.45us |  53.54us |  85.01us |     0 | 
+      zeCommandListAppendMemoryFill | 177.02us |   0.00% |      2 |  88.51us |  79.80us |  97.22us |     0 | 
+                  clGetPlatformInfo | 169.90us |   0.00% |    248 | 685.06ns |    121ns |   6.56us |     0 | 
+              zeDeviceGetSubDevices | 160.36us |   0.00% |    260 | 616.77ns |    113ns |   2.93us |     0 | 
+                   clReleaseContext | 159.93us |   0.00% |     60 |   2.67us |    197ns |  14.28us |     0 | 
+                zeCommandListCreate | 147.79us |   0.00% |      7 |  21.11us |  11.01us |  32.98us |     0 | 
+                    clGetDeviceInfo | 123.73us |   0.00% |    492 | 251.49ns |    107ns |   1.17us |     0 | 
+        zeEventQueryKernelTimestamp | 120.44us |   0.00% |     64 |   1.88us |    895ns |   4.62us |     0 | 
+                     clCreateKernel |  94.22us |   0.00% |      4 |  23.55us |  20.61us |  29.53us |     0 | 
+                   clGetPlatformIDs |  85.29us |   0.00% |     84 |   1.02us |    298ns |   4.92us |     0 | 
+                    clReleaseDevice |  75.47us |   0.00% |    128 | 589.60ns |    113ns |   4.46us |     0 | 
+                 zeCommandListReset |  74.10us |   0.00% |     26 |   2.85us |    555ns |   5.86us |     0 | 
+                  zeEventHostSignal |  72.70us |   0.00% |     90 | 807.74ns |    163ns |   3.97us |     0 | 
+                        zeDeviceGet |  57.08us |   0.00% |     36 |   1.59us |    338ns |   7.67us |     0 | 
+    zeCommandListAppendWaitOnEvents |  50.62us |   0.00% |     18 |   2.81us |    357ns |  11.73us |     0 | 
+                 zeMemOpenIpcHandle |  42.57us |   0.00% |      3 |  14.19us |  14.06us |  14.30us |     0 | 
+                     clRetainDevice |  41.71us |   0.00% |     92 | 453.38ns |    114ns |   2.83us |     0 | 
+                    zeContextCreate |  39.35us |   0.00% |     14 |   2.81us |   1.15us |   5.27us |     0 | 
+                   clReleaseProgram |  38.91us |   0.00% |      8 |   4.86us |    252ns |  13.28us |     0 | 
+                  zeMemGetIpcHandle |  38.17us |   0.00% |      4 |   9.54us |   3.98us |  23.13us |     0 | 
+                    clReleaseKernel |  37.27us |   0.00% |      8 |   4.66us |    653ns |  11.13us |     0 | 
+               zeCommandListDestroy |  36.29us |   0.00% |      7 |   5.18us |   1.40us |   9.96us |     0 | 
+          zeKernelSetIndirectAccess |  35.97us |   0.00% |     73 | 492.78ns |    183ns |   1.21us |     0 | 
+                   clGetContextInfo |  34.74us |   0.00% |     80 | 434.24ns |    166ns |   1.98us |     0 | 
+          clCreateProgramWithBinary |  34.44us |   0.00% |      6 |   5.74us |   2.13us |   9.40us |     0 | 
+                 zeCommandListClose |  31.33us |   0.00% |     33 | 949.42ns |    260ns |   1.67us |     0 | 
+               zeMemGetAddressRange |  30.73us |   0.00% |     34 | 903.71ns |    169ns |   2.51us |     0 | 
+                             zeInit |  29.96us |   0.00% |     20 |   1.50us |    203ns |   2.78us |     0 | 
+ clCreateCommandQueueWithProperties |  24.22us |   0.00% |      4 |   6.05us |   2.98us |   9.09us |     0 | 
+                 zeFabricEdgeGetExp |  20.95us |   0.00% |     60 | 349.17ns |    212ns |   1.12us |     0 | 
+          clCreateProgramWithSource |  17.47us |   0.00% |      2 |   8.73us |   6.24us |  11.23us |     0 | 
+                        zeDriverGet |  14.69us |   0.00% |     30 | 489.60ns |    163ns |   1.23us |     0 | 
+              zeCommandQueueDestroy |  10.46us |   0.00% |      6 |   1.74us |   1.17us |   3.17us |     0 | 
+                 clCreateSubDevices |   8.65us |   0.00% |     24 | 360.29ns |    139ns |    895ns |     0 | 
+                    clRetainContext |   8.34us |   0.00% |     16 | 521.31ns |    456ns |    646ns |     0 | 
+                   clGetProgramInfo |   4.24us |   0.00% |      8 | 530.12ns |    213ns |    779ns |     0 | 
+            zeModuleBuildLogDestroy |   3.34us |   0.00% |      2 |   1.67us |   1.56us |   1.77us |     0 | 
+              zeDriverGetApiVersion |   3.11us |   0.00% |      6 | 518.00ns |    359ns |    610ns |     0 | 
+                     clRetainKernel |   2.45us |   0.00% |      4 | 612.00ns |    451ns |    729ns |     0 | 
+                              Total |   22.10s | 100.00% | 160010 |                                     42 | 
+
+Device profiling | 1 Hostnames | 2 Processes | 6 Threads | 2 Devices | 1 Subdevices | 
+
+                                                                            Name |     Time | Time(%) | Calls |  Average |      Min |      Max |         
+at::AtenIpexTypeXPU::GammaBetaBackwar[...]nst::{lambda(sycl::_V1::nd_item<3>)#1} |    3.28s |  39.01% |   180 |  18.23ms |  11.65ms |  25.14ms |         
+                                                                     gemm_kernel |    1.96s |  23.33% | 24290 |  80.81us |   7.68us |   1.58ms |         
+at::AtenIpexTypeXPU::launch_vectorize[...]nst::{lambda(sycl::_V1::nd_item<1>)#1} | 564.90ms |   6.72% |  1140 | 495.52us | 278.40us | 757.76us |         
+DpcppIndexKernelImplFunctor<at::AtenI[...]etCalculator<3, unsigned int, false> > | 407.49ms |   4.84% |   160 |   2.55ms |   2.37ms |   2.93ms |         
+at::AtenIpexTypeXPU::launch_vectorize[...]nst::{lambda(sycl::_V1::nd_item<1>)#1} | 395.35ms |   4.70% |  1140 | 346.80us | 145.60us | 596.00us |         
+DpcppIndexKernelImplFunctor<at::AtenI[...]etCalculator<3, unsigned int, false> > | 387.32ms |   4.60% |   200 |   1.94ms | 173.92us |   2.52ms |         
+at::AtenIpexTypeXPU::normalization::f[...]nst::{lambda(sycl::_V1::nd_item<3>)#1} | 230.25ms |   2.74% |   180 |   1.28ms | 801.60us |   1.78ms |         
+at::AtenIpexTypeXPU::reduce_kernel<4,[...]ps<float> >, unsigned int, float, 4> > | 206.73ms |   2.46% |  1320 | 156.62us |  54.56us | 300.32us |         
+at::AtenIpexTypeXPU::impl::CatArrayBa[...]nst::{lambda(sycl::_V1::nd_item<2>)#1} | 201.89ms |   2.40% |   170 |   1.19ms | 141.76us |   1.93ms |         
+at::AtenIpexTypeXPU::launch_vectorize[...]nst::{lambda(sycl::_V1::nd_item<1>)#1} | 196.02ms |   2.33% |   410 | 478.11us |  20.48us | 790.88us |         
+at::AtenIpexTypeXPU::normalization::f[...]nst::{lambda(sycl::_V1::nd_item<3>)#1} | 132.33ms |   1.57% |   180 | 735.15us | 449.12us |   1.09ms |         
+IndexKernel<IndexKernelConfig<xpu::dp[...]exSelectOperator<float> >, true, true> | 110.16ms |   1.31% |    80 |   1.38ms |   1.36ms |   1.45ms |         
+at::AtenIpexTypeXPU::launch_vectorize[...]nst::{lambda(sycl::_V1::nd_item<1>)#1} |  87.19ms |   1.04% |   160 | 544.95us | 398.08us | 727.04us |         
+at::AtenIpexTypeXPU::_launch_scatter_[...]nst::{lambda(sycl::_V1::nd_item<1>)#1} |  77.93ms |   0.93% |    80 | 974.06us | 954.88us |   1.03ms |         
+at::AtenIpexTypeXPU::_launch_scatter_[...]nst::{lambda(sycl::_V1::nd_item<1>)#1} |  77.37ms |   0.92% |    80 | 967.18us | 933.60us |   1.03ms |         
+at::AtenIpexTypeXPU::launch_vectorize[...]nst::{lambda(sycl::_V1::nd_item<1>)#1} |  33.05ms |   0.39% |   352 |  93.89us |   1.28us | 250.72us |         
+at::AtenIpexTypeXPU::launch_vectorize[...]nst::{lambda(sycl::_V1::nd_item<1>)#1} |  22.76ms |   0.27% |  1988 |  11.45us |    960ns |  85.60us |         
+at::AtenIpexTypeXPU::launch_vectorize[...]nst::{lambda(sycl::_V1::nd_item<1>)#1} |   8.49ms |   0.10% |  2920 |   2.91us |   1.44us |  31.52us |         
+at::AtenIpexTypeXPU::launch_unrolled_[...]nst::{lambda(sycl::_V1::nd_item<1>)#1} |   7.41ms |   0.09% |  3020 |   2.45us |   1.76us |   4.64us |         
+at::AtenIpexTypeXPU::launch_vectorize[...]nst::{lambda(sycl::_V1::nd_item<1>)#1} |   6.08ms |   0.07% |  1330 |   4.57us |   3.36us |  31.52us |         
+at::AtenIpexTypeXPU::launch_vectorize[...]nst::{lambda(sycl::_V1::nd_item<1>)#1} |   5.49ms |   0.07% |  3432 |   1.60us |   1.12us |   3.84us |         
+                                              zeCommandListAppendMemoryCopy(M2D) |   4.44ms |   0.05% |   621 |   7.15us |     80ns | 870.64us |         
+at::AtenIpexTypeXPU::reduce_kernel<1,[...]oat, float>, unsigned int, float, 4> > |   2.71ms |   0.03% |    10 | 270.91us | 267.20us | 273.28us |         
+                                              zeCommandListAppendMemoryCopy(H2D) | 561.68us |   0.01% |   176 |   3.19us |   1.84us |  30.48us |         
+at::AtenIpexTypeXPU::launch_vectorize[...]nst::{lambda(sycl::_V1::nd_item<1>)#1} | 322.56us |   0.00% |   100 |   3.23us |   1.76us |  28.64us |         
+at::AtenIpexTypeXPU::reduce_kernel<1,[...]ps<float> >, unsigned int, float, 4> > | 260.64us |   0.00% |    10 |  26.06us |  24.32us |  27.84us |         
+at::AtenIpexTypeXPU::launch_legacy_ke[...]nst::{lambda(sycl::_V1::nd_item<1>)#1} | 214.72us |   0.00% |    10 |  21.47us |  20.96us |  22.72us |         
+at::AtenIpexTypeXPU::reduce_kernel<1,[...]oat, float>, unsigned int, float, 4> > | 203.84us |   0.00% |    10 |  20.38us |  19.20us |  23.04us |         
+at::AtenIpexTypeXPU::launch_vectorize[...]nst::{lambda(sycl::_V1::nd_item<1>)#1} | 203.84us |   0.00% |    10 |  20.38us |  19.52us |  22.08us |         
+at::AtenIpexTypeXPU::impl::CatArrayBa[...]nst::{lambda(sycl::_V1::nd_item<2>)#1} | 170.72us |   0.00% |     2 |  85.36us |  85.12us |  85.60us |         
+                                                    allreduce_kernel_float32_sum | 135.68us |   0.00% |    15 |   9.05us |   7.68us |  10.40us |         
+                                                      zeCommandListAppendBarrier |  84.00us |   0.00% |    43 |   1.95us |   1.28us |   3.36us |         
+                                              zeCommandListAppendMemoryCopy(D2M) |  66.08us |   0.00% |    25 |   2.64us |   1.52us |   4.16us |         
+at::AtenIpexTypeXPU::launch_vectorize[...]nst::{lambda(sycl::_V1::nd_item<1>)#1} |  42.56us |   0.00% |    10 |   4.26us |   3.84us |   6.56us |         
+                                              zeCommandListAppendMemoryCopy(D2D) |  38.40us |   0.00% |     8 |   4.80us |   1.92us |   8.64us |         
+                                                zeCommandListAppendMemoryFill(D) |  20.48us |   0.00% |     2 |  10.24us |  10.24us |  10.24us |         
+at::AtenIpexTypeXPU::launch_vectorize[...]nst::{lambda(sycl::_V1::nd_item<1>)#1} |  16.80us |   0.00% |     5 |   3.36us |   2.72us |   4.96us |         
+                                                                           Total |    8.41s | 100.00% | 43869 |                                          
+
+Explicit memory traffic (BACKEND_MPI) | 1 Hostnames | 2 Processes | 2 Threads | 
+
+      Name |   Byte | Byte(%) | Calls | Average | Min |  Max |         
+ MPI_Bcast | 1.26kB |  49.14% |    36 |  34.89B |  4B | 116B |         
+  MPI_Send |   626B |  24.49% |    16 |  39.12B |  4B | 131B |         
+  MPI_Recv |   626B |  24.49% |    16 |  39.12B |  4B | 131B |         
+MPI_Reduce |    48B |   1.88% |     2 |  24.00B | 24B |  24B |         
+     Total | 2.56kB | 100.00% |    70 |                                
+
+Explicit memory traffic (BACKEND_ZE) | 1 Hostnames | 2 Processes | 6 Threads | 
+
+                              Name |     Byte | Byte(%) | Calls |  Average |     Min |      Max |         
+       zeContextMakeMemoryResident | 494.89GB |  99.97% |  2606 | 189.91MB |      1B | 769.65MB |         
+zeCommandListAppendMemoryCopy(M2D) | 137.32MB |   0.03% |   621 | 221.13kB |      4B |  32.00MB |         
+  zeCommandListAppendMemoryFill(D) |  29.36MB |   0.01% |     2 |  14.68MB | 14.68MB |  14.68MB |         
+zeCommandListAppendMemoryCopy(H2D) |   5.64MB |   0.00% |   176 |  32.04kB |      4B |  32.77kB |         
+zeCommandListAppendMemoryCopy(D2D) | 662.17kB |   0.00% |     8 |  82.77kB |      4B | 653.96kB |         
+zeCommandListAppendMemoryCopy(D2M) |  16.44kB |   0.00% |    25 |  657.76B |      4B |   6.96kB |         
+                             Total | 495.07GB | 100.00% |  3438 |                                         
+

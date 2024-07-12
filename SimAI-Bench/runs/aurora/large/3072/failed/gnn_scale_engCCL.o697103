@@ -1,0 +1,368 @@
+
+The following have been reloaded with a version change:
+  1) intel_compute_runtime/release/821.36 => intel_compute_runtime/release/803.29
+  2) oneapi/eng-compiler/2024.04.15.002 => oneapi/release/2024.1
+
+Loaded modules:
+
+Currently Loaded Modules:
+  1) mpich/icc-all-pmix-gpu/20231026
+  2) mpich-config/collective-tuning/1024
+  3) libfabric/1.15.2.0
+  4) cray-pals/1.3.3
+  5) cray-libpals/1.3.3
+  6) spack-pe-gcc/0.7.0-24.086.0
+  7) gmp/6.2.1-pcxzkau
+  8) mpfr/4.2.0-w7v7yjv
+  9) mpc/1.3.1-dfagrna
+ 10) gcc/12.2.0
+ 11) intel_compute_runtime/release/803.29
+ 12) oneapi/release/2024.1
+ 13) frameworks/2024.1
+
+ 
+
+
+Torch version: 2.1.0.post0+cxx11.abi
+IPEX version: 2.1.20+xpu
+Torch Geometric version: 2.5.3
+
+Number of nodes: 512
+Number of ranks per node: 12
+Number of total ranks: 6144
+
+Setting oneCCL bindings for 12 ranks per node
+
+Running script /lus/flare/projects/Aurora_deployment/balin/Nek/GNN/GNN/SimAI-Bench/main.py
+with arguments --device=xpu --iterations=100 --problem_size=large
+Wed 10 Jul 2024 05:23:02 PM UTC
+Traceback (most recent call last):
+  File "/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/GNN/SimAI-Bench/main.py", line 17, in <module>
+Traceback (most recent call last):
+  File "/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/GNN/SimAI-Bench/main.py", line 17, in <module>
+    import intel_extension_for_pytorch as ipex
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/intel_extension_for_pytorch/__init__.py", line 110, in <module>
+Traceback (most recent call last):
+  File "/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/GNN/SimAI-Bench/main.py", line 17, in <module>
+    import intel_extension_for_pytorch as ipex
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/intel_extension_for_pytorch/__init__.py", line 110, in <module>
+Traceback (most recent call last):
+  File "/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/GNN/SimAI-Bench/main.py", line 17, in <module>
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/intel_extension_for_pytorch/__init__.py", line 110, in <module>
+Traceback (most recent call last):
+  File "/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/GNN/SimAI-Bench/main.py", line 17, in <module>
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/intel_extension_for_pytorch/__init__.py", line 110, in <module>
+/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/env/_pyg/lib/python3.9/site-packages/torch_geometric/typing.py:83: UserWarning: An issue occurred while importing 'torch-cluster'. Disabling its usage. Stacktrace: Can't get source for <function radius at 0x1455a81fa0d0>. TorchScript requires source access in order to carry out compilation, make sure original .py files are available.
+/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/env/_pyg/lib/python3.9/site-packages/torch_geometric/typing.py:110: UserWarning: An issue occurred while importing 'torch-sparse'. Disabling its usage. Stacktrace: [Errno 108] Cannot send after transport endpoint shutdown: '/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/env/_pyg/lib/python3.9/site-packages'
+    import intel_extension_for_pytorch as ipex
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/intel_extension_for_pytorch/__init__.py", line 110, in <module>
+Traceback (most recent call last):
+  File "/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/GNN/SimAI-Bench/main.py", line 17, in <module>
+    import intel_extension_for_pytorch as ipex
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/intel_extension_for_pytorch/__init__.py", line 110, in <module>
+/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/env/_pyg/lib/python3.9/site-packages/torch_geometric/typing.py:83: UserWarning: An issue occurred while importing 'torch-cluster'. Disabling its usage. Stacktrace: [Errno 108] Cannot send after transport endpoint shutdown: '/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/env/_pyg/lib/python3.9/site-packages/torch_cluster/radius.py'
+/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/env/_pyg/lib/python3.9/site-packages/torch_geometric/typing.py:99: UserWarning: An issue occurred while importing 'torch-spline-conv'. Disabling its usage. Stacktrace: [Errno 108] Cannot send after transport endpoint shutdown: '/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/env/_pyg/lib/python3.9/site-packages'
+/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/env/_pyg/lib/python3.9/site-packages/torch_geometric/typing.py:110: UserWarning: An issue occurred while importing 'torch-sparse'. Disabling its usage. Stacktrace: [Errno 108] Cannot send after transport endpoint shutdown: '/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/env/_pyg/lib/python3.9/site-packages'
+/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/env/_pyg/lib/python3.9/site-packages/torch_geometric/typing.py:83: UserWarning: An issue occurred while importing 'torch-cluster'. Disabling its usage. Stacktrace: [Errno 108] Cannot send after transport endpoint shutdown: '/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/env/_pyg/lib/python3.9/site-packages/torch_cluster/radius.py'
+/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/env/_pyg/lib/python3.9/site-packages/torch_geometric/typing.py:110: UserWarning: An issue occurred while importing 'torch-sparse'. Disabling its usage. Stacktrace: [Errno 108] Cannot send after transport endpoint shutdown: '/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/env/_pyg/lib/python3.9/site-packages'
+/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/env/_pyg/lib/python3.9/site-packages/torch_geometric/typing.py:83: UserWarning: An issue occurred while importing 'torch-cluster'. Disabling its usage. Stacktrace: Can't get source for <function radius at 0x153b7411f1f0>. TorchScript requires source access in order to carry out compilation, make sure original .py files are available.
+/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/env/_pyg/lib/python3.9/site-packages/torch_geometric/typing.py:99: UserWarning: An issue occurred while importing 'torch-spline-conv'. Disabling its usage. Stacktrace: [Errno 108] Cannot send after transport endpoint shutdown: '/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/env/_pyg/lib/python3.9/site-packages'
+/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/env/_pyg/lib/python3.9/site-packages/torch_geometric/typing.py:110: UserWarning: An issue occurred while importing 'torch-sparse'. Disabling its usage. Stacktrace: [Errno 108] Cannot send after transport endpoint shutdown: '/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/env/_pyg/lib/python3.9/site-packages'
+Traceback (most recent call last):
+  File "/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/GNN/SimAI-Bench/main.py", line 22, in <module>
+  File "/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/env/_pyg/lib/python3.9/site-packages/torch_geometric/__init__.py", line 2, in <module>
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 982, in _find_and_load_unlocked
+Traceback (most recent call last):
+  File "/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/GNN/SimAI-Bench/main.py", line 22, in <module>
+  File "/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/env/_pyg/lib/python3.9/site-packages/torch_geometric/__init__.py", line 2, in <module>
+    from . import xpu
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/intel_extension_for_pytorch/xpu/__init__.py", line 27, in <module>
+  File "<frozen importlib._bootstrap>", line 925, in _find_spec
+    from . import xpu
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/intel_extension_for_pytorch/xpu/__init__.py", line 27, in <module>
+    from . import xpu
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/intel_extension_for_pytorch/xpu/__init__.py", line 27, in <module>
+    from . import xpu
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/intel_extension_for_pytorch/xpu/__init__.py", line 27, in <module>
+    from . import xpu
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/intel_extension_for_pytorch/xpu/__init__.py", line 27, in <module>
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 982, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 925, in _find_spec
+  File "<frozen importlib._bootstrap_external>", line 1423, in find_spec
+    from . import xpu
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/intel_extension_for_pytorch/xpu/__init__.py", line 27, in <module>
+  File "<frozen importlib._bootstrap_external>", line 1423, in find_spec
+  File "<frozen importlib._bootstrap_external>", line 1395, in _get_spec
+  File "<frozen importlib._bootstrap_external>", line 1526, in find_spec
+Traceback (most recent call last):
+  File "/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/GNN/SimAI-Bench/main.py", line 22, in <module>
+  File "/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/env/_pyg/lib/python3.9/site-packages/torch_geometric/__init__.py", line 2, in <module>
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 982, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1569, in _fill_cache
+  File "<frozen importlib._bootstrap_external>", line 1395, in _get_spec
+  File "<frozen importlib._bootstrap_external>", line 1526, in find_spec
+BrokenPipeError: [Errno 108] Cannot send after transport endpoint shutdown: '/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/env/_pyg/lib/python3.9/site-packages/torch_geometric'
+  File "<frozen importlib._bootstrap>", line 925, in _find_spec
+  File "<frozen importlib._bootstrap_external>", line 1423, in find_spec
+  File "<frozen importlib._bootstrap_external>", line 1395, in _get_spec
+  File "<frozen importlib._bootstrap_external>", line 1569, in _fill_cache
+BrokenPipeError: [Errno 108] Cannot send after transport endpoint shutdown: '/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/env/_pyg/lib/python3.9/site-packages/torch_geometric'
+Traceback (most recent call last):
+  File "/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/GNN/SimAI-Bench/main.py", line 22, in <module>
+  File "/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/env/_pyg/lib/python3.9/site-packages/torch_geometric/__init__.py", line 2, in <module>
+  File "<frozen importlib._bootstrap_external>", line 1526, in find_spec
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap_external>", line 1569, in _fill_cache
+BrokenPipeError: [Errno 108] Cannot send after transport endpoint shutdown: '/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/env/_pyg/lib/python3.9/site-packages/torch_geometric'
+  File "<frozen importlib._bootstrap>", line 982, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 925, in _find_spec
+  File "<frozen importlib._bootstrap_external>", line 1423, in find_spec
+  File "<frozen importlib._bootstrap_external>", line 1395, in _get_spec
+  File "<frozen importlib._bootstrap_external>", line 1526, in find_spec
+  File "<frozen importlib._bootstrap_external>", line 1569, in _fill_cache
+BrokenPipeError: [Errno 108] Cannot send after transport endpoint shutdown: '/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/env/_pyg/lib/python3.9/site-packages/torch_geometric'
+/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/_jit_internal.py:857: UserWarning: Unable to retrieve source for @torch.jit._overload function: <function remove_self_loops at 0x146839753d30>.
+  warnings.warn(
+/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/_jit_internal.py:857: UserWarning: Unable to retrieve source for @torch.jit._overload function: <function remove_self_loops at 0x146839772280>.
+  warnings.warn(
+/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/_jit_internal.py:857: UserWarning: Unable to retrieve source for @torch.jit._overload function: <function segregate_self_loops at 0x1468397723a0>.
+  warnings.warn(
+Traceback (most recent call last):
+  File "/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/GNN/SimAI-Bench/main.py", line 22, in <module>
+/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/_jit_internal.py:857: UserWarning: Unable to retrieve source for @torch.jit._overload function: <function segregate_self_loops at 0x146839772430>.
+  warnings.warn(
+  File "/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/env/_pyg/lib/python3.9/site-packages/torch_geometric/__init__.py", line 8, in <module>
+  File "/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/env/_pyg/lib/python3.9/site-packages/torch_geometric/utils/__init__.py", line 22, in <module>
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/_jit_internal.py:857: UserWarning: Unable to retrieve source for @torch.jit._overload function: <function segregate_self_loops at 0x1468397724c0>.
+  warnings.warn(
+  File "<frozen importlib._bootstrap>", line 982, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 925, in _find_spec
+/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/_jit_internal.py:857: UserWarning: Unable to retrieve source for @torch.jit._overload function: <function add_self_loops at 0x1468397725e0>.
+  warnings.warn(
+  File "<frozen importlib._bootstrap_external>", line 1423, in find_spec
+/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/_jit_internal.py:857: UserWarning: Unable to retrieve source for @torch.jit._overload function: <function add_self_loops at 0x146839772670>.
+  warnings.warn(
+  File "<frozen importlib._bootstrap_external>", line 1395, in _get_spec
+/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/_jit_internal.py:857: UserWarning: Unable to retrieve source for @torch.jit._overload function: <function add_self_loops at 0x146839772700>.
+  warnings.warn(
+  File "<frozen importlib._bootstrap_external>", line 1526, in find_spec
+  File "<frozen importlib._bootstrap_external>", line 1569, in _fill_cache
+BrokenPipeError: [Errno 108] Cannot send after transport endpoint shutdown: '/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/env/_pyg/lib/python3.9/site-packages/torch_geometric/utils'
+/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/_jit_internal.py:857: UserWarning: Unable to retrieve source for @torch.jit._overload function: <function add_self_loops at 0x146839772790>.
+  warnings.warn(
+/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/_jit_internal.py:857: UserWarning: Unable to retrieve source for @torch.jit._overload function: <function add_self_loops at 0x146839772820>.
+  warnings.warn(
+/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/_jit_internal.py:857: UserWarning: Unable to retrieve source for @torch.jit._overload function: <function add_self_loops at 0x1468397728b0>.
+  warnings.warn(
+    from .cpp_extension import *
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/intel_extension_for_pytorch/xpu/cpp_extension.py", line 16, in <module>
+    from .cpp_extension import *
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/intel_extension_for_pytorch/xpu/cpp_extension.py", line 16, in <module>
+    from torch.utils.cpp_extension import _TORCH_PATH
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/utils/cpp_extension.py", line 27, in <module>
+    from .cpp_extension import *
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/intel_extension_for_pytorch/xpu/cpp_extension.py", line 16, in <module>
+    from torch.utils.cpp_extension import _TORCH_PATH
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/utils/cpp_extension.py", line 27, in <module>
+    from .cpp_extension import *
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/intel_extension_for_pytorch/xpu/cpp_extension.py", line 16, in <module>
+    from torch.utils.cpp_extension import _TORCH_PATH
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/utils/cpp_extension.py", line 27, in <module>
+    from .cpp_extension import *
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/intel_extension_for_pytorch/xpu/cpp_extension.py", line 16, in <module>
+    from torch.utils.cpp_extension import _TORCH_PATH
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/utils/cpp_extension.py", line 27, in <module>
+    from torch.utils.cpp_extension import _TORCH_PATH
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/utils/cpp_extension.py", line 27, in <module>
+    from .cpp_extension import *
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/intel_extension_for_pytorch/xpu/cpp_extension.py", line 16, in <module>
+    from torch.utils.cpp_extension import _TORCH_PATH
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/utils/cpp_extension.py", line 27, in <module>
+/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/_jit_internal.py:857: UserWarning: Unable to retrieve source for @torch.jit._overload function: <function add_self_loops at 0x146839772940>.
+  warnings.warn(
+/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/_jit_internal.py:857: UserWarning: Unable to retrieve source for @torch.jit._overload function: <function add_self_loops at 0x1468397729d0>.
+  warnings.warn(
+/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/_jit_internal.py:857: UserWarning: Unable to retrieve source for @torch.jit._overload function: <function add_self_loops at 0x146839772a60>.
+  warnings.warn(
+/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/_jit_internal.py:857: UserWarning: Unable to retrieve source for @torch.jit._overload function: <function add_self_loops at 0x146839772af0>.
+  warnings.warn(
+/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/_jit_internal.py:857: UserWarning: Unable to retrieve source for @torch.jit._overload function: <function add_self_loops at 0x146839772b80>.
+  warnings.warn(
+/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/_jit_internal.py:857: UserWarning: Unable to retrieve source for @torch.jit._overload function: <function add_self_loops at 0x146839772c10>.
+  warnings.warn(
+/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/_jit_internal.py:857: UserWarning: Unable to retrieve source for @torch.jit._overload function: <function add_self_loops at 0x146839772ca0>.
+  warnings.warn(
+/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/_jit_internal.py:857: UserWarning: Unable to retrieve source for @torch.jit._overload function: <function add_self_loops at 0x146839772d30>.
+  warnings.warn(
+/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/_jit_internal.py:857: UserWarning: Unable to retrieve source for @torch.jit._overload function: <function add_self_loops at 0x146839772dc0>.
+  warnings.warn(
+/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/_jit_internal.py:857: UserWarning: Unable to retrieve source for @torch.jit._overload function: <function add_self_loops at 0x146839772e50>.
+  warnings.warn(
+    from setuptools.command.build_ext import build_ext
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+    from setuptools.command.build_ext import build_ext
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+    from setuptools.command.build_ext import build_ext
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+    from setuptools.command.build_ext import build_ext
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+    from setuptools.command.build_ext import build_ext
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+    from setuptools.command.build_ext import build_ext
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/_jit_internal.py:857: UserWarning: Unable to retrieve source for @torch.jit._overload function: <function add_self_loops at 0x146839772ee0>.
+  warnings.warn(
+/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/_jit_internal.py:857: UserWarning: Unable to retrieve source for @torch.jit._overload function: <function add_self_loops at 0x146839772f70>.
+  warnings.warn(
+/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/_jit_internal.py:857: UserWarning: Unable to retrieve source for @torch.jit._overload function: <function add_remaining_self_loops at 0x1468397770d0>.
+  warnings.warn(
+/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/_jit_internal.py:857: UserWarning: Unable to retrieve source for @torch.jit._overload function: <function add_remaining_self_loops at 0x146839777160>.
+  warnings.warn(
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 846, in exec_module
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 846, in exec_module
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 846, in exec_module
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 846, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 846, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 982, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1039, in get_data
+  File "<frozen importlib._bootstrap_external>", line 846, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 982, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1039, in get_data
+  File "<frozen importlib._bootstrap_external>", line 982, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1039, in get_data
+  File "<frozen importlib._bootstrap_external>", line 982, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1039, in get_data
+BrokenPipeError: [Errno 108] Cannot send after transport endpoint shutdown: '/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/env/_pyg/lib/python3.9/site-packages/setuptools/command/build_ext.py'
+  File "<frozen importlib._bootstrap_external>", line 982, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1039, in get_data
+BrokenPipeError: [Errno 108] Cannot send after transport endpoint shutdown: '/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/env/_pyg/lib/python3.9/site-packages/setuptools/command/build_ext.py'
+  File "<frozen importlib._bootstrap_external>", line 982, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1039, in get_data
+BrokenPipeError: [Errno 108] Cannot send after transport endpoint shutdown: '/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/env/_pyg/lib/python3.9/site-packages/setuptools/command/build_ext.py'
+BrokenPipeError: [Errno 108] Cannot send after transport endpoint shutdown: '/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/env/_pyg/lib/python3.9/site-packages/setuptools/command/build_ext.py'
+Error in atexit._run_exitfuncs:
+Traceback (most recent call last):
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/_dynamo/utils.py", line 86, in tabulate
+/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/_jit_internal.py:857: UserWarning: Unable to retrieve source for @torch.jit._overload function: <function add_remaining_self_loops at 0x1468397771f0>.
+  warnings.warn(
+/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/_jit_internal.py:857: UserWarning: Unable to retrieve source for @torch.jit._overload function: <function add_remaining_self_loops at 0x146839777280>.
+  warnings.warn(
+/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/_jit_internal.py:857: UserWarning: Unable to retrieve source for @torch.jit._overload function: <function add_remaining_self_loops at 0x146839777310>.
+  warnings.warn(
+/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/_jit_internal.py:857: UserWarning: Unable to retrieve source for @torch.jit._overload function: <function add_remaining_self_loops at 0x1468397773a0>.
+  warnings.warn(
+/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/_jit_internal.py:857: UserWarning: Unable to retrieve source for @torch.jit._overload function: <function add_remaining_self_loops at 0x146839777430>.
+  warnings.warn(
+/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/_jit_internal.py:857: UserWarning: Unable to retrieve source for @torch.jit._overload function: <function add_remaining_self_loops at 0x1468397774c0>.
+  warnings.warn(
+BrokenPipeError: [Errno 108] Cannot send after transport endpoint shutdown: '/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/env/_pyg/lib/python3.9/site-packages/setuptools/command/build_ext.py'
+Error in atexit._run_exitfuncs:
+Traceback (most recent call last):
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/_dynamo/utils.py", line 86, in tabulate
+BrokenPipeError: [Errno 108] Cannot send after transport endpoint shutdown: '/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/env/_pyg/lib/python3.9/site-packages/setuptools/command/build_ext.py'
+Error in atexit._run_exitfuncs:
+Traceback (most recent call last):
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/_dynamo/utils.py", line 86, in tabulate
+Error in atexit._run_exitfuncs:
+Traceback (most recent call last):
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/_dynamo/utils.py", line 86, in tabulate
+Error in atexit._run_exitfuncs:
+Traceback (most recent call last):
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/_dynamo/utils.py", line 86, in tabulate
+/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/_jit_internal.py:857: UserWarning: Unable to retrieve source for @torch.jit._overload function: <function add_remaining_self_loops at 0x146839777550>.
+  warnings.warn(
+/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/_jit_internal.py:857: UserWarning: Unable to retrieve source for @torch.jit._overload function: <function compute_loop_attr at 0x146839777700>.
+  warnings.warn(
+/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/_jit_internal.py:857: UserWarning: Unable to retrieve source for @torch.jit._overload function: <function compute_loop_attr at 0x146839777790>.
+  warnings.warn(
+Error in atexit._run_exitfuncs:
+Traceback (most recent call last):
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/_dynamo/utils.py", line 86, in tabulate
+/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/_jit_internal.py:857: UserWarning: Unable to retrieve source for @torch.jit._overload function: <function compute_loop_attr at 0x146839777820>.
+  warnings.warn(
+Traceback (most recent call last):
+  File "/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/GNN/SimAI-Bench/main.py", line 22, in <module>
+  File "/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/env/_pyg/lib/python3.9/site-packages/torch_geometric/__init__.py", line 8, in <module>
+  File "/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/env/_pyg/lib/python3.9/site-packages/torch_geometric/utils/__init__.py", line 18, in <module>
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 982, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 925, in _find_spec
+  File "<frozen importlib._bootstrap_external>", line 1423, in find_spec
+  File "<frozen importlib._bootstrap_external>", line 1395, in _get_spec
+  File "<frozen importlib._bootstrap_external>", line 1526, in find_spec
+  File "<frozen importlib._bootstrap_external>", line 1569, in _fill_cache
+BrokenPipeError: [Errno 108] Cannot send after transport endpoint shutdown: '/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/env/_pyg/lib/python3.9/site-packages/torch_geometric/utils'
+    import tabulate
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+    import tabulate
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 982, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 925, in _find_spec
+    import tabulate
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 982, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 925, in _find_spec
+  File "<frozen importlib._bootstrap_external>", line 1423, in find_spec
+    import tabulate
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 982, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 925, in _find_spec
+    import tabulate
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 982, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 925, in _find_spec
+  File "<frozen importlib._bootstrap_external>", line 1423, in find_spec
+  File "<frozen importlib._bootstrap>", line 982, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 925, in _find_spec
+  File "<frozen importlib._bootstrap_external>", line 1423, in find_spec
+  File "<frozen importlib._bootstrap_external>", line 1423, in find_spec
+  File "<frozen importlib._bootstrap_external>", line 1395, in _get_spec
+  File "<frozen importlib._bootstrap_external>", line 1526, in find_spec
+  File "<frozen importlib._bootstrap_external>", line 1395, in _get_spec
+  File "<frozen importlib._bootstrap_external>", line 1526, in find_spec
+  File "<frozen importlib._bootstrap_external>", line 1423, in find_spec
+  File "<frozen importlib._bootstrap_external>", line 1395, in _get_spec
+  File "<frozen importlib._bootstrap_external>", line 1526, in find_spec
+  File "<frozen importlib._bootstrap_external>", line 1569, in _fill_cache
+    import tabulate
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 982, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 925, in _find_spec
+  File "<frozen importlib._bootstrap_external>", line 1423, in find_spec
+  File "<frozen importlib._bootstrap_external>", line 1395, in _get_spec
+  File "<frozen importlib._bootstrap_external>", line 1526, in find_spec
+  File "<frozen importlib._bootstrap_external>", line 1395, in _get_spec
+  File "<frozen importlib._bootstrap_external>", line 1526, in find_spec
+  File "<frozen importlib._bootstrap_external>", line 1569, in _fill_cache
+  File "<frozen importlib._bootstrap_external>", line 1569, in _fill_cache
+BrokenPipeError: [Errno 108] Cannot send after transport endpoint shutdown: '/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/GNN/SimAI-Bench'
+  File "<frozen importlib._bootstrap_external>", line 1569, in _fill_cache
+BrokenPipeError: [Errno 108] Cannot send after transport endpoint shutdown: '/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/GNN/SimAI-Bench'
+BrokenPipeError: [Errno 108] Cannot send after transport endpoint shutdown: '/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/GNN/SimAI-Bench'
+  File "<frozen importlib._bootstrap_external>", line 1395, in _get_spec
+  File "<frozen importlib._bootstrap_external>", line 1526, in find_spec
+  File "<frozen importlib._bootstrap_external>", line 1569, in _fill_cache
+BrokenPipeError: [Errno 108] Cannot send after transport endpoint shutdown: '/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/GNN/SimAI-Bench'
+BrokenPipeError: [Errno 108] Cannot send after transport endpoint shutdown: '/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/GNN/SimAI-Bench'
+  File "<frozen importlib._bootstrap_external>", line 1569, in _fill_cache
+BrokenPipeError: [Errno 108] Cannot send after transport endpoint shutdown: '/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/GNN/SimAI-Bench'
+x4015c1s4b0n0.hostmgmt2015.cm.aurora.alcf.anl.gov: rank 2321 exited with code 1
+x4011c4s7b0n0.hostmgmt2011.cm.aurora.alcf.anl.gov: rank 5358 died from signal 15
+ping failed on x4005c2s5b0n0: Application 353312b4-3a1b-43aa-bbfc-a4785acc703f not found
+Wed 10 Jul 2024 05:26:54 PM UTC
