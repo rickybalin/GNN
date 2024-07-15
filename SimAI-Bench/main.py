@@ -155,7 +155,8 @@ def train(args, model, optimizer, loss_fn, data, comm) -> dict:
         'forward_pass': [],
         'loss': [],
         'backward_pass': [],
-        'optimizer_step': []
+        'optimizer_step': [],
+        'collectives': []
     }
 
     # Loop over iterations
@@ -185,14 +186,17 @@ def train(args, model, optimizer, loss_fn, data, comm) -> dict:
         optimizer.step()
         toc_o = perf_counter()
 
-        toc_t = perf_counter()
-
+        tic_c = perf_counter()
         if size>1:
             if args.device=='xpu':
                 dist.reduce(loss, 0, op=dist.ReduceOp.SUM)
                 if rank==0: loss /= size
             else:
                 dist.reduce(loss, 0, op=dist.ReduceOp.AVG)
+        toc_c = perf_counter()        
+
+        toc_t = perf_counter()
+
         if rank==0:
             print(f'[{iteration}]: avg_loss = {loss:>4e}', flush=True)
 
@@ -205,6 +209,7 @@ def train(args, model, optimizer, loss_fn, data, comm) -> dict:
             times['loss'].append(toc_l-tic_l)
             times['backward_pass'].append(toc_b-tic_b)
             times['optimizer_step'].append(toc_o-tic_o)
+            times['collectives'].append(toc_c-tic_c)
 
     end = perf_counter()
     times['training_loop'] = end - start 

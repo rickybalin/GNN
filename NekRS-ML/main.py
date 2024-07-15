@@ -284,12 +284,10 @@ class Trainer:
                 self.loss_hist_train = loss_hist_train_new
                 self.loss_hist_test = loss_hist_test_new
 
-        # ~~~~ Wrap model in DDP
-        if WITH_DDP and SIZE > 1:
-            self.model = DDP(self.model)
-
         # ~~~~ Set loss function
         self.loss_fn = nn.MSELoss()
+        if WITH_CUDA or WITH_XPU:
+            self.loss_fn.to(self.device)
 
         # ~~~~ Set optimizer 
         self.optimizer = self.build_optimizer(self.model)
@@ -307,6 +305,14 @@ class Trainer:
                 log.info(sepstr)
                 log.info(astr)
                 log.info(sepstr)
+        
+        # ~~~ IPEX optimizations
+        if WITH_XPU:
+            self.model, self.optimizer = ipex.optimize(self.model, optimizer=self.optimizer)
+
+        # ~~~~ Wrap model in DDP
+        if WITH_DDP and SIZE > 1:
+            self.model = DDP(self.model)
 
         # ~~~~ Setup train_step timers 
         self.timer_step = 0
