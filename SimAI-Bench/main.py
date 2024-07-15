@@ -352,7 +352,7 @@ if __name__ == '__main__':
 
     # Wrap model with DDP
     if size>1:
-        model = DDP(model) 
+        model = DDP(model, broadcast_buffers=False, gradient_as_bucket_view=True) 
 
     # Perform training
     times = train(args, model, optimizer, loss_fn, data, comm)
