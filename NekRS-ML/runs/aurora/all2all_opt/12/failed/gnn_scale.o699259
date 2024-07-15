@@ -1,0 +1,893 @@
+
+The following have been reloaded with a version change:
+  1) intel_compute_runtime/release/821.36 => intel_compute_runtime/release/803.29
+  2) oneapi/eng-compiler/2024.04.15.002 => oneapi/release/2024.1
+
+Loaded modules:
+
+Currently Loaded Modules:
+  1) mpich/icc-all-pmix-gpu/20231026
+  2) mpich-config/collective-tuning/1024
+  3) libfabric/1.15.2.0
+  4) cray-pals/1.3.3
+  5) cray-libpals/1.3.3
+  6) spack-pe-gcc/0.7.0-24.086.0
+  7) gmp/6.2.1-pcxzkau
+  8) mpfr/4.2.0-w7v7yjv
+  9) mpc/1.3.1-dfagrna
+ 10) gcc/12.2.0
+ 11) intel_compute_runtime/release/803.29
+ 12) oneapi/release/2024.1
+ 13) frameworks/2024.1
+
+ 
+
+
+Torch version: 2.1.0.post0+cxx11.abi
+IPEX version: 2.1.20+xpu
+Torch Geometric version: 2.5.3
+
+Number of nodes: 2
+Number of ML ranks per node: 12
+Number of ML total ranks: 24
+
+Setting oneCCL bindings for 12 ranks per node
+
+Running script /flare/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/main.py
+with arguments backend=ccl halo_swap_mode=all_to_all_opt gnn_outputs_path=/flare/Aurora_deployment/balin/Nek/GNN/weak_scale_data/500k_aurora/24/gnn_outputs_poly_5/
+
+Fri 12 Jul 2024 01:14:54 PM UTC
+[2024-07-12 13:15:03,990][__main__][INFO] - Hello from rank 10/24, local rank 10, on device xpu:10 out of 12.
+[2024-07-12 13:15:03,992][__main__][INFO] - Hello from rank 0/24, local rank 0, on device xpu:0 out of 12.
+[2024-07-12 13:15:03,999][__main__][INFO] - Hello from rank 5/24, local rank 5, on device xpu:5 out of 12.
+[2024-07-12 13:15:03,999][__main__][INFO] - Hello from rank 1/24, local rank 1, on device xpu:1 out of 12.
+[2024-07-12 13:15:03,999][__main__][INFO] - Hello from rank 2/24, local rank 2, on device xpu:2 out of 12.
+[2024-07-12 13:15:03,999][__main__][INFO] - Hello from rank 4/24, local rank 4, on device xpu:4 out of 12.
+[2024-07-12 13:15:03,999][__main__][INFO] - Hello from rank 6/24, local rank 6, on device xpu:6 out of 12.
+[2024-07-12 13:15:03,999][__main__][INFO] - Hello from rank 3/24, local rank 3, on device xpu:3 out of 12.
+[2024-07-12 13:15:04,001][__main__][INFO] - Hello from rank 8/24, local rank 8, on device xpu:8 out of 12.
+[2024-07-12 13:15:04,001][__main__][INFO] - Hello from rank 7/24, local rank 7, on device xpu:7 out of 12.
+[2024-07-12 13:15:04,001][__main__][INFO] - Hello from rank 9/24, local rank 9, on device xpu:9 out of 12.
+[2024-07-12 13:15:04,002][__main__][INFO] - Hello from rank 11/24, local rank 11, on device xpu:11 out of 12.
+[2024-07-12 13:15:04,200][__main__][INFO] - [RANK 2]: Loading positions and global node index
+[2024-07-12 13:15:04,210][__main__][INFO] - [RANK 5]: Loading positions and global node index
+[2024-07-12 13:15:04,228][__main__][INFO] - [RANK 3]: Loading positions and global node index
+[2024-07-12 13:15:04,231][__main__][INFO] - [RANK 1]: Loading positions and global node index
+[2024-07-12 13:15:04,240][__main__][INFO] - [RANK 8]: Loading positions and global node index
+[2024-07-12 13:15:04,244][__main__][INFO] - [RANK 10]: Loading positions and global node index
+[2024-07-12 13:15:04,248][__main__][INFO] - [RANK 4]: Loading positions and global node index
+[2024-07-12 13:15:04,292][__main__][INFO] - [RANK 6]: Loading positions and global node index
+[2024-07-12 13:15:04,292][__main__][INFO] - [RANK 7]: Loading positions and global node index
+[2024-07-12 13:15:04,332][__main__][INFO] - [RANK 5]: Loading edge index
+[2024-07-12 13:15:04,338][__main__][INFO] - [RANK 2]: Loading edge index
+[2024-07-12 13:15:04,351][__main__][INFO] - [RANK 3]: Loading edge index
+[2024-07-12 13:15:04,352][__main__][INFO] - [RANK 10]: Loading edge index
+[2024-07-12 13:15:04,358][__main__][INFO] - [RANK 8]: Loading edge index
+[2024-07-12 13:15:04,374][__main__][INFO] - [RANK 1]: Loading edge index
+[2024-07-12 13:15:04,393][__main__][INFO] - [RANK 4]: Loading edge index
+[2024-07-12 13:15:04,417][__main__][INFO] - [RANK 6]: Loading edge index
+[2024-07-12 13:15:04,429][__main__][INFO] - [RANK 7]: Loading edge index
+[2024-07-12 13:15:04,505][__main__][INFO] - [RANK 5]: Loading local unique mask
+[2024-07-12 13:15:04,509][__main__][INFO] - [RANK 8]: Loading local unique mask
+[2024-07-12 13:15:04,529][__main__][INFO] - [RANK 10]: Loading local unique mask
+[2024-07-12 13:15:04,560][__main__][INFO] - [RANK 2]: Loading local unique mask
+[2024-07-12 13:15:04,575][__main__][INFO] - [RANK 3]: Loading local unique mask
+[2024-07-12 13:15:04,576][__main__][INFO] - [RANK 1]: Loading local unique mask
+[2024-07-12 13:15:04,594][__main__][INFO] - [RANK 8]: Making the FULL GLL-based graph with overlapping nodes
+[2024-07-12 13:15:04,595][__main__][INFO] - [RANK 5]: Making the FULL GLL-based graph with overlapping nodes
+[2024-07-12 13:15:04,595][__main__][INFO] - [RANK 6]: Loading local unique mask
+[2024-07-12 13:15:04,603][__main__][INFO] - [RANK 4]: Loading local unique mask
+[2024-07-12 13:15:04,613][__main__][INFO] - [RANK 7]: Loading local unique mask
+[2024-07-12 13:15:04,617][__main__][INFO] - [RANK 10]: Making the FULL GLL-based graph with overlapping nodes
+[2024-07-12 13:15:04,644][__main__][INFO] - [RANK 1]: Making the FULL GLL-based graph with overlapping nodes
+[2024-07-12 13:15:04,652][__main__][INFO] - [RANK 2]: Making the FULL GLL-based graph with overlapping nodes
+[2024-07-12 13:15:04,661][__main__][INFO] - [RANK 6]: Making the FULL GLL-based graph with overlapping nodes
+[2024-07-12 13:15:04,671][__main__][INFO] - [RANK 4]: Making the FULL GLL-based graph with overlapping nodes
+[2024-07-12 13:15:04,680][__main__][INFO] - [RANK 3]: Making the FULL GLL-based graph with overlapping nodes
+[2024-07-12 13:15:04,702][__main__][INFO] - [RANK 7]: Making the FULL GLL-based graph with overlapping nodes
+[2024-07-12 13:15:08,475][__main__][INFO] - [RANK 8]: Making the REDUCED GLL-based graph with non-overlapping nodes
+[2024-07-12 13:15:08,576][__main__][INFO] - [RANK 10]: Making the REDUCED GLL-based graph with non-overlapping nodes
+[2024-07-12 13:15:08,610][__main__][INFO] - [RANK 1]: Making the REDUCED GLL-based graph with non-overlapping nodes
+[2024-07-12 13:15:08,676][__main__][INFO] - [RANK 4]: Making the REDUCED GLL-based graph with non-overlapping nodes
+[2024-07-12 13:15:08,737][__main__][INFO] - [RANK 3]: Making the REDUCED GLL-based graph with non-overlapping nodes
+[2024-07-12 13:15:09,196][__main__][INFO] - [RANK 11]: Loading positions and global node index
+[2024-07-12 13:15:09,204][__main__][INFO] - [RANK 2]: Making the REDUCED GLL-based graph with non-overlapping nodes
+[2024-07-12 13:15:09,268][__main__][INFO] - [RANK 9]: Loading positions and global node index
+[2024-07-12 13:15:09,356][__main__][INFO] - [RANK 11]: Loading edge index
+[2024-07-12 13:15:09,391][__main__][INFO] - [RANK 9]: Loading edge index
+[2024-07-12 13:15:09,522][__main__][INFO] - [RANK 11]: Loading local unique mask
+[2024-07-12 13:15:09,589][__main__][INFO] - [RANK 9]: Loading local unique mask
+[2024-07-12 13:15:09,624][__main__][INFO] - [RANK 11]: Making the FULL GLL-based graph with overlapping nodes
+[2024-07-12 13:15:09,751][__main__][INFO] - [RANK 9]: Making the FULL GLL-based graph with overlapping nodes
+[2024-07-12 13:15:09,826][__main__][INFO] - [RANK 8]: Getting idx_reduced2full
+[2024-07-12 13:15:09,935][__main__][INFO] - [RANK 10]: Getting idx_reduced2full
+[2024-07-12 13:15:10,004][__main__][INFO] - [RANK 1]: Getting idx_reduced2full
+[2024-07-12 13:15:10,065][__main__][INFO] - [RANK 4]: Getting idx_reduced2full
+[2024-07-12 13:15:10,073][__main__][INFO] - [RANK 7]: Making the REDUCED GLL-based graph with non-overlapping nodes
+[2024-07-12 13:15:10,133][__main__][INFO] - [RANK 3]: Getting idx_reduced2full
+[2024-07-12 13:15:10,181][__main__][INFO] - [RANK 6]: Making the REDUCED GLL-based graph with non-overlapping nodes
+[2024-07-12 13:15:10,218][__main__][INFO] - [RANK 5]: Making the REDUCED GLL-based graph with non-overlapping nodes
+[2024-07-12 13:15:10,535][__main__][INFO] - [RANK 2]: Getting idx_reduced2full
+[2024-07-12 13:15:10,569][__main__][INFO] - Hello from rank 12/24, local rank 0, on device xpu:0 out of 12.
+[2024-07-12 13:15:10,576][__main__][INFO] - Hello from rank 16/24, local rank 4, on device xpu:4 out of 12.
+[2024-07-12 13:15:10,576][__main__][INFO] - Hello from rank 14/24, local rank 2, on device xpu:2 out of 12.
+[2024-07-12 13:15:10,578][__main__][INFO] - Hello from rank 15/24, local rank 3, on device xpu:3 out of 12.
+[2024-07-12 13:15:10,578][__main__][INFO] - Hello from rank 17/24, local rank 5, on device xpu:5 out of 12.
+[2024-07-12 13:15:10,578][__main__][INFO] - Hello from rank 20/24, local rank 8, on device xpu:8 out of 12.
+[2024-07-12 13:15:10,578][__main__][INFO] - Hello from rank 21/24, local rank 9, on device xpu:9 out of 12.
+[2024-07-12 13:15:10,578][__main__][INFO] - Hello from rank 23/24, local rank 11, on device xpu:11 out of 12.
+[2024-07-12 13:15:10,578][__main__][INFO] - Hello from rank 13/24, local rank 1, on device xpu:1 out of 12.
+[2024-07-12 13:15:10,578][__main__][INFO] - Hello from rank 19/24, local rank 7, on device xpu:7 out of 12.
+[2024-07-12 13:15:10,578][__main__][INFO] - Hello from rank 22/24, local rank 10, on device xpu:10 out of 12.
+[2024-07-12 13:15:10,581][__main__][INFO] - Hello from rank 18/24, local rank 6, on device xpu:6 out of 12.
+[2024-07-12 13:15:10,760][__main__][INFO] - [RANK 23]: Loading positions and global node index
+[2024-07-12 13:15:10,777][__main__][INFO] - [RANK 18]: Loading positions and global node index
+[2024-07-12 13:15:10,777][__main__][INFO] - [RANK 22]: Loading positions and global node index
+[2024-07-12 13:15:10,781][__main__][INFO] - [RANK 16]: Loading positions and global node index
+[2024-07-12 13:15:10,789][__main__][INFO] - [RANK 14]: Loading positions and global node index
+[2024-07-12 13:15:10,789][__main__][INFO] - [RANK 19]: Loading positions and global node index
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+RUNNING WITH INPUTS:
+profile: false
+halo_test: false
+verbose: true
+seed: 12
+epochs: 100
+backend: ccl
+lr_init: 0.0001
+use_noise: true
+num_threads: 0
+logfreq: 10
+ckptfreq: 1000
+batch_size: 1
+test_batch_size: 1
+fp16_allreduce: false
+restart: false
+hidden_channels: 32
+n_mlp_hidden_layers: 5
+n_messagePassing_layers: 4
+rollout_steps: 1
+halo_swap_mode: all_to_all_opt
+plot_connectivity: false
+work_dir: ${hydra:runtime.cwd}
+data_dir: ${work_dir}/datasets/
+ckpt_dir: ${work_dir}/ckpt/
+model_dir: ${work_dir}/saved_models/
+profile_dir: ${work_dir}/outputs/profiles/test/
+gnn_outputs_path: /flare/Aurora_deployment/balin/Nek/GNN/weak_scale_data/500k_aurora/24/gnn_outputs_poly_5/
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[2024-07-12 13:15:10,792][__main__][INFO] - [RANK 0]: Loading positions and global node index
+[2024-07-12 13:15:10,797][__main__][INFO] - [RANK 13]: Loading positions and global node index
+[2024-07-12 13:15:10,804][__main__][INFO] - [RANK 20]: Loading positions and global node index
+[2024-07-12 13:15:10,805][__main__][INFO] - [RANK 17]: Loading positions and global node index
+[2024-07-12 13:15:10,808][__main__][INFO] - [RANK 12]: Loading positions and global node index
+[2024-07-12 13:15:10,817][__main__][INFO] - [RANK 21]: Loading positions and global node index
+[2024-07-12 13:15:10,829][__main__][INFO] - [RANK 15]: Loading positions and global node index
+[2024-07-12 13:15:10,890][__main__][INFO] - [RANK 18]: Loading edge index
+[2024-07-12 13:15:10,891][__main__][INFO] - [RANK 16]: Loading edge index
+[2024-07-12 13:15:10,892][__main__][INFO] - [RANK 22]: Loading edge index
+[2024-07-12 13:15:10,899][__main__][INFO] - [RANK 17]: Loading edge index
+[2024-07-12 13:15:10,901][__main__][INFO] - [RANK 19]: Loading edge index
+[2024-07-12 13:15:10,920][__main__][INFO] - [RANK 13]: Loading edge index
+[2024-07-12 13:15:10,922][__main__][INFO] - [RANK 14]: Loading edge index
+[2024-07-12 13:15:10,922][__main__][INFO] - [RANK 20]: Loading edge index
+[2024-07-12 13:15:10,922][__main__][INFO] - [RANK 23]: Loading edge index
+[2024-07-12 13:15:10,925][__main__][INFO] - [RANK 21]: Loading edge index
+[2024-07-12 13:15:10,927][__main__][INFO] - [RANK 0]: Loading edge index
+[2024-07-12 13:15:10,949][__main__][INFO] - [RANK 12]: Loading edge index
+[2024-07-12 13:15:10,960][__main__][INFO] - [RANK 15]: Loading edge index
+[2024-07-12 13:15:11,063][__main__][INFO] - [RANK 16]: Loading local unique mask
+[2024-07-12 13:15:11,123][__main__][INFO] - [RANK 17]: Loading local unique mask
+[2024-07-12 13:15:11,134][__main__][INFO] - [RANK 18]: Loading local unique mask
+[2024-07-12 13:15:11,143][__main__][INFO] - [RANK 16]: Making the FULL GLL-based graph with overlapping nodes
+[2024-07-12 13:15:11,144][__main__][INFO] - [RANK 14]: Loading local unique mask
+[2024-07-12 13:15:11,146][__main__][INFO] - [RANK 19]: Loading local unique mask
+[2024-07-12 13:15:11,165][__main__][INFO] - [RANK 22]: Loading local unique mask
+[2024-07-12 13:15:11,166][__main__][INFO] - [RANK 13]: Loading local unique mask
+[2024-07-12 13:15:11,167][__main__][INFO] - [RANK 21]: Loading local unique mask
+[2024-07-12 13:15:11,168][__main__][INFO] - [RANK 23]: Loading local unique mask
+[2024-07-12 13:15:11,171][__main__][INFO] - [RANK 15]: Loading local unique mask
+[2024-07-12 13:15:11,171][__main__][INFO] - [RANK 20]: Loading local unique mask
+[2024-07-12 13:15:11,187][__main__][INFO] - [RANK 12]: Loading local unique mask
+[2024-07-12 13:15:11,207][__main__][INFO] - [RANK 17]: Making the FULL GLL-based graph with overlapping nodes
+[2024-07-12 13:15:11,209][__main__][INFO] - [RANK 0]: Loading local unique mask
+[2024-07-12 13:15:11,218][__main__][INFO] - [RANK 14]: Making the FULL GLL-based graph with overlapping nodes
+[2024-07-12 13:15:11,234][__main__][INFO] - [RANK 13]: Making the FULL GLL-based graph with overlapping nodes
+[2024-07-12 13:15:11,234][__main__][INFO] - [RANK 18]: Making the FULL GLL-based graph with overlapping nodes
+[2024-07-12 13:15:11,237][__main__][INFO] - [RANK 20]: Making the FULL GLL-based graph with overlapping nodes
+[2024-07-12 13:15:11,242][__main__][INFO] - [RANK 22]: Making the FULL GLL-based graph with overlapping nodes
+[2024-07-12 13:15:11,243][__main__][INFO] - [RANK 23]: Making the FULL GLL-based graph with overlapping nodes
+[2024-07-12 13:15:11,245][__main__][INFO] - [RANK 19]: Making the FULL GLL-based graph with overlapping nodes
+[2024-07-12 13:15:11,254][__main__][INFO] - [RANK 15]: Making the FULL GLL-based graph with overlapping nodes
+[2024-07-12 13:15:11,270][__main__][INFO] - [RANK 0]: Making the FULL GLL-based graph with overlapping nodes
+[2024-07-12 13:15:11,276][__main__][INFO] - [RANK 21]: Making the FULL GLL-based graph with overlapping nodes
+[2024-07-12 13:15:11,295][__main__][INFO] - [RANK 12]: Making the FULL GLL-based graph with overlapping nodes
+[2024-07-12 13:15:11,429][__main__][INFO] - [RANK 7]: Getting idx_reduced2full
+[2024-07-12 13:15:11,809][__main__][INFO] - [RANK 5]: Getting idx_reduced2full
+[2024-07-12 13:15:12,186][__main__][INFO] - [RANK 6]: Getting idx_reduced2full
+[2024-07-12 13:15:14,513][__main__][INFO] - [RANK 8]: Assembling halo_ids_list using reduced graph
+[2024-07-12 13:15:14,546][__main__][INFO] - [RANK 8]: Found 4 neighboring processes: [3 4 6 7]
+[2024-07-12 13:15:14,583][__main__][INFO] - [RANK 10]: Assembling halo_ids_list using reduced graph
+[2024-07-12 13:15:14,615][__main__][INFO] - [RANK 10]: Found 3 neighboring processes: [ 9 11 14]
+[2024-07-12 13:15:14,806][__main__][INFO] - [RANK 3]: Assembling halo_ids_list using reduced graph
+[2024-07-12 13:15:14,815][__main__][INFO] - [RANK 4]: Assembling halo_ids_list using reduced graph
+[2024-07-12 13:15:14,838][__main__][INFO] - [RANK 3]: Found 3 neighboring processes: [4 5 8]
+[2024-07-12 13:15:14,850][__main__][INFO] - [RANK 4]: Found 3 neighboring processes: [3 5 8]
+[2024-07-12 13:15:14,926][__main__][INFO] - [RANK 22]: Making the REDUCED GLL-based graph with non-overlapping nodes
+[2024-07-12 13:15:14,927][__main__][INFO] - [RANK 19]: Making the REDUCED GLL-based graph with non-overlapping nodes
+2024:07:12-13:15:14:(149056) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+[2024-07-12 13:15:14,986][__main__][INFO] - [RANK 18]: Making the REDUCED GLL-based graph with non-overlapping nodes
+[2024-07-12 13:15:15,013][__main__][INFO] - [RANK 0]: Making the REDUCED GLL-based graph with non-overlapping nodes
+[2024-07-12 13:15:15,015][__main__][INFO] - [RANK 15]: Making the REDUCED GLL-based graph with non-overlapping nodes
+[2024-07-12 13:15:15,023][__main__][INFO] - [RANK 20]: Making the REDUCED GLL-based graph with non-overlapping nodes
+[2024-07-12 13:15:15,052][__main__][INFO] - [RANK 23]: Making the REDUCED GLL-based graph with non-overlapping nodes
+2024:07:12-13:15:15:(149058) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+[2024-07-12 13:15:15,101][__main__][INFO] - [RANK 1]: Assembling halo_ids_list using reduced graph
+[2024-07-12 13:15:15,105][__main__][INFO] - [RANK 11]: Making the REDUCED GLL-based graph with non-overlapping nodes
+[2024-07-12 13:15:15,134][__main__][INFO] - [RANK 1]: Found 3 neighboring processes: [0 2 5]
+[2024-07-12 13:15:15,153][__main__][INFO] - [RANK 9]: Making the REDUCED GLL-based graph with non-overlapping nodes
+2024:07:12-13:15:15:(149051) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+[2024-07-12 13:15:15,258][__main__][INFO] - [RANK 2]: Assembling halo_ids_list using reduced graph
+[2024-07-12 13:15:15,291][__main__][INFO] - [RANK 2]: Found 4 neighboring processes: [ 0  1 21 22]
+2024:07:12-13:15:15:(149052) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:07:12-13:15:15:(149049) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:07:12-13:15:15:(149050) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+[2024-07-12 13:15:16,267][__main__][INFO] - [RANK 7]: Assembling halo_ids_list using reduced graph
+[2024-07-12 13:15:16,304][__main__][INFO] - [RANK 7]: Found 3 neighboring processes: [ 6  8 11]
+[2024-07-12 13:15:16,316][__main__][INFO] - [RANK 19]: Getting idx_reduced2full
+[2024-07-12 13:15:16,317][__main__][INFO] - [RANK 22]: Getting idx_reduced2full
+[2024-07-12 13:15:16,374][__main__][INFO] - [RANK 0]: Getting idx_reduced2full
+[2024-07-12 13:15:16,383][__main__][INFO] - [RANK 20]: Getting idx_reduced2full
+[2024-07-12 13:15:16,386][__main__][INFO] - [RANK 15]: Getting idx_reduced2full
+[2024-07-12 13:15:16,402][__main__][INFO] - [RANK 18]: Getting idx_reduced2full
+[2024-07-12 13:15:16,415][__main__][INFO] - [RANK 11]: Getting idx_reduced2full
+[2024-07-12 13:15:16,417][__main__][INFO] - [RANK 23]: Getting idx_reduced2full
+[2024-07-12 13:15:16,494][__main__][INFO] - [RANK 9]: Getting idx_reduced2full
+[2024-07-12 13:15:16,571][__main__][INFO] - [RANK 5]: Assembling halo_ids_list using reduced graph
+[2024-07-12 13:15:16,600][__main__][INFO] - [RANK 5]: Found 4 neighboring processes: [0 1 3 4]
+[2024-07-12 13:15:16,614][__main__][INFO] - [RANK 16]: Making the REDUCED GLL-based graph with non-overlapping nodes
+[2024-07-12 13:15:16,626][__main__][INFO] - [RANK 13]: Making the REDUCED GLL-based graph with non-overlapping nodes
+[2024-07-12 13:15:16,701][__main__][INFO] - [RANK 12]: Making the REDUCED GLL-based graph with non-overlapping nodes
+2024:07:12-13:15:16:(149055) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+[2024-07-12 13:15:16,761][__main__][INFO] - [RANK 17]: Making the REDUCED GLL-based graph with non-overlapping nodes
+[2024-07-12 13:15:16,800][__main__][INFO] - [RANK 14]: Making the REDUCED GLL-based graph with non-overlapping nodes
+[2024-07-12 13:15:16,860][__main__][INFO] - [RANK 21]: Making the REDUCED GLL-based graph with non-overlapping nodes
+[2024-07-12 13:15:17,005][__main__][INFO] - [RANK 6]: Assembling halo_ids_list using reduced graph
+2024:07:12-13:15:17:(149053) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+[2024-07-12 13:15:17,063][__main__][INFO] - [RANK 6]: Found 3 neighboring processes: [ 7  8 11]
+2024:07:12-13:15:17:(149054) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+[2024-07-12 13:15:17,987][__main__][INFO] - [RANK 13]: Getting idx_reduced2full
+[2024-07-12 13:15:18,015][__main__][INFO] - [RANK 16]: Getting idx_reduced2full
+[2024-07-12 13:15:18,103][__main__][INFO] - [RANK 12]: Getting idx_reduced2full
+[2024-07-12 13:15:18,133][__main__][INFO] - [RANK 17]: Getting idx_reduced2full
+[2024-07-12 13:15:18,624][__main__][INFO] - [RANK 21]: Getting idx_reduced2full
+[2024-07-12 13:15:18,676][__main__][INFO] - [RANK 14]: Getting idx_reduced2full
+[2024-07-12 13:15:21,036][__main__][INFO] - [RANK 22]: Assembling halo_ids_list using reduced graph
+[2024-07-12 13:15:21,060][__main__][INFO] - [RANK 22]: Found 3 neighboring processes: [ 2 21 23]
+[2024-07-12 13:15:21,069][__main__][INFO] - [RANK 18]: Assembling halo_ids_list using reduced graph
+[2024-07-12 13:15:21,090][__main__][INFO] - [RANK 0]: Assembling halo_ids_list using reduced graph
+[2024-07-12 13:15:21,100][__main__][INFO] - [RANK 18]: Found 3 neighboring processes: [19 20 23]
+[2024-07-12 13:15:21,102][__main__][INFO] - [RANK 11]: Assembling halo_ids_list using reduced graph
+[2024-07-12 13:15:21,124][__main__][INFO] - [RANK 0]: Found 3 neighboring processes: [1 2 5]
+[2024-07-12 13:15:21,124][__main__][INFO] - In setup_data...
+[2024-07-12 13:15:21,138][__main__][INFO] - [RANK 11]: Found 4 neighboring processes: [ 6  7  9 10]
+[2024-07-12 13:15:21,154][__main__][INFO] - [RANK 20]: Assembling halo_ids_list using reduced graph
+[2024-07-12 13:15:21,156][__main__][INFO] - [RANK 19]: Assembling halo_ids_list using reduced graph
+[2024-07-12 13:15:21,188][__main__][INFO] - [RANK 20]: Found 4 neighboring processes: [15 16 18 19]
+[2024-07-12 13:15:21,198][__main__][INFO] - [RANK 23]: Assembling halo_ids_list using reduced graph
+[2024-07-12 13:15:21,201][__main__][INFO] - [RANK 19]: Found 3 neighboring processes: [18 20 23]
+[2024-07-12 13:15:21,239][__main__][INFO] - [RANK 23]: Found 4 neighboring processes: [18 19 21 22]
+[2024-07-12 13:15:21,247][__main__][INFO] - [RANK 15]: Assembling halo_ids_list using reduced graph
+[2024-07-12 13:15:21,281][__main__][INFO] - [RANK 9]: Assembling halo_ids_list using reduced graph
+[2024-07-12 13:15:21,292][__main__][INFO] - [RANK 15]: Found 3 neighboring processes: [16 17 20]
+[2024-07-12 13:15:21,323][__main__][INFO] - [RANK 9]: Found 3 neighboring processes: [10 11 14]
+2024:07:12-13:15:21:(131531) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:07:12-13:15:21:(131527) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+Data(x=[560400, 3], y=[560400, 3], edge_index=[2, 3136160], pos=[560400, 3], global_ids=[528080], local_unique_mask=[528080], halo_unique_mask=[528080], local_ids=[884736], n_nodes_local=528080, n_nodes_halo=32320, halo_info=[32320, 4], edge_weight=[3136160], node_degree=[528080], edge_attr=[3136160, 4])
+[2024-07-12 13:15:21,510][__main__][INFO] - Done with setup_data
+[2024-07-12 13:15:21,512][__main__][INFO] - Done with build_masks
+2024:07:12-13:15:21:(149048) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:07:12-13:15:21:(149059) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:07:12-13:15:21:(131529) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:07:12-13:15:21:(131528) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:07:12-13:15:21:(131532) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:07:12-13:15:21:(131524) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:07:12-13:15:21:(149057) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+[2024-07-12 13:15:22,746][__main__][INFO] - [RANK 13]: Assembling halo_ids_list using reduced graph
+[2024-07-12 13:15:22,774][__main__][INFO] - [RANK 16]: Assembling halo_ids_list using reduced graph
+[2024-07-12 13:15:22,795][__main__][INFO] - [RANK 13]: Found 3 neighboring processes: [12 14 17]
+[2024-07-12 13:15:22,804][__main__][INFO] - [RANK 12]: Assembling halo_ids_list using reduced graph
+[2024-07-12 13:15:22,819][__main__][INFO] - [RANK 16]: Found 3 neighboring processes: [15 17 20]
+[2024-07-12 13:15:22,836][__main__][INFO] - [RANK 12]: Found 3 neighboring processes: [13 14 17]
+[2024-07-12 13:15:22,937][__main__][INFO] - [RANK 17]: Assembling halo_ids_list using reduced graph
+[2024-07-12 13:15:22,968][__main__][INFO] - [RANK 17]: Found 4 neighboring processes: [12 13 15 16]
+2024:07:12-13:15:23:(131522) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:07:12-13:15:23:(131521) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:07:12-13:15:23:(131525) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:07:12-13:15:23:(131526) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+[2024-07-12 13:15:23,423][__main__][INFO] - [RANK 21]: Assembling halo_ids_list using reduced graph
+[2024-07-12 13:15:23,458][__main__][INFO] - [RANK 21]: Found 3 neighboring processes: [ 2 22 23]
+[2024-07-12 13:15:23,604][__main__][INFO] - [RANK 14]: Assembling halo_ids_list using reduced graph
+[2024-07-12 13:15:23,633][__main__][INFO] - [RANK 14]: Found 4 neighboring processes: [ 9 10 12 13]
+2024:07:12-13:15:23:(131530) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:07:12-13:15:24:(131523) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+[2024-07-12 13:15:34,963][__main__][INFO] - [RANK 5]: Created send and receive buffers for all_to_all_opt halo exchange:
+[2024-07-12 13:15:34,963][__main__][INFO] - [RANK 0]: Created send and receive buffers for all_to_all_opt halo exchange:
+[2024-07-12 13:15:34,963][__main__][INFO] - [RANK 1]: Created send and receive buffers for all_to_all_opt halo exchange:
+[2024-07-12 13:15:34,963][__main__][INFO] - [RANK 2]: Created send and receive buffers for all_to_all_opt halo exchange:
+[2024-07-12 13:15:34,963][__main__][INFO] - [RANK 3]: Created send and receive buffers for all_to_all_opt halo exchange:
+[2024-07-12 13:15:34,964][__main__][INFO] - [RANK 3]: Send buffers of size [0, 0, 0, 0, 3297280, 419840, 0, 0, 419840, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[2024-07-12 13:15:34,963][__main__][INFO] - [RANK 4]: Created send and receive buffers for all_to_all_opt halo exchange:
+[2024-07-12 13:15:34,963][__main__][INFO] - [RANK 5]: Send buffers of size [419840, 419840, 0, 419840, 419840, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[2024-07-12 13:15:34,964][__main__][INFO] - [RANK 5]: Receive buffers of size [419840, 419840, 0, 419840, 419840, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[2024-07-12 13:15:34,963][__main__][INFO] - [RANK 6]: Created send and receive buffers for all_to_all_opt halo exchange:
+[2024-07-12 13:15:34,964][__main__][INFO] - [RANK 6]: Send buffers of size [0, 0, 0, 0, 0, 0, 0, 3297280, 419840, 0, 0, 419840, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[2024-07-12 13:15:34,963][__main__][INFO] - [RANK 18]: Created send and receive buffers for all_to_all_opt halo exchange:
+[2024-07-12 13:15:34,963][__main__][INFO] - [RANK 7]: Created send and receive buffers for all_to_all_opt halo exchange:
+[2024-07-12 13:15:34,964][__main__][INFO] - [RANK 7]: Send buffers of size [0, 0, 0, 0, 0, 0, 3297280, 0, 419840, 0, 0, 419840, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[2024-07-12 13:15:34,963][__main__][INFO] - [RANK 20]: Created send and receive buffers for all_to_all_opt halo exchange:
+[2024-07-12 13:15:34,963][__main__][INFO] - [RANK 20]: Send buffers of size [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 419840, 419840, 0, 419840, 419840, 0, 0, 0, 0]
+[2024-07-12 13:15:34,963][__main__][INFO] - [RANK 8]: Created send and receive buffers for all_to_all_opt halo exchange:
+[2024-07-12 13:15:34,964][__main__][INFO] - [RANK 8]: Send buffers of size [0, 0, 0, 419840, 419840, 0, 419840, 419840, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[2024-07-12 13:15:34,963][__main__][INFO] - [RANK 21]: Created send and receive buffers for all_to_all_opt halo exchange:
+[2024-07-12 13:15:34,963][__main__][INFO] - [RANK 21]: Send buffers of size [0, 0, 419840, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3297280, 419840]
+[2024-07-12 13:15:34,963][__main__][INFO] - [RANK 9]: Created send and receive buffers for all_to_all_opt halo exchange:
+[2024-07-12 13:15:34,964][__main__][INFO] - [RANK 9]: Send buffers of size [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3297280, 419840, 0, 0, 419840, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[2024-07-12 13:15:34,963][__main__][INFO] - [RANK 23]: Created send and receive buffers for all_to_all_opt halo exchange:
+[2024-07-12 13:15:34,963][__main__][INFO] - [RANK 23]: Send buffers of size [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 419840, 419840, 0, 419840, 419840, 0]
+[2024-07-12 13:15:34,964][__main__][INFO] - [RANK 23]: Receive buffers of size [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 419840, 419840, 0, 419840, 419840, 0]
+[2024-07-12 13:15:34,963][__main__][INFO] - [RANK 12]: Created send and receive buffers for all_to_all_opt halo exchange:
+[2024-07-12 13:15:34,963][__main__][INFO] - [RANK 10]: Created send and receive buffers for all_to_all_opt halo exchange:
+[2024-07-12 13:15:34,964][__main__][INFO] - [RANK 10]: Send buffers of size [0, 0, 0, 0, 0, 0, 0, 0, 0, 3297280, 0, 419840, 0, 0, 419840, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[2024-07-12 13:15:34,963][__main__][INFO] - [RANK 13]: Created send and receive buffers for all_to_all_opt halo exchange:
+[2024-07-12 13:15:34,963][__main__][INFO] - [RANK 14]: Created send and receive buffers for all_to_all_opt halo exchange:
+[2024-07-12 13:15:34,964][__main__][INFO] - [RANK 14]: Send buffers of size [0, 0, 0, 0, 0, 0, 0, 0, 0, 419840, 419840, 0, 419840, 419840, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[2024-07-12 13:15:34,963][__main__][INFO] - [RANK 11]: Created send and receive buffers for all_to_all_opt halo exchange:
+[2024-07-12 13:15:34,964][__main__][INFO] - [RANK 11]: Send buffers of size [0, 0, 0, 0, 0, 0, 419840, 419840, 0, 419840, 419840, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[2024-07-12 13:15:34,963][__main__][INFO] - [RANK 15]: Created send and receive buffers for all_to_all_opt halo exchange:
+[2024-07-12 13:15:34,964][__main__][INFO] - [RANK 15]: Send buffers of size [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3297280, 419840, 0, 0, 419840, 0, 0, 0]
+[2024-07-12 13:15:34,963][__main__][INFO] - [RANK 16]: Created send and receive buffers for all_to_all_opt halo exchange:
+[2024-07-12 13:15:34,964][__main__][INFO] - [RANK 16]: Send buffers of size [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3297280, 0, 419840, 0, 0, 419840, 0, 0, 0]
+[2024-07-12 13:15:34,964][__main__][INFO] - [RANK 4]: Send buffers of size [0, 0, 0, 3297280, 0, 419840, 0, 0, 419840, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[2024-07-12 13:15:34,963][__main__][INFO] - [RANK 17]: Created send and receive buffers for all_to_all_opt halo exchange:
+[2024-07-12 13:15:34,964][__main__][INFO] - [RANK 17]: Send buffers of size [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 419840, 419840, 0, 419840, 419840, 0, 0, 0, 0, 0, 0, 0]
+[2024-07-12 13:15:34,963][__main__][INFO] - [RANK 18]: Send buffers of size [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3297280, 419840, 0, 0, 419840]
+[2024-07-12 13:15:34,964][__main__][INFO] - [RANK 18]: Receive buffers of size [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3297280, 419840, 0, 0, 419840]
+[2024-07-12 13:15:34,965][__main__][INFO] - [RANK 0]: Send buffers of size [0, 3297280, 419840, 0, 0, 419840, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[2024-07-12 13:15:34,964][__main__][INFO] - [RANK 1]: Send buffers of size [3297280, 0, 419840, 0, 0, 419840, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[2024-07-12 13:15:34,963][__main__][INFO] - [RANK 19]: Created send and receive buffers for all_to_all_opt halo exchange:
+[2024-07-12 13:15:34,964][__main__][INFO] - [RANK 19]: Send buffers of size [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3297280, 0, 419840, 0, 0, 419840]
+[2024-07-12 13:15:34,965][__main__][INFO] - [RANK 2]: Send buffers of size [419840, 419840, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 419840, 419840, 0]
+[2024-07-12 13:15:34,965][__main__][INFO] - [RANK 3]: Receive buffers of size [0, 0, 0, 0, 3297280, 419840, 0, 0, 419840, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[2024-07-12 13:15:34,965][__main__][INFO] - [RANK 0]: Receive buffers of size [0, 3297280, 419840, 0, 0, 419840, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[2024-07-12 13:15:34,964][__main__][INFO] - [RANK 20]: Receive buffers of size [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 419840, 419840, 0, 419840, 419840, 0, 0, 0, 0]
+[2024-07-12 13:15:34,963][__main__][INFO] - [RANK 22]: Created send and receive buffers for all_to_all_opt halo exchange:
+[2024-07-12 13:15:34,964][__main__][INFO] - [RANK 22]: Send buffers of size [0, 0, 419840, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3297280, 0, 419840]
+[2024-07-12 13:15:34,964][__main__][INFO] - [RANK 22]: Receive buffers of size [0, 0, 419840, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3297280, 0, 419840]
+[2024-07-12 13:15:34,964][__main__][INFO] - [RANK 12]: Send buffers of size [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3297280, 419840, 0, 0, 419840, 0, 0, 0, 0, 0, 0]
+[2024-07-12 13:15:34,964][__main__][INFO] - [RANK 12]: Receive buffers of size [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3297280, 419840, 0, 0, 419840, 0, 0, 0, 0, 0, 0]
+[2024-07-12 13:15:34,965][__main__][INFO] - [RANK 1]: Receive buffers of size [3297280, 0, 419840, 0, 0, 419840, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[2024-07-12 13:15:34,964][__main__][INFO] - [RANK 13]: Send buffers of size [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3297280, 0, 419840, 0, 0, 419840, 0, 0, 0, 0, 0, 0]
+[2024-07-12 13:15:34,964][__main__][INFO] - [RANK 13]: Receive buffers of size [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3297280, 0, 419840, 0, 0, 419840, 0, 0, 0, 0, 0, 0]
+[2024-07-12 13:15:34,965][__main__][INFO] - [RANK 2]: Receive buffers of size [419840, 419840, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 419840, 419840, 0]
+[2024-07-12 13:15:34,964][__main__][INFO] - [RANK 14]: Receive buffers of size [0, 0, 0, 0, 0, 0, 0, 0, 0, 419840, 419840, 0, 419840, 419840, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[2024-07-12 13:15:34,965][__main__][INFO] - [RANK 4]: Receive buffers of size [0, 0, 0, 3297280, 0, 419840, 0, 0, 419840, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[2024-07-12 13:15:34,964][__main__][INFO] - [RANK 15]: Receive buffers of size [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3297280, 419840, 0, 0, 419840, 0, 0, 0]
+[2024-07-12 13:15:34,965][__main__][INFO] - [RANK 6]: Receive buffers of size [0, 0, 0, 0, 0, 0, 0, 3297280, 419840, 0, 0, 419840, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[2024-07-12 13:15:34,964][__main__][INFO] - [RANK 16]: Receive buffers of size [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3297280, 0, 419840, 0, 0, 419840, 0, 0, 0]
+[2024-07-12 13:15:34,965][__main__][INFO] - [RANK 7]: Receive buffers of size [0, 0, 0, 0, 0, 0, 3297280, 0, 419840, 0, 0, 419840, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[2024-07-12 13:15:34,964][__main__][INFO] - [RANK 17]: Receive buffers of size [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 419840, 419840, 0, 419840, 419840, 0, 0, 0, 0, 0, 0, 0]
+[2024-07-12 13:15:34,964][__main__][INFO] - [RANK 19]: Receive buffers of size [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3297280, 0, 419840, 0, 0, 419840]
+[2024-07-12 13:15:34,964][__main__][INFO] - [RANK 21]: Receive buffers of size [0, 0, 419840, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3297280, 419840]
+[2024-07-12 13:15:34,965][__main__][INFO] - [RANK 8]: Receive buffers of size [0, 0, 0, 419840, 419840, 0, 419840, 419840, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[2024-07-12 13:15:34,965][__main__][INFO] - [RANK 9]: Receive buffers of size [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3297280, 419840, 0, 0, 419840, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[2024-07-12 13:15:34,965][__main__][INFO] - [RANK 10]: Receive buffers of size [0, 0, 0, 0, 0, 0, 0, 0, 0, 3297280, 0, 419840, 0, 0, 419840, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[2024-07-12 13:15:34,965][__main__][INFO] - [RANK 11]: Receive buffers of size [0, 0, 0, 0, 0, 0, 419840, 419840, 0, 419840, 419840, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[2024-07-12 13:15:34,965][__main__][INFO] - Done with build_buffers
+[2024-07-12 13:15:34,965][__main__][INFO] - In build_model...
+[2024-07-12 13:15:35,045][__main__][INFO] - Done with build_model
+[2024-07-12 13:15:35,244][__main__][INFO] - [RANK 21] -- model save header : POLY_4_RANK_21_SIZE_24_SEED_12_3_4_32_3_5_4_all_to_all_opt
+[2024-07-12 13:15:35,245][__main__][INFO] - [RANK 15] -- model save header : POLY_4_RANK_15_SIZE_24_SEED_12_3_4_32_3_5_4_all_to_all_opt
+[2024-07-12 13:15:35,245][__main__][INFO] - [RANK 18] -- model save header : POLY_4_RANK_18_SIZE_24_SEED_12_3_4_32_3_5_4_all_to_all_opt
+[2024-07-12 13:15:35,247][__main__][INFO] - [RANK 19] -- model save header : POLY_4_RANK_19_SIZE_24_SEED_12_3_4_32_3_5_4_all_to_all_opt
+[2024-07-12 13:15:35,247][__main__][INFO] - [RANK 20] -- model save header : POLY_4_RANK_20_SIZE_24_SEED_12_3_4_32_3_5_4_all_to_all_opt
+[2024-07-12 13:15:35,247][__main__][INFO] - [RANK 14] -- model save header : POLY_4_RANK_14_SIZE_24_SEED_12_3_4_32_3_5_4_all_to_all_opt
+[2024-07-12 13:15:35,248][__main__][INFO] - [RANK 13] -- model save header : POLY_4_RANK_13_SIZE_24_SEED_12_3_4_32_3_5_4_all_to_all_opt
+[2024-07-12 13:15:35,248][__main__][INFO] - [RANK 22] -- model save header : POLY_4_RANK_22_SIZE_24_SEED_12_3_4_32_3_5_4_all_to_all_opt
+[2024-07-12 13:15:35,248][__main__][INFO] - [RANK 23] -- model save header : POLY_4_RANK_23_SIZE_24_SEED_12_3_4_32_3_5_4_all_to_all_opt
+[2024-07-12 13:15:35,248][__main__][INFO] - In writeGraphStatistics
+[2024-07-12 13:15:35,248][__main__][INFO] - [RANK 12] -- model save header : POLY_4_RANK_12_SIZE_24_SEED_12_3_4_32_3_5_4_all_to_all_opt
+[2024-07-12 13:15:35,248][__main__][INFO] - [RANK 16] -- model save header : POLY_4_RANK_16_SIZE_24_SEED_12_3_4_32_3_5_4_all_to_all_opt
+[2024-07-12 13:15:35,248][__main__][INFO] - [RANK 17] -- model save header : POLY_4_RANK_17_SIZE_24_SEED_12_3_4_32_3_5_4_all_to_all_opt
+[2024-07-12 13:15:35,248][__main__][INFO] - [RANK 0] -- model save header : POLY_4_RANK_0_SIZE_24_SEED_12_3_4_32_3_5_4_all_to_all_opt
+[2024-07-12 13:15:35,248][__main__][INFO] - [RANK 1] -- model save header : POLY_4_RANK_1_SIZE_24_SEED_12_3_4_32_3_5_4_all_to_all_opt
+[2024-07-12 13:15:35,248][__main__][INFO] - [RANK 3] -- model save header : POLY_4_RANK_3_SIZE_24_SEED_12_3_4_32_3_5_4_all_to_all_opt
+[2024-07-12 13:15:35,248][__main__][INFO] - [RANK 7] -- model save header : POLY_4_RANK_7_SIZE_24_SEED_12_3_4_32_3_5_4_all_to_all_opt
+[2024-07-12 13:15:35,248][__main__][INFO] - [RANK 10] -- model save header : POLY_4_RANK_10_SIZE_24_SEED_12_3_4_32_3_5_4_all_to_all_opt
+[2024-07-12 13:15:35,248][__main__][INFO] - [RANK 11] -- model save header : POLY_4_RANK_11_SIZE_24_SEED_12_3_4_32_3_5_4_all_to_all_opt
+[2024-07-12 13:15:35,248][__main__][INFO] - [RANK 2] -- model save header : POLY_4_RANK_2_SIZE_24_SEED_12_3_4_32_3_5_4_all_to_all_opt
+[2024-07-12 13:15:35,248][__main__][INFO] - [RANK 4] -- model save header : POLY_4_RANK_4_SIZE_24_SEED_12_3_4_32_3_5_4_all_to_all_opt
+[2024-07-12 13:15:35,248][__main__][INFO] - [RANK 5] -- model save header : POLY_4_RANK_5_SIZE_24_SEED_12_3_4_32_3_5_4_all_to_all_opt
+[2024-07-12 13:15:35,248][__main__][INFO] - [RANK 6] -- model save header : POLY_4_RANK_6_SIZE_24_SEED_12_3_4_32_3_5_4_all_to_all_opt
+[2024-07-12 13:15:35,248][__main__][INFO] - [RANK 8] -- model save header : POLY_4_RANK_8_SIZE_24_SEED_12_3_4_32_3_5_4_all_to_all_opt
+[2024-07-12 13:15:35,248][__main__][INFO] - [RANK 9] -- model save header : POLY_4_RANK_9_SIZE_24_SEED_12_3_4_32_3_5_4_all_to_all_opt
+Directory already exists.
+[2024-07-12 13:15:35,252][__main__][INFO] - [RANK 0] -- number of local nodes: 528080, number of halo nodes: 32320, number of edges: 3136160
+[2024-07-12 13:15:35,252][__main__][INFO] - [RANK 1] -- number of local nodes: 528080, number of halo nodes: 32320, number of edges: 3136160
+[2024-07-12 13:15:35,252][__main__][INFO] - [RANK 2] -- number of local nodes: 518400, number of halo nodes: 13120, number of edges: 3097600
+[2024-07-12 13:15:35,252][__main__][INFO] - [RANK 13] -- number of local nodes: 528080, number of halo nodes: 32320, number of edges: 3136160
+[2024-07-12 13:15:35,252][__main__][INFO] - [RANK 6] -- number of local nodes: 528080, number of halo nodes: 32320, number of edges: 3136160
+[2024-07-12 13:15:35,252][__main__][INFO] - [RANK 8] -- number of local nodes: 518400, number of halo nodes: 13120, number of edges: 3097600
+[2024-07-12 13:15:35,252][__main__][INFO] - [RANK 14] -- number of local nodes: 518400, number of halo nodes: 13120, number of edges: 3097600
+[2024-07-12 13:15:35,252][__main__][INFO] - [RANK 9] -- number of local nodes: 528080, number of halo nodes: 32320, number of edges: 3136160
+[2024-07-12 13:15:35,252][__main__][INFO] - [RANK 10] -- number of local nodes: 528080, number of halo nodes: 32320, number of edges: 3136160
+[2024-07-12 13:15:35,252][__main__][INFO] - [RANK 11] -- number of local nodes: 518400, number of halo nodes: 13120, number of edges: 3097600
+[2024-07-12 13:15:35,252][__main__][INFO] - [RANK 3] -- number of local nodes: 528080, number of halo nodes: 32320, number of edges: 3136160
+[2024-07-12 13:15:35,252][__main__][INFO] - [RANK 4] -- number of local nodes: 528080, number of halo nodes: 32320, number of edges: 3136160
+[2024-07-12 13:15:35,252][__main__][INFO] - [RANK 5] -- number of local nodes: 518400, number of halo nodes: 13120, number of edges: 3097600
+[2024-07-12 13:15:35,252][__main__][INFO] - [RANK 7] -- number of local nodes: 528080, number of halo nodes: 32320, number of edges: 3136160
+[2024-07-12 13:15:35,252][__main__][INFO] - [RANK 20] -- number of local nodes: 518400, number of halo nodes: 13120, number of edges: 3097600
+[2024-07-12 13:15:35,252][__main__][INFO] - [RANK 12] -- number of local nodes: 528080, number of halo nodes: 32320, number of edges: 3136160
+[2024-07-12 13:15:35,252][__main__][INFO] - [RANK 15] -- number of local nodes: 528080, number of halo nodes: 32320, number of edges: 3136160
+[2024-07-12 13:15:35,252][__main__][INFO] - [RANK 16] -- number of local nodes: 528080, number of halo nodes: 32320, number of edges: 3136160
+[2024-07-12 13:15:35,252][__main__][INFO] - [RANK 17] -- number of local nodes: 518400, number of halo nodes: 13120, number of edges: 3097600
+[2024-07-12 13:15:35,252][__main__][INFO] - [RANK 18] -- number of local nodes: 528080, number of halo nodes: 32320, number of edges: 3136160
+[2024-07-12 13:15:35,252][__main__][INFO] - [RANK 19] -- number of local nodes: 528080, number of halo nodes: 32320, number of edges: 3136160
+[2024-07-12 13:15:35,252][__main__][INFO] - [RANK 21] -- number of local nodes: 528080, number of halo nodes: 32320, number of edges: 3136160
+[2024-07-12 13:15:35,252][__main__][INFO] - [RANK 22] -- number of local nodes: 528080, number of halo nodes: 32320, number of edges: 3136160
+[2024-07-12 13:15:35,252][__main__][INFO] - [RANK 23] -- number of local nodes: 518400, number of halo nodes: 13120, number of edges: 3097600
+2024:07:12-13:15:37:(149051) |CCL_ERROR| buffer_manager.cpp:101 alloc: condition bytes > 0 failed
+unexpected request to allocate zero size buffer
+2024:07:12-13:15:37:(149048) |CCL_ERROR| buffer_manager.cpp:101 alloc: condition bytes > 0 failed
+unexpected request to allocate zero size buffer
+2024:07:12-13:15:37:(149055) |CCL_ERROR| buffer_manager.cpp:101 alloc: condition bytes > 0 failed
+unexpected request to allocate zero size buffer
+2024:07:12-13:15:37:(149054) |CCL_ERROR| buffer_manager.cpp:101 alloc: condition bytes > 0 failed
+unexpected request to allocate zero size buffer
+2024:07:12-13:15:37:(149049) |CCL_ERROR| buffer_manager.cpp:101 alloc: condition bytes > 0 failed
+unexpected request to allocate zero size buffer
+2024:07:12-13:15:37:(149052) |CCL_ERROR| buffer_manager.cpp:101 alloc: condition bytes > 0 failed
+unexpected request to allocate zero size buffer
+2024:07:12-13:15:37:(149059) |CCL_ERROR| buffer_manager.cpp:101 alloc: condition bytes > 0 failed
+unexpected request to allocate zero size buffer
+2024:07:12-13:15:37:(149056) |CCL_ERROR| buffer_manager.cpp:101 alloc: condition bytes > 0 failed
+unexpected request to allocate zero size buffer
+2024:07:12-13:15:37:(149053) |CCL_ERROR| buffer_manager.cpp:101 alloc: condition bytes > 0 failed
+unexpected request to allocate zero size buffer
+Error executing job with overrides: ['backend=ccl', 'halo_swap_mode=all_to_all_opt', 'gnn_outputs_path=/flare/Aurora_deployment/balin/Nek/GNN/weak_scale_data/500k_aurora/24/gnn_outputs_poly_5/']
+Error executing job with overrides: ['backend=ccl', 'halo_swap_mode=all_to_all_opt', 'gnn_outputs_path=/flare/Aurora_deployment/balin/Nek/GNN/weak_scale_data/500k_aurora/24/gnn_outputs_poly_5/']
+Error executing job with overrides: ['backend=ccl', 'halo_swap_mode=all_to_all_opt', 'gnn_outputs_path=/flare/Aurora_deployment/balin/Nek/GNN/weak_scale_data/500k_aurora/24/gnn_outputs_poly_5/']
+Error executing job with overrides: ['backend=ccl', 'halo_swap_mode=all_to_all_opt', 'gnn_outputs_path=/flare/Aurora_deployment/balin/Nek/GNN/weak_scale_data/500k_aurora/24/gnn_outputs_poly_5/']
+Error executing job with overrides: ['backend=ccl', 'halo_swap_mode=all_to_all_opt', 'gnn_outputs_path=/flare/Aurora_deployment/balin/Nek/GNN/weak_scale_data/500k_aurora/24/gnn_outputs_poly_5/']
+Error executing job with overrides: ['backend=ccl', 'halo_swap_mode=all_to_all_opt', 'gnn_outputs_path=/flare/Aurora_deployment/balin/Nek/GNN/weak_scale_data/500k_aurora/24/gnn_outputs_poly_5/']
+Error executing job with overrides: ['backend=ccl', 'halo_swap_mode=all_to_all_opt', 'gnn_outputs_path=/flare/Aurora_deployment/balin/Nek/GNN/weak_scale_data/500k_aurora/24/gnn_outputs_poly_5/']
+Error executing job with overrides: ['backend=ccl', 'halo_swap_mode=all_to_all_opt', 'gnn_outputs_path=/flare/Aurora_deployment/balin/Nek/GNN/weak_scale_data/500k_aurora/24/gnn_outputs_poly_5/']
+Error executing job with overrides: ['backend=ccl', 'halo_swap_mode=all_to_all_opt', 'gnn_outputs_path=/flare/Aurora_deployment/balin/Nek/GNN/weak_scale_data/500k_aurora/24/gnn_outputs_poly_5/']
+Traceback (most recent call last):
+  File "/flare/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/main.py", line 1431, in main
+    train(cfg)
+  File "/flare/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/main.py", line 1263, in train
+    train_metrics = trainer.train_epoch(epoch)
+  File "/flare/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/main.py", line 1154, in train_epoch
+    loss = self.train_step(data)
+  File "/flare/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/main.py", line 850, in train_step
+    out_gnn = self.model(x = data.x,
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/parallel/distributed.py", line 1519, in forward
+    else self._run_ddp_forward(*inputs, **kwargs)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/parallel/distributed.py", line 1355, in _run_ddp_forward
+    return self.module(*inputs, **kwargs)  # type: ignore[index]
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/gnn.py", line 102, in forward
+    x,_ = self.processor[i](x,
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/gnn.py", line 401, in forward
+    edge_agg = self.halo_swap(edge_agg,
+  File "/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/gnn.py", line 440, in halo_swap
+    distnn.all_to_all(buff_recv, buff_send)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/distributed/nn/functional.py", line 168, in all_to_all
+    return _AlltoAll.apply(group, output_tensor_list, *input_tensor_list)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/autograd/function.py", line 539, in apply
+    return super().apply(*args, **kwargs)  # type: ignore[misc]
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/distributed/nn/functional.py", line 385, in forward
+    dist.all_to_all(
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/distributed/c10d_logger.py", line 47, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/distributed/distributed_c10d.py", line 3659, in all_to_all
+    work.wait()
+RuntimeError: oneCCL: buffer_manager.cpp:101 alloc: EXCEPTION: unexpected request to allocate zero size buffer
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
+Traceback (most recent call last):
+  File "/flare/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/main.py", line 1431, in main
+    train(cfg)
+  File "/flare/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/main.py", line 1263, in train
+    train_metrics = trainer.train_epoch(epoch)
+  File "/flare/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/main.py", line 1154, in train_epoch
+    loss = self.train_step(data)
+  File "/flare/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/main.py", line 850, in train_step
+    out_gnn = self.model(x = data.x,
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/parallel/distributed.py", line 1519, in forward
+    else self._run_ddp_forward(*inputs, **kwargs)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/parallel/distributed.py", line 1355, in _run_ddp_forward
+    return self.module(*inputs, **kwargs)  # type: ignore[index]
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/gnn.py", line 102, in forward
+    x,_ = self.processor[i](x,
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/gnn.py", line 401, in forward
+    edge_agg = self.halo_swap(edge_agg,
+  File "/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/gnn.py", line 440, in halo_swap
+    distnn.all_to_all(buff_recv, buff_send)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/distributed/nn/functional.py", line 168, in all_to_all
+    return _AlltoAll.apply(group, output_tensor_list, *input_tensor_list)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/autograd/function.py", line 539, in apply
+    return super().apply(*args, **kwargs)  # type: ignore[misc]
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/distributed/nn/functional.py", line 385, in forward
+    dist.all_to_all(
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/distributed/c10d_logger.py", line 47, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/distributed/distributed_c10d.py", line 3659, in all_to_all
+    work.wait()
+RuntimeError: oneCCL: buffer_manager.cpp:101 alloc: EXCEPTION: unexpected request to allocate zero size buffer
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
+Traceback (most recent call last):
+  File "/flare/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/main.py", line 1431, in main
+    train(cfg)
+  File "/flare/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/main.py", line 1263, in train
+    train_metrics = trainer.train_epoch(epoch)
+  File "/flare/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/main.py", line 1154, in train_epoch
+    loss = self.train_step(data)
+  File "/flare/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/main.py", line 850, in train_step
+    out_gnn = self.model(x = data.x,
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/parallel/distributed.py", line 1519, in forward
+    else self._run_ddp_forward(*inputs, **kwargs)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/parallel/distributed.py", line 1355, in _run_ddp_forward
+    return self.module(*inputs, **kwargs)  # type: ignore[index]
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/gnn.py", line 102, in forward
+    x,_ = self.processor[i](x,
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/gnn.py", line 401, in forward
+    edge_agg = self.halo_swap(edge_agg,
+  File "/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/gnn.py", line 440, in halo_swap
+    distnn.all_to_all(buff_recv, buff_send)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/distributed/nn/functional.py", line 168, in all_to_all
+    return _AlltoAll.apply(group, output_tensor_list, *input_tensor_list)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/autograd/function.py", line 539, in apply
+    return super().apply(*args, **kwargs)  # type: ignore[misc]
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/distributed/nn/functional.py", line 385, in forward
+    dist.all_to_all(
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/distributed/c10d_logger.py", line 47, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/distributed/distributed_c10d.py", line 3659, in all_to_all
+    work.wait()
+RuntimeError: oneCCL: buffer_manager.cpp:101 alloc: EXCEPTION: unexpected request to allocate zero size buffer
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
+Traceback (most recent call last):
+  File "/flare/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/main.py", line 1431, in main
+    train(cfg)
+  File "/flare/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/main.py", line 1263, in train
+    train_metrics = trainer.train_epoch(epoch)
+  File "/flare/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/main.py", line 1154, in train_epoch
+    loss = self.train_step(data)
+  File "/flare/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/main.py", line 850, in train_step
+    out_gnn = self.model(x = data.x,
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/parallel/distributed.py", line 1519, in forward
+    else self._run_ddp_forward(*inputs, **kwargs)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/parallel/distributed.py", line 1355, in _run_ddp_forward
+    return self.module(*inputs, **kwargs)  # type: ignore[index]
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/gnn.py", line 102, in forward
+    x,_ = self.processor[i](x,
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/gnn.py", line 401, in forward
+    edge_agg = self.halo_swap(edge_agg,
+  File "/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/gnn.py", line 440, in halo_swap
+    distnn.all_to_all(buff_recv, buff_send)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/distributed/nn/functional.py", line 168, in all_to_all
+    return _AlltoAll.apply(group, output_tensor_list, *input_tensor_list)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/autograd/function.py", line 539, in apply
+    return super().apply(*args, **kwargs)  # type: ignore[misc]
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/distributed/nn/functional.py", line 385, in forward
+    dist.all_to_all(
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/distributed/c10d_logger.py", line 47, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/distributed/distributed_c10d.py", line 3659, in all_to_all
+    work.wait()
+RuntimeError: oneCCL: buffer_manager.cpp:101 alloc: EXCEPTION: unexpected request to allocate zero size buffer
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
+Traceback (most recent call last):
+  File "/flare/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/main.py", line 1431, in main
+    train(cfg)
+  File "/flare/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/main.py", line 1263, in train
+    train_metrics = trainer.train_epoch(epoch)
+  File "/flare/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/main.py", line 1154, in train_epoch
+    loss = self.train_step(data)
+  File "/flare/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/main.py", line 850, in train_step
+    out_gnn = self.model(x = data.x,
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/parallel/distributed.py", line 1519, in forward
+    else self._run_ddp_forward(*inputs, **kwargs)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/parallel/distributed.py", line 1355, in _run_ddp_forward
+    return self.module(*inputs, **kwargs)  # type: ignore[index]
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/gnn.py", line 102, in forward
+    x,_ = self.processor[i](x,
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/gnn.py", line 401, in forward
+    edge_agg = self.halo_swap(edge_agg,
+  File "/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/gnn.py", line 440, in halo_swap
+    distnn.all_to_all(buff_recv, buff_send)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/distributed/nn/functional.py", line 168, in all_to_all
+    return _AlltoAll.apply(group, output_tensor_list, *input_tensor_list)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/autograd/function.py", line 539, in apply
+    return super().apply(*args, **kwargs)  # type: ignore[misc]
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/distributed/nn/functional.py", line 385, in forward
+    dist.all_to_all(
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/distributed/c10d_logger.py", line 47, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/distributed/distributed_c10d.py", line 3659, in all_to_all
+    work.wait()
+RuntimeError: oneCCL: buffer_manager.cpp:101 alloc: EXCEPTION: unexpected request to allocate zero size buffer
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
+Traceback (most recent call last):
+  File "/flare/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/main.py", line 1431, in main
+    train(cfg)
+  File "/flare/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/main.py", line 1263, in train
+    train_metrics = trainer.train_epoch(epoch)
+  File "/flare/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/main.py", line 1154, in train_epoch
+    loss = self.train_step(data)
+  File "/flare/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/main.py", line 850, in train_step
+    out_gnn = self.model(x = data.x,
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/parallel/distributed.py", line 1519, in forward
+    else self._run_ddp_forward(*inputs, **kwargs)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/parallel/distributed.py", line 1355, in _run_ddp_forward
+    return self.module(*inputs, **kwargs)  # type: ignore[index]
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/gnn.py", line 102, in forward
+    x,_ = self.processor[i](x,
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/gnn.py", line 401, in forward
+    edge_agg = self.halo_swap(edge_agg,
+  File "/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/gnn.py", line 440, in halo_swap
+    distnn.all_to_all(buff_recv, buff_send)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/distributed/nn/functional.py", line 168, in all_to_all
+    return _AlltoAll.apply(group, output_tensor_list, *input_tensor_list)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/autograd/function.py", line 539, in apply
+    return super().apply(*args, **kwargs)  # type: ignore[misc]
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/distributed/nn/functional.py", line 385, in forward
+    dist.all_to_all(
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/distributed/c10d_logger.py", line 47, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/distributed/distributed_c10d.py", line 3659, in all_to_all
+    work.wait()
+RuntimeError: oneCCL: buffer_manager.cpp:101 alloc: EXCEPTION: unexpected request to allocate zero size buffer
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
+Traceback (most recent call last):
+  File "/flare/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/main.py", line 1431, in main
+    train(cfg)
+  File "/flare/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/main.py", line 1263, in train
+    train_metrics = trainer.train_epoch(epoch)
+  File "/flare/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/main.py", line 1154, in train_epoch
+    loss = self.train_step(data)
+  File "/flare/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/main.py", line 850, in train_step
+    out_gnn = self.model(x = data.x,
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/parallel/distributed.py", line 1519, in forward
+    else self._run_ddp_forward(*inputs, **kwargs)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/parallel/distributed.py", line 1355, in _run_ddp_forward
+    return self.module(*inputs, **kwargs)  # type: ignore[index]
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/gnn.py", line 102, in forward
+    x,_ = self.processor[i](x,
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/gnn.py", line 401, in forward
+    edge_agg = self.halo_swap(edge_agg,
+  File "/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/gnn.py", line 440, in halo_swap
+    distnn.all_to_all(buff_recv, buff_send)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/distributed/nn/functional.py", line 168, in all_to_all
+    return _AlltoAll.apply(group, output_tensor_list, *input_tensor_list)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/autograd/function.py", line 539, in apply
+    return super().apply(*args, **kwargs)  # type: ignore[misc]
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/distributed/nn/functional.py", line 385, in forward
+    dist.all_to_all(
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/distributed/c10d_logger.py", line 47, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/distributed/distributed_c10d.py", line 3659, in all_to_all
+    work.wait()
+RuntimeError: oneCCL: buffer_manager.cpp:101 alloc: EXCEPTION: unexpected request to allocate zero size buffer
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
+Traceback (most recent call last):
+  File "/flare/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/main.py", line 1431, in main
+    train(cfg)
+  File "/flare/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/main.py", line 1263, in train
+    train_metrics = trainer.train_epoch(epoch)
+  File "/flare/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/main.py", line 1154, in train_epoch
+    loss = self.train_step(data)
+  File "/flare/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/main.py", line 850, in train_step
+    out_gnn = self.model(x = data.x,
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/parallel/distributed.py", line 1519, in forward
+    else self._run_ddp_forward(*inputs, **kwargs)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/parallel/distributed.py", line 1355, in _run_ddp_forward
+    return self.module(*inputs, **kwargs)  # type: ignore[index]
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/gnn.py", line 102, in forward
+    x,_ = self.processor[i](x,
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/gnn.py", line 401, in forward
+    edge_agg = self.halo_swap(edge_agg,
+  File "/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/gnn.py", line 440, in halo_swap
+    distnn.all_to_all(buff_recv, buff_send)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/distributed/nn/functional.py", line 168, in all_to_all
+    return _AlltoAll.apply(group, output_tensor_list, *input_tensor_list)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/autograd/function.py", line 539, in apply
+    return super().apply(*args, **kwargs)  # type: ignore[misc]
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/distributed/nn/functional.py", line 385, in forward
+    dist.all_to_all(
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/distributed/c10d_logger.py", line 47, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/distributed/distributed_c10d.py", line 3659, in all_to_all
+    work.wait()
+RuntimeError: oneCCL: buffer_manager.cpp:101 alloc: EXCEPTION: unexpected request to allocate zero size buffer
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
+Traceback (most recent call last):
+  File "/flare/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/main.py", line 1431, in main
+    train(cfg)
+  File "/flare/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/main.py", line 1263, in train
+    train_metrics = trainer.train_epoch(epoch)
+  File "/flare/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/main.py", line 1154, in train_epoch
+    loss = self.train_step(data)
+  File "/flare/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/main.py", line 850, in train_step
+    out_gnn = self.model(x = data.x,
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/parallel/distributed.py", line 1519, in forward
+    else self._run_ddp_forward(*inputs, **kwargs)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/parallel/distributed.py", line 1355, in _run_ddp_forward
+    return self.module(*inputs, **kwargs)  # type: ignore[index]
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/gnn.py", line 102, in forward
+    x,_ = self.processor[i](x,
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/gnn.py", line 401, in forward
+    edge_agg = self.halo_swap(edge_agg,
+  File "/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/gnn.py", line 440, in halo_swap
+    distnn.all_to_all(buff_recv, buff_send)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/distributed/nn/functional.py", line 168, in all_to_all
+    return _AlltoAll.apply(group, output_tensor_list, *input_tensor_list)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/autograd/function.py", line 539, in apply
+    return super().apply(*args, **kwargs)  # type: ignore[misc]
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/distributed/nn/functional.py", line 385, in forward
+    dist.all_to_all(
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/distributed/c10d_logger.py", line 47, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/distributed/distributed_c10d.py", line 3659, in all_to_all
+    work.wait()
+RuntimeError: oneCCL: buffer_manager.cpp:101 alloc: EXCEPTION: unexpected request to allocate zero size buffer
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
+2024:07:12-13:15:38:(131527) |CCL_ERROR| buffer_manager.cpp:101 alloc: condition bytes > 0 failed
+unexpected request to allocate zero size buffer
+2024:07:12-13:15:38:(131529) |CCL_ERROR| buffer_manager.cpp:101 alloc: condition bytes > 0 failed
+unexpected request to allocate zero size buffer
+2024:07:12-13:15:38:(131521) |CCL_ERROR| buffer_manager.cpp:101 alloc: condition bytes > 0 failed
+unexpected request to allocate zero size buffer
+[WARNING] yaksa: 2 leaked handle pool objects
+2024:07:12-13:15:38:(131528) |CCL_ERROR| buffer_manager.cpp:101 alloc: condition bytes > 0 failed
+unexpected request to allocate zero size buffer
+2024:07:12-13:15:38:(131522) |CCL_ERROR| buffer_manager.cpp:101 alloc: condition bytes > 0 failed
+unexpected request to allocate zero size buffer
+2024:07:12-13:15:38:(131525) |CCL_ERROR| buffer_manager.cpp:101 alloc: condition bytes > 0 failed
+unexpected request to allocate zero size buffer
+2024:07:12-13:15:38:(131532) |CCL_ERROR| buffer_manager.cpp:101 alloc: condition bytes > 0 failed
+unexpected request to allocate zero size buffer
+2024:07:12-13:15:38:(131526) |CCL_ERROR| buffer_manager.cpp:101 alloc: condition bytes > 0 failed
+unexpected request to allocate zero size buffer
+2024:07:12-13:15:38:(131524) |CCL_ERROR| buffer_manager.cpp:101 alloc: condition bytes > 0 failed
+unexpected request to allocate zero size buffer
+[WARNING] yaksa: 2 leaked handle pool objects
+[WARNING] yaksa: 2 leaked handle pool objects
+[WARNING] yaksa: 2 leaked handle pool objects
+[WARNING] yaksa: 2 leaked handle pool objects
+[WARNING] yaksa: 2 leaked handle pool objects
+[WARNING] yaksa: 2 leaked handle pool objects
+[WARNING] yaksa: 2 leaked handle pool objects
+[WARNING] yaksa: 2 leaked handle pool objects
+x4717c2s4b0n0.hostmgmt2717.cm.aurora.alcf.anl.gov: rank 0 exited with code 1
+x4717c2s4b0n0.hostmgmt2717.cm.aurora.alcf.anl.gov: rank 9 died from signal 15
+Fri 12 Jul 2024 01:15:39 PM UTC
