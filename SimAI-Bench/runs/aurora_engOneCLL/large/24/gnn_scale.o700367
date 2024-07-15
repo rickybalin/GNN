@@ -1,0 +1,542 @@
+
+The following have been reloaded with a version change:
+  1) intel_compute_runtime/release/821.36 => intel_compute_runtime/release/803.29
+  2) oneapi/eng-compiler/2024.04.15.002 => oneapi/release/2024.1
+
+Loaded modules:
+
+Currently Loaded Modules:
+  1) mpich/icc-all-pmix-gpu/20231026
+  2) mpich-config/collective-tuning/1024
+  3) libfabric/1.15.2.0
+  4) cray-pals/1.3.3
+  5) cray-libpals/1.3.3
+  6) spack-pe-gcc/0.7.0-24.086.0
+  7) gmp/6.2.1-pcxzkau
+  8) mpfr/4.2.0-w7v7yjv
+  9) mpc/1.3.1-dfagrna
+ 10) gcc/12.2.0
+ 11) intel_compute_runtime/release/803.29
+ 12) oneapi/release/2024.1
+ 13) frameworks/2024.1
+
+ 
+
+
+Torch version: 2.1.0.post0+cxx11.abi
+IPEX version: 2.1.20+xpu
+Torch Geometric version: 2.5.3
+
+Number of nodes: 4
+Number of ranks per node: 12
+Number of total ranks: 48
+
+Setting oneCCL bindings for 12 ranks per node
+
+Running script /lus/flare/projects/Aurora_deployment/balin/Nek/GNN/GNN/SimAI-Bench/main.py
+with arguments --device=xpu --iterations=100 --problem_size=large
+Mon 15 Jul 2024 03:00:00 PM UTC
+Hello from rank 0/48, local rank 0 on x4717c2s7b0n0
+Hello from rank 1/48, local rank 1 on x4717c2s7b0n0
+Hello from rank 2/48, local rank 2 on x4717c2s7b0n0
+Hello from rank 3/48, local rank 3 on x4717c2s7b0n0
+Hello from rank 4/48, local rank 4 on x4717c2s7b0n0
+Hello from rank 24/48, local rank 0 on x4717c3s1b0n0
+Hello from rank 25/48, local rank 1 on x4717c3s1b0n0
+Hello from rank 26/48, local rank 2 on x4717c3s1b0n0
+Hello from rank 5/48, local rank 5 on x4717c2s7b0n0
+Hello from rank 27/48, local rank 3 on x4717c3s1b0n0
+Hello from rank 28/48, local rank 4 on x4717c3s1b0n0
+Hello from rank 29/48, local rank 5 on x4717c3s1b0n0
+Hello from rank 6/48, local rank 6 on x4717c2s7b0n0
+Hello from rank 7/48, local rank 7 on x4717c2s7b0n0
+Hello from rank 8/48, local rank 8 on x4717c2s7b0n0
+Hello from rank 9/48, local rank 9 on x4717c2s7b0n0
+Hello from rank 30/48, local rank 6 on x4717c3s1b0n0
+Hello from rank 31/48, local rank 7 on x4717c3s1b0n0
+Hello from rank 12/48, local rank 0 on x4717c3s0b0n0
+Hello from rank 32/48, local rank 8 on x4717c3s1b0n0
+Hello from rank 10/48, local rank 10 on x4717c2s7b0n0
+Hello from rank 13/48, local rank 1 on x4717c3s0b0n0
+Hello from rank 11/48, local rank 11 on x4717c2s7b0n0
+Hello from rank 14/48, local rank 2 on x4717c3s0b0n0
+Hello from rank 15/48, local rank 3 on x4717c3s0b0n0
+Hello from rank 33/48, local rank 9 on x4717c3s1b0n0
+Hello from rank 16/48, local rank 4 on x4717c3s0b0n0
+Hello from rank 36/48, local rank 0 on x4717c3s2b0n0
+Hello from rank 34/48, local rank 10 on x4717c3s1b0n0
+Hello from rank 17/48, local rank 5 on x4717c3s0b0n0
+Hello from rank 18/48, local rank 6 on x4717c3s0b0n0
+Hello from rank 35/48, local rank 11 on x4717c3s1b0n0
+Hello from rank 19/48, local rank 7 on x4717c3s0b0n0
+Hello from rank 37/48, local rank 1 on x4717c3s2b0n0
+Hello from rank 20/48, local rank 8 on x4717c3s0b0n0
+Hello from rank 21/48, local rank 9 on x4717c3s0b0n0
+Hello from rank 22/48, local rank 10 on x4717c3s0b0n0
+Hello from rank 38/48, local rank 2 on x4717c3s2b0n0
+Hello from rank 23/48, local rank 11 on x4717c3s0b0n0
+Hello from rank 39/48, local rank 3 on x4717c3s2b0n0
+Hello from rank 40/48, local rank 4 on x4717c3s2b0n0
+Hello from rank 41/48, local rank 5 on x4717c3s2b0n0
+Hello from rank 42/48, local rank 6 on x4717c3s2b0n0
+Hello from rank 43/48, local rank 7 on x4717c3s2b0n0
+Hello from rank 44/48, local rank 8 on x4717c3s2b0n0
+Hello from rank 45/48, local rank 9 on x4717c3s2b0n0
+Hello from rank 46/48, local rank 10 on x4717c3s2b0n0
+Hello from rank 47/48, local rank 11 on x4717c3s2b0n0
+
+Loaded data and model with 163491 parameters
+
+2024:07:15-15:00:24:(141564) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2024:07:15-15:00:24:(141564) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2024:07:15-15:00:24:(141564) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(141564) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(141565) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2024:07:15-15:00:24:(141565) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2024:07:15-15:00:24:(141565) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(141565) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(147294) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2024:07:15-15:00:24:(147294) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2024:07:15-15:00:24:(147294) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(147294) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(147290) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2024:07:15-15:00:24:(147290) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2024:07:15-15:00:24:(147290) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(147290) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(141563) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2024:07:15-15:00:24:(141563) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2024:07:15-15:00:24:(141563) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(141563) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(141561) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2024:07:15-15:00:24:(141561) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2024:07:15-15:00:24:(141561) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(141561) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(147284) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2024:07:15-15:00:24:(147284) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2024:07:15-15:00:24:(147284) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(147284) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(147284) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:07:15-15:00:24:(147290) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:07:15-15:00:24:(147294) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:07:15-15:00:24:(141561) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:07:15-15:00:24:(141563) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:07:15-15:00:24:(141564) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:07:15-15:00:24:(141565) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:07:15-15:00:24:(141566) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2024:07:15-15:00:24:(141566) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2024:07:15-15:00:24:(141566) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(141566) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(141566) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:07:15-15:00:24:(137312) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2024:07:15-15:00:24:(137320) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2024:07:15-15:00:24:(137312) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2024:07:15-15:00:24:(137320) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2024:07:15-15:00:24:(147292) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2024:07:15-15:00:24:(147292) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2024:07:15-15:00:24:(147292) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(147292) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(137312) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(137312) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(137320) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(137320) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(147292) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:07:15-15:00:24:(141556) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2024:07:15-15:00:24:(141556) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2024:07:15-15:00:24:(141556) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(141556) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(141556) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:07:15-15:00:24:(141559) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2024:07:15-15:00:24:(141559) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2024:07:15-15:00:24:(141559) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(141559) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(141559) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:07:15-15:00:24:(147288) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2024:07:15-15:00:24:(147288) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2024:07:15-15:00:24:(147288) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(147288) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(147288) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:07:15-15:00:24:(147291) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2024:07:15-15:00:24:(147291) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2024:07:15-15:00:24:(147291) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(147291) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(147291) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:07:15-15:00:24:(137318) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2024:07:15-15:00:24:(137318) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2024:07:15-15:00:24:(137318) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(137318) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(137312) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:07:15-15:00:24:(137320) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:07:15-15:00:24:(137318) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:07:15-15:00:24:(141560) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2024:07:15-15:00:24:(141560) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2024:07:15-15:00:24:(141560) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(141560) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(141560) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:07:15-15:00:24:(137314) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2024:07:15-15:00:24:(137314) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2024:07:15-15:00:24:(137314) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(137314) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(137314) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:07:15-15:00:24:(147285) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2024:07:15-15:00:24:(147285) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2024:07:15-15:00:24:(147285) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(147285) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(147285) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:07:15-15:00:24:(137313) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2024:07:15-15:00:24:(137321) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2024:07:15-15:00:24:(137321) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2024:07:15-15:00:24:(137321) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(137321) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(137313) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2024:07:15-15:00:24:(137313) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(137313) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(137321) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:07:15-15:00:24:(147293) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2024:07:15-15:00:24:(147293) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2024:07:15-15:00:24:(147293) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(147293) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(137313) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:07:15-15:00:24:(147293) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:07:15-15:00:24:(137316) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2024:07:15-15:00:24:(137316) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2024:07:15-15:00:24:(137316) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(137316) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(137316) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:07:15-15:00:24:(147289) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2024:07:15-15:00:24:(147289) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2024:07:15-15:00:24:(147289) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(147289) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(147289) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:07:15-15:00:24:(138007) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2024:07:15-15:00:24:(138008) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2024:07:15-15:00:24:(138007) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2024:07:15-15:00:24:(138008) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2024:07:15-15:00:24:(138007) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(138008) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(138008) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(138007) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(141558) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2024:07:15-15:00:24:(141558) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2024:07:15-15:00:24:(141558) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(141558) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(141558) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:07:15-15:00:24:(138012) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2024:07:15-15:00:24:(138012) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2024:07:15-15:00:24:(138012) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(138012) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+Running on device: xpu 
+
+2024:07:15-15:00:24:(137317) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2024:07:15-15:00:24:(137317) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2024:07:15-15:00:24:(137317) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(137317) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(137319) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2024:07:15-15:00:24:(137319) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2024:07:15-15:00:24:(137319) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(137319) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(137317) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:07:15-15:00:24:(137319) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:07:15-15:00:24:(141555) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2024:07:15-15:00:24:(141555) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2024:07:15-15:00:24:(141555) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(141555) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(138005) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2024:07:15-15:00:24:(138005) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2024:07:15-15:00:24:(138005) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(138005) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(141555) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:07:15-15:00:24:(147295) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2024:07:15-15:00:24:(147295) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2024:07:15-15:00:24:(147295) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(147295) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(147295) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:07:15-15:00:24:(141562) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2024:07:15-15:00:24:(141562) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2024:07:15-15:00:24:(141562) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(141562) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(141562) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:07:15-15:00:24:(138005) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:07:15-15:00:24:(138007) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:07:15-15:00:24:(138008) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:07:15-15:00:24:(138012) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:07:15-15:00:24:(138009) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2024:07:15-15:00:24:(138009) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2024:07:15-15:00:24:(138009) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(138009) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(138009) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:07:15-15:00:24:(147286) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2024:07:15-15:00:24:(147286) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2024:07:15-15:00:24:(147286) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(147286) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(147286) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:07:15-15:00:24:(137310) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2024:07:15-15:00:24:(137310) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2024:07:15-15:00:24:(137310) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(137310) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(137310) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:07:15-15:00:24:(141557) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2024:07:15-15:00:24:(141557) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2024:07:15-15:00:24:(141557) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(141557) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(141557) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:07:15-15:00:24:(138002) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2024:07:15-15:00:24:(138002) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2024:07:15-15:00:24:(138002) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(138002) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(138002) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:07:15-15:00:24:(138006) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2024:07:15-15:00:24:(138006) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2024:07:15-15:00:24:(138006) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(138006) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(138006) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:07:15-15:00:24:(137311) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2024:07:15-15:00:24:(137311) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2024:07:15-15:00:24:(137311) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(137311) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(137311) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:07:15-15:00:24:(137315) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2024:07:15-15:00:24:(137315) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2024:07:15-15:00:24:(137315) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(137315) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(137315) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:07:15-15:00:24:(147287) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2024:07:15-15:00:24:(147287) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2024:07:15-15:00:24:(147287) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(147287) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(147287) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:07:15-15:00:24:(138010) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2024:07:15-15:00:24:(138010) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2024:07:15-15:00:24:(138010) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(138010) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(138010) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:07:15-15:00:24:(138003) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2024:07:15-15:00:24:(138003) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2024:07:15-15:00:24:(138003) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(138003) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(138003) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:07:15-15:00:24:(138011) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2024:07:15-15:00:24:(138011) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2024:07:15-15:00:24:(138011) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(138011) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(138011) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:07:15-15:00:24:(138013) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2024:07:15-15:00:24:(138013) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2024:07:15-15:00:24:(138013) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(138013) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(138013) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:07:15-15:00:24:(138004) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2024:07:15-15:00:24:(138004) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2024:07:15-15:00:24:(138004) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(138004) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:15-15:00:24:(138004) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:07:15-15:00:25:(147286) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:07:15-15:00:25:(147288) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:07:15-15:00:25:(147289) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:07:15-15:00:25:(147290) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:07:15-15:00:25:(147293) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:07:15-15:00:25:(147295) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:07:15-15:00:25:(147284) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:07:15-15:00:25:(147285) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:07:15-15:00:25:(147287) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:07:15-15:00:25:(147291) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:07:15-15:00:25:(147292) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:07:15-15:00:25:(147294) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:07:15-15:00:25:(141555) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:07:15-15:00:25:(141556) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:07:15-15:00:25:(141557) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:07:15-15:00:25:(141558) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:07:15-15:00:25:(137310) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:07:15-15:00:25:(137313) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:07:15-15:00:25:(137314) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:07:15-15:00:25:(141559) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:07:15-15:00:25:(137311) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:07:15-15:00:25:(137312) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:07:15-15:00:25:(141560) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:07:15-15:00:25:(141561) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:07:15-15:00:25:(137315) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:07:15-15:00:25:(141562) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:07:15-15:00:25:(137316) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:07:15-15:00:25:(141563) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:07:15-15:00:25:(137317) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:07:15-15:00:25:(141564) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:07:15-15:00:25:(137318) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:07:15-15:00:25:(141565) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:07:15-15:00:25:(137319) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:07:15-15:00:25:(141566) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:07:15-15:00:25:(137320) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:07:15-15:00:25:(137321) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:07:15-15:00:25:(138002) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:07:15-15:00:25:(138003) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:07:15-15:00:25:(138004) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:07:15-15:00:25:(138005) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:07:15-15:00:25:(138006) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:07:15-15:00:25:(138007) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:07:15-15:00:25:(138008) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:07:15-15:00:25:(138009) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:07:15-15:00:25:(138010) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:07:15-15:00:25:(138011) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:07:15-15:00:25:(138012) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+2024:07:15-15:00:25:(138013) |CCL_WARN| MPI was initialized externaly but with unexpected thread level: required 3, provided 0
+
+Starting training loop ... 
+[0]: avg_loss = 1.150816e-02
+[1]: avg_loss = 1.037384e-02
+[2]: avg_loss = 1.089019e-02
+[3]: avg_loss = 1.064089e-02
+[4]: avg_loss = 1.039617e-02
+[5]: avg_loss = 1.038030e-02
+[6]: avg_loss = 1.038325e-02
+[7]: avg_loss = 1.036523e-02
+[8]: avg_loss = 1.036933e-02
+[9]: avg_loss = 1.036642e-02
+[10]: avg_loss = 1.036286e-02
+[11]: avg_loss = 1.036436e-02
+[12]: avg_loss = 1.036977e-02
+[13]: avg_loss = 1.036934e-02
+[14]: avg_loss = 1.036325e-02
+[15]: avg_loss = 1.036980e-02
+[16]: avg_loss = 1.036073e-02
+[17]: avg_loss = 1.036777e-02
+[18]: avg_loss = 1.036072e-02
+[19]: avg_loss = 1.036653e-02
+[20]: avg_loss = 1.036024e-02
+[21]: avg_loss = 1.036488e-02
+[22]: avg_loss = 1.036034e-02
+[23]: avg_loss = 1.036345e-02
+[24]: avg_loss = 1.036002e-02
+[25]: avg_loss = 1.036194e-02
+[26]: avg_loss = 1.035985e-02
+[27]: avg_loss = 1.035987e-02
+[28]: avg_loss = 1.035824e-02
+[29]: avg_loss = 1.035736e-02
+[30]: avg_loss = 1.035567e-02
+[31]: avg_loss = 1.035250e-02
+[32]: avg_loss = 1.034942e-02
+[33]: avg_loss = 1.034293e-02
+[34]: avg_loss = 1.033566e-02
+[35]: avg_loss = 1.032178e-02
+[36]: avg_loss = 1.030070e-02
+[37]: avg_loss = 1.026006e-02
+[38]: avg_loss = 1.020005e-02
+[39]: avg_loss = 1.013350e-02
+[40]: avg_loss = 9.986853e-03
+[41]: avg_loss = 9.819850e-03
+[42]: avg_loss = 9.430609e-03
+[43]: avg_loss = 8.883918e-03
+[44]: avg_loss = 8.474268e-03
+[45]: avg_loss = 8.758973e-03
+[46]: avg_loss = 7.349590e-03
+[47]: avg_loss = 8.423647e-03
+[48]: avg_loss = 7.711917e-03
+[49]: avg_loss = 8.443672e-03
+[50]: avg_loss = 7.220501e-03
+[51]: avg_loss = 7.548220e-03
+[52]: avg_loss = 7.520258e-03
+[53]: avg_loss = 6.986714e-03
+[54]: avg_loss = 7.389515e-03
+[55]: avg_loss = 7.392621e-03
+[56]: avg_loss = 6.983524e-03
+[57]: avg_loss = 7.111195e-03
+[58]: avg_loss = 7.157697e-03
+[59]: avg_loss = 6.835913e-03
+[60]: avg_loss = 7.024921e-03
+[61]: avg_loss = 6.952329e-03
+[62]: avg_loss = 6.658070e-03
+[63]: avg_loss = 7.054131e-03
+[64]: avg_loss = 6.579853e-03
+[65]: avg_loss = 6.755593e-03
+[66]: avg_loss = 6.529882e-03
+[67]: avg_loss = 6.501912e-03
+[68]: avg_loss = 6.446606e-03
+[69]: avg_loss = 6.346240e-03
+[70]: avg_loss = 6.321510e-03
+[71]: avg_loss = 6.381236e-03
+[72]: avg_loss = 6.036051e-03
+[73]: avg_loss = 6.032545e-03
+[74]: avg_loss = 6.120279e-03
+[75]: avg_loss = 6.127800e-03
+[76]: avg_loss = 5.745713e-03
+[77]: avg_loss = 5.659417e-03
+[78]: avg_loss = 5.834147e-03
+[79]: avg_loss = 6.199620e-03
+[80]: avg_loss = 7.105350e-03
+[81]: avg_loss = 5.493130e-03
+[82]: avg_loss = 6.380883e-03
+[83]: avg_loss = 6.503329e-03
+[84]: avg_loss = 5.753625e-03
+[85]: avg_loss = 6.613918e-03
+[86]: avg_loss = 5.408037e-03
+[87]: avg_loss = 6.077317e-03
+[88]: avg_loss = 5.656477e-03
+[89]: avg_loss = 5.807451e-03
+[90]: avg_loss = 5.377260e-03
+[91]: avg_loss = 5.434228e-03
+[92]: avg_loss = 5.583674e-03
+[93]: avg_loss = 5.458137e-03
+[94]: avg_loss = 5.276378e-03
+[95]: avg_loss = 5.113724e-03
+[96]: avg_loss = 5.294201e-03
+[97]: avg_loss = 5.272292e-03
+[98]: avg_loss = 5.082977e-03
+[99]: avg_loss = 4.985501e-03
+
+Performance data averaged over 48 ranks and 98 iterations:
+training_loop [s] : min = 8.869613e+01 , max = 8.870044e+01 , avg = 8.869784e+01 , std = 1.211801e-03 
+train_tot [s] : min = 7.318664e+00 , max = 7.556276e+00 , avg = 7.456627e+00 , std = 5.407225e-02 
+train_iter [s] : min = 7.105666e-02 , max = 8.559570e-02 , avg = 7.608803e-02 , std = 1.896649e-03 
+throughput_iter [s] : min = 1.168283e+07 , max = 1.407328e+07 , avg = 1.315081e+07 , std = 3.267543e+05 
+forward_pass [s] : min = 1.728134e-02 , max = 2.869609e-02 , avg = 1.889127e-02 , std = 7.296255e-04 
+loss [s] : min = 1.941060e-04 , max = 4.050540e-04 , avg = 2.383700e-04 , std = 2.109736e-05 
+backward_pass [s] : min = 4.397972e-02 , max = 6.026690e-02 , avg = 4.939797e-02 , std = 1.303612e-03 
+optimizer_step [s] : min = 6.743356e-03 , max = 1.041284e-02 , avg = 7.302061e-03 , std = 2.389205e-04 
+[WARNING] yaksa: 2 leaked handle pool objects
+Average parallel training throughout [nodes/s] : 6.312389e+08
+[WARNING] yaksa: 2 leaked handle pool objects
+[WARNING] yaksa: 2 leaked handle pool objects
+[WARNING] yaksa: 2 leaked handle pool objects
+[WARNING] yaksa: 2 leaked handle pool objects
+[WARNING] yaksa: 2 leaked handle pool objects
+[WARNING] yaksa: 2 leaked handle pool objects
+[WARNING] yaksa: 2 leaked handle pool objects
+[WARNING] yaksa: 2 leaked handle pool objects
+[WARNING] yaksa: 2 leaked handle pool objects
+[WARNING] yaksa: 2 leaked handle pool objects
+[WARNING] yaksa: 2 leaked handle pool objects
+[WARNING] yaksa: 2 leaked handle pool objects
+[WARNING] yaksa: 2 leaked handle pool objects
+[WARNING] yaksa: 2 leaked handle pool objects
+[WARNING] yaksa: 2 leaked handle pool objects
+[WARNING] yaksa: 2 leaked handle pool objects
+[WARNING] yaksa: 2 leaked handle pool objects
+[WARNING] yaksa: 2 leaked handle pool objects
+[WARNING] yaksa: 2 leaked handle pool objects
+[WARNING] yaksa: 2 leaked handle pool objects
+[WARNING] yaksa: 2 leaked handle pool objects
+[WARNING] yaksa: 2 leaked handle pool objects
+[WARNING] yaksa: 2 leaked handle pool objects
+[WARNING] yaksa: 2 leaked handle pool objects
+[WARNING] yaksa: 2 leaked handle pool objects
+[WARNING] yaksa: 2 leaked handle pool objects
+[WARNING] yaksa: 2 leaked handle pool objects
+[WARNING] yaksa: 2 leaked handle pool objects
+[WARNING] yaksa: 2 leaked handle pool objects
+[WARNING] yaksa: 2 leaked handle pool objects
+[WARNING] yaksa: 2 leaked handle pool objects
+[WARNING] yaksa: 2 leaked handle pool objects
+[WARNING] yaksa: 2 leaked handle pool objects
+[WARNING] yaksa: 2 leaked handle pool objects
+[WARNING] yaksa: 2 leaked handle pool objects
+[WARNING] yaksa: 2 leaked handle pool objects
+[WARNING] yaksa: 2 leaked handle pool objects
+[WARNING] yaksa: 2 leaked handle pool objects
+[WARNING] yaksa: 2 leaked handle pool objects
+[WARNING] yaksa: 2 leaked handle pool objects
+[WARNING] yaksa: 2 leaked handle pool objects
+[WARNING] yaksa: 2 leaked handle pool objects
+[WARNING] yaksa: 2 leaked handle pool objects
+[WARNING] yaksa: 2 leaked handle pool objects
+[WARNING] yaksa: 2 leaked handle pool objects
+[WARNING] yaksa: 2 leaked handle pool objects
+[WARNING] yaksa: 2 leaked handle pool objects
+2024:07:15-15:02:06:(141555) |CCL_WARN| MPI_Finalize has been called before CCL finalization
+Mon 15 Jul 2024 03:02:06 PM UTC
