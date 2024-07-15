@@ -185,17 +185,27 @@ def train(args, model, optimizer, loss_fn, data, comm) -> dict:
         tic_o = perf_counter()
         optimizer.step()
         toc_o = perf_counter()
+        
+        if args.include_loss_avg=='false':
+            toc_t = perf_counter()
 
         tic_c = perf_counter()
         if size>1:
             if args.device=='xpu':
+                #loss = comm.reduce(loss.item())
                 dist.reduce(loss, 0, op=dist.ReduceOp.SUM)
                 if rank==0: loss /= size
+                # The allreduce is slower, as expected
+                #loss = comm.allreduce(loss.item())
+                #dist.all_reduce(loss, op=dist.ReduceOp.SUM)
+                #loss /= size
             else:
                 dist.reduce(loss, 0, op=dist.ReduceOp.AVG)
-        toc_c = perf_counter()        
+        toc_c = perf_counter()
+        #print(f'rank [{rank}]: backward: {toc_b-tic_b}, metric_avg: {toc_c-tic_c}', flush=True)
 
-        toc_t = perf_counter()
+        if args.include_loss_avg=='true':
+            toc_t = perf_counter()
 
         if rank==0:
             print(f'[{iteration}]: avg_loss = {loss:>4e}', flush=True)
@@ -296,6 +306,7 @@ if __name__ == '__main__':
     parser.add_argument('--iterations', default=10, type=int, help='Number of optimizer iterations to perform')
     parser.add_argument('--precision', default="fp32", type=str, help='Floating point precision')
     parser.add_argument('--learning_rate', default=0.0001, type=float, help='Optimizer learning rate')
+    parser.add_argument('--include_loss_avg', default='true', choices=['true','false'], type=str, help='Include average of the loss across ranks in performance measurement')
     args = parser.parse_args()
 
     # Initialize Torch Distributed
