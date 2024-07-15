@@ -1,0 +1,191 @@
+
+Lmod is automatically replacing "nvhpc/23.9" with "gcc-native/12.3".
+
+
+Lmod is automatically replacing "PrgEnv-nvhpc/8.5.0" with "PrgEnv-gnu/8.5.0".
+
+
+Due to MODULEPATH changes, the following have been reloaded:
+  1) cray-mpich/8.1.28
+
+Loaded modules:
+
+Currently Loaded Modules:
+  1) libfabric/1.15.2.0       9) cray-pmi/6.1.13
+  2) craype-network-ofi      10) cray-pals/1.3.4
+  3) perftools-base/23.12.0  11) cray-libpals/1.3.4
+  4) darshan/3.4.4           12) craype-x86-milan
+  5) gcc-native/12.3         13) PrgEnv-gnu/8.5.0
+  6) craype/2.7.30           14) cray-hdf5-parallel/1.12.2.9
+  7) cray-dsmml/0.2.2        15) conda/2024-04-29
+  8) cray-mpich/8.1.28
+
+ 
+
+
+Torch version: 2.3.0
+Torch CUDA version: 12.4
+NCCL version: (2, 20, 5)
+cuDNN version: 90100
+Torch Geometric version: 2.5.3
+
+Number of nodes: 8
+Number of ranks per node: 4
+Number of total ranks: 32
+
+Running script /lus/eagle/projects/datascience/balin/Nek/GNN/GNN/SimAI-Bench/main.py
+with arguments --device=cuda --iterations=100 --problem_size=large
+
+Mon 15 Jul 2024 07:59:28 PM UTC
+Hello from rank 1/32, local rank 1 on x3003c0s19b0n0
+Hello from rank 28/32, local rank 0 on x3003c0s37b1n0
+Hello from rank 15/32, local rank 3 on x3003c0s1b1n0
+Hello from rank 29/32, local rank 1 on x3003c0s37b1n0
+Hello from rank 30/32, local rank 2 on x3003c0s37b1n0
+Hello from rank 3/32, local rank 3 on x3003c0s19b0n0
+Hello from rank 12/32, local rank 0 on x3003c0s1b1n0
+Hello from rank 31/32, local rank 3 on x3003c0s37b1n0
+Hello from rank 0/32, local rank 0 on x3003c0s19b0n0
+Hello from rank 13/32, local rank 1 on x3003c0s1b1n0
+Hello from rank 14/32, local rank 2 on x3003c0s1b1n0
+Hello from rank 8/32, local rank 0 on x3003c0s1b0n0
+Hello from rank 2/32, local rank 2 on x3003c0s19b0n0
+Hello from rank 5/32, local rank 1 on x3003c0s19b1n0
+Hello from rank 7/32, local rank 3 on x3003c0s19b1n0
+Hello from rank 24/32, local rank 0 on x3003c0s37b0n0
+Hello from rank 4/32, local rank 0 on x3003c0s19b1n0
+Hello from rank 6/32, local rank 2 on x3003c0s19b1n0
+Hello from rank 11/32, local rank 3 on x3003c0s1b0n0
+Hello from rank 20/32, local rank 0 on x3003c0s31b1n0
+Hello from rank 25/32, local rank 1 on x3003c0s37b0n0
+Hello from rank 27/32, local rank 3 on x3003c0s37b0n0
+Hello from rank 9/32, local rank 1 on x3003c0s1b0n0
+Hello from rank 21/32, local rank 1 on x3003c0s31b1n0
+Hello from rank 22/32, local rank 2 on x3003c0s31b1n0
+Hello from rank 26/32, local rank 2 on x3003c0s37b0n0
+Hello from rank 10/32, local rank 2 on x3003c0s1b0n0
+Hello from rank 23/32, local rank 3 on x3003c0s31b1n0
+Hello from rank 16/32, local rank 0 on x3003c0s31b0n0
+Hello from rank 17/32, local rank 1 on x3003c0s31b0n0
+Hello from rank 18/32, local rank 2 on x3003c0s31b0n0
+Hello from rank 19/32, local rank 3 on x3003c0s31b0n0
+
+Loaded data and model with 163491 parameters
+
+Running on device: cuda 
+
+
+Starting training loop ... 
+[0]: avg_loss = 3.547288e-02
+[1]: avg_loss = 3.014177e-02
+[2]: avg_loss = 2.545362e-02
+[3]: avg_loss = 2.031652e-02
+[4]: avg_loss = 1.644195e-02
+[5]: avg_loss = 1.234904e-02
+[6]: avg_loss = 1.080871e-02
+[7]: avg_loss = 1.259550e-02
+[8]: avg_loss = 1.218552e-02
+[9]: avg_loss = 1.118493e-02
+[10]: avg_loss = 1.082391e-02
+[11]: avg_loss = 1.079291e-02
+[12]: avg_loss = 1.082602e-02
+[13]: avg_loss = 1.081842e-02
+[14]: avg_loss = 1.076417e-02
+[15]: avg_loss = 1.071459e-02
+[16]: avg_loss = 1.064298e-02
+[17]: avg_loss = 1.057346e-02
+[18]: avg_loss = 1.047786e-02
+[19]: avg_loss = 1.041978e-02
+[20]: avg_loss = 1.039275e-02
+[21]: avg_loss = 1.039528e-02
+[22]: avg_loss = 1.042217e-02
+[23]: avg_loss = 1.043235e-02
+[24]: avg_loss = 1.041864e-02
+[25]: avg_loss = 1.040121e-02
+[26]: avg_loss = 1.039662e-02
+[27]: avg_loss = 1.039675e-02
+[28]: avg_loss = 1.038932e-02
+[29]: avg_loss = 1.038474e-02
+[30]: avg_loss = 1.039145e-02
+[31]: avg_loss = 1.039701e-02
+[32]: avg_loss = 1.039250e-02
+[33]: avg_loss = 1.038519e-02
+[34]: avg_loss = 1.038286e-02
+[35]: avg_loss = 1.037919e-02
+[36]: avg_loss = 1.037208e-02
+[37]: avg_loss = 1.036777e-02
+[38]: avg_loss = 1.036655e-02
+[39]: avg_loss = 1.036188e-02
+[40]: avg_loss = 1.035163e-02
+[41]: avg_loss = 1.033914e-02
+[42]: avg_loss = 1.032444e-02
+[43]: avg_loss = 1.030299e-02
+[44]: avg_loss = 1.027371e-02
+[45]: avg_loss = 1.023896e-02
+[46]: avg_loss = 1.019359e-02
+[47]: avg_loss = 1.013266e-02
+[48]: avg_loss = 1.004095e-02
+[49]: avg_loss = 9.929598e-03
+[50]: avg_loss = 9.788152e-03
+[51]: avg_loss = 9.611186e-03
+[52]: avg_loss = 9.411631e-03
+[53]: avg_loss = 9.196139e-03
+[54]: avg_loss = 8.945191e-03
+[55]: avg_loss = 8.715147e-03
+[56]: avg_loss = 8.520761e-03
+[57]: avg_loss = 8.427809e-03
+[58]: avg_loss = 8.371174e-03
+[59]: avg_loss = 8.308263e-03
+[60]: avg_loss = 8.204475e-03
+[61]: avg_loss = 8.090069e-03
+[62]: avg_loss = 8.016868e-03
+[63]: avg_loss = 8.152383e-03
+[64]: avg_loss = 8.095549e-03
+[65]: avg_loss = 7.717136e-03
+[66]: avg_loss = 7.684400e-03
+[67]: avg_loss = 7.666357e-03
+[68]: avg_loss = 7.357644e-03
+[69]: avg_loss = 7.438881e-03
+[70]: avg_loss = 7.334719e-03
+[71]: avg_loss = 7.082094e-03
+[72]: avg_loss = 7.065760e-03
+[73]: avg_loss = 7.091950e-03
+[74]: avg_loss = 6.936734e-03
+[75]: avg_loss = 6.825780e-03
+[76]: avg_loss = 6.748162e-03
+[77]: avg_loss = 6.700009e-03
+[78]: avg_loss = 6.770947e-03
+[79]: avg_loss = 6.854586e-03
+[80]: avg_loss = 6.673703e-03
+[81]: avg_loss = 6.492571e-03
+[82]: avg_loss = 6.408731e-03
+[83]: avg_loss = 6.468311e-03
+[84]: avg_loss = 6.422457e-03
+[85]: avg_loss = 6.250709e-03
+[86]: avg_loss = 6.277042e-03
+[87]: avg_loss = 6.309171e-03
+[88]: avg_loss = 6.137957e-03
+[89]: avg_loss = 6.100178e-03
+[90]: avg_loss = 6.160329e-03
+[91]: avg_loss = 6.074737e-03
+[92]: avg_loss = 5.966862e-03
+[93]: avg_loss = 5.962923e-03
+[94]: avg_loss = 5.997722e-03
+[95]: avg_loss = 5.973984e-03
+[96]: avg_loss = 5.905778e-03
+[97]: avg_loss = 5.875583e-03
+[98]: avg_loss = 5.892885e-03
+[99]: avg_loss = 5.921073e-03
+
+Performance data averaged over 32 ranks and 98 iterations:
+training_loop [s] : min = 9.218989e+01 , max = 9.268838e+01 , avg = 9.222422e+01 , std = 8.548609e-02 
+train_tot [s] : min = 6.185993e+01 , max = 8.962296e+01 , avg = 8.872423e+01 , std = 4.825004e+00 
+train_iter [s] : min = 6.308385e-01 , max = 1.022376e+00 , avg = 9.053493e-01 , std = 5.426561e-02 
+throughput_iter [s] : min = 9.781133e+05 , max = 1.585192e+06 , avg = 1.109821e+06 , std = 8.892533e+04 
+forward_pass [s] : min = 8.275925e-03 , max = 4.001388e-01 , avg = 1.113558e-01 , std = 7.509103e-02 
+loss [s] : min = 1.277607e-04 , max = 8.358129e-03 , avg = 1.452276e-04 , std = 1.711982e-04 
+backward_pass [s] : min = 6.155519e-01 , max = 8.474125e-01 , avg = 7.896782e-01 , std = 5.919949e-02 
+optimizer_step [s] : min = 2.386237e-03 , max = 5.697973e-03 , avg = 3.894143e-03 , std = 1.430890e-03 
+collectives [s] : min = 6.466080e-05 , max = 1.095142e-04 , avg = 7.267675e-05 , std = 2.789065e-06 
+Average parallel training throughout [nodes/s] : 3.551428e+07
+Mon 15 Jul 2024 08:01:57 PM UTC
