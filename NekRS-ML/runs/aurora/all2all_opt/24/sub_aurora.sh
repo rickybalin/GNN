@@ -2,7 +2,7 @@
 #PBS -S /bin/bash
 #PBS -N gnn_scale
 #PBS -l walltime=00:30:00
-#PBS -l select=2
+#PBS -l select=4
 #PBS -k doe
 #PBS -j oe
 #PBS -A Aurora_deployment
@@ -34,6 +34,21 @@ echo
 export FI_CXI_DEFAULT_CQ_SIZE=131072
 export FI_CXI_OVFLOW_BUF_SIZE=8388608
 export FI_CXI_CQ_FILL_PERCENT=20
+
+#export MPIR_CVAR_ENABLE_GPU=0
+export CCL_KVS_GET_TIMEOUT=600
+export CCL_PROCESS_LAUNCHER=pmix
+export FI_CXI_OFLOW_BUF_SIZE=20971520 # increased 2MB to 20MB
+
+export CCL_ATL_TRANSPORT=mpi
+export CCL_KVS_MODE=mpi
+
+export CCL_CONFIGURATION_PATH=""
+export CCL_CONFIGURATION=cpu_gpu_dpcpp
+export CCL_ROOT="/flare/Aurora_deployment/intel/ccl/ccl_3504f9b6_install"
+export LD_LIBRARY_PATH=/flare/Aurora_deployment/intel/ccl/ccl_3504f9b6_install/lib:$LD_LIBRARY_PATH
+export CPATH=/flare/Aurora_deployment/intel/ccl/ccl_3504f9b6_install/include:$CPATH
+export LIBRARY_PATH=/flare/Aurora_deployment/intel/ccl/ccl_3504f9b6_install/lib:$LIBRARY_PATH
 
 export CPU_BIND="list:2-4:10-12:18-20:26-28:34-36:42-44:54-56:62-64:70-72:78-80:86-88:94-96"
 if [[ $PROCS_PER_NODE -eq 1 ]]; then
