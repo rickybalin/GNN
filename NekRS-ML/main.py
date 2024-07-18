@@ -313,6 +313,7 @@ class Trainer:
         # ~~~~ Wrap model in DDP
         if WITH_DDP and SIZE > 1:
             self.model = DDP(self.model)
+            #self.model = DDP(self.model, broadcast_buffers=False, gradient_as_bucket_view=True)
 
         # ~~~~ Setup train_step timers 
         self.timer_step = 0
