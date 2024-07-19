@@ -1,11 +1,8 @@
 #!/bin/bash 
 
 module use /soft/modulefiles
-module load forge cray-cti
-module load conda/2024-04-29
-#conda activate /eagle/datascience/balin/SimAI-Bench/conda/clone
-conda activate /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn
-source /lus/eagle/projects/datascience/balin/Nek/GNN/env/_pyg/bin/activate
+module load jax/0.4.29-dev
+source /lus/eagle/projects/datascience/balin/Nek/GNN/env/_pyg_old/bin/activate
 
 echo Loaded modules:
 module list
@@ -27,13 +24,14 @@ export FI_CXI_DISABLE_HOST_REGISTER=1
 export FI_MR_CACHE_MONITOR=userfaultfd
 export FI_CXI_DEFAULT_CQ_SIZE=131072
 
-# for all_to_all
+# for all_to_all at larger scale
 #export FI_CXI_RX_MATCH_MODE=software
 #export FI_CXI_RDZV_PROTO=alt_read
 #export FI_CXI_REQ_BUF_SIZE=8388608
 
 NODES=$(cat $PBS_NODEFILE | wc -l)
-PROCS_PER_NODE=4
+NODES=1
+PROCS_PER_NODE=1
 PROCS=$((NODES * PROCS_PER_NODE))
 JOBID=$(echo $PBS_JOBID | awk '{split($1,a,"."); print a[1]}')
 echo Number of nodes: $NODES
@@ -42,10 +40,10 @@ echo Number of ML total ranks: $PROCS
 echo
 
 # Halo swap mode
-HALO_SWAP_MODE=none
+#HALO_SWAP_MODE=none
 #HALO_SWAP_MODE=all_to_all
 #HALO_SWAP_MODE=all_to_all_opt
-#HALO_SWAP_MODE=send_recv
+HALO_SWAP_MODE=send_recv
 
 # Data path strong scaling
 #DATA_PATH=/lus/eagle/projects/datascience/sbarwey/codes/nek/nekrs_cases/examples_v23_gnn/tgv/gnn_outputs_distributed_gnn/gnn_outputs_poly_3/
@@ -54,13 +52,13 @@ HALO_SWAP_MODE=none
 #DATA_PATH=/lus/eagle/projects/datascience/sbarwey/codes/nek/nekrs_cases/examples_v23_gnn/tgv_weak_scaling/ne_16_v2/gnn_outputs_poly_5/
 DATA_PATH=/eagle/datascience/balin/Nek/GNN/weak_scale_data/500k_polaris/${PROCS}/gnn_outputs_poly_5/
 
-EXE=/eagle/datascience/balin/Nek/GNN/GNN/NekRS-ML/main.py
-ARGS="backend=nccl halo_swap_mode=${HALO_SWAP_MODE} gnn_outputs_path=${DATA_PATH} epochs=30"
+EXE=/eagle/projects/datascience/balin/Nek/GNN/GNN/NekRS-ML/main.py
+ARGS="backend=nccl halo_swap_mode=${HALO_SWAP_MODE} gnn_outputs_path=${DATA_PATH} hidden_channels=8 n_mlp_hidden_layers=5"
 echo Running script $EXE
 echo with arguments $ARGS
 echo
 echo `date`
-MPICH_GPU_SUPPORT_ENABLED=0 map --profile mpiexec --envall -n $PROCS --ppn $PROCS_PER_NODE --cpu-bind=list:24:16:8:1 python $EXE ${ARGS} 
+mpiexec --envall -n $PROCS --ppn $PROCS_PER_NODE --cpu-bind=list:24:16:8:1 python $EXE ${ARGS} 
 echo `date`
 
 
