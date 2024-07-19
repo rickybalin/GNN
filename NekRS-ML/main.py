@@ -51,10 +51,6 @@ import torch_geometric.nn as tgnn
 
 # Intel extensions
 try:
-    import intel_extension_for_pytorch as ipex
-except ModuleNotFoundError as e:
-    pass
-try:
     import oneccl_bindings_for_pytorch as ccl
 except ModuleNotFoundError as e:
     pass
