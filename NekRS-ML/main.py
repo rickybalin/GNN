@@ -1261,6 +1261,7 @@ def train(cfg: DictConfig) -> None:
     epoch_times = []
     batch_times = []
     epoch_throughput = []
+    batch_throughput = []
     n_nodes_local = trainer.data_reduced.n_nodes_local.item()
 
     for epoch in range(trainer.epoch_start, cfg.epochs+1):
@@ -1276,6 +1277,7 @@ def train(cfg: DictConfig) -> None:
             epoch_times.append(epoch_time)
             epoch_throughput.append(n_nodes_local/epoch_time)
             batch_times.extend(train_metrics['batch_times'])
+            batch_throughput.extend([n_nodes_local/time for time in train_metrics['batch_times']])
 
         # ~~~~ Validation step
         #test_metrics = trainer.test()
@@ -1331,10 +1333,12 @@ def train(cfg: DictConfig) -> None:
 
     # ~~~ Print times
     epoch_stats = collect_list_times(epoch_times)
-    throughput_stats = collect_list_times(epoch_throughput)
+    epoch_throughput_stats = collect_list_times(epoch_throughput)
     batch_stats = collect_list_times(batch_times)
+    batch_throughput_stats = collect_list_times(batch_throughput)
+    total_epoch_throughput = average_list_times(epoch_throughput)
+    total_batch_throughput = average_list_times(batch_throughput)
     trainer.collect_timer_stats()
-    total_throughput = average_list_times(epoch_throughput)
     if RANK == 0:
         log.info(f'\nPerformance data averaged over {SIZE} ranks, {len(epoch_times)} epochs and {len(batch_times)} iterations:')
         log.info(f'Total training time: {end - start}')
@@ -1343,17 +1347,23 @@ def train(cfg: DictConfig) -> None:
                            f"avg = {epoch_stats['avg']:>6e} , " + \
                            f"std = {epoch_stats['std']:>6e} "
         log.info(f"Training epoch [s] " + stats_string)
-        stats_string = f": min = {throughput_stats['min'][0]:>6e} , " + \
-                           f"max = {throughput_stats['max'][0]:>6e} , " + \
-                           f"avg = {throughput_stats['avg']:>6e} , " + \
-                           f"std = {throughput_stats['std']:>6e} "
+        stats_string = f": min = {epoch_throughput_stats['min'][0]:>6e} , " + \
+                           f"max = {epoch_throughput_stats['max'][0]:>6e} , " + \
+                           f"avg = {epoch_throughput_stats['avg']:>6e} , " + \
+                           f"std = {epoch_throughput_stats['std']:>6e} "
         log.info(f"Training throughput [nodes/s] " + stats_string)
-        log.info(f"Average parallel training throughout [nodes/s] : {total_throughput:>6e}")
+        log.info(f"Average parallel training throughout [nodes/s] : {total_epoch_throughput:>6e}")
         stats_string = f": min = {batch_stats['min'][0]:>6e} , " + \
                            f"max = {batch_stats['max'][0]:>6e} , " + \
                            f"avg = {batch_stats['avg']:>6e} , " + \
                            f"std = {batch_stats['std']:>6e} "
         log.info(f"Training batch [s] " + stats_string)
+        stats_string = f": min = {batch_throughput_stats['min'][0]:>6e} , " + \
+                           f"max = {batch_throughput_stats['max'][0]:>6e} , " + \
+                           f"avg = {batch_throughput_stats['avg']:>6e} , " + \
+                           f"std = {batch_throughput_stats['std']:>6e} "
+        log.info(f"Training batch throughput [nodes/s] " + stats_string)
+        log.info(f"Average parallel training batch throughout [nodes/s] : {total_batch_throughput:>6e}")
         trainer.print_timer_stats()
     
  
