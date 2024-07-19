@@ -30,7 +30,8 @@ export FI_CXI_DEFAULT_CQ_SIZE=131072
 #export FI_CXI_REQ_BUF_SIZE=8388608
 
 NODES=$(cat $PBS_NODEFILE | wc -l)
-PROCS_PER_NODE=1
+NODES=1
+PROCS_PER_NODE=4
 PROCS=$((NODES * PROCS_PER_NODE))
 JOBID=$(echo $PBS_JOBID | awk '{split($1,a,"."); print a[1]}')
 echo Number of nodes: $NODES
@@ -52,7 +53,7 @@ HALO_SWAP_MODE=send_recv
 DATA_PATH=/eagle/datascience/balin/Nek/GNN/weak_scale_data/500k_polaris/${PROCS}/gnn_outputs_poly_5/
 
 EXE=/eagle/projects/datascience/balin/Nek/GNN/GNN/NekRS-ML/main.py
-ARGS="backend=nccl halo_swap_mode=${HALO_SWAP_MODE} gnn_outputs_path=${DATA_PATH}"
+ARGS="backend=nccl halo_swap_mode=${HALO_SWAP_MODE} gnn_outputs_path=${DATA_PATH} hidden_channels=8 n_mlp_hidden_layers=5"
 echo Running script $EXE
 echo with arguments $ARGS
 echo

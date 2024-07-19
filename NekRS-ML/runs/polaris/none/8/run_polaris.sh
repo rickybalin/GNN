@@ -1,7 +1,6 @@
 #!/bin/bash 
 
 module use /soft/modulefiles
-module load forge cray-cti
 module load conda/2024-04-29
 #conda activate /eagle/datascience/balin/SimAI-Bench/conda/clone
 conda activate /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn
@@ -55,12 +54,12 @@ HALO_SWAP_MODE=none
 DATA_PATH=/eagle/datascience/balin/Nek/GNN/weak_scale_data/500k_polaris/${PROCS}/gnn_outputs_poly_5/
 
 EXE=/eagle/datascience/balin/Nek/GNN/GNN/NekRS-ML/main.py
-ARGS="backend=nccl halo_swap_mode=${HALO_SWAP_MODE} gnn_outputs_path=${DATA_PATH} epochs=30"
+ARGS="backend=nccl halo_swap_mode=${HALO_SWAP_MODE} gnn_outputs_path=${DATA_PATH}"
 echo Running script $EXE
 echo with arguments $ARGS
 echo
 echo `date`
-MPICH_GPU_SUPPORT_ENABLED=0 map --profile mpiexec --envall -n $PROCS --ppn $PROCS_PER_NODE --cpu-bind=list:24:16:8:1 python $EXE ${ARGS} 
+mpiexec --envall -n $PROCS --ppn $PROCS_PER_NODE --cpu-bind=list:24:16:8:1 python $EXE ${ARGS} 
 echo `date`
 
 
