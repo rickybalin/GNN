@@ -1,0 +1,1186 @@
+Loaded modules:
+
+Torch version: 2.3.0
+Torch CUDA version: 12.4
+NCCL version: (2, 20, 5)
+cuDNN version: 90100
+Torch Geometric version: 2.5.3
+
+Number of nodes: 2
+Number of ML ranks per node: 4
+Number of ML total ranks: 8
+
+Running script /eagle/datascience/balin/Nek/GNN/GNN/NekRS-ML/main.py
+with arguments epochs=200 backend=nccl halo_swap_mode=all_to_all_opt gnn_outputs_path=/eagle/datascience/balin/Nek/GNN/weak_scale_data/250k_polaris/8/gnn_outputs_poly_5/
+
+Wed 24 Jul 2024 06:23:03 PM UTC
+[2024-07-24 18:23:09,975][__main__][INFO] - Hello from rank 0/8, local rank 0, on device cuda:0 out of 4.
+[2024-07-24 18:23:10,470][__main__][INFO] - Hello from rank 2/8, local rank 2, on device cuda:2 out of 4.
+[2024-07-24 18:23:10,471][__main__][INFO] - Hello from rank 3/8, local rank 3, on device cuda:3 out of 4.
+[2024-07-24 18:23:10,471][__main__][INFO] - Hello from rank 1/8, local rank 1, on device cuda:1 out of 4.
+[2024-07-24 18:23:10,976][__main__][INFO] - [RANK 1]: Loading positions and global node index
+[2024-07-24 18:23:10,988][__main__][INFO] - [RANK 1]: Loading edge index
+[2024-07-24 18:23:10,992][__main__][INFO] - [RANK 2]: Loading positions and global node index
+[2024-07-24 18:23:11,008][__main__][INFO] - [RANK 3]: Loading positions and global node index
+[2024-07-24 18:23:11,009][__main__][INFO] - [RANK 2]: Loading edge index
+[2024-07-24 18:23:11,018][__main__][INFO] - [RANK 1]: Loading local unique mask
+[2024-07-24 18:23:11,021][__main__][INFO] - [RANK 1]: Making the FULL GLL-based graph with overlapping nodes
+[2024-07-24 18:23:11,021][__main__][INFO] - [RANK 3]: Loading edge index
+[2024-07-24 18:23:11,039][__main__][INFO] - [RANK 2]: Loading local unique mask
+[2024-07-24 18:23:11,042][__main__][INFO] - [RANK 2]: Making the FULL GLL-based graph with overlapping nodes
+[2024-07-24 18:23:11,052][__main__][INFO] - [RANK 3]: Loading local unique mask
+[2024-07-24 18:23:11,056][__main__][INFO] - [RANK 3]: Making the FULL GLL-based graph with overlapping nodes
+[2024-07-24 18:23:11,307][__main__][INFO] - Hello from rank 4/8, local rank 0, on device cuda:0 out of 4.
+[2024-07-24 18:23:11,846][__main__][INFO] - Hello from rank 5/8, local rank 1, on device cuda:1 out of 4.
+[2024-07-24 18:23:11,847][__main__][INFO] - Hello from rank 7/8, local rank 3, on device cuda:3 out of 4.
+[2024-07-24 18:23:11,849][__main__][INFO] - Hello from rank 6/8, local rank 2, on device cuda:2 out of 4.
+[2024-07-24 18:23:11,862][__main__][INFO] - [RANK 1]: Making the REDUCED GLL-based graph with non-overlapping nodes
+[2024-07-24 18:23:11,885][__main__][INFO] - [RANK 2]: Making the REDUCED GLL-based graph with non-overlapping nodes
+[2024-07-24 18:23:11,894][__main__][INFO] - [RANK 3]: Making the REDUCED GLL-based graph with non-overlapping nodes
+[2024-07-24 18:23:12,092][__main__][INFO] - [RANK 4]: Loading positions and global node index
+[2024-07-24 18:23:12,104][__main__][INFO] - [RANK 4]: Loading edge index
+[2024-07-24 18:23:12,134][__main__][INFO] - [RANK 4]: Loading local unique mask
+[2024-07-24 18:23:12,137][__main__][INFO] - [RANK 4]: Making the FULL GLL-based graph with overlapping nodes
+[2024-07-24 18:23:12,198][__main__][INFO] - [RANK 1]: Getting idx_reduced2full
+[2024-07-24 18:23:12,216][__main__][INFO] - [RANK 2]: Getting idx_reduced2full
+[2024-07-24 18:23:12,225][__main__][INFO] - [RANK 3]: Getting idx_reduced2full
+[2024-07-24 18:23:12,372][__main__][INFO] - [RANK 6]: Loading positions and global node index
+[2024-07-24 18:23:12,385][__main__][INFO] - [RANK 6]: Loading edge index
+[2024-07-24 18:23:12,415][__main__][INFO] - [RANK 6]: Loading local unique mask
+[2024-07-24 18:23:12,418][__main__][INFO] - [RANK 6]: Making the FULL GLL-based graph with overlapping nodes
+[2024-07-24 18:23:12,472][__main__][INFO] - [RANK 7]: Loading positions and global node index
+[2024-07-24 18:23:12,484][__main__][INFO] - [RANK 7]: Loading edge index
+[2024-07-24 18:23:12,512][__main__][INFO] - [RANK 5]: Loading positions and global node index
+[2024-07-24 18:23:12,514][__main__][INFO] - [RANK 7]: Loading local unique mask
+[2024-07-24 18:23:12,517][__main__][INFO] - [RANK 7]: Making the FULL GLL-based graph with overlapping nodes
+[2024-07-24 18:23:12,524][__main__][INFO] - [RANK 5]: Loading edge index
+[2024-07-24 18:23:12,554][__main__][INFO] - [RANK 5]: Loading local unique mask
+[2024-07-24 18:23:12,557][__main__][INFO] - [RANK 5]: Making the FULL GLL-based graph with overlapping nodes
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+RUNNING WITH INPUTS:
+profile: false
+halo_test: false
+verbose: true
+seed: 12
+epochs: 200
+backend: nccl
+lr_init: 0.0001
+use_noise: true
+num_threads: 0
+logfreq: 10
+ckptfreq: 1000
+batch_size: 1
+test_batch_size: 1
+fp16_allreduce: false
+restart: false
+hidden_channels: 32
+n_mlp_hidden_layers: 5
+n_messagePassing_layers: 4
+rollout_steps: 1
+halo_swap_mode: all_to_all_opt
+plot_connectivity: false
+work_dir: ${hydra:runtime.cwd}
+data_dir: ${work_dir}/datasets/
+ckpt_dir: ${work_dir}/ckpt/
+model_dir: ${work_dir}/saved_models/
+profile_dir: ${work_dir}/outputs/profiles/test/
+gnn_outputs_path: /eagle/datascience/balin/Nek/GNN/weak_scale_data/250k_polaris/8/gnn_outputs_poly_5/
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[2024-07-24 18:23:12,624][__main__][INFO] - [RANK 0]: Loading positions and global node index
+[2024-07-24 18:23:12,636][__main__][INFO] - [RANK 0]: Loading edge index
+[2024-07-24 18:23:12,666][__main__][INFO] - [RANK 0]: Loading local unique mask
+[2024-07-24 18:23:12,669][__main__][INFO] - [RANK 0]: Making the FULL GLL-based graph with overlapping nodes
+[2024-07-24 18:23:12,982][__main__][INFO] - [RANK 4]: Making the REDUCED GLL-based graph with non-overlapping nodes
+[2024-07-24 18:23:13,256][__main__][INFO] - [RANK 6]: Making the REDUCED GLL-based graph with non-overlapping nodes
+[2024-07-24 18:23:13,308][__main__][INFO] - [RANK 4]: Getting idx_reduced2full
+[2024-07-24 18:23:13,360][__main__][INFO] - [RANK 7]: Making the REDUCED GLL-based graph with non-overlapping nodes
+[2024-07-24 18:23:13,394][__main__][INFO] - [RANK 5]: Making the REDUCED GLL-based graph with non-overlapping nodes
+[2024-07-24 18:23:13,503][__main__][INFO] - [RANK 0]: Making the REDUCED GLL-based graph with non-overlapping nodes
+[2024-07-24 18:23:13,585][__main__][INFO] - [RANK 6]: Getting idx_reduced2full
+[2024-07-24 18:23:13,693][__main__][INFO] - [RANK 7]: Getting idx_reduced2full
+[2024-07-24 18:23:13,727][__main__][INFO] - [RANK 5]: Getting idx_reduced2full
+[2024-07-24 18:23:13,828][__main__][INFO] - [RANK 0]: Getting idx_reduced2full
+[2024-07-24 18:23:15,188][__main__][INFO] - [RANK 1]: Assembling halo_ids_list using reduced graph
+[2024-07-24 18:23:15,190][__main__][INFO] - [RANK 1]: Found 2 neighboring processes: [0 2]
+[2024-07-24 18:23:15,200][__main__][INFO] - [RANK 2]: Assembling halo_ids_list using reduced graph
+[2024-07-24 18:23:15,201][__main__][INFO] - [RANK 2]: Found 2 neighboring processes: [1 3]
+[2024-07-24 18:23:15,294][__main__][INFO] - [RANK 3]: Assembling halo_ids_list using reduced graph
+[2024-07-24 18:23:15,296][__main__][INFO] - [RANK 3]: Found 2 neighboring processes: [2 4]
+[2024-07-24 18:23:16,328][__main__][INFO] - [RANK 4]: Assembling halo_ids_list using reduced graph
+[2024-07-24 18:23:16,331][__main__][INFO] - [RANK 4]: Found 2 neighboring processes: [3 5]
+[2024-07-24 18:23:16,627][__main__][INFO] - [RANK 6]: Assembling halo_ids_list using reduced graph
+[2024-07-24 18:23:16,628][__main__][INFO] - [RANK 6]: Found 2 neighboring processes: [5 7]
+[2024-07-24 18:23:16,755][__main__][INFO] - [RANK 5]: Assembling halo_ids_list using reduced graph
+[2024-07-24 18:23:16,757][__main__][INFO] - [RANK 5]: Found 2 neighboring processes: [4 6]
+[2024-07-24 18:23:16,808][__main__][INFO] - [RANK 7]: Assembling halo_ids_list using reduced graph
+[2024-07-24 18:23:16,810][__main__][INFO] - [RANK 7]: Found 2 neighboring processes: [0 6]
+[2024-07-24 18:23:16,849][__main__][INFO] - [RANK 0]: Assembling halo_ids_list using reduced graph
+[2024-07-24 18:23:16,851][__main__][INFO] - [RANK 0]: Found 2 neighboring processes: [1 7]
+[2024-07-24 18:23:16,852][__main__][INFO] - In setup_data...
+Data(x=[265600, 3], y=[265600, 3], edge_index=[2, 1548800], pos=[265600, 3], global_ids=[259200], local_unique_mask=[259200], halo_unique_mask=[259200], local_ids=[442368], n_nodes_local=259200, n_nodes_halo=6400, halo_info=[6400, 4], edge_weight=[1548800], node_degree=[259200], edge_attr=[1548800, 4])
+[2024-07-24 18:23:16,925][__main__][INFO] - Done with setup_data
+[2024-07-24 18:23:16,925][__main__][INFO] - Done with build_masks
+[2024-07-24 18:23:17,901][__main__][INFO] - [RANK 1]: Created send and receive buffers for all_to_all_opt halo exchange:
+[2024-07-24 18:23:17,901][__main__][INFO] - [RANK 4]: Created send and receive buffers for all_to_all_opt halo exchange:
+[2024-07-24 18:23:17,901][__main__][INFO] - [RANK 5]: Created send and receive buffers for all_to_all_opt halo exchange:
+[2024-07-24 18:23:17,901][__main__][INFO] - [RANK 5]: Send buffers of size [0, 0, 0, 0, 409600, 0, 409600, 0]
+[2024-07-24 18:23:17,901][__main__][INFO] - [RANK 5]: Receive buffers of size [0, 0, 0, 0, 409600, 0, 409600, 0]
+[2024-07-24 18:23:17,901][__main__][INFO] - [RANK 6]: Created send and receive buffers for all_to_all_opt halo exchange:
+[2024-07-24 18:23:17,901][__main__][INFO] - [RANK 6]: Send buffers of size [0, 0, 0, 0, 0, 409600, 0, 409600]
+[2024-07-24 18:23:17,901][__main__][INFO] - [RANK 6]: Receive buffers of size [0, 0, 0, 0, 0, 409600, 0, 409600]
+[2024-07-24 18:23:17,901][__main__][INFO] - [RANK 3]: Created send and receive buffers for all_to_all_opt halo exchange:
+[2024-07-24 18:23:17,901][__main__][INFO] - [RANK 3]: Send buffers of size [0, 0, 409600, 0, 409600, 0, 0, 0]
+[2024-07-24 18:23:17,901][__main__][INFO] - [RANK 3]: Receive buffers of size [0, 0, 409600, 0, 409600, 0, 0, 0]
+[2024-07-24 18:23:17,901][__main__][INFO] - [RANK 4]: Send buffers of size [0, 0, 0, 409600, 0, 409600, 0, 0]
+[2024-07-24 18:23:17,901][__main__][INFO] - [RANK 4]: Receive buffers of size [0, 0, 0, 409600, 0, 409600, 0, 0]
+[2024-07-24 18:23:17,901][__main__][INFO] - [RANK 0]: Created send and receive buffers for all_to_all_opt halo exchange:
+[2024-07-24 18:23:17,901][__main__][INFO] - [RANK 0]: Send buffers of size [0, 409600, 0, 0, 0, 0, 0, 409600]
+[2024-07-24 18:23:17,901][__main__][INFO] - [RANK 0]: Receive buffers of size [0, 409600, 0, 0, 0, 0, 0, 409600]
+[2024-07-24 18:23:17,901][__main__][INFO] - Done with build_buffers
+[2024-07-24 18:23:17,901][__main__][INFO] - In build_model...
+[2024-07-24 18:23:17,901][__main__][INFO] - [RANK 7]: Created send and receive buffers for all_to_all_opt halo exchange:
+[2024-07-24 18:23:17,901][__main__][INFO] - [RANK 7]: Send buffers of size [409600, 0, 0, 0, 0, 0, 409600, 0]
+[2024-07-24 18:23:17,901][__main__][INFO] - [RANK 7]: Receive buffers of size [409600, 0, 0, 0, 0, 0, 409600, 0]
+[2024-07-24 18:23:17,901][__main__][INFO] - [RANK 1]: Send buffers of size [409600, 0, 409600, 0, 0, 0, 0, 0]
+[2024-07-24 18:23:17,901][__main__][INFO] - [RANK 1]: Receive buffers of size [409600, 0, 409600, 0, 0, 0, 0, 0]
+[2024-07-24 18:23:17,901][__main__][INFO] - [RANK 2]: Created send and receive buffers for all_to_all_opt halo exchange:
+[2024-07-24 18:23:17,901][__main__][INFO] - [RANK 2]: Send buffers of size [0, 409600, 0, 409600, 0, 0, 0, 0]
+[2024-07-24 18:23:17,901][__main__][INFO] - [RANK 2]: Receive buffers of size [0, 409600, 0, 409600, 0, 0, 0, 0]
+[2024-07-24 18:23:17,940][__main__][INFO] - Done with build_model
+[2024-07-24 18:23:17,955][__main__][INFO] - [RANK 6] -- model save header : POLY_5_RANK_6_SIZE_8_SEED_12_3_4_32_3_5_4_all_to_all_opt
+[2024-07-24 18:23:17,955][__main__][INFO] - In writeGraphStatistics
+[2024-07-24 18:23:17,955][__main__][INFO] - [RANK 0] -- model save header : POLY_5_RANK_0_SIZE_8_SEED_12_3_4_32_3_5_4_all_to_all_opt
+[2024-07-24 18:23:17,955][__main__][INFO] - [RANK 4] -- model save header : POLY_5_RANK_4_SIZE_8_SEED_12_3_4_32_3_5_4_all_to_all_opt
+[2024-07-24 18:23:17,956][__main__][INFO] - [RANK 2] -- model save header : POLY_5_RANK_2_SIZE_8_SEED_12_3_4_32_3_5_4_all_to_all_opt
+[2024-07-24 18:23:17,956][__main__][INFO] - [RANK 3] -- model save header : POLY_5_RANK_3_SIZE_8_SEED_12_3_4_32_3_5_4_all_to_all_opt
+[2024-07-24 18:23:17,956][__main__][INFO] - [RANK 5] -- model save header : POLY_5_RANK_5_SIZE_8_SEED_12_3_4_32_3_5_4_all_to_all_opt
+[2024-07-24 18:23:17,956][__main__][INFO] - [RANK 7] -- model save header : POLY_5_RANK_7_SIZE_8_SEED_12_3_4_32_3_5_4_all_to_all_opt
+[2024-07-24 18:23:17,957][__main__][INFO] - [RANK 1] -- model save header : POLY_5_RANK_1_SIZE_8_SEED_12_3_4_32_3_5_4_all_to_all_opt
+Directory created by root processor.
+[2024-07-24 18:23:17,957][__main__][INFO] - [RANK 0] -- number of local nodes: 259200, number of halo nodes: 6400, number of edges: 1548800
+[2024-07-24 18:23:17,957][__main__][INFO] - [RANK 4] -- number of local nodes: 259200, number of halo nodes: 6400, number of edges: 1548800
+[2024-07-24 18:23:17,957][__main__][INFO] - [RANK 1] -- number of local nodes: 259200, number of halo nodes: 6400, number of edges: 1548800
+[2024-07-24 18:23:17,957][__main__][INFO] - [RANK 5] -- number of local nodes: 259200, number of halo nodes: 6400, number of edges: 1548800
+[2024-07-24 18:23:17,957][__main__][INFO] - [RANK 2] -- number of local nodes: 259200, number of halo nodes: 6400, number of edges: 1548800
+[2024-07-24 18:23:17,957][__main__][INFO] - [RANK 6] -- number of local nodes: 259200, number of halo nodes: 6400, number of edges: 1548800
+[2024-07-24 18:23:17,957][__main__][INFO] - [RANK 7] -- number of local nodes: 259200, number of halo nodes: 6400, number of edges: 1548800
+[2024-07-24 18:23:17,957][__main__][INFO] - [RANK 3] -- number of local nodes: 259200, number of halo nodes: 6400, number of edges: 1548800
+[2024-07-24 18:23:19,157][__main__][INFO] - [0] [1/200: Batch 1 (100%)] epoch=1.0000 time[s]=1.1888 batch_loss=0.0867 running_loss=0.0867
+[2024-07-24 18:23:19,191][__main__][INFO] - [TRAIN]  loss=8.6676e-02  epoch_time=1.231 sec
+[2024-07-24 18:23:19,191][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:19,191][__main__][INFO] - ----------------------------------------------
+[2024-07-24 18:23:19,191][__main__][INFO] - ----------------------------------------------
+[2024-07-24 18:23:19,542][__main__][INFO] - [0] [2/200: Batch 1 (100%)] epoch=2.0000 time[s]=0.2917 batch_loss=0.0862 running_loss=0.0862
+[2024-07-24 18:23:19,544][__main__][INFO] - [TRAIN]  loss=8.6164e-02  epoch_time=0.3526 sec
+[2024-07-24 18:23:19,544][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:19,544][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:19,544][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:19,908][__main__][INFO] - [0] [3/200: Batch 1 (100%)] epoch=3.0000 time[s]=0.2911 batch_loss=0.0857 running_loss=0.0857
+[2024-07-24 18:23:19,908][__main__][INFO] - [TRAIN]  loss=8.5705e-02  epoch_time=0.3641 sec
+[2024-07-24 18:23:19,908][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:19,908][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:19,908][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:20,250][__main__][INFO] - [0] [4/200: Batch 1 (100%)] epoch=4.0000 time[s]=0.2887 batch_loss=0.0853 running_loss=0.0853
+[2024-07-24 18:23:20,263][__main__][INFO] - [TRAIN]  loss=8.5299e-02  epoch_time=0.3552 sec
+[2024-07-24 18:23:20,264][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:20,264][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:20,264][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:20,659][__main__][INFO] - [0] [5/200: Batch 1 (100%)] epoch=5.0000 time[s]=0.3308 batch_loss=0.0849 running_loss=0.0849
+[2024-07-24 18:23:20,660][__main__][INFO] - [TRAIN]  loss=8.4942e-02  epoch_time=0.3959 sec
+[2024-07-24 18:23:20,660][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:20,660][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:20,660][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:21,014][__main__][INFO] - [0] [6/200: Batch 1 (100%)] epoch=6.0000 time[s]=0.2983 batch_loss=0.0846 running_loss=0.0846
+[2024-07-24 18:23:21,014][__main__][INFO] - [TRAIN]  loss=8.4630e-02  epoch_time=0.3544 sec
+[2024-07-24 18:23:21,014][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:21,014][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:21,014][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:21,384][__main__][INFO] - [0] [7/200: Batch 1 (100%)] epoch=7.0000 time[s]=0.3091 batch_loss=0.0844 running_loss=0.0844
+[2024-07-24 18:23:21,403][__main__][INFO] - [TRAIN]  loss=8.4360e-02  epoch_time=0.3883 sec
+[2024-07-24 18:23:21,403][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:21,403][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:21,403][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:21,746][__main__][INFO] - [0] [8/200: Batch 1 (100%)] epoch=8.0000 time[s]=0.2907 batch_loss=0.0841 running_loss=0.0841
+[2024-07-24 18:23:21,746][__main__][INFO] - [TRAIN]  loss=8.4128e-02  epoch_time=0.3432 sec
+[2024-07-24 18:23:21,746][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:21,746][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:21,747][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:22,118][__main__][INFO] - [0] [9/200: Batch 1 (100%)] epoch=9.0000 time[s]=0.3193 batch_loss=0.0839 running_loss=0.0839
+[2024-07-24 18:23:22,131][__main__][INFO] - [TRAIN]  loss=8.3930e-02  epoch_time=0.3842 sec
+[2024-07-24 18:23:22,131][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:22,131][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:22,131][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:22,492][__main__][INFO] - [0] [10/200: Batch 1 (100%)] epoch=10.0000 time[s]=0.2951 batch_loss=0.0838 running_loss=0.0838
+[2024-07-24 18:23:22,493][__main__][INFO] - [TRAIN]  loss=8.3762e-02  epoch_time=0.3622 sec
+[2024-07-24 18:23:22,493][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:22,493][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:22,493][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:22,842][__main__][INFO] - [0] [11/200: Batch 1 (100%)] epoch=11.0000 time[s]=0.2896 batch_loss=0.0836 running_loss=0.0836
+[2024-07-24 18:23:22,843][__main__][INFO] - [TRAIN]  loss=8.3623e-02  epoch_time=0.3491 sec
+[2024-07-24 18:23:22,843][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:22,843][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:22,843][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:23,190][__main__][INFO] - [0] [12/200: Batch 1 (100%)] epoch=12.0000 time[s]=0.2945 batch_loss=0.0835 running_loss=0.0835
+[2024-07-24 18:23:23,207][__main__][INFO] - [TRAIN]  loss=8.3509e-02  epoch_time=0.364 sec
+[2024-07-24 18:23:23,207][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:23,207][__main__][INFO] - ----------------------------------------------
+[2024-07-24 18:23:23,207][__main__][INFO] - ----------------------------------------------
+[2024-07-24 18:23:23,586][__main__][INFO] - [0] [13/200: Batch 1 (100%)] epoch=13.0000 time[s]=0.3268 batch_loss=0.0834 running_loss=0.0834
+[2024-07-24 18:23:23,603][__main__][INFO] - [TRAIN]  loss=8.3417e-02  epoch_time=0.3955 sec
+[2024-07-24 18:23:23,603][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:23,603][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:23,603][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:23,974][__main__][INFO] - [0] [14/200: Batch 1 (100%)] epoch=14.0000 time[s]=0.3191 batch_loss=0.0833 running_loss=0.0833
+[2024-07-24 18:23:23,974][__main__][INFO] - [TRAIN]  loss=8.3346e-02  epoch_time=0.3715 sec
+[2024-07-24 18:23:23,975][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:23,975][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:23,975][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:24,314][__main__][INFO] - [0] [15/200: Batch 1 (100%)] epoch=15.0000 time[s]=0.2873 batch_loss=0.0833 running_loss=0.0833
+[2024-07-24 18:23:24,323][__main__][INFO] - [TRAIN]  loss=8.3294e-02  epoch_time=0.3482 sec
+[2024-07-24 18:23:24,323][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:24,323][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:24,323][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:24,686][__main__][INFO] - [0] [16/200: Batch 1 (100%)] epoch=16.0000 time[s]=0.3109 batch_loss=0.0833 running_loss=0.0833
+[2024-07-24 18:23:24,686][__main__][INFO] - [TRAIN]  loss=8.3257e-02  epoch_time=0.3633 sec
+[2024-07-24 18:23:24,687][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:24,687][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:24,687][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:25,032][__main__][INFO] - [0] [17/200: Batch 1 (100%)] epoch=17.0000 time[s]=0.2873 batch_loss=0.0832 running_loss=0.0832
+[2024-07-24 18:23:25,033][__main__][INFO] - [TRAIN]  loss=8.3233e-02  epoch_time=0.3459 sec
+[2024-07-24 18:23:25,033][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:25,033][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:25,033][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:25,390][__main__][INFO] - [0] [18/200: Batch 1 (100%)] epoch=18.0000 time[s]=0.3051 batch_loss=0.0832 running_loss=0.0832
+[2024-07-24 18:23:25,403][__main__][INFO] - [TRAIN]  loss=8.3221e-02  epoch_time=0.3697 sec
+[2024-07-24 18:23:25,403][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:25,403][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:25,403][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:25,754][__main__][INFO] - [0] [19/200: Batch 1 (100%)] epoch=19.0000 time[s]=0.2985 batch_loss=0.0832 running_loss=0.0832
+[2024-07-24 18:23:25,763][__main__][INFO] - [TRAIN]  loss=8.3216e-02  epoch_time=0.3598 sec
+[2024-07-24 18:23:25,763][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:25,763][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:25,763][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:26,124][__main__][INFO] - [0] [20/200: Batch 1 (100%)] epoch=20.0000 time[s]=0.2957 batch_loss=0.0832 running_loss=0.0832
+[2024-07-24 18:23:26,124][__main__][INFO] - [TRAIN]  loss=8.3217e-02  epoch_time=0.3613 sec
+[2024-07-24 18:23:26,124][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:26,124][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:26,124][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:26,502][__main__][INFO] - [0] [21/200: Batch 1 (100%)] epoch=21.0000 time[s]=0.3222 batch_loss=0.0832 running_loss=0.0832
+[2024-07-24 18:23:26,502][__main__][INFO] - [TRAIN]  loss=8.3221e-02  epoch_time=0.3777 sec
+[2024-07-24 18:23:26,502][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:26,502][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:26,502][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:26,880][__main__][INFO] - [0] [22/200: Batch 1 (100%)] epoch=22.0000 time[s]=0.3123 batch_loss=0.0832 running_loss=0.0832
+[2024-07-24 18:23:26,880][__main__][INFO] - [TRAIN]  loss=8.3224e-02  epoch_time=0.3778 sec
+[2024-07-24 18:23:26,880][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:26,880][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:26,880][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:27,252][__main__][INFO] - [0] [23/200: Batch 1 (100%)] epoch=23.0000 time[s]=0.3143 batch_loss=0.0832 running_loss=0.0832
+[2024-07-24 18:23:27,271][__main__][INFO] - [TRAIN]  loss=8.3225e-02  epoch_time=0.3903 sec
+[2024-07-24 18:23:27,271][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:27,271][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:27,271][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:27,622][__main__][INFO] - [0] [24/200: Batch 1 (100%)] epoch=24.0000 time[s]=0.2955 batch_loss=0.0832 running_loss=0.0832
+[2024-07-24 18:23:27,635][__main__][INFO] - [TRAIN]  loss=8.3222e-02  epoch_time=0.3637 sec
+[2024-07-24 18:23:27,635][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:27,635][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:27,635][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:27,994][__main__][INFO] - [0] [25/200: Batch 1 (100%)] epoch=25.0000 time[s]=0.3038 batch_loss=0.0832 running_loss=0.0832
+[2024-07-24 18:23:28,007][__main__][INFO] - [TRAIN]  loss=8.3214e-02  epoch_time=0.3717 sec
+[2024-07-24 18:23:28,007][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:28,007][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:28,007][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:28,378][__main__][INFO] - [0] [26/200: Batch 1 (100%)] epoch=26.0000 time[s]=0.3155 batch_loss=0.0832 running_loss=0.0832
+[2024-07-24 18:23:28,378][__main__][INFO] - [TRAIN]  loss=8.3202e-02  epoch_time=0.371 sec
+[2024-07-24 18:23:28,378][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:28,378][__main__][INFO] - ----------------------------------------------
+[2024-07-24 18:23:28,378][__main__][INFO] - ----------------------------------------------
+[2024-07-24 18:23:28,740][__main__][INFO] - [0] [27/200: Batch 1 (100%)] epoch=27.0000 time[s]=0.3017 batch_loss=0.0832 running_loss=0.0832
+[2024-07-24 18:23:28,741][__main__][INFO] - [TRAIN]  loss=8.3185e-02  epoch_time=0.3621 sec
+[2024-07-24 18:23:28,741][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:28,741][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:28,741][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:29,124][__main__][INFO] - [0] [28/200: Batch 1 (100%)] epoch=28.0000 time[s]=0.3149 batch_loss=0.0832 running_loss=0.0832
+[2024-07-24 18:23:29,124][__main__][INFO] - [TRAIN]  loss=8.3164e-02  epoch_time=0.3834 sec
+[2024-07-24 18:23:29,124][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:29,124][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:29,124][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:29,466][__main__][INFO] - [0] [29/200: Batch 1 (100%)] epoch=29.0000 time[s]=0.2863 batch_loss=0.0831 running_loss=0.0831
+[2024-07-24 18:23:29,466][__main__][INFO] - [TRAIN]  loss=8.3140e-02  epoch_time=0.3418 sec
+[2024-07-24 18:23:29,466][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:29,466][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:29,467][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:29,852][__main__][INFO] - [0] [30/200: Batch 1 (100%)] epoch=30.0000 time[s]=0.3140 batch_loss=0.0831 running_loss=0.0831
+[2024-07-24 18:23:29,852][__main__][INFO] - [TRAIN]  loss=8.3113e-02  epoch_time=0.3856 sec
+[2024-07-24 18:23:29,852][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:29,852][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:29,852][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:30,232][__main__][INFO] - [0] [31/200: Batch 1 (100%)] epoch=31.0000 time[s]=0.3136 batch_loss=0.0831 running_loss=0.0831
+[2024-07-24 18:23:30,232][__main__][INFO] - [TRAIN]  loss=8.3085e-02  epoch_time=0.3798 sec
+[2024-07-24 18:23:30,232][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:30,232][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:30,232][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:30,614][__main__][INFO] - [0] [32/200: Batch 1 (100%)] epoch=32.0000 time[s]=0.3293 batch_loss=0.0831 running_loss=0.0831
+[2024-07-24 18:23:30,623][__main__][INFO] - [TRAIN]  loss=8.3055e-02  epoch_time=0.3901 sec
+[2024-07-24 18:23:30,623][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:30,623][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:30,623][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:30,986][__main__][INFO] - [0] [33/200: Batch 1 (100%)] epoch=33.0000 time[s]=0.3112 batch_loss=0.0830 running_loss=0.0830
+[2024-07-24 18:23:30,986][__main__][INFO] - [TRAIN]  loss=8.3025e-02  epoch_time=0.3634 sec
+[2024-07-24 18:23:30,986][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:30,986][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:30,986][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:31,362][__main__][INFO] - [0] [34/200: Batch 1 (100%)] epoch=34.0000 time[s]=0.3234 batch_loss=0.0830 running_loss=0.0830
+[2024-07-24 18:23:31,375][__main__][INFO] - [TRAIN]  loss=8.2994e-02  epoch_time=0.3883 sec
+[2024-07-24 18:23:31,375][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:31,375][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:31,375][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:31,730][__main__][INFO] - [0] [35/200: Batch 1 (100%)] epoch=35.0000 time[s]=0.3027 batch_loss=0.0830 running_loss=0.0830
+[2024-07-24 18:23:31,743][__main__][INFO] - [TRAIN]  loss=8.2964e-02  epoch_time=0.3676 sec
+[2024-07-24 18:23:31,743][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:31,743][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:31,743][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:32,084][__main__][INFO] - [0] [36/200: Batch 1 (100%)] epoch=36.0000 time[s]=0.2872 batch_loss=0.0829 running_loss=0.0829
+[2024-07-24 18:23:32,095][__main__][INFO] - [TRAIN]  loss=8.2933e-02  epoch_time=0.3519 sec
+[2024-07-24 18:23:32,095][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:32,095][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:32,095][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:32,434][__main__][INFO] - [0] [37/200: Batch 1 (100%)] epoch=37.0000 time[s]=0.2863 batch_loss=0.0829 running_loss=0.0829
+[2024-07-24 18:23:32,447][__main__][INFO] - [TRAIN]  loss=8.2901e-02  epoch_time=0.3515 sec
+[2024-07-24 18:23:32,447][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:32,447][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:32,447][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:32,810][__main__][INFO] - [0] [38/200: Batch 1 (100%)] epoch=38.0000 time[s]=0.3061 batch_loss=0.0829 running_loss=0.0829
+[2024-07-24 18:23:32,823][__main__][INFO] - [TRAIN]  loss=8.2869e-02  epoch_time=0.3757 sec
+[2024-07-24 18:23:32,823][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:32,823][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:32,823][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:33,182][__main__][INFO] - [0] [39/200: Batch 1 (100%)] epoch=39.0000 time[s]=0.3067 batch_loss=0.0828 running_loss=0.0828
+[2024-07-24 18:23:33,182][__main__][INFO] - [TRAIN]  loss=8.2834e-02  epoch_time=0.3593 sec
+[2024-07-24 18:23:33,182][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:33,182][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:33,182][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:33,522][__main__][INFO] - [0] [40/200: Batch 1 (100%)] epoch=40.0000 time[s]=0.2875 batch_loss=0.0828 running_loss=0.0828
+[2024-07-24 18:23:33,523][__main__][INFO] - [TRAIN]  loss=8.2798e-02  epoch_time=0.34 sec
+[2024-07-24 18:23:33,523][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:33,523][__main__][INFO] - ---------------------------------------------
+[2024-07-24 18:23:33,523][__main__][INFO] - ---------------------------------------------
+[2024-07-24 18:23:33,862][__main__][INFO] - [0] [41/200: Batch 1 (100%)] epoch=41.0000 time[s]=0.2872 batch_loss=0.0828 running_loss=0.0828
+[2024-07-24 18:23:33,875][__main__][INFO] - [TRAIN]  loss=8.2758e-02  epoch_time=0.352 sec
+[2024-07-24 18:23:33,875][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:33,875][__main__][INFO] - ----------------------------------------------
+[2024-07-24 18:23:33,875][__main__][INFO] - ----------------------------------------------
+[2024-07-24 18:23:34,250][__main__][INFO] - [0] [42/200: Batch 1 (100%)] epoch=42.0000 time[s]=0.3227 batch_loss=0.0827 running_loss=0.0827
+[2024-07-24 18:23:34,263][__main__][INFO] - [TRAIN]  loss=8.2714e-02  epoch_time=0.3877 sec
+[2024-07-24 18:23:34,263][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:34,263][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:34,263][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:34,667][__main__][INFO] - [0] [43/200: Batch 1 (100%)] epoch=43.0000 time[s]=0.3188 batch_loss=0.0827 running_loss=0.0827
+[2024-07-24 18:23:34,668][__main__][INFO] - [TRAIN]  loss=8.2666e-02  epoch_time=0.4045 sec
+[2024-07-24 18:23:34,668][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:34,668][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:34,668][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:35,031][__main__][INFO] - [0] [44/200: Batch 1 (100%)] epoch=44.0000 time[s]=0.2980 batch_loss=0.0826 running_loss=0.0826
+[2024-07-24 18:23:35,059][__main__][INFO] - [TRAIN]  loss=8.2613e-02  epoch_time=0.391 sec
+[2024-07-24 18:23:35,059][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:35,059][__main__][INFO] - ----------------------------------------------
+[2024-07-24 18:23:35,059][__main__][INFO] - ----------------------------------------------
+[2024-07-24 18:23:35,426][__main__][INFO] - [0] [45/200: Batch 1 (100%)] epoch=45.0000 time[s]=0.3146 batch_loss=0.0826 running_loss=0.0826
+[2024-07-24 18:23:35,426][__main__][INFO] - [TRAIN]  loss=8.2553e-02  epoch_time=0.3668 sec
+[2024-07-24 18:23:35,426][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:35,426][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:35,426][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:35,766][__main__][INFO] - [0] [46/200: Batch 1 (100%)] epoch=46.0000 time[s]=0.2879 batch_loss=0.0825 running_loss=0.0825
+[2024-07-24 18:23:35,780][__main__][INFO] - [TRAIN]  loss=8.2484e-02  epoch_time=0.3537 sec
+[2024-07-24 18:23:35,780][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:35,780][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:35,780][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:36,163][__main__][INFO] - [0] [47/200: Batch 1 (100%)] epoch=47.0000 time[s]=0.2908 batch_loss=0.0824 running_loss=0.0824
+[2024-07-24 18:23:36,175][__main__][INFO] - [TRAIN]  loss=8.2406e-02  epoch_time=0.3945 sec
+[2024-07-24 18:23:36,175][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:36,175][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:36,175][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:36,522][__main__][INFO] - [0] [48/200: Batch 1 (100%)] epoch=48.0000 time[s]=0.2943 batch_loss=0.0823 running_loss=0.0823
+[2024-07-24 18:23:36,535][__main__][INFO] - [TRAIN]  loss=8.2318e-02  epoch_time=0.3597 sec
+[2024-07-24 18:23:36,535][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:36,535][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:36,535][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:36,888][__main__][INFO] - [0] [49/200: Batch 1 (100%)] epoch=49.0000 time[s]=0.2871 batch_loss=0.0822 running_loss=0.0822
+[2024-07-24 18:23:36,888][__main__][INFO] - [TRAIN]  loss=8.2216e-02  epoch_time=0.3533 sec
+[2024-07-24 18:23:36,888][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:36,888][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:36,888][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:37,236][__main__][INFO] - [0] [50/200: Batch 1 (100%)] epoch=50.0000 time[s]=0.2930 batch_loss=0.0821 running_loss=0.0821
+[2024-07-24 18:23:37,255][__main__][INFO] - [TRAIN]  loss=8.2101e-02  epoch_time=0.3662 sec
+[2024-07-24 18:23:37,255][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:37,255][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:37,255][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:37,631][__main__][INFO] - [0] [51/200: Batch 1 (100%)] epoch=51.0000 time[s]=0.3150 batch_loss=0.0820 running_loss=0.0820
+[2024-07-24 18:23:37,639][__main__][INFO] - [TRAIN]  loss=8.1972e-02  epoch_time=0.3839 sec
+[2024-07-24 18:23:37,639][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:37,639][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:37,639][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:38,002][__main__][INFO] - [0] [52/200: Batch 1 (100%)] epoch=52.0000 time[s]=0.3110 batch_loss=0.0818 running_loss=0.0818
+[2024-07-24 18:23:38,011][__main__][INFO] - [TRAIN]  loss=8.1830e-02  epoch_time=0.3721 sec
+[2024-07-24 18:23:38,011][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:38,011][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:38,011][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:38,362][__main__][INFO] - [0] [53/200: Batch 1 (100%)] epoch=53.0000 time[s]=0.2983 batch_loss=0.0817 running_loss=0.0817
+[2024-07-24 18:23:38,379][__main__][INFO] - [TRAIN]  loss=8.1668e-02  epoch_time=0.3672 sec
+[2024-07-24 18:23:38,379][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:38,379][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:38,379][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:38,759][__main__][INFO] - [0] [54/200: Batch 1 (100%)] epoch=54.0000 time[s]=0.3045 batch_loss=0.0815 running_loss=0.0815
+[2024-07-24 18:23:38,779][__main__][INFO] - [TRAIN]  loss=8.1483e-02  epoch_time=0.3998 sec
+[2024-07-24 18:23:38,779][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:38,779][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:38,779][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:39,134][__main__][INFO] - [0] [55/200: Batch 1 (100%)] epoch=55.0000 time[s]=0.3033 batch_loss=0.0813 running_loss=0.0813
+[2024-07-24 18:23:39,134][__main__][INFO] - [TRAIN]  loss=8.1267e-02  epoch_time=0.3554 sec
+[2024-07-24 18:23:39,134][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:39,134][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:39,135][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:39,474][__main__][INFO] - [0] [56/200: Batch 1 (100%)] epoch=56.0000 time[s]=0.2875 batch_loss=0.0810 running_loss=0.0810
+[2024-07-24 18:23:39,474][__main__][INFO] - [TRAIN]  loss=8.1014e-02  epoch_time=0.3398 sec
+[2024-07-24 18:23:39,474][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:39,475][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:39,475][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:39,828][__main__][INFO] - [0] [57/200: Batch 1 (100%)] epoch=57.0000 time[s]=0.2874 batch_loss=0.0807 running_loss=0.0807
+[2024-07-24 18:23:39,828][__main__][INFO] - [TRAIN]  loss=8.0718e-02  epoch_time=0.3533 sec
+[2024-07-24 18:23:39,828][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:39,828][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:39,828][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:40,176][__main__][INFO] - [0] [58/200: Batch 1 (100%)] epoch=58.0000 time[s]=0.2936 batch_loss=0.0804 running_loss=0.0804
+[2024-07-24 18:23:40,179][__main__][INFO] - [TRAIN]  loss=8.0370e-02  epoch_time=0.3506 sec
+[2024-07-24 18:23:40,179][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:40,179][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:40,179][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:40,537][__main__][INFO] - [0] [59/200: Batch 1 (100%)] epoch=59.0000 time[s]=0.3054 batch_loss=0.0800 running_loss=0.0800
+[2024-07-24 18:23:40,537][__main__][INFO] - [TRAIN]  loss=7.9956e-02  epoch_time=0.358 sec
+[2024-07-24 18:23:40,537][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:40,537][__main__][INFO] - ----------------------------------------------
+[2024-07-24 18:23:40,537][__main__][INFO] - ----------------------------------------------
+[2024-07-24 18:23:40,910][__main__][INFO] - [0] [60/200: Batch 1 (100%)] epoch=60.0000 time[s]=0.3155 batch_loss=0.0795 running_loss=0.0795
+[2024-07-24 18:23:40,910][__main__][INFO] - [TRAIN]  loss=7.9460e-02  epoch_time=0.3727 sec
+[2024-07-24 18:23:40,910][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:40,910][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:40,910][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:41,270][__main__][INFO] - [0] [61/200: Batch 1 (100%)] epoch=61.0000 time[s]=0.3071 batch_loss=0.0789 running_loss=0.0789
+[2024-07-24 18:23:41,283][__main__][INFO] - [TRAIN]  loss=7.8865e-02  epoch_time=0.3724 sec
+[2024-07-24 18:23:41,283][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:41,283][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:41,283][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:41,699][__main__][INFO] - [0] [62/200: Batch 1 (100%)] epoch=62.0000 time[s]=0.3227 batch_loss=0.0782 running_loss=0.0782
+[2024-07-24 18:23:41,700][__main__][INFO] - [TRAIN]  loss=7.8154e-02  epoch_time=0.4165 sec
+[2024-07-24 18:23:41,700][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:41,700][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:41,700][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:42,068][__main__][INFO] - [0] [63/200: Batch 1 (100%)] epoch=63.0000 time[s]=0.3023 batch_loss=0.0773 running_loss=0.0773
+[2024-07-24 18:23:42,068][__main__][INFO] - [TRAIN]  loss=7.7301e-02  epoch_time=0.3681 sec
+[2024-07-24 18:23:42,068][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:42,068][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:42,068][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:42,414][__main__][INFO] - [0] [64/200: Batch 1 (100%)] epoch=64.0000 time[s]=0.2941 batch_loss=0.0763 running_loss=0.0763
+[2024-07-24 18:23:42,415][__main__][INFO] - [TRAIN]  loss=7.6283e-02  epoch_time=0.3465 sec
+[2024-07-24 18:23:42,415][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:42,415][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:42,415][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:42,790][__main__][INFO] - [0] [65/200: Batch 1 (100%)] epoch=65.0000 time[s]=0.3230 batch_loss=0.0751 running_loss=0.0751
+[2024-07-24 18:23:42,803][__main__][INFO] - [TRAIN]  loss=7.5074e-02  epoch_time=0.3879 sec
+[2024-07-24 18:23:42,803][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:42,803][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:42,803][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:43,180][__main__][INFO] - [0] [66/200: Batch 1 (100%)] epoch=66.0000 time[s]=0.3109 batch_loss=0.0737 running_loss=0.0737
+[2024-07-24 18:23:43,180][__main__][INFO] - [TRAIN]  loss=7.3656e-02  epoch_time=0.3771 sec
+[2024-07-24 18:23:43,180][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:43,180][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:43,180][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:43,530][__main__][INFO] - [0] [67/200: Batch 1 (100%)] epoch=67.0000 time[s]=0.2974 batch_loss=0.0720 running_loss=0.0720
+[2024-07-24 18:23:43,544][__main__][INFO] - [TRAIN]  loss=7.2025e-02  epoch_time=0.3638 sec
+[2024-07-24 18:23:43,544][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:43,544][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:43,544][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:43,918][__main__][INFO] - [0] [68/200: Batch 1 (100%)] epoch=68.0000 time[s]=0.3144 batch_loss=0.0702 running_loss=0.0702
+[2024-07-24 18:23:43,918][__main__][INFO] - [TRAIN]  loss=7.0175e-02  epoch_time=0.3738 sec
+[2024-07-24 18:23:43,918][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:43,918][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:43,919][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:44,272][__main__][INFO] - [0] [69/200: Batch 1 (100%)] epoch=69.0000 time[s]=0.2868 batch_loss=0.0681 running_loss=0.0681
+[2024-07-24 18:23:44,272][__main__][INFO] - [TRAIN]  loss=6.8103e-02  epoch_time=0.3536 sec
+[2024-07-24 18:23:44,272][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:44,272][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:44,272][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:44,614][__main__][INFO] - [0] [70/200: Batch 1 (100%)] epoch=70.0000 time[s]=0.2896 batch_loss=0.0658 running_loss=0.0658
+[2024-07-24 18:23:44,627][__main__][INFO] - [TRAIN]  loss=6.5831e-02  epoch_time=0.3544 sec
+[2024-07-24 18:23:44,627][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:44,627][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:44,627][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:44,994][__main__][INFO] - [0] [71/200: Batch 1 (100%)] epoch=71.0000 time[s]=0.3148 batch_loss=0.0634 running_loss=0.0634
+[2024-07-24 18:23:45,007][__main__][INFO] - [TRAIN]  loss=6.3412e-02  epoch_time=0.3797 sec
+[2024-07-24 18:23:45,007][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:45,007][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:45,007][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:45,382][__main__][INFO] - [0] [72/200: Batch 1 (100%)] epoch=72.0000 time[s]=0.3229 batch_loss=0.0609 running_loss=0.0609
+[2024-07-24 18:23:45,396][__main__][INFO] - [TRAIN]  loss=6.0923e-02  epoch_time=0.3894 sec
+[2024-07-24 18:23:45,397][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:45,397][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:45,397][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:45,779][__main__][INFO] - [0] [73/200: Batch 1 (100%)] epoch=73.0000 time[s]=0.2942 batch_loss=0.0585 running_loss=0.0585
+[2024-07-24 18:23:45,787][__main__][INFO] - [TRAIN]  loss=5.8478e-02  epoch_time=0.39 sec
+[2024-07-24 18:23:45,787][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:45,787][__main__][INFO] - ---------------------------------------------
+[2024-07-24 18:23:45,787][__main__][INFO] - ---------------------------------------------
+[2024-07-24 18:23:46,141][__main__][INFO] - [0] [74/200: Batch 1 (100%)] epoch=74.0000 time[s]=0.2903 batch_loss=0.0562 running_loss=0.0562
+[2024-07-24 18:23:46,142][__main__][INFO] - [TRAIN]  loss=5.6248e-02  epoch_time=0.3545 sec
+[2024-07-24 18:23:46,142][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:46,142][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:46,142][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:46,575][__main__][INFO] - [0] [75/200: Batch 1 (100%)] epoch=75.0000 time[s]=0.3528 batch_loss=0.0546 running_loss=0.0546
+[2024-07-24 18:23:46,576][__main__][INFO] - [TRAIN]  loss=5.4614e-02  epoch_time=0.4339 sec
+[2024-07-24 18:23:46,576][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:46,576][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:46,576][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:46,938][__main__][INFO] - [0] [76/200: Batch 1 (100%)] epoch=76.0000 time[s]=0.3099 batch_loss=0.0529 running_loss=0.0529
+[2024-07-24 18:23:46,947][__main__][INFO] - [TRAIN]  loss=5.2929e-02  epoch_time=0.3708 sec
+[2024-07-24 18:23:46,947][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:46,947][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:46,947][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:47,290][__main__][INFO] - [0] [77/200: Batch 1 (100%)] epoch=77.0000 time[s]=0.2909 batch_loss=0.0517 running_loss=0.0517
+[2024-07-24 18:23:47,299][__main__][INFO] - [TRAIN]  loss=5.1683e-02  epoch_time=0.3516 sec
+[2024-07-24 18:23:47,299][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:47,299][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:47,299][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:47,703][__main__][INFO] - [0] [78/200: Batch 1 (100%)] epoch=78.0000 time[s]=0.3307 batch_loss=0.0511 running_loss=0.0511
+[2024-07-24 18:23:47,723][__main__][INFO] - [TRAIN]  loss=5.1149e-02  epoch_time=0.4238 sec
+[2024-07-24 18:23:47,723][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:47,723][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:47,723][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:48,100][__main__][INFO] - [0] [79/200: Batch 1 (100%)] epoch=79.0000 time[s]=0.3149 batch_loss=0.0503 running_loss=0.0503
+[2024-07-24 18:23:48,113][__main__][INFO] - [TRAIN]  loss=5.0349e-02  epoch_time=0.39 sec
+[2024-07-24 18:23:48,113][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:48,113][__main__][INFO] - ---------------------------------------------
+[2024-07-24 18:23:48,113][__main__][INFO] - ---------------------------------------------
+[2024-07-24 18:23:48,472][__main__][INFO] - [0] [80/200: Batch 1 (100%)] epoch=80.0000 time[s]=0.2926 batch_loss=0.0503 running_loss=0.0503
+[2024-07-24 18:23:48,472][__main__][INFO] - [TRAIN]  loss=5.0289e-02  epoch_time=0.3588 sec
+[2024-07-24 18:23:48,472][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:48,472][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:48,472][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:48,891][__main__][INFO] - [0] [81/200: Batch 1 (100%)] epoch=81.0000 time[s]=0.3269 batch_loss=0.0502 running_loss=0.0502
+[2024-07-24 18:23:48,911][__main__][INFO] - [TRAIN]  loss=5.0152e-02  epoch_time=0.4383 sec
+[2024-07-24 18:23:48,911][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:48,911][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:48,911][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:49,288][__main__][INFO] - [0] [82/200: Batch 1 (100%)] epoch=82.0000 time[s]=0.2951 batch_loss=0.0500 running_loss=0.0500
+[2024-07-24 18:23:49,288][__main__][INFO] - [TRAIN]  loss=5.0038e-02  epoch_time=0.3769 sec
+[2024-07-24 18:23:49,288][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:49,288][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:49,288][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:49,672][__main__][INFO] - [0] [83/200: Batch 1 (100%)] epoch=83.0000 time[s]=0.3178 batch_loss=0.0502 running_loss=0.0502
+[2024-07-24 18:23:49,673][__main__][INFO] - [TRAIN]  loss=5.0204e-02  epoch_time=0.3849 sec
+[2024-07-24 18:23:49,673][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:49,673][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:49,673][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:50,050][__main__][INFO] - [0] [84/200: Batch 1 (100%)] epoch=84.0000 time[s]=0.3175 batch_loss=0.0499 running_loss=0.0499
+[2024-07-24 18:23:50,059][__main__][INFO] - [TRAIN]  loss=4.9947e-02  epoch_time=0.3855 sec
+[2024-07-24 18:23:50,059][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:50,059][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:50,059][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:50,426][__main__][INFO] - [0] [85/200: Batch 1 (100%)] epoch=85.0000 time[s]=0.3141 batch_loss=0.0499 running_loss=0.0499
+[2024-07-24 18:23:50,426][__main__][INFO] - [TRAIN]  loss=4.9867e-02  epoch_time=0.367 sec
+[2024-07-24 18:23:50,426][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:50,426][__main__][INFO] - ----------------------------------------------
+[2024-07-24 18:23:50,426][__main__][INFO] - ----------------------------------------------
+[2024-07-24 18:23:50,790][__main__][INFO] - [0] [86/200: Batch 1 (100%)] epoch=86.0000 time[s]=0.3118 batch_loss=0.0495 running_loss=0.0495
+[2024-07-24 18:23:50,790][__main__][INFO] - [TRAIN]  loss=4.9456e-02  epoch_time=0.364 sec
+[2024-07-24 18:23:50,790][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:50,790][__main__][INFO] - ----------------------------------------------
+[2024-07-24 18:23:50,790][__main__][INFO] - ----------------------------------------------
+[2024-07-24 18:23:51,159][__main__][INFO] - [0] [87/200: Batch 1 (100%)] epoch=87.0000 time[s]=0.2873 batch_loss=0.0489 running_loss=0.0489
+[2024-07-24 18:23:51,179][__main__][INFO] - [TRAIN]  loss=4.8905e-02  epoch_time=0.3882 sec
+[2024-07-24 18:23:51,179][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:51,179][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:51,179][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:51,546][__main__][INFO] - [0] [88/200: Batch 1 (100%)] epoch=88.0000 time[s]=0.3147 batch_loss=0.0483 running_loss=0.0483
+[2024-07-24 18:23:51,559][__main__][INFO] - [TRAIN]  loss=4.8346e-02  epoch_time=0.3796 sec
+[2024-07-24 18:23:51,559][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:51,559][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:51,559][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:51,918][__main__][INFO] - [0] [89/200: Batch 1 (100%)] epoch=89.0000 time[s]=0.3070 batch_loss=0.0476 running_loss=0.0476
+[2024-07-24 18:23:51,918][__main__][INFO] - [TRAIN]  loss=4.7552e-02  epoch_time=0.3593 sec
+[2024-07-24 18:23:51,918][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:51,918][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:51,918][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:52,284][__main__][INFO] - [0] [90/200: Batch 1 (100%)] epoch=90.0000 time[s]=0.2996 batch_loss=0.0469 running_loss=0.0469
+[2024-07-24 18:23:52,284][__main__][INFO] - [TRAIN]  loss=4.6910e-02  epoch_time=0.3658 sec
+[2024-07-24 18:23:52,284][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:52,284][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:52,284][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:52,640][__main__][INFO] - [0] [91/200: Batch 1 (100%)] epoch=91.0000 time[s]=0.2894 batch_loss=0.0462 running_loss=0.0462
+[2024-07-24 18:23:52,640][__main__][INFO] - [TRAIN]  loss=4.6198e-02  epoch_time=0.3556 sec
+[2024-07-24 18:23:52,640][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:52,640][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:52,640][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:53,018][__main__][INFO] - [0] [92/200: Batch 1 (100%)] epoch=92.0000 time[s]=0.3257 batch_loss=0.0457 running_loss=0.0457
+[2024-07-24 18:23:53,018][__main__][INFO] - [TRAIN]  loss=4.5749e-02  epoch_time=0.3779 sec
+[2024-07-24 18:23:53,018][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:53,018][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:53,018][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:53,362][__main__][INFO] - [0] [93/200: Batch 1 (100%)] epoch=93.0000 time[s]=0.2875 batch_loss=0.0454 running_loss=0.0454
+[2024-07-24 18:23:53,362][__main__][INFO] - [TRAIN]  loss=4.5392e-02  epoch_time=0.3439 sec
+[2024-07-24 18:23:53,362][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:53,362][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:53,363][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:53,709][__main__][INFO] - [0] [94/200: Batch 1 (100%)] epoch=94.0000 time[s]=0.2943 batch_loss=0.0453 running_loss=0.0453
+[2024-07-24 18:23:53,723][__main__][INFO] - [TRAIN]  loss=4.5283e-02  epoch_time=0.3601 sec
+[2024-07-24 18:23:53,723][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:53,723][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:53,723][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:54,090][__main__][INFO] - [0] [95/200: Batch 1 (100%)] epoch=95.0000 time[s]=0.3151 batch_loss=0.0453 running_loss=0.0453
+[2024-07-24 18:23:54,099][__main__][INFO] - [TRAIN]  loss=4.5294e-02  epoch_time=0.3757 sec
+[2024-07-24 18:23:54,099][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:54,099][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:54,099][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:54,444][__main__][INFO] - [0] [96/200: Batch 1 (100%)] epoch=96.0000 time[s]=0.2909 batch_loss=0.0453 running_loss=0.0453
+[2024-07-24 18:23:54,463][__main__][INFO] - [TRAIN]  loss=4.5314e-02  epoch_time=0.3637 sec
+[2024-07-24 18:23:54,463][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:54,463][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:54,463][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:54,806][__main__][INFO] - [0] [97/200: Batch 1 (100%)] epoch=97.0000 time[s]=0.2909 batch_loss=0.0453 running_loss=0.0453
+[2024-07-24 18:23:54,819][__main__][INFO] - [TRAIN]  loss=4.5256e-02  epoch_time=0.3556 sec
+[2024-07-24 18:23:54,819][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:54,819][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:54,819][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:55,166][__main__][INFO] - [0] [98/200: Batch 1 (100%)] epoch=98.0000 time[s]=0.2951 batch_loss=0.0450 running_loss=0.0450
+[2024-07-24 18:23:55,175][__main__][INFO] - [TRAIN]  loss=4.5007e-02  epoch_time=0.3563 sec
+[2024-07-24 18:23:55,175][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:55,175][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:55,175][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:55,528][__main__][INFO] - [0] [99/200: Batch 1 (100%)] epoch=99.0000 time[s]=0.2985 batch_loss=0.0447 running_loss=0.0447
+[2024-07-24 18:23:55,547][__main__][INFO] - [TRAIN]  loss=4.4679e-02  epoch_time=0.3713 sec
+[2024-07-24 18:23:55,547][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:55,547][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:55,547][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:55,904][__main__][INFO] - [0] [100/200: Batch 1 (100%)] epoch=100.0000 time[s]=0.2910 batch_loss=0.0443 running_loss=0.0443
+[2024-07-24 18:23:55,904][__main__][INFO] - [TRAIN]  loss=4.4258e-02  epoch_time=0.3571 sec
+[2024-07-24 18:23:55,904][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:55,904][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:55,904][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:56,266][__main__][INFO] - [0] [101/200: Batch 1 (100%)] epoch=101.0000 time[s]=0.3095 batch_loss=0.0439 running_loss=0.0439
+[2024-07-24 18:23:56,279][__main__][INFO] - [TRAIN]  loss=4.3913e-02  epoch_time=0.3744 sec
+[2024-07-24 18:23:56,279][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:56,279][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:56,279][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:56,640][__main__][INFO] - [0] [102/200: Batch 1 (100%)] epoch=102.0000 time[s]=0.2946 batch_loss=0.0436 running_loss=0.0436
+[2024-07-24 18:23:56,640][__main__][INFO] - [TRAIN]  loss=4.3636e-02  epoch_time=0.3609 sec
+[2024-07-24 18:23:56,640][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:56,640][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:56,640][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:57,013][__main__][INFO] - [0] [103/200: Batch 1 (100%)] epoch=103.0000 time[s]=0.3145 batch_loss=0.0435 running_loss=0.0435
+[2024-07-24 18:23:57,031][__main__][INFO] - [TRAIN]  loss=4.3491e-02  epoch_time=0.3906 sec
+[2024-07-24 18:23:57,031][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:57,031][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:57,031][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:57,407][__main__][INFO] - [0] [104/200: Batch 1 (100%)] epoch=104.0000 time[s]=0.2945 batch_loss=0.0434 running_loss=0.0434
+[2024-07-24 18:23:57,419][__main__][INFO] - [TRAIN]  loss=4.3412e-02  epoch_time=0.3876 sec
+[2024-07-24 18:23:57,419][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:57,419][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:57,419][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:57,760][__main__][INFO] - [0] [105/200: Batch 1 (100%)] epoch=105.0000 time[s]=0.2868 batch_loss=0.0434 running_loss=0.0434
+[2024-07-24 18:23:57,783][__main__][INFO] - [TRAIN]  loss=4.3372e-02  epoch_time=0.3637 sec
+[2024-07-24 18:23:57,783][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:57,783][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:57,783][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:58,151][__main__][INFO] - [0] [106/200: Batch 1 (100%)] epoch=106.0000 time[s]=0.2951 batch_loss=0.0433 running_loss=0.0433
+[2024-07-24 18:23:58,172][__main__][INFO] - [TRAIN]  loss=4.3287e-02  epoch_time=0.389 sec
+[2024-07-24 18:23:58,172][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:58,172][__main__][INFO] - ----------------------------------------------
+[2024-07-24 18:23:58,172][__main__][INFO] - ----------------------------------------------
+[2024-07-24 18:23:58,538][__main__][INFO] - [0] [107/200: Batch 1 (100%)] epoch=107.0000 time[s]=0.3067 batch_loss=0.0432 running_loss=0.0432
+[2024-07-24 18:23:58,538][__main__][INFO] - [TRAIN]  loss=4.3150e-02  epoch_time=0.3661 sec
+[2024-07-24 18:23:58,538][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:58,538][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:58,539][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:58,898][__main__][INFO] - [0] [108/200: Batch 1 (100%)] epoch=108.0000 time[s]=0.3068 batch_loss=0.0429 running_loss=0.0429
+[2024-07-24 18:23:58,907][__main__][INFO] - [TRAIN]  loss=4.2932e-02  epoch_time=0.368 sec
+[2024-07-24 18:23:58,907][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:58,907][__main__][INFO] - ----------------------------------------------
+[2024-07-24 18:23:58,907][__main__][INFO] - ----------------------------------------------
+[2024-07-24 18:23:59,266][__main__][INFO] - [0] [109/200: Batch 1 (100%)] epoch=109.0000 time[s]=0.3069 batch_loss=0.0427 running_loss=0.0427
+[2024-07-24 18:23:59,266][__main__][INFO] - [TRAIN]  loss=4.2700e-02  epoch_time=0.3591 sec
+[2024-07-24 18:23:59,266][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:59,266][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:59,266][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:59,663][__main__][INFO] - [0] [110/200: Batch 1 (100%)] epoch=110.0000 time[s]=0.3157 batch_loss=0.0425 running_loss=0.0425
+[2024-07-24 18:23:59,664][__main__][INFO] - [TRAIN]  loss=4.2470e-02  epoch_time=0.3972 sec
+[2024-07-24 18:23:59,664][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:23:59,664][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:23:59,664][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:00,014][__main__][INFO] - [0] [111/200: Batch 1 (100%)] epoch=111.0000 time[s]=0.2983 batch_loss=0.0423 running_loss=0.0423
+[2024-07-24 18:24:00,027][__main__][INFO] - [TRAIN]  loss=4.2318e-02  epoch_time=0.363 sec
+[2024-07-24 18:24:00,027][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:00,027][__main__][INFO] - ----------------------------------------------
+[2024-07-24 18:24:00,027][__main__][INFO] - ----------------------------------------------
+[2024-07-24 18:24:00,386][__main__][INFO] - [0] [112/200: Batch 1 (100%)] epoch=112.0000 time[s]=0.3070 batch_loss=0.0422 running_loss=0.0422
+[2024-07-24 18:24:00,387][__main__][INFO] - [TRAIN]  loss=4.2229e-02  epoch_time=0.3595 sec
+[2024-07-24 18:24:00,387][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:00,387][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:00,387][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:00,726][__main__][INFO] - [0] [113/200: Batch 1 (100%)] epoch=113.0000 time[s]=0.2876 batch_loss=0.0422 running_loss=0.0422
+[2024-07-24 18:24:00,727][__main__][INFO] - [TRAIN]  loss=4.2191e-02  epoch_time=0.34 sec
+[2024-07-24 18:24:00,727][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:00,727][__main__][INFO] - ---------------------------------------------
+[2024-07-24 18:24:00,727][__main__][INFO] - ---------------------------------------------
+[2024-07-24 18:24:01,083][__main__][INFO] - [0] [114/200: Batch 1 (100%)] epoch=114.0000 time[s]=0.2907 batch_loss=0.0421 running_loss=0.0421
+[2024-07-24 18:24:01,084][__main__][INFO] - [TRAIN]  loss=4.2124e-02  epoch_time=0.3567 sec
+[2024-07-24 18:24:01,084][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:01,084][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:01,084][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:01,462][__main__][INFO] - [0] [115/200: Batch 1 (100%)] epoch=115.0000 time[s]=0.3258 batch_loss=0.0420 running_loss=0.0420
+[2024-07-24 18:24:01,475][__main__][INFO] - [TRAIN]  loss=4.2025e-02  epoch_time=0.3906 sec
+[2024-07-24 18:24:01,475][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:01,475][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:01,475][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:01,845][__main__][INFO] - [0] [116/200: Batch 1 (100%)] epoch=116.0000 time[s]=0.2951 batch_loss=0.0419 running_loss=0.0419
+[2024-07-24 18:24:01,846][__main__][INFO] - [TRAIN]  loss=4.1873e-02  epoch_time=0.3709 sec
+[2024-07-24 18:24:01,846][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:01,846][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:01,846][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:02,219][__main__][INFO] - [0] [117/200: Batch 1 (100%)] epoch=117.0000 time[s]=0.3078 batch_loss=0.0417 running_loss=0.0417
+[2024-07-24 18:24:02,220][__main__][INFO] - [TRAIN]  loss=4.1723e-02  epoch_time=0.3737 sec
+[2024-07-24 18:24:02,220][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:02,220][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:02,220][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:02,566][__main__][INFO] - [0] [118/200: Batch 1 (100%)] epoch=118.0000 time[s]=0.2941 batch_loss=0.0416 running_loss=0.0416
+[2024-07-24 18:24:02,566][__main__][INFO] - [TRAIN]  loss=4.1597e-02  epoch_time=0.3462 sec
+[2024-07-24 18:24:02,566][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:02,566][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:02,566][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:02,950][__main__][INFO] - [0] [119/200: Batch 1 (100%)] epoch=119.0000 time[s]=0.3314 batch_loss=0.0415 running_loss=0.0415
+[2024-07-24 18:24:02,950][__main__][INFO] - [TRAIN]  loss=4.1523e-02  epoch_time=0.3838 sec
+[2024-07-24 18:24:02,950][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:02,950][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:02,950][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:03,310][__main__][INFO] - [0] [120/200: Batch 1 (100%)] epoch=120.0000 time[s]=0.3074 batch_loss=0.0415 running_loss=0.0415
+[2024-07-24 18:24:03,310][__main__][INFO] - [TRAIN]  loss=4.1481e-02  epoch_time=0.36 sec
+[2024-07-24 18:24:03,311][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:03,311][__main__][INFO] - ---------------------------------------------
+[2024-07-24 18:24:03,311][__main__][INFO] - ---------------------------------------------
+[2024-07-24 18:24:03,682][__main__][INFO] - [0] [121/200: Batch 1 (100%)] epoch=121.0000 time[s]=0.3192 batch_loss=0.0414 running_loss=0.0414
+[2024-07-24 18:24:03,682][__main__][INFO] - [TRAIN]  loss=4.1435e-02  epoch_time=0.3715 sec
+[2024-07-24 18:24:03,682][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:03,682][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:03,682][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:04,083][__main__][INFO] - [0] [122/200: Batch 1 (100%)] epoch=122.0000 time[s]=0.3273 batch_loss=0.0414 running_loss=0.0414
+[2024-07-24 18:24:04,104][__main__][INFO] - [TRAIN]  loss=4.1366e-02  epoch_time=0.4212 sec
+[2024-07-24 18:24:04,104][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:04,104][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:04,104][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:04,487][__main__][INFO] - [0] [123/200: Batch 1 (100%)] epoch=123.0000 time[s]=0.2989 batch_loss=0.0413 running_loss=0.0413
+[2024-07-24 18:24:04,507][__main__][INFO] - [TRAIN]  loss=4.1264e-02  epoch_time=0.4026 sec
+[2024-07-24 18:24:04,507][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:04,507][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:04,507][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:04,854][__main__][INFO] - [0] [124/200: Batch 1 (100%)] epoch=124.0000 time[s]=0.2943 batch_loss=0.0412 running_loss=0.0412
+[2024-07-24 18:24:04,854][__main__][INFO] - [TRAIN]  loss=4.1162e-02  epoch_time=0.3473 sec
+[2024-07-24 18:24:04,854][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:04,854][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:04,854][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:05,226][__main__][INFO] - [0] [125/200: Batch 1 (100%)] epoch=125.0000 time[s]=0.3192 batch_loss=0.0411 running_loss=0.0411
+[2024-07-24 18:24:05,235][__main__][INFO] - [TRAIN]  loss=4.1077e-02  epoch_time=0.3801 sec
+[2024-07-24 18:24:05,235][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:05,235][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:05,235][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:05,635][__main__][INFO] - [0] [126/200: Batch 1 (100%)] epoch=126.0000 time[s]=0.3230 batch_loss=0.0410 running_loss=0.0410
+[2024-07-24 18:24:05,636][__main__][INFO] - [TRAIN]  loss=4.1017e-02  epoch_time=0.4008 sec
+[2024-07-24 18:24:05,636][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:05,636][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:05,636][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:06,016][__main__][INFO] - [0] [127/200: Batch 1 (100%)] epoch=127.0000 time[s]=0.3132 batch_loss=0.0410 running_loss=0.0410
+[2024-07-24 18:24:06,027][__main__][INFO] - [TRAIN]  loss=4.0971e-02  epoch_time=0.3906 sec
+[2024-07-24 18:24:06,027][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:06,027][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:06,027][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:06,380][__main__][INFO] - [0] [128/200: Batch 1 (100%)] epoch=128.0000 time[s]=0.2871 batch_loss=0.0409 running_loss=0.0409
+[2024-07-24 18:24:06,380][__main__][INFO] - [TRAIN]  loss=4.0911e-02  epoch_time=0.3533 sec
+[2024-07-24 18:24:06,380][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:06,380][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:06,380][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:06,726][__main__][INFO] - [0] [129/200: Batch 1 (100%)] epoch=129.0000 time[s]=0.2933 batch_loss=0.0408 running_loss=0.0408
+[2024-07-24 18:24:06,739][__main__][INFO] - [TRAIN]  loss=4.0835e-02  epoch_time=0.3582 sec
+[2024-07-24 18:24:06,739][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:06,739][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:06,739][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:07,087][__main__][INFO] - [0] [130/200: Batch 1 (100%)] epoch=130.0000 time[s]=0.2869 batch_loss=0.0407 running_loss=0.0407
+[2024-07-24 18:24:07,089][__main__][INFO] - [TRAIN]  loss=4.0744e-02  epoch_time=0.3497 sec
+[2024-07-24 18:24:07,089][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:07,089][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:07,089][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:07,438][__main__][INFO] - [0] [131/200: Batch 1 (100%)] epoch=131.0000 time[s]=0.2901 batch_loss=0.0407 running_loss=0.0407
+[2024-07-24 18:24:07,438][__main__][INFO] - [TRAIN]  loss=4.0653e-02  epoch_time=0.3495 sec
+[2024-07-24 18:24:07,439][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:07,439][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:07,439][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:07,794][__main__][INFO] - [0] [132/200: Batch 1 (100%)] epoch=132.0000 time[s]=0.2985 batch_loss=0.0406 running_loss=0.0406
+[2024-07-24 18:24:07,794][__main__][INFO] - [TRAIN]  loss=4.0575e-02  epoch_time=0.3555 sec
+[2024-07-24 18:24:07,794][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:07,794][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:07,794][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:08,150][__main__][INFO] - [0] [133/200: Batch 1 (100%)] epoch=133.0000 time[s]=0.3033 batch_loss=0.0405 running_loss=0.0405
+[2024-07-24 18:24:08,150][__main__][INFO] - [TRAIN]  loss=4.0505e-02  epoch_time=0.3556 sec
+[2024-07-24 18:24:08,150][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:08,150][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:08,150][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:08,490][__main__][INFO] - [0] [134/200: Batch 1 (100%)] epoch=134.0000 time[s]=0.2875 batch_loss=0.0404 running_loss=0.0404
+[2024-07-24 18:24:08,511][__main__][INFO] - [TRAIN]  loss=4.0433e-02  epoch_time=0.3603 sec
+[2024-07-24 18:24:08,511][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:08,511][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:08,511][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:08,868][__main__][INFO] - [0] [135/200: Batch 1 (100%)] epoch=135.0000 time[s]=0.2912 batch_loss=0.0404 running_loss=0.0404
+[2024-07-24 18:24:08,887][__main__][INFO] - [TRAIN]  loss=4.0351e-02  epoch_time=0.3757 sec
+[2024-07-24 18:24:08,887][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:08,887][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:08,887][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:09,268][__main__][INFO] - [0] [136/200: Batch 1 (100%)] epoch=136.0000 time[s]=0.3150 batch_loss=0.0403 running_loss=0.0403
+[2024-07-24 18:24:09,268][__main__][INFO] - [TRAIN]  loss=4.0255e-02  epoch_time=0.3811 sec
+[2024-07-24 18:24:09,268][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:09,268][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:09,268][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:09,642][__main__][INFO] - [0] [137/200: Batch 1 (100%)] epoch=137.0000 time[s]=0.3216 batch_loss=0.0402 running_loss=0.0402
+[2024-07-24 18:24:09,655][__main__][INFO] - [TRAIN]  loss=4.0155e-02  epoch_time=0.3865 sec
+[2024-07-24 18:24:09,655][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:09,655][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:09,655][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:10,040][__main__][INFO] - [0] [138/200: Batch 1 (100%)] epoch=138.0000 time[s]=0.3189 batch_loss=0.0401 running_loss=0.0401
+[2024-07-24 18:24:10,040][__main__][INFO] - [TRAIN]  loss=4.0060e-02  epoch_time=0.385 sec
+[2024-07-24 18:24:10,040][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:10,040][__main__][INFO] - ----------------------------------------------
+[2024-07-24 18:24:10,040][__main__][INFO] - ----------------------------------------------
+[2024-07-24 18:24:10,396][__main__][INFO] - [0] [139/200: Batch 1 (100%)] epoch=139.0000 time[s]=0.2897 batch_loss=0.0400 running_loss=0.0400
+[2024-07-24 18:24:10,397][__main__][INFO] - [TRAIN]  loss=3.9967e-02  epoch_time=0.3568 sec
+[2024-07-24 18:24:10,397][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:10,397][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:10,397][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:10,772][__main__][INFO] - [0] [140/200: Batch 1 (100%)] epoch=140.0000 time[s]=0.3135 batch_loss=0.0399 running_loss=0.0399
+[2024-07-24 18:24:10,772][__main__][INFO] - [TRAIN]  loss=3.9871e-02  epoch_time=0.375 sec
+[2024-07-24 18:24:10,772][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:10,772][__main__][INFO] - ----------------------------------------------
+[2024-07-24 18:24:10,772][__main__][INFO] - ----------------------------------------------
+[2024-07-24 18:24:11,130][__main__][INFO] - [0] [141/200: Batch 1 (100%)] epoch=141.0000 time[s]=0.3046 batch_loss=0.0398 running_loss=0.0398
+[2024-07-24 18:24:11,143][__main__][INFO] - [TRAIN]  loss=3.9765e-02  epoch_time=0.3702 sec
+[2024-07-24 18:24:11,143][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:11,143][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:11,143][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:11,498][__main__][INFO] - [0] [142/200: Batch 1 (100%)] epoch=142.0000 time[s]=0.2908 batch_loss=0.0396 running_loss=0.0396
+[2024-07-24 18:24:11,499][__main__][INFO] - [TRAIN]  loss=3.9646e-02  epoch_time=0.3558 sec
+[2024-07-24 18:24:11,499][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:11,499][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:11,499][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:11,858][__main__][INFO] - [0] [143/200: Batch 1 (100%)] epoch=143.0000 time[s]=0.3070 batch_loss=0.0395 running_loss=0.0395
+[2024-07-24 18:24:11,858][__main__][INFO] - [TRAIN]  loss=3.9519e-02  epoch_time=0.3593 sec
+[2024-07-24 18:24:11,858][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:11,858][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:11,858][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:12,232][__main__][INFO] - [0] [144/200: Batch 1 (100%)] epoch=144.0000 time[s]=0.3073 batch_loss=0.0394 running_loss=0.0394
+[2024-07-24 18:24:12,331][__main__][INFO] - [TRAIN]  loss=3.9387e-02  epoch_time=0.4721 sec
+[2024-07-24 18:24:12,331][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:12,331][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:12,331][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:12,695][__main__][INFO] - [0] [145/200: Batch 1 (100%)] epoch=145.0000 time[s]=0.3024 batch_loss=0.0392 running_loss=0.0392
+[2024-07-24 18:24:12,696][__main__][INFO] - [TRAIN]  loss=3.9250e-02  epoch_time=0.3644 sec
+[2024-07-24 18:24:12,696][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:12,696][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:12,696][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:13,054][__main__][INFO] - [0] [146/200: Batch 1 (100%)] epoch=146.0000 time[s]=0.3058 batch_loss=0.0391 running_loss=0.0391
+[2024-07-24 18:24:13,054][__main__][INFO] - [TRAIN]  loss=3.9101e-02  epoch_time=0.3584 sec
+[2024-07-24 18:24:13,054][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:13,054][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:13,054][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:13,414][__main__][INFO] - [0] [147/200: Batch 1 (100%)] epoch=147.0000 time[s]=0.3074 batch_loss=0.0389 running_loss=0.0389
+[2024-07-24 18:24:13,427][__main__][INFO] - [TRAIN]  loss=3.8935e-02  epoch_time=0.3722 sec
+[2024-07-24 18:24:13,427][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:13,427][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:13,427][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:13,766][__main__][INFO] - [0] [148/200: Batch 1 (100%)] epoch=148.0000 time[s]=0.2868 batch_loss=0.0388 running_loss=0.0388
+[2024-07-24 18:24:13,766][__main__][INFO] - [TRAIN]  loss=3.8753e-02  epoch_time=0.3392 sec
+[2024-07-24 18:24:13,766][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:13,766][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:13,766][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:14,163][__main__][INFO] - [0] [149/200: Batch 1 (100%)] epoch=149.0000 time[s]=0.3035 batch_loss=0.0386 running_loss=0.0386
+[2024-07-24 18:24:14,165][__main__][INFO] - [TRAIN]  loss=3.8556e-02  epoch_time=0.3984 sec
+[2024-07-24 18:24:14,165][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:14,165][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:14,165][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:14,534][__main__][INFO] - [0] [150/200: Batch 1 (100%)] epoch=150.0000 time[s]=0.3098 batch_loss=0.0383 running_loss=0.0383
+[2024-07-24 18:24:14,547][__main__][INFO] - [TRAIN]  loss=3.8346e-02  epoch_time=0.3817 sec
+[2024-07-24 18:24:14,547][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:14,547][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:14,547][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:14,943][__main__][INFO] - [0] [151/200: Batch 1 (100%)] epoch=151.0000 time[s]=0.3088 batch_loss=0.0381 running_loss=0.0381
+[2024-07-24 18:24:14,944][__main__][INFO] - [TRAIN]  loss=3.8117e-02  epoch_time=0.3966 sec
+[2024-07-24 18:24:14,944][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:14,944][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:14,944][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:15,303][__main__][INFO] - [0] [152/200: Batch 1 (100%)] epoch=152.0000 time[s]=0.2979 batch_loss=0.0379 running_loss=0.0379
+[2024-07-24 18:24:15,319][__main__][INFO] - [TRAIN]  loss=3.7863e-02  epoch_time=0.3748 sec
+[2024-07-24 18:24:15,319][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:15,319][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:15,319][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:15,666][__main__][INFO] - [0] [153/200: Batch 1 (100%)] epoch=153.0000 time[s]=0.2950 batch_loss=0.0376 running_loss=0.0376
+[2024-07-24 18:24:15,675][__main__][INFO] - [TRAIN]  loss=3.7580e-02  epoch_time=0.3563 sec
+[2024-07-24 18:24:15,675][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:15,675][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:15,675][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:16,018][__main__][INFO] - [0] [154/200: Batch 1 (100%)] epoch=154.0000 time[s]=0.2904 batch_loss=0.0373 running_loss=0.0373
+[2024-07-24 18:24:16,031][__main__][INFO] - [TRAIN]  loss=3.7264e-02  epoch_time=0.3551 sec
+[2024-07-24 18:24:16,031][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:16,031][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:16,031][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:16,439][__main__][INFO] - [0] [155/200: Batch 1 (100%)] epoch=155.0000 time[s]=0.3230 batch_loss=0.0369 running_loss=0.0369
+[2024-07-24 18:24:16,440][__main__][INFO] - [TRAIN]  loss=3.6912e-02  epoch_time=0.4087 sec
+[2024-07-24 18:24:16,440][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:16,440][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:16,440][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:16,804][__main__][INFO] - [0] [156/200: Batch 1 (100%)] epoch=156.0000 time[s]=0.3020 batch_loss=0.0365 running_loss=0.0365
+[2024-07-24 18:24:16,824][__main__][INFO] - [TRAIN]  loss=3.6516e-02  epoch_time=0.3838 sec
+[2024-07-24 18:24:16,824][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:16,824][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:16,824][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:17,170][__main__][INFO] - [0] [157/200: Batch 1 (100%)] epoch=157.0000 time[s]=0.2869 batch_loss=0.0361 running_loss=0.0361
+[2024-07-24 18:24:17,179][__main__][INFO] - [TRAIN]  loss=3.6066e-02  epoch_time=0.3547 sec
+[2024-07-24 18:24:17,179][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:17,179][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:17,179][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:17,562][__main__][INFO] - [0] [158/200: Batch 1 (100%)] epoch=158.0000 time[s]=0.3302 batch_loss=0.0355 running_loss=0.0355
+[2024-07-24 18:24:17,562][__main__][INFO] - [TRAIN]  loss=3.5548e-02  epoch_time=0.3832 sec
+[2024-07-24 18:24:17,562][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:17,562][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:17,562][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:17,902][__main__][INFO] - [0] [159/200: Batch 1 (100%)] epoch=159.0000 time[s]=0.2873 batch_loss=0.0349 running_loss=0.0349
+[2024-07-24 18:24:17,919][__main__][INFO] - [TRAIN]  loss=3.4948e-02  epoch_time=0.3563 sec
+[2024-07-24 18:24:17,919][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:17,919][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:17,919][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:18,282][__main__][INFO] - [0] [160/200: Batch 1 (100%)] epoch=160.0000 time[s]=0.3109 batch_loss=0.0342 running_loss=0.0342
+[2024-07-24 18:24:18,282][__main__][INFO] - [TRAIN]  loss=3.4250e-02  epoch_time=0.3631 sec
+[2024-07-24 18:24:18,282][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:18,282][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:18,282][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:18,642][__main__][INFO] - [0] [161/200: Batch 1 (100%)] epoch=161.0000 time[s]=0.3076 batch_loss=0.0334 running_loss=0.0334
+[2024-07-24 18:24:18,655][__main__][INFO] - [TRAIN]  loss=3.3432e-02  epoch_time=0.3723 sec
+[2024-07-24 18:24:18,655][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:18,655][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:18,655][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:19,000][__main__][INFO] - [0] [162/200: Batch 1 (100%)] epoch=162.0000 time[s]=0.2909 batch_loss=0.0325 running_loss=0.0325
+[2024-07-24 18:24:19,023][__main__][INFO] - [TRAIN]  loss=3.2468e-02  epoch_time=0.3677 sec
+[2024-07-24 18:24:19,023][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:19,023][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:19,023][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:19,370][__main__][INFO] - [0] [163/200: Batch 1 (100%)] epoch=163.0000 time[s]=0.2949 batch_loss=0.0313 running_loss=0.0313
+[2024-07-24 18:24:19,370][__main__][INFO] - [TRAIN]  loss=3.1329e-02  epoch_time=0.3472 sec
+[2024-07-24 18:24:19,370][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:19,370][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:19,370][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:19,746][__main__][INFO] - [0] [164/200: Batch 1 (100%)] epoch=164.0000 time[s]=0.3235 batch_loss=0.0300 running_loss=0.0300
+[2024-07-24 18:24:19,759][__main__][INFO] - [TRAIN]  loss=2.9989e-02  epoch_time=0.3884 sec
+[2024-07-24 18:24:19,759][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:19,759][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:19,759][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:20,155][__main__][INFO] - [0] [165/200: Batch 1 (100%)] epoch=165.0000 time[s]=0.3221 batch_loss=0.0284 running_loss=0.0284
+[2024-07-24 18:24:20,175][__main__][INFO] - [TRAIN]  loss=2.8427e-02  epoch_time=0.4157 sec
+[2024-07-24 18:24:20,175][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:20,175][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:20,175][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:20,543][__main__][INFO] - [0] [166/200: Batch 1 (100%)] epoch=166.0000 time[s]=0.2870 batch_loss=0.0266 running_loss=0.0266
+[2024-07-24 18:24:20,563][__main__][INFO] - [TRAIN]  loss=2.6632e-02  epoch_time=0.3877 sec
+[2024-07-24 18:24:20,563][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:20,563][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:20,563][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:20,915][__main__][INFO] - [0] [167/200: Batch 1 (100%)] epoch=167.0000 time[s]=0.2871 batch_loss=0.0246 running_loss=0.0246
+[2024-07-24 18:24:20,935][__main__][INFO] - [TRAIN]  loss=2.4614e-02  epoch_time=0.3717 sec
+[2024-07-24 18:24:20,935][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:20,935][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:20,935][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:21,320][__main__][INFO] - [0] [168/200: Batch 1 (100%)] epoch=168.0000 time[s]=0.3228 batch_loss=0.0224 running_loss=0.0224
+[2024-07-24 18:24:21,320][__main__][INFO] - [TRAIN]  loss=2.2406e-02  epoch_time=0.3852 sec
+[2024-07-24 18:24:21,320][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:21,320][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:21,320][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:21,687][__main__][INFO] - [0] [169/200: Batch 1 (100%)] epoch=169.0000 time[s]=0.2856 batch_loss=0.0201 running_loss=0.0201
+[2024-07-24 18:24:21,691][__main__][INFO] - [TRAIN]  loss=2.0084e-02  epoch_time=0.3709 sec
+[2024-07-24 18:24:21,691][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:21,691][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:21,691][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:22,048][__main__][INFO] - [0] [170/200: Batch 1 (100%)] epoch=170.0000 time[s]=0.2903 batch_loss=0.0178 running_loss=0.0178
+[2024-07-24 18:24:22,048][__main__][INFO] - [TRAIN]  loss=1.7754e-02  epoch_time=0.3566 sec
+[2024-07-24 18:24:22,048][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:22,048][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:22,048][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:22,431][__main__][INFO] - [0] [171/200: Batch 1 (100%)] epoch=171.0000 time[s]=0.3015 batch_loss=0.0156 running_loss=0.0156
+[2024-07-24 18:24:22,443][__main__][INFO] - [TRAIN]  loss=1.5552e-02  epoch_time=0.3948 sec
+[2024-07-24 18:24:22,443][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:22,443][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:22,443][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:22,816][__main__][INFO] - [0] [172/200: Batch 1 (100%)] epoch=172.0000 time[s]=0.3105 batch_loss=0.0136 running_loss=0.0136
+[2024-07-24 18:24:22,817][__main__][INFO] - [TRAIN]  loss=1.3607e-02  epoch_time=0.3731 sec
+[2024-07-24 18:24:22,817][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:22,817][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:22,817][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:23,204][__main__][INFO] - [0] [173/200: Batch 1 (100%)] epoch=173.0000 time[s]=0.3208 batch_loss=0.0120 running_loss=0.0120
+[2024-07-24 18:24:23,204][__main__][INFO] - [TRAIN]  loss=1.2005e-02  epoch_time=0.3871 sec
+[2024-07-24 18:24:23,204][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:23,204][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:23,204][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:23,614][__main__][INFO] - [0] [174/200: Batch 1 (100%)] epoch=174.0000 time[s]=0.3375 batch_loss=0.0108 running_loss=0.0108
+[2024-07-24 18:24:23,626][__main__][INFO] - [TRAIN]  loss=1.0778e-02  epoch_time=0.4213 sec
+[2024-07-24 18:24:23,626][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:23,626][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:23,626][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:24,019][__main__][INFO] - [0] [175/200: Batch 1 (100%)] epoch=175.0000 time[s]=0.3081 batch_loss=0.0099 running_loss=0.0099
+[2024-07-24 18:24:24,020][__main__][INFO] - [TRAIN]  loss=9.9140e-03  epoch_time=0.3938 sec
+[2024-07-24 18:24:24,020][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:24,020][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:24,020][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:24,398][__main__][INFO] - [0] [176/200: Batch 1 (100%)] epoch=176.0000 time[s]=0.3261 batch_loss=0.0094 running_loss=0.0094
+[2024-07-24 18:24:24,398][__main__][INFO] - [TRAIN]  loss=9.3796e-03  epoch_time=0.3783 sec
+[2024-07-24 18:24:24,398][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:24,398][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:24,398][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:24,760][__main__][INFO] - [0] [177/200: Batch 1 (100%)] epoch=177.0000 time[s]=0.2955 batch_loss=0.0091 running_loss=0.0091
+[2024-07-24 18:24:24,761][__main__][INFO] - [TRAIN]  loss=9.1049e-03  epoch_time=0.3628 sec
+[2024-07-24 18:24:24,761][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:24,761][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:24,761][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:25,124][__main__][INFO] - [0] [178/200: Batch 1 (100%)] epoch=178.0000 time[s]=0.2890 batch_loss=0.0090 running_loss=0.0090
+[2024-07-24 18:24:25,124][__main__][INFO] - [TRAIN]  loss=9.0067e-03  epoch_time=0.3625 sec
+[2024-07-24 18:24:25,124][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:25,124][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:25,124][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:25,476][__main__][INFO] - [0] [179/200: Batch 1 (100%)] epoch=179.0000 time[s]=0.2849 batch_loss=0.0091 running_loss=0.0091
+[2024-07-24 18:24:25,476][__main__][INFO] - [TRAIN]  loss=9.1216e-03  epoch_time=0.3516 sec
+[2024-07-24 18:24:25,476][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:25,476][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:25,476][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:25,814][__main__][INFO] - [0] [180/200: Batch 1 (100%)] epoch=180.0000 time[s]=0.2858 batch_loss=0.0093 running_loss=0.0093
+[2024-07-24 18:24:25,823][__main__][INFO] - [TRAIN]  loss=9.3229e-03  epoch_time=0.347 sec
+[2024-07-24 18:24:25,823][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:25,823][__main__][INFO] - ----------------------------------------------
+[2024-07-24 18:24:25,823][__main__][INFO] - ----------------------------------------------
+[2024-07-24 18:24:26,174][__main__][INFO] - [0] [181/200: Batch 1 (100%)] epoch=181.0000 time[s]=0.2984 batch_loss=0.0087 running_loss=0.0087
+[2024-07-24 18:24:26,174][__main__][INFO] - [TRAIN]  loss=8.7275e-03  epoch_time=0.3508 sec
+[2024-07-24 18:24:26,174][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:26,174][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:26,174][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:26,523][__main__][INFO] - [0] [182/200: Batch 1 (100%)] epoch=182.0000 time[s]=0.2873 batch_loss=0.0083 running_loss=0.0083
+[2024-07-24 18:24:26,527][__main__][INFO] - [TRAIN]  loss=8.3045e-03  epoch_time=0.3528 sec
+[2024-07-24 18:24:26,527][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:26,527][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:26,528][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:26,866][__main__][INFO] - [0] [183/200: Batch 1 (100%)] epoch=183.0000 time[s]=0.2862 batch_loss=0.0079 running_loss=0.0079
+[2024-07-24 18:24:26,875][__main__][INFO] - [TRAIN]  loss=7.8974e-03  epoch_time=0.3471 sec
+[2024-07-24 18:24:26,875][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:26,875][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:26,875][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:27,256][__main__][INFO] - [0] [184/200: Batch 1 (100%)] epoch=184.0000 time[s]=0.3147 batch_loss=0.0073 running_loss=0.0073
+[2024-07-24 18:24:27,256][__main__][INFO] - [TRAIN]  loss=7.3315e-03  epoch_time=0.3811 sec
+[2024-07-24 18:24:27,256][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:27,256][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:27,256][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:27,607][__main__][INFO] - [0] [185/200: Batch 1 (100%)] epoch=185.0000 time[s]=0.2856 batch_loss=0.0066 running_loss=0.0066
+[2024-07-24 18:24:27,608][__main__][INFO] - [TRAIN]  loss=6.5620e-03  epoch_time=0.3516 sec
+[2024-07-24 18:24:27,608][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:27,608][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:27,608][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:27,986][__main__][INFO] - [0] [186/200: Batch 1 (100%)] epoch=186.0000 time[s]=0.3256 batch_loss=0.0060 running_loss=0.0060
+[2024-07-24 18:24:27,999][__main__][INFO] - [TRAIN]  loss=6.0070e-03  epoch_time=0.3905 sec
+[2024-07-24 18:24:27,999][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:27,999][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:27,999][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:28,390][__main__][INFO] - [0] [187/200: Batch 1 (100%)] epoch=187.0000 time[s]=0.3269 batch_loss=0.0053 running_loss=0.0053
+[2024-07-24 18:24:28,391][__main__][INFO] - [TRAIN]  loss=5.2757e-03  epoch_time=0.392 sec
+[2024-07-24 18:24:28,391][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:28,391][__main__][INFO] - ----------------------------------------------
+[2024-07-24 18:24:28,391][__main__][INFO] - ----------------------------------------------
+[2024-07-24 18:24:28,750][__main__][INFO] - [0] [188/200: Batch 1 (100%)] epoch=188.0000 time[s]=0.3067 batch_loss=0.0048 running_loss=0.0048
+[2024-07-24 18:24:28,750][__main__][INFO] - [TRAIN]  loss=4.8418e-03  epoch_time=0.3591 sec
+[2024-07-24 18:24:28,750][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:28,750][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:28,750][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:29,112][__main__][INFO] - [0] [189/200: Batch 1 (100%)] epoch=189.0000 time[s]=0.2954 batch_loss=0.0046 running_loss=0.0046
+[2024-07-24 18:24:29,112][__main__][INFO] - [TRAIN]  loss=4.5546e-03  epoch_time=0.3615 sec
+[2024-07-24 18:24:29,112][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:29,112][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:29,112][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:29,486][__main__][INFO] - [0] [190/200: Batch 1 (100%)] epoch=190.0000 time[s]=0.3219 batch_loss=0.0044 running_loss=0.0044
+[2024-07-24 18:24:29,499][__main__][INFO] - [TRAIN]  loss=4.4061e-03  epoch_time=0.3865 sec
+[2024-07-24 18:24:29,499][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:29,499][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:29,499][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:29,838][__main__][INFO] - [0] [191/200: Batch 1 (100%)] epoch=191.0000 time[s]=0.2870 batch_loss=0.0045 running_loss=0.0045
+[2024-07-24 18:24:29,852][__main__][INFO] - [TRAIN]  loss=4.4767e-03  epoch_time=0.3529 sec
+[2024-07-24 18:24:29,852][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:29,852][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:29,852][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:30,232][__main__][INFO] - [0] [192/200: Batch 1 (100%)] epoch=192.0000 time[s]=0.3071 batch_loss=0.0043 running_loss=0.0043
+[2024-07-24 18:24:30,232][__main__][INFO] - [TRAIN]  loss=4.3328e-03  epoch_time=0.3802 sec
+[2024-07-24 18:24:30,232][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:30,232][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:30,232][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:30,623][__main__][INFO] - [0] [193/200: Batch 1 (100%)] epoch=193.0000 time[s]=0.3166 batch_loss=0.0042 running_loss=0.0042
+[2024-07-24 18:24:30,635][__main__][INFO] - [TRAIN]  loss=4.2421e-03  epoch_time=0.4021 sec
+[2024-07-24 18:24:30,635][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:30,635][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:30,635][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:30,986][__main__][INFO] - [0] [194/200: Batch 1 (100%)] epoch=194.0000 time[s]=0.2988 batch_loss=0.0039 running_loss=0.0039
+[2024-07-24 18:24:31,007][__main__][INFO] - [TRAIN]  loss=3.8840e-03  epoch_time=0.3717 sec
+[2024-07-24 18:24:31,007][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:31,007][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:31,007][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:31,350][__main__][INFO] - [0] [195/200: Batch 1 (100%)] epoch=195.0000 time[s]=0.2909 batch_loss=0.0035 running_loss=0.0035
+[2024-07-24 18:24:31,359][__main__][INFO] - [TRAIN]  loss=3.5274e-03  epoch_time=0.3517 sec
+[2024-07-24 18:24:31,359][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:31,359][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:31,359][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:31,727][__main__][INFO] - [0] [196/200: Batch 1 (100%)] epoch=196.0000 time[s]=0.2910 batch_loss=0.0032 running_loss=0.0032
+[2024-07-24 18:24:31,735][__main__][INFO] - [TRAIN]  loss=3.1890e-03  epoch_time=0.3764 sec
+[2024-07-24 18:24:31,735][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:31,735][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:31,736][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:32,110][__main__][INFO] - [0] [197/200: Batch 1 (100%)] epoch=197.0000 time[s]=0.3219 batch_loss=0.0029 running_loss=0.0029
+[2024-07-24 18:24:32,122][__main__][INFO] - [TRAIN]  loss=2.9208e-03  epoch_time=0.3861 sec
+[2024-07-24 18:24:32,122][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:32,122][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:32,122][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:32,476][__main__][INFO] - [0] [198/200: Batch 1 (100%)] epoch=198.0000 time[s]=0.2878 batch_loss=0.0028 running_loss=0.0028
+[2024-07-24 18:24:32,476][__main__][INFO] - [TRAIN]  loss=2.7945e-03  epoch_time=0.3541 sec
+[2024-07-24 18:24:32,476][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:32,476][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:32,476][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:32,840][__main__][INFO] - [0] [199/200: Batch 1 (100%)] epoch=199.0000 time[s]=0.2975 batch_loss=0.0027 running_loss=0.0027
+[2024-07-24 18:24:32,840][__main__][INFO] - [TRAIN]  loss=2.7301e-03  epoch_time=0.3636 sec
+[2024-07-24 18:24:32,840][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:32,840][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:32,840][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:33,186][__main__][INFO] - [0] [200/200: Batch 1 (100%)] epoch=200.0000 time[s]=0.2936 batch_loss=0.0027 running_loss=0.0027
+[2024-07-24 18:24:33,195][__main__][INFO] - [TRAIN]  loss=2.7139e-03  epoch_time=0.3549 sec
+[2024-07-24 18:24:33,195][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-07-24 18:24:33,195][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:33,195][__main__][INFO] - -----------------------------------------------
+[2024-07-24 18:24:33,197][__main__][INFO] - 
+Performance data averaged over 8 ranks, 198 epochs and 198 iterations:
+[2024-07-24 18:24:33,197][__main__][INFO] - Total training time: 83.21900844573975
+[2024-07-24 18:24:33,197][__main__][INFO] - Training epoch [s] : min = 3.383095e-01 , max = 4.721203e-01 , avg = 3.718870e-01 , std = 1.964061e-02 
+[2024-07-24 18:24:33,197][__main__][INFO] - Training throughput [nodes/s] : min = 5.490126e+05 , max = 7.661623e+05 , avg = 6.988561e+05 , std = 3.553448e+04 
+[2024-07-24 18:24:33,197][__main__][INFO] - Average parallel training throughout [nodes/s] : 5.590849e+06
+[2024-07-24 18:24:33,197][__main__][INFO] - Training batch [s] : min = 2.849259e-01 , max = 4.071472e-01 , avg = 3.102776e-01 , std = 1.609505e-02 
+[2024-07-24 18:24:33,197][__main__][INFO] - Training batch throughput [nodes/s] : min = 6.366248e+05 , max = 9.097101e+05 , avg = 8.375351e+05 , std = 4.171313e+04 
+[2024-07-24 18:24:33,197][__main__][INFO] - Average parallel training batch throughout [nodes/s] : 6.700281e+06
+[2024-07-24 18:24:33,197][__main__][INFO] - forwardPass [s] : min = 1.609077e-01 , max = 2.833114e-01 , avg = 1.773704e-01 , std = 1.328399e-02 
+[2024-07-24 18:24:33,197][__main__][INFO] - backwardPass [s] : min = 1.113431e-01 , max = 1.685815e-01 , avg = 1.244111e-01 , std = 6.981256e-03 
+[2024-07-24 18:24:33,197][__main__][INFO] - loss [s] : min = 3.685951e-04 , max = 5.554438e-03 , avg = 1.613671e-03 , std = 2.138693e-03 
+[2024-07-24 18:24:33,198][__main__][INFO] - optimizerStep [s] : min = 1.508236e-03 , max = 1.718044e-03 , avg = 1.564758e-03 , std = 3.099250e-05 
+[2024-07-24 18:24:33,198][__main__][INFO] - dataTransfer [s] : min = 4.517317e-03 , max = 6.317854e-03 , avg = 4.712045e-03 , std = 2.068226e-04 
+[2024-07-24 18:24:33,198][__main__][INFO] - bufferInit [s] : min = 1.294613e-04 , max = 2.925396e-04 , avg = 1.708433e-04 , std = 2.575187e-05 
+[2024-07-24 18:24:33,198][__main__][INFO] - collectives [s] : min = 8.344650e-05 , max = 1.895428e-04 , avg = 8.973903e-05 , std = 6.614375e-06 
+Wed 24 Jul 2024 06:24:35 PM UTC
