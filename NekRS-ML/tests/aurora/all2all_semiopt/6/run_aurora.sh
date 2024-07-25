@@ -51,7 +51,7 @@ fi
 echo
 
 EXE=/flare/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/all2all.py
-ARGS="--all_to_all_buff=semi-optimized --num_neighbors=3"
+ARGS="--all_to_all_buff=semi-optimized --num_neighbors=2"
 echo Running script $EXE
 echo with arguments $ARGS
 echo

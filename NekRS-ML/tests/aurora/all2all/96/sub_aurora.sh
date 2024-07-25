@@ -1,13 +1,28 @@
-#!/bin/bash 
+#!/bin/bash -l
+#PBS -S /bin/bash
+#PBS -N gnn_scale
+#PBS -l walltime=00:30:00
+#PBS -l select=16
+#PBS -k doe
+#PBS -j oe
+#PBS -A Aurora_deployment
+#PBS -q lustre_scaling
+#PBS -V
+##PBS -m be
+##PBS -M rbalin@anl.gov 
 
+cd $PBS_O_WORKDIR
 module load frameworks/2024.1
 source /lus/flare/projects/Aurora_deployment/balin/Nek/GNN/env/_pyg/bin/activate
 echo Loaded modules:
 module list
 echo
+echo Torch version: `python -c "import torch; print(torch.__version__)"`
+echo IPEX version: `python -c "import torch;import intel_extension_for_pytorch as ipex;print(ipex.__version__)"`
+echo Torch Geometric version: `python -c "import torch;import torch_geometric;print(torch_geometric.__version__)"`
+echo
 
 NODES=$(cat $PBS_NODEFILE | wc -l)
-NODES=1
 PROCS_PER_NODE=12
 PROCS=$((NODES * PROCS_PER_NODE))
 JOBID=$(echo $PBS_JOBID | awk '{split($1,a,"."); print a[1]}')
@@ -51,7 +66,7 @@ fi
 echo
 
 EXE=/flare/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/all2all.py
-ARGS="--all_to_all_buff=optimized --num_neighbors=2"
+ARGS="--all_to_all_buff=naive --iterations=50"
 echo Running script $EXE
 echo with arguments $ARGS
 echo

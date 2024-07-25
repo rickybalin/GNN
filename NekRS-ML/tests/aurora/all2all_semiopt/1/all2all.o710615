@@ -24,7 +24,7 @@ Setting oneCCL bindings for 2 ranks per node
 Running script /flare/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/all2all.py
 with arguments --all_to_all_buff=semi-optimized --num_neighbors=1
 
-Thu 25 Jul 2024 01:50:42 PM UTC
+Thu 25 Jul 2024 03:06:59 PM UTC
 Running on CUDA devices
 Running on XPU devices
 Hello from rank 0/2, local rank 0, on device xpu:0 out of 12
@@ -32,28 +32,28 @@ Hello from rank 1/2, local rank 1, on device xpu:1 out of 12
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 RUNNING WITH INPUTS:
-Namespace(all_to_all_buff='semi-optimized', num_nodes=32768, num_features=8, num_neighbors=1, iterations=20)
+Namespace(all_to_all_buff='semi-optimized', num_nodes=32768, num_features=8, num_neighbors=1, neighbors='nearest', iterations=20)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-[1] neighbor list: [0]
+[1] neighbor list: [0, 0]
 [RANK 1]: Created send and receive buffers for semi-optimized halo exchange:
 [RANK 1]: Send buffers of size [MB]: [1.0, 0]
 [RANK 1]: Receive buffers of size [MB]: [1.0, 0]
-[0] neighbor list: [1]
+[0] neighbor list: [1, 1]
 [RANK 0]: Created send and receive buffers for semi-optimized halo exchange:
 [RANK 0]: Send buffers of size [MB]: [0, 1.0]
 [RANK 0]: Receive buffers of size [MB]: [0, 1.0]
-2024:07:25-13:50:47:(30120) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
-2024:07:25-13:50:47:(30120) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
-2024:07:25-13:50:47:(30120) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
-2024:07:25-13:50:47:(30121) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
-2024:07:25-13:50:47:(30121) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
-2024:07:25-13:50:47:(30121) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
-2024:07:25-13:50:47:(30121) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
-2024:07:25-13:50:47:(30120) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
-2024:07:25-13:50:47:(30121) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
-2024:07:25-13:50:47:(30120) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:07:25-15:07:04:(25493) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2024:07:25-15:07:04:(25493) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2024:07:25-15:07:04:(25493) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:25-15:07:04:(25494) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2024:07:25-15:07:04:(25494) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2024:07:25-15:07:04:(25493) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:25-15:07:04:(25494) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:25-15:07:04:(25494) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:07:25-15:07:04:(25494) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:07:25-15:07:04:(25493) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
 
 
-Average all2all time: 2.546586e-03 sec
-Thu 25 Jul 2024 01:50:58 PM UTC
+Average all2all time: 2.383878e-03 sec
+Thu 25 Jul 2024 03:07:15 PM UTC

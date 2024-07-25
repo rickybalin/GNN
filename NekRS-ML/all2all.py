@@ -123,10 +123,16 @@ def get_neighbors(args):
             neighbors = [0]
         else:
             rank_list = [i for i in range(SIZE)]
-            while len(neighbors)<args.num_neighbors:
-                rank = random.choice(rank_list)
-                if rank not in neighbors and rank!=RANK:
-                    neighbors.append(rank)
+            if args.neighbors == 'random':
+                while len(neighbors)<args.num_neighbors:
+                    rank = random.choice(rank_list)
+                    if rank not in neighbors and rank!=RANK:
+                        neighbors.append(rank)
+            elif args.neighbors == 'nearest':
+                for i in range(args.num_neighbors):
+                    left_rank = (RANK-(1+i))%SIZE
+                    right_rank = (RANK+(1+i))%SIZE
+                    neighbors.extend([left_rank, right_rank])
         print(f'[{RANK}] neighbor list: {neighbors}',flush=True)
     return neighbors
 
@@ -216,9 +222,14 @@ def main() -> None:
     parser.add_argument('--num_nodes', default=32768, type=int, help='Number of input nodes (rows) to the all_to_all')
     parser.add_argument('--num_features', default=8, type=int, help='Number of input features (columns) to the all_to_all')
     parser.add_argument('--num_neighbors', default=1, type=int, help='Number of neighbors involved in the all_to_all')
+    parser.add_argument('--neighbors', default='nearest', type=str, choices=['nearest','random'], help='Strategy for gathering neighbors')
     parser.add_argument('--iterations', default=20, type=int, help='Number of iterations to run')
     args = parser.parse_args()
-    assert args.num_neighbors<=SIZE, 'Number of neighbors must be less than or equal to the number of ranks'
+    if args.neighbors=='random':
+        assert args.num_neighbors<=SIZE, 'Number of neighbors must be less than or equal to the number of ranks'
+    elif args.neighbors=='nearest':
+        if SIZE>1:
+            assert args.num_neighbors*2<=SIZE, 'Number of neighbors x 2 must be less than or equal to the number of ranks'
     if RANK == 0:
         print('\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
         print('RUNNING WITH INPUTS:')

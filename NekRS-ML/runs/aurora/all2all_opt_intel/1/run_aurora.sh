@@ -5,10 +5,14 @@ source /lus/flare/projects/Aurora_deployment/balin/Nek/GNN/env/_pyg/bin/activate
 echo Loaded modules:
 module list
 echo
+echo Torch version: `python -c "import torch; print(torch.__version__)"`
+echo IPEX version: `python -c "import torch;import intel_extension_for_pytorch as ipex;print(ipex.__version__)"`
+echo Torch Geometric version: `python -c "import torch;import torch_geometric;print(torch_geometric.__version__)"`
+echo
 
 NODES=$(cat $PBS_NODEFILE | wc -l)
 NODES=1
-PROCS_PER_NODE=12
+PROCS_PER_NODE=2
 PROCS=$((NODES * PROCS_PER_NODE))
 JOBID=$(echo $PBS_JOBID | awk '{split($1,a,"."); print a[1]}')
 echo Number of nodes: $NODES
@@ -50,8 +54,21 @@ elif [[ $PROCS_PER_NODE -eq 12 ]]; then
 fi
 echo
 
-EXE=/flare/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/all2all.py
-ARGS="--all_to_all_buff=optimized --num_neighbors=2"
+# CCL backend
+CCL_BACKEND=ccl
+
+# Halo swap mode
+#HALO_SWAP_MODE=none
+#HALO_SWAP_MODE=all_to_all
+#HALO_SWAP_MODE=all_to_all_opt
+HALO_SWAP_MODE=all_to_all_opt_intel
+#HALO_SWAP_MODE=send_recv
+
+# Data path weak scaling
+DATA_PATH=/flare/Aurora_deployment/balin/Nek/GNN/weak_scale_data/500k_aurora/${PROCS}/gnn_outputs_poly_5/
+
+EXE=/flare/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/main.py
+ARGS="backend=${CCL_BACKEND} halo_swap_mode=${HALO_SWAP_MODE} gnn_outputs_path=${DATA_PATH}"
 echo Running script $EXE
 echo with arguments $ARGS
 echo
