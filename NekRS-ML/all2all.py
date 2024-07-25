@@ -1,9 +1,12 @@
 import os
 import sys
 import socket
-from typing import Optional, Union, Callable
 import numpy as np
 import time
+from typing import Union, Optional
+from argparse import ArgumentParser
+from time import perf_counter
+import random
 
 try:
     #import mpi4py
@@ -113,40 +116,64 @@ def cleanup() -> None:
     dist.destroy_process_group()
 
 
-def get_neighbors(args) -> List[int]:
+def get_neighbors(args):
     neighbors = []
-    if args.all_to_all_buff == 'optimized':
-        rank_list = [i for i in range(SIZE)]
-        while len(neighbors)<args.num_neighbors:
-            rank = random.choice(rank_list)
-            if rank not in neighbors and rank!=RANK:
-                neighbors.append(rank)
+    if 'optimized' in args.all_to_all_buff:
+        if SIZE==1:
+            neighbors = [0]
+        else:
+            rank_list = [i for i in range(SIZE)]
+            if args.neighbors == 'random':
+                while len(neighbors)<args.num_neighbors:
+                    rank = random.choice(rank_list)
+                    if rank not in neighbors and rank!=RANK:
+                        neighbors.append(rank)
+            elif args.neighbors == 'nearest':
+                for i in range(args.num_neighbors):
+                    left_rank = (RANK-(1+i))%SIZE
+                    right_rank = (RANK+(1+i))%SIZE
+                    neighbors.extend([left_rank, right_rank])
+        print(f'[{RANK}] neighbor list: {neighbors}',flush=True)
     return neighbors
 
 
 def build_buffers(args, neighbors):
-    buff_send = [torch.empty(0, device=DEVICE)] * SIZE
-    buff_recv = [torch.empty(0, device=DEVICE)] * SIZE
     buff_send_sz = [0] * SIZE
     buff_recv_sz = [0] * SIZE
 
     if args.all_to_all_buff == 'naive':
+        buff_send = [torch.empty(0, device=DEVICE)] * SIZE
+        buff_recv = [torch.empty(0, device=DEVICE)] * SIZE
         for i in range(SIZE):
-            buff_send[i] = torch.empty([args.num_nodes, args.n_features], dtype=TORCH_FLOAT_DTYPE, device=DEVICE)
-            buff_send_sz[i] = torch.numel(buff_send[i])*buff_send[i].element_size()
-            buff_recv[i] = torch.empty([args.num_nodes, args.n_features], dtype=TORCH_FLOAT_DTYPE, device=DEVICE)
-            buff_recv_sz[i] = torch.numel(buff_recv[i])*buff_recv[i].element_size()
+            buff_send[i] = torch.empty([args.num_nodes, args.num_features], dtype=TORCH_FLOAT_DTYPE, device=DEVICE)
+            buff_send_sz[i] = torch.numel(buff_send[i])*buff_send[i].element_size()/1024/1024
+            buff_recv[i] = torch.empty([args.num_nodes, args.num_features], dtype=TORCH_FLOAT_DTYPE, device=DEVICE)
+            buff_recv_sz[i] = torch.numel(buff_recv[i])*buff_recv[i].element_size()/1024/1024
     elif args.all_to_all_buff == 'optimized':
-        for i in neighboring_procs:
-            buff_send[i] = torch.empty([int(n_nodes_to_exchange[i]), n_features], dtype=TORCH_FLOAT_DTYPE, device=DEVICE)
-            buff_send_sz[i] = torch.numel(buff_send[i])*buff_send[i].element_size()
-            buff_recv[i] = torch.empty([int(n_nodes_to_exchange[i]), n_features], dtype=TORCH_FLOAT_DTYPE, device=DEVICE)
-            buff_recv_sz[i] = torch.numel(buff_recv[i])*buff_recv[i].element_size()
+        buff_send = [torch.empty(0, device=DEVICE)] * SIZE
+        buff_recv = [torch.empty(0, device=DEVICE)] * SIZE
+        for i in neighbors:
+            buff_send[i] = torch.empty([args.num_nodes, args.num_features], dtype=TORCH_FLOAT_DTYPE, device=DEVICE)
+            buff_send_sz[i] = torch.numel(buff_send[i])*buff_send[i].element_size()/1024/1024
+            buff_recv[i] = torch.empty([args.num_nodes, args.num_features], dtype=TORCH_FLOAT_DTYPE, device=DEVICE)
+            buff_recv_sz[i] = torch.numel(buff_recv[i])*buff_recv[i].element_size()/1024/1024
+    elif args.all_to_all_buff == 'semi-optimized':
+        #buff_send = [torch.empty([], device=DEVICE)] * SIZE
+        #buff_recv = [torch.empty([], device=DEVICE)] * SIZE
+        buff_send = [torch.zeros(1, device=DEVICE)] * SIZE
+        buff_recv = [torch.zeros(1, device=DEVICE)] * SIZE
+        for i in neighbors:
+            #buff_send[i] = torch.empty([args.num_nodes, args.num_features], dtype=TORCH_FLOAT_DTYPE, device=DEVICE)
+            buff_send[i] = torch.zeros([args.num_nodes, args.num_features], dtype=TORCH_FLOAT_DTYPE, device=DEVICE)
+            buff_send_sz[i] = torch.numel(buff_send[i])*buff_send[i].element_size()/1024/1024
+            #buff_recv[i] = torch.empty([args.num_nodes, args.num_features], dtype=TORCH_FLOAT_DTYPE, device=DEVICE)
+            buff_recv[i] = torch.zeros([args.num_nodes, args.num_features], dtype=TORCH_FLOAT_DTYPE, device=DEVICE)
+            buff_recv_sz[i] = torch.numel(buff_recv[i])*buff_recv[i].element_size()/1024/1024
 
     # Print information about the buffers
-    print('[RANK %d]: Created send and receive buffers for %s halo exchange:' %(RANK,args.all_to_all_buff))
-    print(f'[RANK {RANK}]: Send buffers of size {buff_send_sz}')
-    print(f'[RANK {RANK}]: Receive buffers of size {buff_recv_sz}')
+    print('[RANK %d]: Created send and receive buffers for %s halo exchange:' %(RANK,args.all_to_all_buff), flush=True)
+    print(f'[RANK {RANK}]: Send buffers of size [MB]: {buff_send_sz}',flush=True)
+    print(f'[RANK {RANK}]: Receive buffers of size [MB]: {buff_recv_sz}',flush=True)
 
     return [buff_send, buff_recv]
 
@@ -162,14 +189,14 @@ def halo_test(args, neighbors, buffers) -> None:
         # initialize the buffers 
         for i in range(SIZE):
             buff_send[i] = torch.empty_like(buff_send_safe[i])
-            buff_recv[i] = torch.empty_like(buffer_recv_safe[i])
+            buff_recv[i] = torch.empty_like(buff_recv_safe[i])
         
         # fill in the non-empty buffers
         if args.all_to_all_buff == 'naive':
             for i in range(SIZE):
                 buff_send[i] = torch.randn_like(buff_send[i])
-        elif args.all_to_all_buff == 'optimized':
-            for i in neighboring_procs:
+        elif 'optimized' in args.all_to_all_buff:
+            for i in neighbors:
                 buff_send[i] = torch.randn_like(buff_send[i])
 
         # Perform the all_to_all
@@ -178,6 +205,11 @@ def halo_test(args, neighbors, buffers) -> None:
         toc = perf_counter()
         times.append(toc-tic)
 
+    # Get stats, remove first two iterations
+    times.pop(0)
+    times.pop(0)
+    avg_time = sum(times)/len(times)
+    return avg_time
     
 
 def main() -> None:
@@ -186,25 +218,35 @@ def main() -> None:
 
     # Parse arguments
     parser = ArgumentParser(description='GNN for ML Surrogate Modeling for CFD')
-    parser.add_argument('--all_to_all_buff', default='naive', type=str, choices=['naive','optimized'], help='Type of all_to_all buffers')
-    parser.add_argument('--num_nodes', default=1638400, type=int, help='Number of input nodes (rows) to the all_to_all')
-    parser.add_argument('--num_features', default=5, type=int, help='Number of input features (columns) to the all_to_all')
-    parser.add_argument('--num_neighbors', default=0, type=int, help='Number of neighbors involved in the all_to_all')
+    parser.add_argument('--all_to_all_buff', default='naive', type=str, choices=['naive','optimized','semi-optimized'], help='Type of all_to_all buffers')
+    parser.add_argument('--num_nodes', default=32768, type=int, help='Number of input nodes (rows) to the all_to_all')
+    parser.add_argument('--num_features', default=8, type=int, help='Number of input features (columns) to the all_to_all')
+    parser.add_argument('--num_neighbors', default=1, type=int, help='Number of neighbors involved in the all_to_all')
+    parser.add_argument('--neighbors', default='nearest', type=str, choices=['nearest','random'], help='Strategy for gathering neighbors')
+    parser.add_argument('--iterations', default=20, type=int, help='Number of iterations to run')
     args = parser.parse_args()
-    assert args.num_neighbors<=SIZE, 'Number of neighbors must be less than or equal to the number of ranks'
+    if args.neighbors=='random':
+        assert args.num_neighbors<=SIZE, 'Number of neighbors must be less than or equal to the number of ranks'
+    elif args.neighbors=='nearest':
+        if SIZE>1:
+            assert args.num_neighbors*2<=SIZE, 'Number of neighbors x 2 must be less than or equal to the number of ranks'
     if RANK == 0:
         print('\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
         print('RUNNING WITH INPUTS:')
         print(args)
-        print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+        print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n',flush=True)
 
     if WITH_DDP:
         init_process_group(RANK, SIZE)
         
+        random.seed(42+int(RANK))
         neighbors = get_neighbors(args)
         buffers = build_buffers(args, neighbors)
-        halo_test(args, neighbors, buffers)
-        
+        COMM.Barrier()
+        avg_time = halo_test(args, neighbors, buffers)
+        if RANK == 0:
+            print(f'\n\nAverage all2all time: {avg_time:>4e} sec',flush=True)        
+
         cleanup()
 
 
