@@ -6,9 +6,8 @@
 #PBS -l filesystems=home:eagle
 #PBS -k doe
 #PBS -j oe
-##PBS -A datascience
-#PBS -A ExaNek_NEUP_IRP2
-#PBS -q prod
+#PBS -A datascience
+#PBS -q R2036270
 ##PBS -q preemptable
 ##PBS -q debug-scaling
 ##PBS -q debug
