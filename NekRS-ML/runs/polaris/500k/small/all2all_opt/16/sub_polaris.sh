@@ -2,7 +2,7 @@
 #PBS -S /bin/bash
 #PBS -N gnn_scale
 #PBS -l walltime=00:20:00
-#PBS -l select=64:ncpus=64:ngpus=4
+#PBS -l select=4:ncpus=64:ngpus=4
 #PBS -l filesystems=home:eagle
 #PBS -k doe
 #PBS -j oe
@@ -58,9 +58,9 @@ echo Number of ML total ranks: $PROCS
 echo
 
 # Halo swap mode
-HALO_SWAP_MODE=none
+#HALO_SWAP_MODE=none
 #HALO_SWAP_MODE=all_to_all
-#HALO_SWAP_MODE=all_to_all_opt
+HALO_SWAP_MODE=all_to_all_opt
 #HALO_SWAP_MODE=send_recv
 
 # Data path strong scaling

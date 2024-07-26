@@ -58,9 +58,9 @@ echo Number of ML total ranks: $PROCS
 echo
 
 # Halo swap mode
-#HALO_SWAP_MODE=none
+HALO_SWAP_MODE=none
 #HALO_SWAP_MODE=all_to_all
-HALO_SWAP_MODE=all_to_all_opt
+#HALO_SWAP_MODE=all_to_all_opt
 #HALO_SWAP_MODE=send_recv
 
 # Data path strong scaling

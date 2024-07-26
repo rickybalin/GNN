@@ -7,7 +7,7 @@
 #PBS -k doe
 #PBS -j oe
 #PBS -A datascience
-#PBS -q prod
+#PBS -q R2036270
 ##PBS -q preemptable
 ##PBS -q debug-scaling
 ##PBS -q debug

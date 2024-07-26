@@ -2,13 +2,12 @@
 #PBS -S /bin/bash
 #PBS -N gnn_scale
 #PBS -l walltime=00:20:00
-#PBS -l select=64:ncpus=64:ngpus=4
+#PBS -l select=1:ncpus=64:ngpus=4
 #PBS -l filesystems=home:eagle
 #PBS -k doe
 #PBS -j oe
 #PBS -A datascience
-##PBS -q prod
-#PBS -q R2036270
+##BS -q R2036270
 ##PBS -q preemptable
 ##PBS -q debug-scaling
 ##PBS -q debug
@@ -58,8 +57,8 @@ echo Number of ML total ranks: $PROCS
 echo
 
 # Halo swap mode
-HALO_SWAP_MODE=none
-#HALO_SWAP_MODE=all_to_all
+#HALO_SWAP_MODE=none
+HALO_SWAP_MODE=all_to_all
 #HALO_SWAP_MODE=all_to_all_opt
 #HALO_SWAP_MODE=send_recv
 
