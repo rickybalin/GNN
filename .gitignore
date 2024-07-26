@@ -2,6 +2,10 @@
 outputs/
 saved_models/
 
+# Profiles
+*.nsys-rep
+*.sqlite
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

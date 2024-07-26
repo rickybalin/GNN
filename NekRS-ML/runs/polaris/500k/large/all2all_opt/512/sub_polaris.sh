@@ -1,13 +1,14 @@
 #!/bin/bash -l
 #PBS -S /bin/bash
 #PBS -N gnn_scale
-#PBS -l walltime=00:30:00
+#PBS -l walltime=00:20:00
 #PBS -l select=128:ncpus=64:ngpus=4
 #PBS -l filesystems=home:eagle
 #PBS -k doe
 #PBS -j oe
 #PBS -A ExaNek_NEUP_IRP2
-#PBS -q prod
+##PBS -q prod
+#PBS -q R2036270
 ##PBS -q preemptable
 ##PBS -q debug-scaling
 ##PBS -q debug

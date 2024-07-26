@@ -9,12 +9,6 @@ source /lus/eagle/projects/datascience/balin/Nek/GNN/env/_pyg/bin/activate
 echo Loaded modules:
 module list
 echo
-echo Torch version: `python -c "import torch; print(torch.__version__)"`
-echo Torch CUDA version: `python -c "import torch;print(torch.version.cuda)"`
-echo NCCL version: `python -c "import torch;print(torch.cuda.nccl.version())"`
-echo cuDNN version: `python -c "import torch;print(torch.backends.cudnn.version())"`
-echo Torch Geometric version: `python -c "import torch;import torch_geometric;print(torch_geometric.__version__)"`
-echo
 
 export NCCL_NET_GDR_LEVEL=PHB
 export NCCL_CROSS_NIC=1
@@ -54,15 +48,14 @@ HALO_SWAP_MODE=none
 DATA_PATH=/eagle/datascience/balin/Nek/GNN/weak_scale_data/500k_polaris/${PROCS}/gnn_outputs_poly_5/
 
 EXE=/eagle/datascience/balin/Nek/GNN/GNN/NekRS-ML/main.py
-ARGS="backend=nccl halo_swap_mode=${HALO_SWAP_MODE} gnn_outputs_path=${DATA_PATH} epochs=30"
+ARGS="backend=nccl halo_swap_mode=${HALO_SWAP_MODE} gnn_outputs_path=${DATA_PATH} epochs=5"
 echo Running script $EXE
 echo with arguments $ARGS
 echo
 echo `date`
-nsys profile --trace=cuda,nvtx,osrt,cudnn,cublas,mpi \
-   --backtrace=dwarf  \
+nsys profile --trace=cuda,nvtx,osrt,cudnn,cublas \
    --gpu-metrics-device=all \
-   -o sys_report \
+   -o nsys_report \
    --stats=true --show-output=true \
    mpiexec --envall -n $PROCS --ppn $PROCS_PER_NODE --cpu-bind=list:24:16:8:1 python $EXE ${ARGS} 
 echo `date`

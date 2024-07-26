@@ -469,7 +469,10 @@ class Trainer:
             n_max = int(n_max)
 
             # fill the buffers -- make all buffer sizes the same (required for all_to_all) 
-            if self.cfg.halo_swap_mode == "all_to_all":
+            if self.cfg.halo_swap_mode == "none":
+                buff_send = [torch.empty(0, device=DEVICE)] * SIZE
+                buff_recv = [torch.empty(0, device=DEVICE)] * SIZE
+            elif self.cfg.halo_swap_mode == "all_to_all":
                 buff_send = [torch.empty(0, device=DEVICE)] * SIZE
                 buff_recv = [torch.empty(0, device=DEVICE)] * SIZE
                 for i in range(SIZE): 
