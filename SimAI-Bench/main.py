@@ -51,7 +51,7 @@ def load_model(args, data) -> torch.nn.Module:
         hidden_channels = 16
         n_mlp_hidden_layers = 2
         n_messagePassing_layers = 6
-    elif args.problem_size=='large':
+    elif args.problem_size=='large' or args.problem_size=='pretty_large':
         hidden_channels = 32
         n_mlp_hidden_layers = 5
         n_messagePassing_layers = 8
@@ -99,6 +99,34 @@ def generate_data(args, comm) -> Data:
         inputs[:,1] = v.flatten() 
         outputs[:,0] = udt.flatten() 
         outputs[:,1] = vdt.flatten()
+    elif (args.problem_size=="pretty_large"):
+        N = 80
+        n_samples = N**3
+        ndIn = 3
+        ndTot = 6
+        partition = Partition(dimensions=3, comm=comm)
+        part_origin = partition.origin
+        part_extent = partition.extent
+        x = np.linspace(part_origin[0],part_origin[0]+part_extent[0],num=N)*4*PI-2*PI
+        y = np.linspace(part_origin[1],part_origin[1]+part_extent[1],num=N)*4*PI-2*PI
+        z = np.linspace(part_origin[2],part_origin[2]+part_extent[2],num=N)*4*PI-2*PI
+        x, y, z = np.meshgrid(x, y, z)
+        coords = np.vstack((x.flatten(),y.flatten(),z.flatten())).T
+        r = np.sqrt(x**2+y**2+z**2)
+        u = np.sin(2.0*r-0)/(r+1.0)
+        udt = np.sin(2.0*r-0.01)/(r+1.0)
+        v = np.cos(2.0*r-0)/(r+1.0)
+        vdt = np.cos(2.0*r-0.01)/(r+1.0)
+        w = np.sin(2.0*r-0)**2/(r+1.0)
+        wdt = np.sin(2.0*r-0.01)**2/(r+1.0)
+        inputs = np.empty((n_samples,ndIn))
+        outputs = np.empty((n_samples,ndTot-ndIn))
+        inputs[:,0] = u.flatten()
+        inputs[:,1] = v.flatten()
+        inputs[:,2] = w.flatten()
+        outputs[:,0] = udt.flatten()
+        outputs[:,1] = vdt.flatten()
+        outputs[:,2] = wdt.flatten()
     elif (args.problem_size=="large"):
         N = 100
         n_samples = N**3
@@ -302,7 +330,7 @@ if __name__ == '__main__':
     # Parse arguments
     parser = ArgumentParser(description='GNN for ML Surrogate Modeling for CFD')
     parser.add_argument('--device', default="cuda", type=str, help='Device to use for training (cpu,cuda,xpu)')
-    parser.add_argument('--problem_size', default="medium", type=str, help='Size of ML problem to train (medium)')
+    parser.add_argument('--problem_size', default="medium", type=str, help='Size of ML problem to train (medium, large)')
     parser.add_argument('--iterations', default=10, type=int, help='Number of optimizer iterations to perform')
     parser.add_argument('--precision', default="fp32", type=str, help='Floating point precision')
     parser.add_argument('--learning_rate', default=0.0001, type=float, help='Optimizer learning rate')

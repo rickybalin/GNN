@@ -1,15 +1,15 @@
 #!/bin/bash -l
 #PBS -S /bin/bash
 #PBS -N gnn_scale
-#PBS -l walltime=00:20:00
-#PBS -l select=4:ncpus=64:ngpus=4
+#PBS -l walltime=00:30:00
+#PBS -l select=16:ncpus=64:ngpus=4
 #PBS -l filesystems=home:eagle
 #PBS -k doe
 #PBS -j oe
 #PBS -A datascience
-##PBS -q prod
+#PBS -q prod
 ##PBS -q preemptable
-#PBS -q debug-scaling
+##PBS -q debug-scaling
 ##PBS -q debug
 #PBS -V
 ##PBS -m be
@@ -17,8 +17,10 @@
 
 cd $PBS_O_WORKDIR
 module use /soft/modulefiles
-module load jax/0.4.29-dev
-source /lus/eagle/projects/datascience/balin/Nek/GNN/env/_pyg_old/bin/activate
+module load conda/2024-04-29
+#conda activate /eagle/datascience/balin/SimAI-Bench/conda/clone
+conda activate /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn
+source /lus/eagle/projects/datascience/balin/Nek/GNN/env/_pyg/bin/activate
 
 echo Loaded modules:
 module list
@@ -30,15 +32,15 @@ echo cuDNN version: `python -c "import torch;print(torch.backends.cudnn.version(
 echo Torch Geometric version: `python -c "import torch;import torch_geometric;print(torch_geometric.__version__)"`
 echo
 
-export NCCL_NET_GDR_LEVEL=PHB
-export NCCL_CROSS_NIC=1
-export NCCL_COLLNET_ENABLE=1
+#export NCCL_NET_GDR_LEVEL=PHB
+#export NCCL_CROSS_NIC=1
+#export NCCL_COLLNET_ENABLE=1
 ##export NCCL_NET="AWS Libfabric"
 ##export LD_LIBRARY_PATH=/soft/libraries/aws-ofi-nccl/v1.9.1-aws/lib:$LD_LIBRARY_PATH
 ##export LD_LIBRARY_PATH=/soft/libraries/hwloc/lib/:$LD_LIBRARY_PATH
-export FI_CXI_DISABLE_HOST_REGISTER=1
-export FI_MR_CACHE_MONITOR=userfaultfd
-export FI_CXI_DEFAULT_CQ_SIZE=131072
+#export FI_CXI_DISABLE_HOST_REGISTER=1
+#export FI_MR_CACHE_MONITOR=userfaultfd
+#export FI_CXI_DEFAULT_CQ_SIZE=131072
 
 # for all_to_all
 #export FI_CXI_RX_MATCH_MODE=software
@@ -55,10 +57,10 @@ echo Number of ML total ranks: $PROCS
 echo
 
 # Halo swap mode
-#HALO_SWAP_MODE=none
+HALO_SWAP_MODE=none
 #HALO_SWAP_MODE=all_to_all
 #HALO_SWAP_MODE=all_to_all_opt
-HALO_SWAP_MODE=send_recv
+#HALO_SWAP_MODE=send_recv
 
 # Data path strong scaling
 #DATA_PATH=/lus/eagle/projects/datascience/sbarwey/codes/nek/nekrs_cases/examples_v23_gnn/tgv/gnn_outputs_distributed_gnn/gnn_outputs_poly_3/
@@ -67,8 +69,8 @@ HALO_SWAP_MODE=send_recv
 #DATA_PATH=/lus/eagle/projects/datascience/sbarwey/codes/nek/nekrs_cases/examples_v23_gnn/tgv_weak_scaling/ne_16_v2/gnn_outputs_poly_5/
 DATA_PATH=/eagle/datascience/balin/Nek/GNN/weak_scale_data/500k_polaris/${PROCS}/gnn_outputs_poly_5/
 
-EXE=/eagle/datascience/balin/Nek/GNN/GNN/NekRS-ML/main.py
-ARGS="hidden_channels=8 n_mlp_hidden_layers=2 backend=nccl halo_swap_mode=${HALO_SWAP_MODE} gnn_outputs_path=${DATA_PATH}"
+EXE=/eagle/datascience/balin/Nek/GNN/GNN/NekRS-ML/main_halo_in_tp.py
+ARGS="backend=nccl halo_swap_mode=${HALO_SWAP_MODE} gnn_outputs_path=${DATA_PATH}"
 echo Running script $EXE
 echo with arguments $ARGS
 echo

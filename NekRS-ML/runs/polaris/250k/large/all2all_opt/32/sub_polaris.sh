@@ -1,8 +1,8 @@
 #!/bin/bash -l
 #PBS -S /bin/bash
 #PBS -N gnn_scale
-#PBS -l walltime=00:20:00
-#PBS -l select=4:ncpus=64:ngpus=4
+#PBS -l walltime=00:30:00
+#PBS -l select=8:ncpus=64:ngpus=4
 #PBS -l filesystems=home:eagle
 #PBS -k doe
 #PBS -j oe
@@ -17,8 +17,10 @@
 
 cd $PBS_O_WORKDIR
 module use /soft/modulefiles
-module load jax/0.4.29-dev
-source /lus/eagle/projects/datascience/balin/Nek/GNN/env/_pyg_old/bin/activate
+module load conda/2024-04-29
+#conda activate /eagle/datascience/balin/SimAI-Bench/conda/clone
+conda activate /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn
+source /lus/eagle/projects/datascience/balin/Nek/GNN/env/_pyg/bin/activate
 
 echo Loaded modules:
 module list
@@ -57,18 +59,18 @@ echo
 # Halo swap mode
 #HALO_SWAP_MODE=none
 #HALO_SWAP_MODE=all_to_all
-#HALO_SWAP_MODE=all_to_all_opt
-HALO_SWAP_MODE=send_recv
+HALO_SWAP_MODE=all_to_all_opt
+#HALO_SWAP_MODE=send_recv
 
 # Data path strong scaling
 #DATA_PATH=/lus/eagle/projects/datascience/sbarwey/codes/nek/nekrs_cases/examples_v23_gnn/tgv/gnn_outputs_distributed_gnn/gnn_outputs_poly_3/
 
 # Data path weak scaling
 #DATA_PATH=/lus/eagle/projects/datascience/sbarwey/codes/nek/nekrs_cases/examples_v23_gnn/tgv_weak_scaling/ne_16_v2/gnn_outputs_poly_5/
-DATA_PATH=/eagle/datascience/balin/Nek/GNN/weak_scale_data/500k_polaris/${PROCS}/gnn_outputs_poly_5/
+DATA_PATH=/eagle/datascience/balin/Nek/GNN/weak_scale_data/250k_polaris/${PROCS}/gnn_outputs_poly_5/
 
 EXE=/eagle/datascience/balin/Nek/GNN/GNN/NekRS-ML/main.py
-ARGS="hidden_channels=8 n_mlp_hidden_layers=2 backend=nccl halo_swap_mode=${HALO_SWAP_MODE} gnn_outputs_path=${DATA_PATH}"
+ARGS="backend=nccl halo_swap_mode=${HALO_SWAP_MODE} gnn_outputs_path=${DATA_PATH}"
 echo Running script $EXE
 echo with arguments $ARGS
 echo
