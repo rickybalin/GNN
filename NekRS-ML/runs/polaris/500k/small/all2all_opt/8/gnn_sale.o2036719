@@ -1,0 +1,113 @@
+Loaded modules:
+
+Torch version: 2.3.0
+Torch CUDA version: 12.4
+NCCL version: (2, 20, 5)
+cuDNN version: 90100
+Torch Geometric version: 2.5.3
+
+Number of nodes: 2
+Number of ML ranks per node: 8
+Number of ML total ranks: 16
+
+Running script /eagle/datascience/balin/Nek/GNN/GNN/NekRS-ML/main.py
+with arguments hidden_channels=8 n_mlp_hidden_layers=2 backend=nccl halo_swap_mode=all_to_all_opt gnn_outputs_path=/eagle/datascience/balin/Nek/GNN/weak_scale_data/500k_polaris/16/gnn_outputs_poly_5/
+
+Wed 24 Jul 2024 06:28:02 PM UTC
+[2024-07-24 18:28:12,890][__main__][INFO] - Hello from rank 0/16, local rank 0, on device cuda:0 out of 4.
+[2024-07-24 18:28:13,613][__main__][INFO] - Hello from rank 8/16, local rank 0, on device cuda:0 out of 4.
+[2024-07-24 18:28:13,856][__main__][INFO] - Hello from rank 1/16, local rank 1, on device cuda:1 out of 4.
+[2024-07-24 18:28:13,860][__main__][INFO] - Hello from rank 2/16, local rank 2, on device cuda:2 out of 4.
+[2024-07-24 18:28:13,861][__main__][INFO] - Hello from rank 3/16, local rank 3, on device cuda:3 out of 4.
+[2024-07-24 18:28:14,183][__main__][INFO] - [RANK 8]: Loading positions and global node index
+[2024-07-24 18:28:14,308][__main__][INFO] - [RANK 8]: Loading edge index
+[2024-07-24 18:28:14,470][__main__][INFO] - Hello from rank 10/16, local rank 2, on device cuda:2 out of 4.
+[2024-07-24 18:28:14,494][__main__][INFO] - Hello from rank 11/16, local rank 3, on device cuda:3 out of 4.
+[2024-07-24 18:28:14,502][__main__][INFO] - Hello from rank 9/16, local rank 1, on device cuda:1 out of 4.
+[2024-07-24 18:28:14,503][__main__][INFO] - [RANK 1]: Loading positions and global node index
+[2024-07-24 18:28:14,510][__main__][INFO] - [RANK 2]: Loading positions and global node index
+[2024-07-24 18:28:14,512][__main__][INFO] - [RANK 3]: Loading positions and global node index
+[2024-07-24 18:28:14,543][__main__][INFO] - [RANK 8]: Loading local unique mask
+[2024-07-24 18:28:14,609][__main__][INFO] - [RANK 8]: Making the FULL GLL-based graph with overlapping nodes
+[2024-07-24 18:28:14,617][__main__][INFO] - [RANK 1]: Loading edge index
+[2024-07-24 18:28:14,617][__main__][INFO] - [RANK 2]: Loading edge index
+[2024-07-24 18:28:14,617][__main__][INFO] - [RANK 3]: Loading edge index
+[2024-07-24 18:28:14,786][__main__][INFO] - [RANK 11]: Loading positions and global node index
+[2024-07-24 18:28:14,799][__main__][INFO] - [RANK 9]: Loading positions and global node index
+[2024-07-24 18:28:14,871][__main__][INFO] - [RANK 3]: Loading local unique mask
+[2024-07-24 18:28:14,883][__main__][INFO] - [RANK 1]: Loading local unique mask
+[2024-07-24 18:28:14,900][__main__][INFO] - [RANK 2]: Loading local unique mask
+[2024-07-24 18:28:14,906][__main__][INFO] - [RANK 9]: Loading edge index
+[2024-07-24 18:28:14,909][__main__][INFO] - [RANK 11]: Loading edge index
+[2024-07-24 18:28:14,936][__main__][INFO] - [RANK 3]: Making the FULL GLL-based graph with overlapping nodes
+[2024-07-24 18:28:14,952][__main__][INFO] - [RANK 1]: Making the FULL GLL-based graph with overlapping nodes
+[2024-07-24 18:28:14,957][__main__][INFO] - [RANK 2]: Making the FULL GLL-based graph with overlapping nodes
+[2024-07-24 18:28:15,032][__main__][INFO] - [RANK 10]: Loading positions and global node index
+[2024-07-24 18:28:15,139][__main__][INFO] - [RANK 9]: Loading local unique mask
+[2024-07-24 18:28:15,153][__main__][INFO] - [RANK 10]: Loading edge index
+[2024-07-24 18:28:15,163][__main__][INFO] - [RANK 11]: Loading local unique mask
+[2024-07-24 18:28:15,225][__main__][INFO] - [RANK 9]: Making the FULL GLL-based graph with overlapping nodes
+[2024-07-24 18:28:15,234][__main__][INFO] - [RANK 11]: Making the FULL GLL-based graph with overlapping nodes
+[2024-07-24 18:28:15,389][__main__][INFO] - [RANK 10]: Loading local unique mask
+[2024-07-24 18:28:15,457][__main__][INFO] - [RANK 10]: Making the FULL GLL-based graph with overlapping nodes
+[2024-07-24 18:28:17,830][__main__][INFO] - [RANK 8]: Making the REDUCED GLL-based graph with non-overlapping nodes
+[2024-07-24 18:28:18,150][__main__][INFO] - [RANK 3]: Making the REDUCED GLL-based graph with non-overlapping nodes
+[2024-07-24 18:28:18,159][__main__][INFO] - [RANK 1]: Making the REDUCED GLL-based graph with non-overlapping nodes
+[2024-07-24 18:28:18,201][__main__][INFO] - [RANK 2]: Making the REDUCED GLL-based graph with non-overlapping nodes
+[2024-07-24 18:28:18,459][__main__][INFO] - [RANK 11]: Making the REDUCED GLL-based graph with non-overlapping nodes
+[2024-07-24 18:28:18,484][__main__][INFO] - [RANK 9]: Making the REDUCED GLL-based graph with non-overlapping nodes
+[2024-07-24 18:28:18,706][__main__][INFO] - [RANK 10]: Making the REDUCED GLL-based graph with non-overlapping nodes
+[2024-07-24 18:28:19,105][__main__][INFO] - [RANK 8]: Getting idx_reduced2full
+[2024-07-24 18:28:19,431][__main__][INFO] - [RANK 3]: Getting idx_reduced2full
+[2024-07-24 18:28:19,448][__main__][INFO] - [RANK 1]: Getting idx_reduced2full
+[2024-07-24 18:28:19,486][__main__][INFO] - [RANK 2]: Getting idx_reduced2full
+[2024-07-24 18:28:19,748][__main__][INFO] - [RANK 11]: Getting idx_reduced2full
+[2024-07-24 18:28:19,773][__main__][INFO] - [RANK 9]: Getting idx_reduced2full
+[2024-07-24 18:28:19,991][__main__][INFO] - [RANK 10]: Getting idx_reduced2full
+[2024-07-24 18:28:31,276][__main__][INFO] - [RANK 1]: Assembling halo_ids_list using reduced graph
+[2024-07-24 18:28:31,308][__main__][INFO] - [RANK 1]: Found 5 neighboring processes: [0 2 3 6 7]
+[2024-07-24 18:28:31,350][__main__][INFO] - [RANK 8]: Assembling halo_ids_list using reduced graph
+[2024-07-24 18:28:31,386][__main__][INFO] - [RANK 8]: Found 5 neighboring processes: [ 9 10 11 14 15]
+[2024-07-24 18:28:31,527][__main__][INFO] - [RANK 2]: Assembling halo_ids_list using reduced graph
+[2024-07-24 18:28:31,558][__main__][INFO] - [RANK 2]: Found 5 neighboring processes: [ 0  1  3 12 13]
+[2024-07-24 18:28:31,592][__main__][INFO] - [RANK 11]: Assembling halo_ids_list using reduced graph
+[2024-07-24 18:28:31,596][__main__][INFO] - [RANK 3]: Assembling halo_ids_list using reduced graph
+[2024-07-24 18:28:31,622][__main__][INFO] - [RANK 3]: Found 5 neighboring processes: [ 0  1  2 12 13]
+[2024-07-24 18:28:31,626][__main__][INFO] - [RANK 11]: Found 5 neighboring processes: [ 4  5  8  9 10]
+[2024-07-24 18:28:31,722][__main__][INFO] - [RANK 9]: Assembling halo_ids_list using reduced graph
+[2024-07-24 18:28:31,757][__main__][INFO] - [RANK 9]: Found 5 neighboring processes: [ 8 10 11 14 15]
+[2024-07-24 18:28:31,820][__main__][INFO] - [RANK 10]: Assembling halo_ids_list using reduced graph
+[2024-07-24 18:28:31,854][__main__][INFO] - [RANK 10]: Found 5 neighboring processes: [ 4  5  8  9 11]
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+RUNNING WITH INPUTS:
+profile: false
+halo_test: false
+verbose: true
+seed: 12
+epochs: 100
+backend: nccl
+lr_init: 0.0001
+use_noise: true
+num_threads: 0
+logfreq: 10
+ckptfreq: 1000
+batch_size: 1
+test_batch_size: 1
+fp16_allreduce: false
+restart: false
+hidden_channels: 8
+n_mlp_hidden_layers: 2
+n_messagePassing_layers: 4
+rollout_steps: 1
+halo_swap_mode: all_to_all_opt
+plot_connectivity: false
+work_dir: ${hydra:runtime.cwd}
+data_dir: ${work_dir}/datasets/
+ckpt_dir: ${work_dir}/ckpt/
+model_dir: ${work_dir}/saved_models/
+profile_dir: ${work_dir}/outputs/profiles/test/
+gnn_outputs_path: /eagle/datascience/balin/Nek/GNN/weak_scale_data/500k_polaris/16/gnn_outputs_poly_5/
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Wed 24 Jul 2024 06:38:17 PM UTC

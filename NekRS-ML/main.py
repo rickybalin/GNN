@@ -173,10 +173,9 @@ def metric_max(val: Tensor):
     return val
 
 def trace_handler(p):
-    output = p.key_averages().table(sort_by="cpu_time_total", row_limit=20)
-    #print(output)
-    print(temp_test)
-    #p.export_chrome_trace("/tmp/trace_" + str(p.step_num) + ".json")
+    output = p.key_averages().table(sort_by="self_cuda_time", row_limit=20)
+    print(output)
+    p.export_chrome_trace("/tmp/trace_" + str(p.step_num) + ".json")
 
 def collect_list_times(a_list):
     collected_arr = np.zeros((len(a_list)*SIZE))
@@ -470,7 +469,10 @@ class Trainer:
             n_max = int(n_max)
 
             # fill the buffers -- make all buffer sizes the same (required for all_to_all) 
-            if self.cfg.halo_swap_mode == "all_to_all":
+            if self.cfg.halo_swap_mode == "none":
+                buff_send = [torch.empty(0, device=DEVICE)] * SIZE
+                buff_recv = [torch.empty(0, device=DEVICE)] * SIZE
+            elif self.cfg.halo_swap_mode == "all_to_all":
                 buff_send = [torch.empty(0, device=DEVICE)] * SIZE
                 buff_recv = [torch.empty(0, device=DEVICE)] * SIZE
                 for i in range(SIZE): 
@@ -1061,28 +1063,33 @@ class Trainer:
 
     def train_step_profile(self):
         self.model.train()
-        wait = 5
-        warmup = 50
-        active = 200
+        skip = 5
+        wait = 1
+        warmup = 1
+        active = 5
 
         # with torch.no_grad(): 
         with profile(
                 activities=[ProfilerActivity.CPU, ProfilerActivity.CUDA],
                 schedule=torch.profiler.schedule(
+                    skip_first=skip,
                     wait=wait,
                     warmup=warmup,
-                    active=active)
+                    active=active),
+                record_shapes=True,
+                profile_memory=True,
+                with_stack=True,
                 #on_trace_ready=trace_handler
             ) as prof:
 
-            data = self.data['train']['example']
-            for idx in range(wait+warmup+active): 
+            for idx in range(skip+wait+warmup+active): 
                 # log.info(f"\t[RANK {RANK}] -- step {idx}")
+                data = self.data['train']['example']
 
                 loss = torch.tensor([0.0])
                 if WITH_CUDA or WITH_XPU:
                     data.x = data.x.to(self.device) 
-                    data.y = data.y.to(self.device)
+                    #data.y = data.y.to(self.device)
                     data.edge_index = data.edge_index.to(self.device)
                     data.edge_weight = data.edge_weight.to(self.device)
                     data.edge_attr = data.edge_attr.to(self.device)
@@ -1097,14 +1104,12 @@ class Trainer:
                 if self.cfg.halo_swap_mode != 'none':
                     for i in range(SIZE):
                         self.buffer_send[i] = torch.zeros_like(self.buffer_send[i])
-                    for i in range(SIZE):
                         self.buffer_recv[i] = torch.zeros_like(self.buffer_recv[i])
-
                 else:
                     buffer_send = None
                     buffer_recv = None
                 
-                with record_function(f"[RANK {RANK}] FORWARD PASS"):
+                with record_function(f"forward_pass"):
                     out_gnn = self.model(x = data.x,
                                          edge_index = data.edge_index,
                                          edge_attr = data.edge_attr,
@@ -1118,30 +1123,26 @@ class Trainer:
                                          SIZE = SIZE,
                                          batch = data.batch)
 
-                # target = data.x
+                with record_function(f"loss"):
+                    target = data.x
+                    n_nodes_local = data.n_nodes_local
+                    if SIZE == 1:
+                        loss = self.loss_fn(out_gnn[:n_nodes_local], target[:n_nodes_local])
+                        effective_nodes = n_nodes_local
+                    else: # custom
+                        n_output_features = out_gnn.shape[1]
+                        squared_errors_local = torch.pow(out_gnn[:n_nodes_local] - target[:n_nodes_local], 2)
+                        squared_errors_local = squared_errors_local/data.node_degree[:n_nodes_local].unsqueeze(-1)
+                        sum_squared_errors_local = squared_errors_local.sum()
+                        effective_nodes_local = torch.sum(1.0/data.node_degree[:n_nodes_local])
+                        effective_nodes = distnn.all_reduce(effective_nodes_local)
+                        sum_squared_errors = distnn.all_reduce(sum_squared_errors_local)
+                        loss = (1.0/(effective_nodes*n_output_features)) * sum_squared_errors
 
-                # # Accumulate loss
-                # with record_function(f"[RANK {RANK}] LOSS"):
-                #     n_nodes_local = data.n_nodes_local
-                #     if SIZE == 1:
-                #         loss = self.loss_fn(out_gnn[:n_nodes_local], target[:n_nodes_local])
-                #         effective_nodes = n_nodes_local 
-                #     else:
-                #         n_output_features = out_gnn.shape[1]
-                #         squared_errors_local = torch.pow(out_gnn[:n_nodes_local] - target[:n_nodes_local], 2)
-                #         squared_errors_local = squared_errors_local/data.node_degree[:n_nodes_local].unsqueeze(-1)
+                with record_function(f"backward_pass"):
+                     loss.backward()
 
-                #         sum_squared_errors_local = squared_errors_local.sum()
-                #         effective_nodes_local = torch.sum(1.0/data.node_degree[:n_nodes_local])
-
-                #         effective_nodes = distnn.all_reduce(effective_nodes_local)
-                #         sum_squared_errors = distnn.all_reduce(sum_squared_errors_local)
-                #         loss = (1.0/(effective_nodes*n_output_features)) * sum_squared_errors
-                # 
-                # with record_function(f"[RANK {RANK}] BACKWARD PASS"):
-                #     loss.backward()
-
-                # self.optimizer.step()
+                self.optimizer.step()
 
                 # Step the profiler 
                 prof.step()
@@ -1407,18 +1408,13 @@ def train(cfg: DictConfig) -> None:
 
 
 def train_profile(cfg: DictConfig) -> None:
-    start = time.time()
     trainer = Trainer(cfg)
-    # epoch_times = []
 
     # Run a bunch of train steps 
-    t_prof = time.time()
     prof = trainer.train_step_profile()
-    t_prof = time.time() - t_prof
-    log.info(f"[RANK {RANK}] -- t_prof = {t_prof} s")
 
     if RANK == 0:
-        print(prof.key_averages().table(sort_by="cpu_time_total", row_limit=10))
+        print(prof.key_averages().table(sort_by="self_cuda_time_total", row_limit=20))
 
     # save profiler data 
     if SIZE == 1:
@@ -1437,6 +1433,7 @@ def train_profile(cfg: DictConfig) -> None:
     COMM.Barrier()
 
     torch.save(prof.key_averages(), savepath + '/%s.tar' %(model.get_save_header()))
+    prof.export_chrome_trace(f"/eagle/datascience/balin/Nek/GNN/GNN/NekRS-ML/runs/polaris/none/4_torch_prof/trace_{RANK}.json")
 
     return 
 
