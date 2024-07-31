@@ -335,19 +335,27 @@ if __name__ == '__main__':
     parser.add_argument('--precision', default="fp32", type=str, help='Floating point precision')
     parser.add_argument('--learning_rate', default=0.0001, type=float, help='Optimizer learning rate')
     parser.add_argument('--include_loss_avg', default='true', choices=['true','false'], type=str, help='Include average of the loss across ranks in performance measurement')
+    parser.add_argument('--master_addr', default=None, type=str, help='Master address for torch.distributed')
     args = parser.parse_args()
 
     # Initialize Torch Distributed
     if size>1:
         os.environ['RANK'] = str(rank)
         os.environ['WORLD_SIZE'] = str(size)
-        master_addr = socket.gethostname() if rank == 0 else None
+        if args.master_addr is not None:
+            master_addr = args.master_addr if rank == 0 else None
+        else:
+            master_addr = socket.gethostname() if rank == 0 else None
         master_addr = comm.bcast(master_addr, root=0)
         os.environ['MASTER_ADDR'] = master_addr
-        os.environ['MASTER_PORT'] = str(2345)
+        if args.device=='rocm':
+            os.environ['MASTER_PORT'] = str(3442)
+        else:
+            os.environ['MASTER_PORT'] = str(2345)
         if (args.device=='cpu'): backend = 'gloo'
         elif (args.device=='cuda'): backend = 'nccl'
         elif (args.device=='xpu'): backend = 'ccl'
+        elif (args.device=='rocm'): backend = 'nccl'
         dist.init_process_group(backend,
                                 rank=int(rank),
                                 world_size=int(size),
