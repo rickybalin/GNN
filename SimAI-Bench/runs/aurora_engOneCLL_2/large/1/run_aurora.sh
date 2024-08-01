@@ -56,7 +56,7 @@ echo
 
 EXE=/lus/flare/projects/Aurora_deployment/balin/Nek/GNN/GNN/SimAI-Bench/main.py
 GPU_AFFINITY=./affinity_aurora.sh
-ARGS="--device=xpu --iterations=100 --problem_size=large"
+ARGS="--device=xpu --iterations=150 --problem_size=large"
 echo Running script $EXE
 echo with arguments $ARGS
 echo `date`
