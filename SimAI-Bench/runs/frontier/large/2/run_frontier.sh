@@ -1,17 +1,4 @@
 #!/bin/bash
-#SBATCH -A CSC613
-#SBATCH -J gnn_scale
-#SBATCH -o gnn_scale-%j.o
-#SBATCH -e gnn_scale-%j.e
-#SBATCH -t 00:30:00
-#SBATCH -p batch
-#SBATCH -N 1
-
-cd $SLURM_SUBMIT_DIR
-
-# Only necessary if submitting like: sbatch --export=NONE ... (recommended)
-# Do NOT include this line when submitting without --export=NONE
-unset SLURM_EXPORT_ENV
 
 module load PrgEnv-gnu/8.5.0
 module load miniforge3/23.11.0-0
@@ -43,15 +30,15 @@ export NCCL_CROSS_NIC=1
 export NCCL_COLLNET_ENABLE=1
 
 NODES=$(echo $SLURM_NODEFILE | wc -l)
-PROCS_PER_NODE=8
+PROCS_PER_NODE=4
 PROCS=$((NODES * PROCS_PER_NODE))
 echo Number of nodes: $NODES
 echo Number of ML ranks per node: $PROCS_PER_NODE
 echo Number of ML total ranks: $PROCS
 echo
 
-EXE=./main.py
-ARGS="--device=cuda --iterations=100 --problem_size=large --master_addr=${MASTER_ADDR} --master_port=3442"
+EXE=/lustre/orion/csc613/proj-shared/balin/Nek/GNN/GNN/SimAI-Bench/main.py
+ARGS="--device=cuda --iterations=150 --problem_size=large --master_addr=${MASTER_ADDR} --master_port=3442"
 echo Running script $EXE
 echo with arguments $ARGS
 echo

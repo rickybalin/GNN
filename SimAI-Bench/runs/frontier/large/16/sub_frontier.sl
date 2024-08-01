@@ -1,11 +1,11 @@
 #!/bin/bash
+#SBATCH -N 4
 #SBATCH -A CSC613
 #SBATCH -J gnn_scale
 #SBATCH -o gnn_scale-%j.o
 #SBATCH -e gnn_scale-%j.e
 #SBATCH -t 00:30:00
 #SBATCH -p batch
-#SBATCH -N 1
 
 cd $SLURM_SUBMIT_DIR
 
@@ -50,8 +50,8 @@ echo Number of ML ranks per node: $PROCS_PER_NODE
 echo Number of ML total ranks: $PROCS
 echo
 
-EXE=./main.py
-ARGS="--device=cuda --iterations=100 --problem_size=large --master_addr=${MASTER_ADDR} --master_port=3442"
+EXE=/lustre/orion/csc613/proj-shared/balin/Nek/GNN/GNN/SimAI-Bench/main.py
+ARGS="--device=cuda --iterations=150 --problem_size=large --master_addr=${MASTER_ADDR} --master_port=3442"
 echo Running script $EXE
 echo with arguments $ARGS
 echo

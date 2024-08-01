@@ -1,0 +1,233 @@
+
+Lmod is automatically replacing "cce/17.0.0" with "gcc-native/12.3".
+
+
+Lmod is automatically replacing "PrgEnv-cray/8.5.0" with "PrgEnv-gnu/8.5.0".
+
+
+Due to MODULEPATH changes, the following have been reloaded:
+  1) cray-libsci/23.12.5     2) cray-mpich/8.1.28     3) darshan-runtime/3.4.0-mpi
+
+Loaded modules:
+
+Currently Loaded Modules:
+  1) craype-x86-trento                       8) tmux/3.2a          15) cray-mpich/8.1.28
+  2) libfabric/1.15.2.0                      9) hsi/default        16) cray-libsci/23.12.5
+  3) craype-network-ofi                     10) lfs-wrapper/0.0.1  17) PrgEnv-gnu/8.5.0
+  4) perftools-base/23.12.0                 11) DefApps            18) darshan-runtime/3.4.0-mpi
+  5) xpmem/2.6.2-2.5_2.40__gd067c3f.shasta  12) gcc-native/12.3    19) miniforge3/23.11.0-0
+  6) cray-pmi/6.1.13                        13) craype/2.7.31      20) rocm/5.7.1
+  7) Core/24.00                             14) cray-dsmml/0.2.2   21) craype-accel-amd-gfx90a
+
+ 
+
+
+Torch version: 2.2.2+rocm5.7
+NCCL version: (2, 17, 1)
+cuDNN version: 2020000
+Torch Geometric version: 2.5.3
+
+Number of nodes: 1
+Number of ML ranks per node: 1
+Number of ML total ranks: 1
+
+Running script /lustre/orion/csc613/proj-shared/balin/Nek/GNN/GNN/SimAI-Bench/main.py
+with arguments --device=cuda --iterations=150 --problem_size=large --master_addr=10.128.88.24 --master_port=3442
+
+Thu 01 Aug 2024 12:35:36 PM EDT
+Hello from rank 0/1, local rank 0 on frontier05633
+
+Loaded data and model with 163491 parameters
+
+Running on device: cuda 
+
+
+Starting training loop ... 
+[0]: avg_loss = 1.730997e-02
+[1]: avg_loss = 1.715332e-02
+[2]: avg_loss = 1.700169e-02
+[3]: avg_loss = 1.685259e-02
+[4]: avg_loss = 1.670110e-02
+[5]: avg_loss = 1.655184e-02
+[6]: avg_loss = 1.640879e-02
+[7]: avg_loss = 1.626884e-02
+[8]: avg_loss = 1.613049e-02
+[9]: avg_loss = 1.599411e-02
+[10]: avg_loss = 1.586104e-02
+[11]: avg_loss = 1.574153e-02
+[12]: avg_loss = 1.562770e-02
+[13]: avg_loss = 1.551063e-02
+[14]: avg_loss = 1.538646e-02
+[15]: avg_loss = 1.525542e-02
+[16]: avg_loss = 1.512288e-02
+[17]: avg_loss = 1.500170e-02
+[18]: avg_loss = 1.488644e-02
+[19]: avg_loss = 1.477311e-02
+[20]: avg_loss = 1.467261e-02
+[21]: avg_loss = 1.457556e-02
+[22]: avg_loss = 1.447755e-02
+[23]: avg_loss = 1.438004e-02
+[24]: avg_loss = 1.428059e-02
+[25]: avg_loss = 1.418174e-02
+[26]: avg_loss = 1.409435e-02
+[27]: avg_loss = 1.400932e-02
+[28]: avg_loss = 1.392380e-02
+[29]: avg_loss = 1.383861e-02
+[30]: avg_loss = 1.375600e-02
+[31]: avg_loss = 1.367747e-02
+[32]: avg_loss = 1.360002e-02
+[33]: avg_loss = 1.352290e-02
+[34]: avg_loss = 1.344526e-02
+[35]: avg_loss = 1.337938e-02
+[36]: avg_loss = 1.331418e-02
+[37]: avg_loss = 1.324889e-02
+[38]: avg_loss = 1.318353e-02
+[39]: avg_loss = 1.311828e-02
+[40]: avg_loss = 1.305346e-02
+[41]: avg_loss = 1.298893e-02
+[42]: avg_loss = 1.292447e-02
+[43]: avg_loss = 1.286152e-02
+[44]: avg_loss = 1.280273e-02
+[45]: avg_loss = 1.274455e-02
+[46]: avg_loss = 1.268611e-02
+[47]: avg_loss = 1.262729e-02
+[48]: avg_loss = 1.256824e-02
+[49]: avg_loss = 1.250938e-02
+[50]: avg_loss = 1.245063e-02
+[51]: avg_loss = 1.239244e-02
+[52]: avg_loss = 1.233707e-02
+[53]: avg_loss = 1.228695e-02
+[54]: avg_loss = 1.223509e-02
+[55]: avg_loss = 1.218168e-02
+[56]: avg_loss = 1.213090e-02
+[57]: avg_loss = 1.208496e-02
+[58]: avg_loss = 1.204163e-02
+[59]: avg_loss = 1.199751e-02
+[60]: avg_loss = 1.195311e-02
+[61]: avg_loss = 1.190869e-02
+[62]: avg_loss = 1.186508e-02
+[63]: avg_loss = 1.182365e-02
+[64]: avg_loss = 1.178237e-02
+[65]: avg_loss = 1.174210e-02
+[66]: avg_loss = 1.170163e-02
+[67]: avg_loss = 1.166135e-02
+[68]: avg_loss = 1.162271e-02
+[69]: avg_loss = 1.158496e-02
+[70]: avg_loss = 1.154877e-02
+[71]: avg_loss = 1.151291e-02
+[72]: avg_loss = 1.147729e-02
+[73]: avg_loss = 1.144258e-02
+[74]: avg_loss = 1.140730e-02
+[75]: avg_loss = 1.137193e-02
+[76]: avg_loss = 1.133810e-02
+[77]: avg_loss = 1.130506e-02
+[78]: avg_loss = 1.127264e-02
+[79]: avg_loss = 1.124077e-02
+[80]: avg_loss = 1.121022e-02
+[81]: avg_loss = 1.117959e-02
+[82]: avg_loss = 1.114877e-02
+[83]: avg_loss = 1.111820e-02
+[84]: avg_loss = 1.108730e-02
+[85]: avg_loss = 1.105698e-02
+[86]: avg_loss = 1.102710e-02
+[87]: avg_loss = 1.099668e-02
+[88]: avg_loss = 1.096721e-02
+[89]: avg_loss = 1.093759e-02
+[90]: avg_loss = 1.090670e-02
+[91]: avg_loss = 1.087812e-02
+[92]: avg_loss = 1.085023e-02
+[93]: avg_loss = 1.082270e-02
+[94]: avg_loss = 1.079593e-02
+[95]: avg_loss = 1.076988e-02
+[96]: avg_loss = 1.074445e-02
+[97]: avg_loss = 1.071937e-02
+[98]: avg_loss = 1.069517e-02
+[99]: avg_loss = 1.067147e-02
+[100]: avg_loss = 1.064794e-02
+[101]: avg_loss = 1.062464e-02
+[102]: avg_loss = 1.060150e-02
+[103]: avg_loss = 1.057840e-02
+[104]: avg_loss = 1.055533e-02
+[105]: avg_loss = 1.053346e-02
+[106]: avg_loss = 1.051220e-02
+[107]: avg_loss = 1.049116e-02
+[108]: avg_loss = 1.047069e-02
+[109]: avg_loss = 1.045084e-02
+[110]: avg_loss = 1.043195e-02
+[111]: avg_loss = 1.041373e-02
+[112]: avg_loss = 1.039634e-02
+[113]: avg_loss = 1.038013e-02
+[114]: avg_loss = 1.036550e-02
+[115]: avg_loss = 1.035135e-02
+[116]: avg_loss = 1.033821e-02
+[117]: avg_loss = 1.032561e-02
+[118]: avg_loss = 1.031417e-02
+[119]: avg_loss = 1.030402e-02
+[120]: avg_loss = 1.029435e-02
+[121]: avg_loss = 1.028562e-02
+[122]: avg_loss = 1.027849e-02
+[123]: avg_loss = 1.027125e-02
+[124]: avg_loss = 1.026461e-02
+[125]: avg_loss = 1.025857e-02
+[126]: avg_loss = 1.025301e-02
+[127]: avg_loss = 1.024787e-02
+[128]: avg_loss = 1.024313e-02
+[129]: avg_loss = 1.023873e-02
+[130]: avg_loss = 1.023465e-02
+[131]: avg_loss = 1.023091e-02
+[132]: avg_loss = 1.022748e-02
+[133]: avg_loss = 1.022442e-02
+[134]: avg_loss = 1.022158e-02
+[135]: avg_loss = 1.021909e-02
+[136]: avg_loss = 1.021706e-02
+[137]: avg_loss = 1.021504e-02
+[138]: avg_loss = 1.021321e-02
+[139]: avg_loss = 1.021155e-02
+[140]: avg_loss = 1.021004e-02
+[141]: avg_loss = 1.020868e-02
+[142]: avg_loss = 1.020743e-02
+[143]: avg_loss = 1.020629e-02
+[144]: avg_loss = 1.020524e-02
+[145]: avg_loss = 1.020429e-02
+[146]: avg_loss = 1.020342e-02
+[147]: avg_loss = 1.020261e-02
+[148]: avg_loss = 1.020188e-02
+[149]: avg_loss = 1.020129e-02
+
+Performance data averaged over 1 ranks and 148 iterations:
+[0.91903463 0.91945273 0.91915681 0.91933894 0.91924277 0.91932778
+ 0.91931766 0.91925722 0.91932257 0.91900791 0.91940701 0.9192311
+ 0.91966705 0.91921749 0.91940813 0.91952132 0.91948851 0.91937954
+ 0.91934797 0.91927618 0.91960523 0.91961793 0.91953509 0.91948187
+ 0.91958205 0.91919325 0.9192568  0.91940403 0.91957563 0.91942378
+ 0.91957379 0.91951722 0.91965862 0.91946643 0.91906533 0.91941436
+ 0.91937625 0.91965101 0.91948149 0.91949073 0.91963877 0.91945054
+ 0.91943641 0.91934655 0.91956816 0.91941166 0.91920338 0.91974919
+ 0.91962421 0.91966477 0.91970701 0.91945999 0.91942968 0.91935278
+ 0.91944876 0.91971405 0.91962577 0.91948965 0.91932129 0.91936262
+ 0.91966404 0.91973855 0.91974922 0.91950839 0.91899935 0.91947739
+ 0.91996854 0.91919319 0.91951618 0.91927729 0.91945441 0.91948347
+ 0.91948565 0.91965865 0.91950917 0.91942716 0.91936441 0.9193315
+ 0.91954144 0.91963415 0.91958199 0.91933581 0.91943349 0.91963741
+ 0.91956699 0.91931279 0.91964683 0.91943411 0.91948594 0.91936054
+ 0.91972407 0.91941985 0.91949149 0.91937102 0.91987632 0.91957912
+ 0.91967538 0.91948748 0.91971724 0.91935085 0.91954599 0.91939821
+ 0.9194574  0.91969062 0.91930496 0.91937228 0.91959143 0.91945495
+ 0.91981899 0.91951215 0.91936805 0.91957194 0.91970686 0.91922157
+ 0.91920395 0.91946802 0.91920763 0.91934399 0.91968129 0.9193874
+ 0.9195425  0.91943672 0.91974521 0.91970827 0.91991081 0.91932653
+ 0.91974713 0.91996128 0.91999366 0.91968325 0.91991561 0.91986554
+ 0.91989332 0.91981154 0.9195509  0.91975466 0.92007828 0.91982279
+ 0.91994885 0.91985113 0.91964239 0.91964506 0.91963869 0.91969624
+ 0.91996521 0.9196405  0.91974063 0.91949549]
+training_loop [s] : min = 1.410261e+02 , max = 1.410261e+02 , avg = 1.410261e+02 , std = 0.000000e+00 
+train_tot [s] : min = 1.360886e+02 , max = 1.360886e+02 , avg = 1.360886e+02 , std = 0.000000e+00 
+train_iter [s] : min = 9.189994e-01 , max = 9.200783e-01 , avg = 9.195174e-01 , std = 2.103597e-04 
+throughput_iter [s] : min = 1.086864e+06 , max = 1.088140e+06 , avg = 1.087527e+06 , std = 2.487863e+02 
+forward_pass [s] : min = 1.001857e-02 , max = 1.034158e-02 , avg = 1.010045e-02 , std = 3.914549e-05 
+loss [s] : min = 1.457350e-04 , max = 1.791480e-04 , avg = 1.529613e-04 , std = 3.989561e-06 
+backward_pass [s] : min = 1.460587e-02 , max = 1.499010e-02 , avg = 1.479443e-02 , std = 5.563186e-05 
+optimizer_step [s] : min = 2.679682e-03 , max = 2.946083e-03 , avg = 2.782556e-03 , std = 5.572969e-05 
+collectives [s] : min = 1.400185e-07 , max = 3.000023e-07 , avg = 1.880125e-07 , std = 2.354040e-08 
+Average parallel training throughout [nodes/s] : 1.087527e+06
+Thu 01 Aug 2024 12:38:06 PM EDT

@@ -20,17 +20,17 @@ export NCCL_NET_GDR_LEVEL=PHB
 export NCCL_CROSS_NIC=1
 export NCCL_COLLNET_ENABLE=1
 
-NODES=$(cat $PBS_NODEFILE | wc -l)
-PROCS_PER_NODE=1
+NODES=$(echo $SLURM_NODEFILE | wc -l)
+PROCS_PER_NODE=8
 PROCS=$((NODES * PROCS_PER_NODE))
-JOBID=$(echo $PBS_JOBID | awk '{split($1,a,"."); print a[1]}')
 echo Number of nodes: $NODES
-echo Number of ML ranks per node: $PROCS_PER_NODE
-echo Number of ML total ranks: $PROCS
+echo Number of ranks per node: $PROCS_PER_NODE
+echo Number of total ranks: $PROCS
 echo
 
 srun -N$NODES -n$PROCS --ntasks-per-node=$PROCS_PER_NODE -c7 --gpu-bind=closest \
-    python main.py --device=rocm --iterations=20 --problem_size=large --master_addr=$MASTER_ADDR
+    python main.py --device=cuda --iterations=20 --problem_size=large \
+    --master_addr=$MASTER_ADDR --master_port=3442
 
 
 
