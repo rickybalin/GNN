@@ -1,17 +1,4 @@
 #!/bin/bash
-#SBATCH -N 2
-#SBATCH -A CSC613
-#SBATCH -J gnn_scale
-#SBATCH -o gnn_scale-%j.o
-#SBATCH -e gnn_scale-%j.e
-#SBATCH -t 00:30:00
-#SBATCH -p batch
-
-cd $SLURM_SUBMIT_DIR
-
-# Only necessary if submitting like: sbatch --export=NONE ... (recommended)
-# Do NOT include this line when submitting without --export=NONE
-unset SLURM_EXPORT_ENV
 
 module load PrgEnv-gnu/8.5.0
 module load miniforge3/23.11.0-0

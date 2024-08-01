@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -N 2
+#SBATCH -N 64
 #SBATCH -A CSC613
 #SBATCH -J gnn_scale
 #SBATCH -o gnn_scale-%j.o
