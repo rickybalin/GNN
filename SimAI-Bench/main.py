@@ -214,9 +214,6 @@ def train(args, model, optimizer, loss_fn, data, comm) -> dict:
         optimizer.step()
         toc_o = perf_counter()
         
-        if args.include_loss_avg=='false':
-            toc_t = perf_counter()
-
         tic_c = perf_counter()
         if size>1:
             if args.device=='xpu':
@@ -232,11 +229,12 @@ def train(args, model, optimizer, loss_fn, data, comm) -> dict:
         toc_c = perf_counter()
         #print(f'rank [{rank}]: backward: {toc_b-tic_b}, metric_avg: {toc_c-tic_c}', flush=True)
 
-        if args.include_loss_avg=='true':
-            toc_t = perf_counter()
-
         if rank==0:
             print(f'[{iteration}]: avg_loss = {loss:>4e}', flush=True)
+       
+        # Timer after the print statement for sync
+        if args.include_loss_avg=='true':
+            toc_t = perf_counter()
 
         if iteration>1:
             t_train = toc_t - tic_t
@@ -335,16 +333,24 @@ if __name__ == '__main__':
     parser.add_argument('--precision', default="fp32", type=str, help='Floating point precision')
     parser.add_argument('--learning_rate', default=0.0001, type=float, help='Optimizer learning rate')
     parser.add_argument('--include_loss_avg', default='true', choices=['true','false'], type=str, help='Include average of the loss across ranks in performance measurement')
+    parser.add_argument('--master_addr', default=None, type=str, help='Master address for torch.distributed')
+    parser.add_argument('--master_port', default=None, type=int, help='Master port for torch.distributed')
     args = parser.parse_args()
 
     # Initialize Torch Distributed
     if size>1:
         os.environ['RANK'] = str(rank)
         os.environ['WORLD_SIZE'] = str(size)
-        master_addr = socket.gethostname() if rank == 0 else None
+        if args.master_addr is not None:
+            master_addr = args.master_addr if rank == 0 else None
+        else:
+            master_addr = socket.gethostname() if rank == 0 else None
         master_addr = comm.bcast(master_addr, root=0)
         os.environ['MASTER_ADDR'] = master_addr
-        os.environ['MASTER_PORT'] = str(2345)
+        if args.master_port is not None:
+            os.environ['MASTER_PORT'] = str(args.master_port)
+        else:
+            os.environ['MASTER_PORT'] = str(2345)
         if (args.device=='cpu'): backend = 'gloo'
         elif (args.device=='cuda'): backend = 'nccl'
         elif (args.device=='xpu'): backend = 'ccl'
