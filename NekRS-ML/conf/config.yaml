@@ -15,6 +15,8 @@ batch_size: 1
 test_batch_size: 1
 fp16_allreduce: False
 restart: False
+master_addr: none
+master_port: none
 
 # arch properties 
 hidden_channels: 32
