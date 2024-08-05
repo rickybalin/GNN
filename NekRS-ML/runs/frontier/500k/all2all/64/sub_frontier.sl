@@ -1,11 +1,11 @@
 #!/bin/bash
-#SBATCH -N 128
 #SBATCH -A CSC613
 #SBATCH -J gnn_scale
 #SBATCH -o gnn_scale-%j.o
 #SBATCH -e gnn_scale-%j.e
 #SBATCH -t 00:30:00
 #SBATCH -p batch
+#SBATCH -N 16
 
 cd $SLURM_SUBMIT_DIR
 
@@ -37,7 +37,7 @@ export MIOPEN_CUSTOM_CACHE_DIR=${MIOPEN_USER_DB_PATH}
 rm -rf ${MIOPEN_USER_DB_PATH}
 mkdir -p ${MIOPEN_USER_DB_PATH}
 
-export NCCL_SOCKET_IFNAME=hsn0,hsn1,hsn2,hsn3
+export NCCL_SOCKET_IFNAME=hsn0
 export NCCL_NET_GDR_LEVEL=PHB
 export NCCL_CROSS_NIC=1
 export NCCL_COLLNET_ENABLE=1
@@ -50,8 +50,17 @@ echo Number of ML ranks per node: $PROCS_PER_NODE
 echo Number of ML total ranks: $PROCS
 echo
 
-EXE=/lustre/orion/csc613/proj-shared/balin/Nek/GNN/GNN/SimAI-Bench/main.py
-ARGS="--device=cuda --iterations=150 --problem_size=large --master_addr=${MASTER_ADDR} --master_port=3442"
+# Halo swap mode
+#HALO_SWAP_MODE=none
+HALO_SWAP_MODE=all_to_all
+#HALO_SWAP_MODE=all_to_all_opt
+#HALO_SWAP_MODE=send_recv
+
+# Data path weak scaling
+DATA_PATH=/lustre/orion/csc613/proj-shared/balin/Nek/GNN/weak_scale_data/500k_frontier/${PROCS}/gnn_outputs_poly_5/
+
+EXE=/lustre/orion/csc613/proj-shared/balin/Nek/GNN/GNN/NekRS-ML/main.py
+ARGS="epochs=120 backend=nccl halo_swap_mode=${HALO_SWAP_MODE} gnn_outputs_path=${DATA_PATH} master_port=3442 master_addr=${MASTER_ADDR}"
 echo Running script $EXE
 echo with arguments $ARGS
 echo
