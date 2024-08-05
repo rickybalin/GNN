@@ -1,23 +1,10 @@
 #!/bin/bash
-#SBATCH -A CSC613
-#SBATCH -J gnn_scale
-#SBATCH -o gnn_scale-%j.o
-#SBATCH -e gnn_scale-%j.e
-#SBATCH -t 00:30:00
-#SBATCH -p batch
-#SBATCH -N 1
 
-cd $SLURM_SUBMIT_DIR
-
-# Only necessary if submitting like: sbatch --export=NONE ... (recommended)
-# Do NOT include this line when submitting without --export=NONE
-unset SLURM_EXPORT_ENV
-
-module load PrgEnv-gnu/8.5.0
-module load miniforge3/23.11.0-0
-module load rocm/5.7.1
-module load craype-accel-amd-gfx90a
-source activate /lustre/orion/csc613/proj-shared/balin/Nek/GNN/env/gnn
+#module load PrgEnv-gnu/8.5.0
+#module load miniforge3/23.11.0-0
+#module load rocm/5.7.1
+#module load craype-accel-amd-gfx90a
+#source activate /lustre/orion/csc613/proj-shared/balin/Nek/GNN/env/gnn
 
 echo Loaded modules:
 module list
@@ -43,6 +30,7 @@ export NCCL_CROSS_NIC=1
 export NCCL_COLLNET_ENABLE=1
 
 NODES=$(echo $SLURM_NNODES)
+NODES=1
 PROCS_PER_NODE=8
 PROCS=$((NODES * PROCS_PER_NODE))
 echo Number of nodes: $NODES
@@ -50,8 +38,17 @@ echo Number of ML ranks per node: $PROCS_PER_NODE
 echo Number of ML total ranks: $PROCS
 echo
 
-EXE=./main.py
-ARGS="--device=cuda --iterations=100 --problem_size=large --master_addr=${MASTER_ADDR} --master_port=3442"
+# Halo swap mode
+HALO_SWAP_MODE=none
+#HALO_SWAP_MODE=all_to_all
+#HALO_SWAP_MODE=all_to_all_opt
+#HALO_SWAP_MODE=send_recv
+
+# Data path weak scaling
+DATA_PATH=/lustre/orion/csc613/proj-shared/balin/Nek/GNN/weak_scale_data/500k_frontier/${PROCS}/gnn_outputs_poly_5/
+
+EXE=/lustre/orion/csc613/proj-shared/balin/Nek/GNN/GNN/NekRS-ML/main.py
+ARGS="epochs=120 backend=nccl halo_swap_mode=${HALO_SWAP_MODE} gnn_outputs_path=${DATA_PATH} master_port=3442 master_addr=${MASTER_ADDR}"
 echo Running script $EXE
 echo with arguments $ARGS
 echo

@@ -19,4 +19,6 @@ pip install torch_cluster -f https://data.pyg.org/whl/torch-2.2.2+cpu.html
 MPICC="cc -shared" pip install --no-cache-dir --no-binary=mpi4py mpi4py
 
 pip install mpipartition
+pip install hydra-core
+pip install matplotlib
 

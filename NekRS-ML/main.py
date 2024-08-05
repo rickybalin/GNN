@@ -105,18 +105,18 @@ if WITH_DDP:
         DEVICE = torch.device('cpu')
         DEVICE_ID = 'cpu'
 
-    # pytorch will look for these
-    os.environ['RANK'] = str(RANK)
-    os.environ['WORLD_SIZE'] = str(SIZE)
-    # -----------------------------------------------------------
-    # NOTE: Get the hostname of the master node, and broadcast
-    # it to all other nodes It will want the master address too,
-    # which we'll broadcast:
-    # -----------------------------------------------------------
-    MASTER_ADDR = socket.gethostname() if RANK == 0 else None
-    MASTER_ADDR = MPI.COMM_WORLD.bcast(MASTER_ADDR, root=0)
-    os.environ['MASTER_ADDR'] = MASTER_ADDR
-    os.environ['MASTER_PORT'] = str(2345)
+    ## pytorch will look for these
+    #os.environ['RANK'] = str(RANK)
+    #os.environ['WORLD_SIZE'] = str(SIZE)
+    ## -----------------------------------------------------------
+    ## NOTE: Get the hostname of the master node, and broadcast
+    ## it to all other nodes It will want the master address too,
+    ## which we'll broadcast:
+    ## -----------------------------------------------------------
+    #MASTER_ADDR = socket.gethostname() if RANK == 0 else None
+    #MASTER_ADDR = MPI.COMM_WORLD.bcast(MASTER_ADDR, root=0)
+    #os.environ['MASTER_ADDR'] = MASTER_ADDR
+    #os.environ['MASTER_PORT'] = str(2345)
 
 else:
     SIZE = 1
@@ -211,6 +211,18 @@ class Trainer:
         self.device = DEVICE
         self.backend = self.cfg.backend
         if WITH_DDP:
+            os.environ['RANK'] = str(RANK)
+            os.environ['WORLD_SIZE'] = str(SIZE)
+            if self.cfg.master_addr=='none':
+                MASTER_ADDR = socket.gethostname() if RANK == 0 else None
+            else:
+                MASTER_ADDR = str(cfg.master_addr) if RANK == 0 else None
+            MASTER_ADDR = MPI.COMM_WORLD.bcast(MASTER_ADDR, root=0)
+            os.environ['MASTER_ADDR'] = MASTER_ADDR
+            if self.cfg.master_port=='none':
+                os.environ['MASTER_PORT'] = str(2345)
+            else:
+                os.environ['MASTER_PORT'] = str(cfg.master_port)
             init_process_group(RANK, SIZE, backend=self.backend)
         
         # ~~~~ Init torch stuff 
