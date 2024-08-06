@@ -412,3 +412,6 @@ Found no XPU devices
   warnings.warn("The verbose parameter is deprecated. Please use get_last_lr() "
 /lustre/orion/csc613/proj-shared/balin/Nek/GNN/env/gnn/lib/python3.10/site-packages/torch/optim/lr_scheduler.py:28: UserWarning: The verbose parameter is deprecated. Please use get_last_lr() to access the learning rate.
   warnings.warn("The verbose parameter is deprecated. Please use get_last_lr() "
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** STEP 2181848.0 ON frontier00446 CANCELLED AT 2024-08-05T13:56:16 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 2181848 ON frontier00446 CANCELLED AT 2024-08-05T13:56:16 DUE TO TIME LIMIT ***
