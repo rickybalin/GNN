@@ -881,14 +881,14 @@ class Trainer:
 
         # Accumulate loss
         self.timers['loss'][self.timer_step] = time.time()
-        target = data.x
+        #target = data.x
         n_nodes_local = data.n_nodes_local
         if SIZE == 1:
-            loss = self.loss_fn(out_gnn[:n_nodes_local], target[:n_nodes_local])
+            loss = self.loss_fn(out_gnn[:n_nodes_local], data.x[:n_nodes_local])
             effective_nodes = n_nodes_local 
         else: # custom 
             n_output_features = out_gnn.shape[1]
-            squared_errors_local = torch.pow(out_gnn[:n_nodes_local] - target[:n_nodes_local], 2)
+            squared_errors_local = torch.pow(out_gnn[:n_nodes_local] - data.x[:n_nodes_local], 2)
             squared_errors_local = squared_errors_local/data.node_degree[:n_nodes_local].unsqueeze(-1)
 
             sum_squared_errors_local = squared_errors_local.sum()

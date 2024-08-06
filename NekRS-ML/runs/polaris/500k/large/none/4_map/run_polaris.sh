@@ -60,7 +60,7 @@ echo Running script $EXE
 echo with arguments $ARGS
 echo
 echo `date`
-MPICH_GPU_SUPPORT_ENABLED=0 map --profile mpiexec --envall -n $PROCS --ppn $PROCS_PER_NODE --cpu-bind=list:24:16:8:1 python $EXE ${ARGS} 
+MPICH_GPU_SUPPORT_ENABLED=0 map --profile --cuda-transfer-analysis mpiexec --envall -n $PROCS --ppn $PROCS_PER_NODE --cpu-bind=list:24:16:8:1 python $EXE ${ARGS} 
 echo `date`
 
 
