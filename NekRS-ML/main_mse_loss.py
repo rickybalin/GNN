@@ -307,8 +307,8 @@ class Trainer:
 
         # ~~~~ Wrap model in DDP
         if WITH_DDP and SIZE > 1:
-            self.model = DDP(self.model)
-            #self.model = DDP(self.model, broadcast_buffers=False, gradient_as_bucket_view=True)
+            #self.model = DDP(self.model)
+            self.model = DDP(self.model, broadcast_buffers=False, gradient_as_bucket_view=True)
 
         # ~~~~ Setup train_step timers 
         self.timer_step = 0
@@ -1273,7 +1273,6 @@ def train(cfg: DictConfig) -> None:
     epoch_throughput = []
     batch_throughput = []
     n_nodes_local = trainer.data_reduced.n_nodes_local.item()
-
     for epoch in range(trainer.epoch_start, cfg.epochs+1):
         # ~~~~ Training step 
         t0 = time.time()

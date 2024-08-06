@@ -26,6 +26,7 @@ export FI_CXI_DEFAULT_CQ_SIZE=131072
 #export FI_CXI_REQ_BUF_SIZE=8388608
 
 NODES=$(cat $PBS_NODEFILE | wc -l)
+NODES=1
 PROCS_PER_NODE=4
 PROCS=$((NODES * PROCS_PER_NODE))
 JOBID=$(echo $PBS_JOBID | awk '{split($1,a,"."); print a[1]}')
@@ -53,11 +54,12 @@ echo Running script $EXE
 echo with arguments $ARGS
 echo
 echo `date`
-nsys profile --trace=cuda,nvtx,osrt,cudnn,cublas \
-   --gpu-metrics-device=all \
-   -o nsys_report \
-   --stats=true --show-output=true \
-   mpiexec --envall -n $PROCS --ppn $PROCS_PER_NODE --cpu-bind=list:24:16:8:1 python $EXE ${ARGS} 
+#mpiexec --envall --env TMPDIR=$PWD/tmpdir/ -n $PROCS --ppn $PROCS_PER_NODE --cpu-bind=list:24:16:8:1 \
+#    nsys profile --trace=cuda,nvtx,osrt,cudnn,cublas --gpu-metrics-device=all -o nsys_report --stats=true --show-output=true \
+#    python $EXE ${ARGS}
+mpiexec --envall --env TMPDIR=$PWD/tmpdir/ -n $PROCS --ppn $PROCS_PER_NODE --cpu-bind=list:24:16:8:1 nsys profile --trace=cuda,nvtx,osrt,cudnn,cublas -o nsys_report --stats=true --show-output=true python /eagle/datascience/balin/Nek/GNN/GNN/NekRS-ML/main.py backend=nccl halo_swap_mode=${HALO_SWAP_MODE} gnn_outputs_path=${DATA_PATH} epochs=5
+
+
 echo `date`
 
 

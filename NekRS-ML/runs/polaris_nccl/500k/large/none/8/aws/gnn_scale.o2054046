@@ -1,0 +1,480 @@
+Loaded modules:
+
+Currently Loaded Modules:
+  1) libfabric/1.15.2.0       9) cray-pmi/6.1.13
+  2) craype-network-ofi      10) cray-pals/1.3.4
+  3) perftools-base/23.12.0  11) cray-libpals/1.3.4
+  4) darshan/3.4.4           12) craype-x86-milan
+  5) gcc-native/12.3         13) PrgEnv-gnu/8.5.0
+  6) craype/2.7.30           14) cray-hdf5-parallel/1.12.2.9
+  7) cray-dsmml/0.2.2        15) conda/2024-04-29
+  8) cray-mpich/8.1.28
+
+ 
+
+
+Torch version: 2.3.0
+Torch CUDA version: 12.4
+NCCL version: (2, 21, 5)
+cuDNN version: 90100
+Torch Geometric version: 2.5.3
+
+Number of nodes: 2
+Number of ML ranks per node: 4
+Number of ML total ranks: 8
+
+Running script /eagle/datascience/balin/Nek/GNN/GNN/NekRS-ML/main.py
+with arguments epochs=120 backend=nccl halo_swap_mode=none gnn_outputs_path=/eagle/datascience/balin/Nek/GNN/weak_scale_data/500k_polaris/8/gnn_outputs_poly_5/
+
+Mon 05 Aug 2024 10:13:39 PM UTC
+[2024-08-05 22:13:45,922][__main__][INFO] - Hello from rank 4/8, local rank 0, on device cuda:0 out of 4.
+[2024-08-05 22:13:45,988][__main__][INFO] - Hello from rank 0/8, local rank 0, on device cuda:0 out of 4.
+[2024-08-05 22:13:46,285][__main__][INFO] - Hello from rank 5/8, local rank 1, on device cuda:1 out of 4.
+[2024-08-05 22:13:46,287][__main__][INFO] - Hello from rank 7/8, local rank 3, on device cuda:3 out of 4.
+[2024-08-05 22:13:46,287][__main__][INFO] - Hello from rank 6/8, local rank 2, on device cuda:2 out of 4.
+[2024-08-05 22:13:46,495][__main__][INFO] - Hello from rank 1/8, local rank 1, on device cuda:1 out of 4.
+[2024-08-05 22:13:46,495][__main__][INFO] - Hello from rank 3/8, local rank 3, on device cuda:3 out of 4.
+[2024-08-05 22:13:46,495][__main__][INFO] - Hello from rank 2/8, local rank 2, on device cuda:2 out of 4.
+[2024-08-05 22:13:46,798][__main__][INFO] - [RANK 7]: Loading positions and global node index
+[2024-08-05 22:13:46,847][__main__][INFO] - [RANK 7]: Loading edge index
+[2024-08-05 22:13:46,901][__main__][INFO] - [RANK 7]: Loading local unique mask
+[2024-08-05 22:13:46,905][__main__][INFO] - [RANK 7]: Making the FULL GLL-based graph with overlapping nodes
+[2024-08-05 22:13:47,054][__main__][INFO] - [RANK 2]: Loading positions and global node index
+[2024-08-05 22:13:47,066][__main__][INFO] - [RANK 6]: Loading positions and global node index
+[2024-08-05 22:13:47,071][__main__][INFO] - [RANK 5]: Loading positions and global node index
+[2024-08-05 22:13:47,078][__main__][INFO] - [RANK 2]: Loading edge index
+[2024-08-05 22:13:47,089][__main__][INFO] - [RANK 6]: Loading edge index
+[2024-08-05 22:13:47,091][__main__][INFO] - [RANK 5]: Loading edge index
+[2024-08-05 22:13:47,146][__main__][INFO] - [RANK 5]: Loading local unique mask
+[2024-08-05 22:13:47,148][__main__][INFO] - [RANK 6]: Loading local unique mask
+[2024-08-05 22:13:47,151][__main__][INFO] - [RANK 5]: Making the FULL GLL-based graph with overlapping nodes
+[2024-08-05 22:13:47,152][__main__][INFO] - [RANK 6]: Making the FULL GLL-based graph with overlapping nodes
+[2024-08-05 22:13:47,240][__main__][INFO] - [RANK 2]: Loading local unique mask
+[2024-08-05 22:13:47,248][__main__][INFO] - [RANK 2]: Making the FULL GLL-based graph with overlapping nodes
+[2024-08-05 22:13:47,314][__main__][INFO] - [RANK 3]: Loading positions and global node index
+[2024-08-05 22:13:47,318][__main__][INFO] - [RANK 1]: Loading positions and global node index
+[2024-08-05 22:13:47,335][__main__][INFO] - [RANK 3]: Loading edge index
+[2024-08-05 22:13:47,338][__main__][INFO] - [RANK 1]: Loading edge index
+[2024-08-05 22:13:47,524][__main__][INFO] - [RANK 3]: Loading local unique mask
+[2024-08-05 22:13:47,528][__main__][INFO] - [RANK 3]: Making the FULL GLL-based graph with overlapping nodes
+[2024-08-05 22:13:47,544][__main__][INFO] - [RANK 1]: Loading local unique mask
+[2024-08-05 22:13:47,547][__main__][INFO] - [RANK 1]: Making the FULL GLL-based graph with overlapping nodes
+[2024-08-05 22:13:47,686][__main__][INFO] - [RANK 4]: Loading positions and global node index
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+RUNNING WITH INPUTS:
+profile: false
+halo_test: false
+verbose: true
+seed: 12
+epochs: 120
+backend: nccl
+lr_init: 0.0001
+use_noise: true
+num_threads: 0
+logfreq: 10
+ckptfreq: 1000
+batch_size: 1
+test_batch_size: 1
+fp16_allreduce: false
+restart: false
+hidden_channels: 32
+n_mlp_hidden_layers: 5
+n_messagePassing_layers: 4
+rollout_steps: 1
+halo_swap_mode: none
+plot_connectivity: false
+work_dir: ${hydra:runtime.cwd}
+data_dir: ${work_dir}/datasets/
+ckpt_dir: ${work_dir}/ckpt/
+model_dir: ${work_dir}/saved_models/
+profile_dir: ${work_dir}/outputs/profiles/test/
+gnn_outputs_path: /eagle/datascience/balin/Nek/GNN/weak_scale_data/500k_polaris/8/gnn_outputs_poly_5/
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[2024-08-05 22:13:47,718][__main__][INFO] - [RANK 0]: Loading positions and global node index
+[2024-08-05 22:13:47,733][__main__][INFO] - [RANK 4]: Loading edge index
+[2024-08-05 22:13:47,740][__main__][INFO] - [RANK 0]: Loading edge index
+[2024-08-05 22:13:47,790][__main__][INFO] - [RANK 4]: Loading local unique mask
+[2024-08-05 22:13:47,796][__main__][INFO] - [RANK 4]: Making the FULL GLL-based graph with overlapping nodes
+[2024-08-05 22:13:47,797][__main__][INFO] - [RANK 0]: Loading local unique mask
+[2024-08-05 22:13:47,805][__main__][INFO] - [RANK 0]: Making the FULL GLL-based graph with overlapping nodes
+[2024-08-05 22:13:48,597][__main__][INFO] - [RANK 7]: Making the REDUCED GLL-based graph with non-overlapping nodes
+[2024-08-05 22:13:48,830][__main__][INFO] - [RANK 6]: Making the REDUCED GLL-based graph with non-overlapping nodes
+[2024-08-05 22:13:48,835][__main__][INFO] - [RANK 5]: Making the REDUCED GLL-based graph with non-overlapping nodes
+[2024-08-05 22:13:48,934][__main__][INFO] - [RANK 2]: Making the REDUCED GLL-based graph with non-overlapping nodes
+[2024-08-05 22:13:49,237][__main__][INFO] - [RANK 1]: Making the REDUCED GLL-based graph with non-overlapping nodes
+[2024-08-05 22:13:49,244][__main__][INFO] - [RANK 3]: Making the REDUCED GLL-based graph with non-overlapping nodes
+[2024-08-05 22:13:49,288][__main__][INFO] - [RANK 7]: Getting idx_reduced2full
+[2024-08-05 22:13:49,476][__main__][INFO] - [RANK 4]: Making the REDUCED GLL-based graph with non-overlapping nodes
+[2024-08-05 22:13:49,496][__main__][INFO] - [RANK 0]: Making the REDUCED GLL-based graph with non-overlapping nodes
+[2024-08-05 22:13:49,496][__main__][INFO] - [RANK 6]: Getting idx_reduced2full
+[2024-08-05 22:13:49,500][__main__][INFO] - [RANK 5]: Getting idx_reduced2full
+[2024-08-05 22:13:49,618][__main__][INFO] - [RANK 2]: Getting idx_reduced2full
+[2024-08-05 22:13:49,906][__main__][INFO] - [RANK 1]: Getting idx_reduced2full
+[2024-08-05 22:13:49,924][__main__][INFO] - [RANK 3]: Getting idx_reduced2full
+[2024-08-05 22:13:50,154][__main__][INFO] - [RANK 4]: Getting idx_reduced2full
+[2024-08-05 22:13:50,168][__main__][INFO] - [RANK 0]: Getting idx_reduced2full
+[2024-08-05 22:13:54,406][__main__][INFO] - [RANK 7]: Assembling halo_ids_list using reduced graph
+[2024-08-05 22:13:54,442][__main__][INFO] - [RANK 7]: Found 2 neighboring processes: [4 6]
+[2024-08-05 22:13:54,561][__main__][INFO] - [RANK 6]: Assembling halo_ids_list using reduced graph
+[2024-08-05 22:13:54,564][__main__][INFO] - [RANK 6]: Found 2 neighboring processes: [1 7]
+[2024-08-05 22:13:54,724][__main__][INFO] - [RANK 5]: Assembling halo_ids_list using reduced graph
+[2024-08-05 22:13:54,726][__main__][INFO] - [RANK 5]: Found 2 neighboring processes: [2 4]
+[2024-08-05 22:13:54,746][__main__][INFO] - [RANK 2]: Assembling halo_ids_list using reduced graph
+[2024-08-05 22:13:54,826][__main__][INFO] - [RANK 2]: Found 2 neighboring processes: [3 5]
+[2024-08-05 22:13:54,964][__main__][INFO] - [RANK 1]: Assembling halo_ids_list using reduced graph
+[2024-08-05 22:13:54,966][__main__][INFO] - [RANK 1]: Found 2 neighboring processes: [0 6]
+[2024-08-05 22:13:55,179][__main__][INFO] - [RANK 3]: Assembling halo_ids_list using reduced graph
+[2024-08-05 22:13:55,181][__main__][INFO] - [RANK 3]: Found 2 neighboring processes: [0 2]
+[2024-08-05 22:13:55,272][__main__][INFO] - [RANK 4]: Assembling halo_ids_list using reduced graph
+[2024-08-05 22:13:55,284][__main__][INFO] - [RANK 4]: Found 2 neighboring processes: [5 7]
+[2024-08-05 22:13:55,351][__main__][INFO] - [RANK 0]: Assembling halo_ids_list using reduced graph
+[2024-08-05 22:13:55,378][__main__][INFO] - [RANK 0]: Found 2 neighboring processes: [1 3]
+[2024-08-05 22:13:55,378][__main__][INFO] - In setup_data...
+Data(x=[531200, 3], y=[531200, 3], edge_index=[2, 3097600], pos=[531200, 3], global_ids=[518400], local_unique_mask=[518400], halo_unique_mask=[518400], local_ids=[884736], n_nodes_local=518400, n_nodes_halo=12800, halo_info=[12800, 4], edge_weight=[3097600], node_degree=[518400], edge_attr=[3097600, 4])
+[2024-08-05 22:13:55,557][__main__][INFO] - Done with setup_data
+[2024-08-05 22:13:55,558][__main__][INFO] - Done with build_masks
+[2024-08-05 22:13:56,517][__main__][INFO] - [RANK 0]: Created send and receive buffers for none halo exchange:
+[2024-08-05 22:13:56,517][__main__][INFO] - [RANK 4]: Created send and receive buffers for none halo exchange:
+[2024-08-05 22:13:56,517][__main__][INFO] - [RANK 3]: Created send and receive buffers for none halo exchange:
+[2024-08-05 22:13:56,517][__main__][INFO] - [RANK 3]: Send buffers of size [KB]: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+[2024-08-05 22:13:56,517][__main__][INFO] - [RANK 3]: Receive buffers of size [KB]: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+[2024-08-05 22:13:56,517][__main__][INFO] - [RANK 5]: Created send and receive buffers for none halo exchange:
+[2024-08-05 22:13:56,517][__main__][INFO] - [RANK 0]: Send buffers of size [KB]: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+[2024-08-05 22:13:56,517][__main__][INFO] - [RANK 0]: Receive buffers of size [KB]: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+[2024-08-05 22:13:56,517][__main__][INFO] - Done with build_buffers
+[2024-08-05 22:13:56,517][__main__][INFO] - In build_model...
+[2024-08-05 22:13:56,517][__main__][INFO] - [RANK 6]: Created send and receive buffers for none halo exchange:
+[2024-08-05 22:13:56,517][__main__][INFO] - [RANK 1]: Created send and receive buffers for none halo exchange:
+[2024-08-05 22:13:56,517][__main__][INFO] - [RANK 1]: Send buffers of size [KB]: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+[2024-08-05 22:13:56,517][__main__][INFO] - [RANK 1]: Receive buffers of size [KB]: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+[2024-08-05 22:13:56,517][__main__][INFO] - [RANK 2]: Created send and receive buffers for none halo exchange:
+[2024-08-05 22:13:56,517][__main__][INFO] - [RANK 2]: Send buffers of size [KB]: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+[2024-08-05 22:13:56,517][__main__][INFO] - [RANK 2]: Receive buffers of size [KB]: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+[2024-08-05 22:13:56,517][__main__][INFO] - [RANK 7]: Created send and receive buffers for none halo exchange:
+[2024-08-05 22:13:56,540][__main__][INFO] - [RANK 4]: Send buffers of size [KB]: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+[2024-08-05 22:13:56,540][__main__][INFO] - [RANK 4]: Receive buffers of size [KB]: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+[2024-08-05 22:13:56,556][__main__][INFO] - Done with build_model
+/lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/optim/lr_scheduler.py:28: UserWarning: The verbose parameter is deprecated. Please use get_last_lr() to access the learning rate.
+  warnings.warn("The verbose parameter is deprecated. Please use get_last_lr() "
+/lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/optim/lr_scheduler.py:28: UserWarning: The verbose parameter is deprecated. Please use get_last_lr() to access the learning rate.
+  warnings.warn("The verbose parameter is deprecated. Please use get_last_lr() "
+/lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/optim/lr_scheduler.py:28: UserWarning: The verbose parameter is deprecated. Please use get_last_lr() to access the learning rate.
+  warnings.warn("The verbose parameter is deprecated. Please use get_last_lr() "
+/lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/optim/lr_scheduler.py:28: UserWarning: The verbose parameter is deprecated. Please use get_last_lr() to access the learning rate.
+  warnings.warn("The verbose parameter is deprecated. Please use get_last_lr() "
+[2024-08-05 22:13:56,577][__main__][INFO] - [RANK 5]: Send buffers of size [KB]: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+[2024-08-05 22:13:56,578][__main__][INFO] - [RANK 5]: Receive buffers of size [KB]: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+[2024-08-05 22:13:56,578][__main__][INFO] - [RANK 6]: Send buffers of size [KB]: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+[2024-08-05 22:13:56,578][__main__][INFO] - [RANK 6]: Receive buffers of size [KB]: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+[2024-08-05 22:13:56,578][__main__][INFO] - [RANK 7]: Send buffers of size [KB]: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+[2024-08-05 22:13:56,578][__main__][INFO] - [RANK 7]: Receive buffers of size [KB]: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+/lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/optim/lr_scheduler.py:28: UserWarning: The verbose parameter is deprecated. Please use get_last_lr() to access the learning rate.
+  warnings.warn("The verbose parameter is deprecated. Please use get_last_lr() "
+/lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/optim/lr_scheduler.py:28: UserWarning: The verbose parameter is deprecated. Please use get_last_lr() to access the learning rate.
+  warnings.warn("The verbose parameter is deprecated. Please use get_last_lr() "
+/lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/optim/lr_scheduler.py:28: UserWarning: The verbose parameter is deprecated. Please use get_last_lr() to access the learning rate.
+  warnings.warn("The verbose parameter is deprecated. Please use get_last_lr() "
+/lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/optim/lr_scheduler.py:28: UserWarning: The verbose parameter is deprecated. Please use get_last_lr() to access the learning rate.
+  warnings.warn("The verbose parameter is deprecated. Please use get_last_lr() "
+[2024-08-05 22:13:56,629][__main__][INFO] - [RANK 2] -- model save header : POLY_5_RANK_2_SIZE_8_SEED_12_3_4_32_3_5_4_none
+[2024-08-05 22:13:56,629][__main__][INFO] - In writeGraphStatistics
+[2024-08-05 22:13:56,629][__main__][INFO] - [RANK 0] -- model save header : POLY_5_RANK_0_SIZE_8_SEED_12_3_4_32_3_5_4_none
+[2024-08-05 22:13:56,633][__main__][INFO] - [RANK 3] -- model save header : POLY_5_RANK_3_SIZE_8_SEED_12_3_4_32_3_5_4_none
+[2024-08-05 22:13:56,634][__main__][INFO] - [RANK 4] -- model save header : POLY_5_RANK_4_SIZE_8_SEED_12_3_4_32_3_5_4_none
+[2024-08-05 22:13:56,634][__main__][INFO] - [RANK 6] -- model save header : POLY_5_RANK_6_SIZE_8_SEED_12_3_4_32_3_5_4_none
+[2024-08-05 22:13:56,635][__main__][INFO] - [RANK 1] -- model save header : POLY_5_RANK_1_SIZE_8_SEED_12_3_4_32_3_5_4_none
+[2024-08-05 22:13:56,635][__main__][INFO] - [RANK 5] -- model save header : POLY_5_RANK_5_SIZE_8_SEED_12_3_4_32_3_5_4_none
+[2024-08-05 22:13:56,635][__main__][INFO] - [RANK 7] -- model save header : POLY_5_RANK_7_SIZE_8_SEED_12_3_4_32_3_5_4_none
+[2024-08-05 22:13:56,642][__main__][INFO] - [RANK 4] -- number of local nodes: 518400, number of halo nodes: 12800, number of edges: 3097600
+Directory already exists.
+[2024-08-05 22:13:56,642][__main__][INFO] - [RANK 0] -- number of local nodes: 518400, number of halo nodes: 12800, number of edges: 3097600
+[2024-08-05 22:13:56,642][__main__][INFO] - [RANK 5] -- number of local nodes: 518400, number of halo nodes: 12800, number of edges: 3097600
+[2024-08-05 22:13:56,642][__main__][INFO] - [RANK 6] -- number of local nodes: 518400, number of halo nodes: 12800, number of edges: 3097600
+[2024-08-05 22:13:56,642][__main__][INFO] - [RANK 7] -- number of local nodes: 518400, number of halo nodes: 12800, number of edges: 3097600
+[2024-08-05 22:13:56,642][__main__][INFO] - [RANK 1] -- number of local nodes: 518400, number of halo nodes: 12800, number of edges: 3097600
+[2024-08-05 22:13:56,642][__main__][INFO] - [RANK 2] -- number of local nodes: 518400, number of halo nodes: 12800, number of edges: 3097600
+[2024-08-05 22:13:56,642][__main__][INFO] - [RANK 3] -- number of local nodes: 518400, number of halo nodes: 12800, number of edges: 3097600
+[rank7]:[E ProcessGroupNCCL.cpp:563] [Rank 7] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=8, OpType=ALLREDUCE, NumelIn=91459, NumelOut=91459, Timeout(ms)=600000) ran for 600001 milliseconds before timing out.
+[rank7]:[E ProcessGroupNCCL.cpp:1537] [PG 0 Rank 7] Timeout at NCCL work: 8, last enqueued NCCL work: 8, last completed NCCL work: 7.
+[rank7]:[E ProcessGroupNCCL.cpp:577] [Rank 7] Some NCCL operations have failed or timed out. Due to the asynchronous nature of CUDA kernels, subsequent GPU operations might run on corrupted/incomplete data.
+[rank7]:[E ProcessGroupNCCL.cpp:583] [Rank 7] To avoid data inconsistency, we are taking the entire process down.
+[rank7]:[E ProcessGroupNCCL.cpp:1414] [PG 0 Rank 7] Process group watchdog thread terminated with exception: [Rank 7] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=8, OpType=ALLREDUCE, NumelIn=91459, NumelOut=91459, Timeout(ms)=600000) ran for 600001 milliseconds before timing out.
+Exception raised from checkTimeout at /lus/eagle/projects/datascience/balin/Nek/GNN/env/pytorch/torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:565 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0xa9 (0x14e230675729 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libc10.so)
+frame #1: <unknown function> + 0x1033061 (0x14e2055bc061 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #2: c10d::ProcessGroupNCCL::WorkNCCL::checkTimeout(std::optional<std::chrono::duration<long, std::ratio<1l, 1000l> > >) + 0x1d1 (0x14e205595721 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #3: c10d::ProcessGroupNCCL::watchdogHandler() + 0x1e5 (0x14e205595bf5 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #4: c10d::ProcessGroupNCCL::ncclCommWatchdog() + 0xfd (0x14e205596a2d in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #5: <unknown function> + 0xd3e95 (0x14e244884e95 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/bin/../lib/libstdc++.so.6)
+frame #6: <unknown function> + 0xa6ea (0x14e24e0c66ea in /lib64/libpthread.so.0)
+frame #7: clone + 0x41 (0x14e24de8650f in /lib64/libc.so.6)
+
+terminate called after throwing an instance of 'c10::DistBackendError'
+  what():  [PG 0 Rank 7] Process group watchdog thread terminated with exception: [Rank 7] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=8, OpType=ALLREDUCE, NumelIn=91459, NumelOut=91459, Timeout(ms)=600000) ran for 600001 milliseconds before timing out.
+Exception raised from checkTimeout at /lus/eagle/projects/datascience/balin/Nek/GNN/env/pytorch/torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:565 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0xa9 (0x14e230675729 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libc10.so)
+frame #1: <unknown function> + 0x1033061 (0x14e2055bc061 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #2: c10d::ProcessGroupNCCL::WorkNCCL::checkTimeout(std::optional<std::chrono::duration<long, std::ratio<1l, 1000l> > >) + 0x1d1 (0x14e205595721 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #3: c10d::ProcessGroupNCCL::watchdogHandler() + 0x1e5 (0x14e205595bf5 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #4: c10d::ProcessGroupNCCL::ncclCommWatchdog() + 0xfd (0x14e205596a2d in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #5: <unknown function> + 0xd3e95 (0x14e244884e95 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/bin/../lib/libstdc++.so.6)
+frame #6: <unknown function> + 0xa6ea (0x14e24e0c66ea in /lib64/libpthread.so.0)
+frame #7: clone + 0x41 (0x14e24de8650f in /lib64/libc.so.6)
+
+Exception raised from ncclCommWatchdog at /lus/eagle/projects/datascience/balin/Nek/GNN/env/pytorch/torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:1418 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0xa9 (0x14e230675729 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libc10.so)
+frame #1: <unknown function> + 0x1033061 (0x14e2055bc061 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #2: <unknown function> + 0xccf010 (0x14e205258010 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #3: <unknown function> + 0xd3e95 (0x14e244884e95 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/bin/../lib/libstdc++.so.6)
+frame #4: <unknown function> + 0xa6ea (0x14e24e0c66ea in /lib64/libpthread.so.0)
+frame #5: clone + 0x41 (0x14e24de8650f in /lib64/libc.so.6)
+
+[rank1]:[E ProcessGroupNCCL.cpp:563] [Rank 1] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=8, OpType=ALLREDUCE, NumelIn=91459, NumelOut=91459, Timeout(ms)=600000) ran for 600013 milliseconds before timing out.
+[rank1]:[E ProcessGroupNCCL.cpp:1537] [PG 0 Rank 1] Timeout at NCCL work: 8, last enqueued NCCL work: 8, last completed NCCL work: 7.
+[rank1]:[E ProcessGroupNCCL.cpp:577] [Rank 1] Some NCCL operations have failed or timed out. Due to the asynchronous nature of CUDA kernels, subsequent GPU operations might run on corrupted/incomplete data.
+[rank1]:[E ProcessGroupNCCL.cpp:583] [Rank 1] To avoid data inconsistency, we are taking the entire process down.
+[rank1]:[E ProcessGroupNCCL.cpp:1414] [PG 0 Rank 1] Process group watchdog thread terminated with exception: [Rank 1] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=8, OpType=ALLREDUCE, NumelIn=91459, NumelOut=91459, Timeout(ms)=600000) ran for 600013 milliseconds before timing out.
+Exception raised from checkTimeout at /lus/eagle/projects/datascience/balin/Nek/GNN/env/pytorch/torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:565 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0xa9 (0x14ef3cb9c729 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libc10.so)
+frame #1: <unknown function> + 0x1033061 (0x14ef1c495061 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #2: c10d::ProcessGroupNCCL::WorkNCCL::checkTimeout(std::optional<std::chrono::duration<long, std::ratio<1l, 1000l> > >) + 0x1d1 (0x14ef1c46e721 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #3: c10d::ProcessGroupNCCL::watchdogHandler() + 0x1e5 (0x14ef1c46ebf5 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #4: c10d::ProcessGroupNCCL::ncclCommWatchdog() + 0xfd (0x14ef1c46fa2d in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #5: <unknown function> + 0xd3e95 (0x14ef5bc84e95 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/bin/../lib/libstdc++.so.6)
+frame #6: <unknown function> + 0xa6ea (0x14ef654656ea in /lib64/libpthread.so.0)
+frame #7: clone + 0x41 (0x14ef6522550f in /lib64/libc.so.6)
+
+terminate called after throwing an instance of 'c10::DistBackendError'
+  what():  [PG 0 Rank 1] Process group watchdog thread terminated with exception: [Rank 1] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=8, OpType=ALLREDUCE, NumelIn=91459, NumelOut=91459, Timeout(ms)=600000) ran for 600013 milliseconds before timing out.
+Exception raised from checkTimeout at /lus/eagle/projects/datascience/balin/Nek/GNN/env/pytorch/torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:565 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0xa9 (0x14ef3cb9c729 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libc10.so)
+frame #1: <unknown function> + 0x1033061 (0x14ef1c495061 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #2: c10d::ProcessGroupNCCL::WorkNCCL::checkTimeout(std::optional<std::chrono::duration<long, std::ratio<1l, 1000l> > >) + 0x1d1 (0x14ef1c46e721 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #3: c10d::ProcessGroupNCCL::watchdogHandler() + 0x1e5 (0x14ef1c46ebf5 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #4: c10d::ProcessGroupNCCL::ncclCommWatchdog() + 0xfd (0x14ef1c46fa2d in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #5: <unknown function> + 0xd3e95 (0x14ef5bc84e95 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/bin/../lib/libstdc++.so.6)
+frame #6: <unknown function> + 0xa6ea (0x14ef654656ea in /lib64/libpthread.so.0)
+frame #7: clone + 0x41 (0x14ef6522550f in /lib64/libc.so.6)
+
+Exception raised from ncclCommWatchdog at /lus/eagle/projects/datascience/balin/Nek/GNN/env/pytorch/torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:1418 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0xa9 (0x14ef3cb9c729 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libc10.so)
+frame #1: <unknown function> + 0x1033061 (0x14ef1c495061 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #2: <unknown function> + 0xccf010 (0x14ef1c131010 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #3: <unknown function> + 0xd3e95 (0x14ef5bc84e95 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/bin/../lib/libstdc++.so.6)
+frame #4: <unknown function> + 0xa6ea (0x14ef654656ea in /lib64/libpthread.so.0)
+frame #5: clone + 0x41 (0x14ef6522550f in /lib64/libc.so.6)
+
+[rank3]:[E ProcessGroupNCCL.cpp:563] [Rank 3] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=8, OpType=ALLREDUCE, NumelIn=91459, NumelOut=91459, Timeout(ms)=600000) ran for 600020 milliseconds before timing out.
+[rank3]:[E ProcessGroupNCCL.cpp:1537] [PG 0 Rank 3] Timeout at NCCL work: 8, last enqueued NCCL work: 8, last completed NCCL work: 7.
+[rank3]:[E ProcessGroupNCCL.cpp:577] [Rank 3] Some NCCL operations have failed or timed out. Due to the asynchronous nature of CUDA kernels, subsequent GPU operations might run on corrupted/incomplete data.
+[rank3]:[E ProcessGroupNCCL.cpp:583] [Rank 3] To avoid data inconsistency, we are taking the entire process down.
+[rank3]:[E ProcessGroupNCCL.cpp:1414] [PG 0 Rank 3] Process group watchdog thread terminated with exception: [Rank 3] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=8, OpType=ALLREDUCE, NumelIn=91459, NumelOut=91459, Timeout(ms)=600000) ran for 600020 milliseconds before timing out.
+Exception raised from checkTimeout at /lus/eagle/projects/datascience/balin/Nek/GNN/env/pytorch/torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:565 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0xa9 (0x153a11c88729 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libc10.so)
+frame #1: <unknown function> + 0x1033061 (0x1539e55bc061 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #2: c10d::ProcessGroupNCCL::WorkNCCL::checkTimeout(std::optional<std::chrono::duration<long, std::ratio<1l, 1000l> > >) + 0x1d1 (0x1539e5595721 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #3: c10d::ProcessGroupNCCL::watchdogHandler() + 0x1e5 (0x1539e5595bf5 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #4: c10d::ProcessGroupNCCL::ncclCommWatchdog() + 0xfd (0x1539e5596a2d in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #5: <unknown function> + 0xd3e95 (0x153a24a84e95 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/bin/../lib/libstdc++.so.6)
+frame #6: <unknown function> + 0xa6ea (0x153a2e3456ea in /lib64/libpthread.so.0)
+frame #7: clone + 0x41 (0x153a2e10550f in /lib64/libc.so.6)
+
+terminate called after throwing an instance of 'c10::DistBackendError'
+  what():  [PG 0 Rank 3] Process group watchdog thread terminated with exception: [Rank 3] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=8, OpType=ALLREDUCE, NumelIn=91459, NumelOut=91459, Timeout(ms)=600000) ran for 600020 milliseconds before timing out.
+Exception raised from checkTimeout at /lus/eagle/projects/datascience/balin/Nek/GNN/env/pytorch/torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:565 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0xa9 (0x153a11c88729 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libc10.so)
+frame #1: <unknown function> + 0x1033061 (0x1539e55bc061 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #2: c10d::ProcessGroupNCCL::WorkNCCL::checkTimeout(std::optional<std::chrono::duration<long, std::ratio<1l, 1000l> > >) + 0x1d1 (0x1539e5595721 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #3: c10d::ProcessGroupNCCL::watchdogHandler() + 0x1e5 (0x1539e5595bf5 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #4: c10d::ProcessGroupNCCL::ncclCommWatchdog() + 0xfd (0x1539e5596a2d in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #5: <unknown function> + 0xd3e95 (0x153a24a84e95 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/bin/../lib/libstdc++.so.6)
+frame #6: <unknown function> + 0xa6ea (0x153a2e3456ea in /lib64/libpthread.so.0)
+frame #7: clone + 0x41 (0x153a2e10550f in /lib64/libc.so.6)
+
+Exception raised from ncclCommWatchdog at /lus/eagle/projects/datascience/balin/Nek/GNN/env/pytorch/torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:1418 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0xa9 (0x153a11c88729 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libc10.so)
+frame #1: <unknown function> + 0x1033061 (0x1539e55bc061 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #2: <unknown function> + 0xccf010 (0x1539e5258010 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #3: <unknown function> + 0xd3e95 (0x153a24a84e95 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/bin/../lib/libstdc++.so.6)
+frame #4: <unknown function> + 0xa6ea (0x153a2e3456ea in /lib64/libpthread.so.0)
+frame #5: clone + 0x41 (0x153a2e10550f in /lib64/libc.so.6)
+
+[rank2]:[E ProcessGroupNCCL.cpp:563] [Rank 2] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=8, OpType=ALLREDUCE, NumelIn=91459, NumelOut=91459, Timeout(ms)=600000) ran for 600026 milliseconds before timing out.
+[rank2]:[E ProcessGroupNCCL.cpp:1537] [PG 0 Rank 2] Timeout at NCCL work: 8, last enqueued NCCL work: 8, last completed NCCL work: 7.
+[rank2]:[E ProcessGroupNCCL.cpp:577] [Rank 2] Some NCCL operations have failed or timed out. Due to the asynchronous nature of CUDA kernels, subsequent GPU operations might run on corrupted/incomplete data.
+[rank2]:[E ProcessGroupNCCL.cpp:583] [Rank 2] To avoid data inconsistency, we are taking the entire process down.
+[rank2]:[E ProcessGroupNCCL.cpp:1414] [PG 0 Rank 2] Process group watchdog thread terminated with exception: [Rank 2] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=8, OpType=ALLREDUCE, NumelIn=91459, NumelOut=91459, Timeout(ms)=600000) ran for 600026 milliseconds before timing out.
+Exception raised from checkTimeout at /lus/eagle/projects/datascience/balin/Nek/GNN/env/pytorch/torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:565 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0xa9 (0x1482fa8a5729 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libc10.so)
+frame #1: <unknown function> + 0x1033061 (0x1482fb93c061 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #2: c10d::ProcessGroupNCCL::WorkNCCL::checkTimeout(std::optional<std::chrono::duration<long, std::ratio<1l, 1000l> > >) + 0x1d1 (0x1482fb915721 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #3: c10d::ProcessGroupNCCL::watchdogHandler() + 0x1e5 (0x1482fb915bf5 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #4: c10d::ProcessGroupNCCL::ncclCommWatchdog() + 0xfd (0x1482fb916a2d in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #5: <unknown function> + 0xd3e95 (0x14833a484e95 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/bin/../lib/libstdc++.so.6)
+frame #6: <unknown function> + 0xa6ea (0x148343da96ea in /lib64/libpthread.so.0)
+frame #7: clone + 0x41 (0x148343b6950f in /lib64/libc.so.6)
+
+terminate called after throwing an instance of 'c10::DistBackendError'
+  what():  [PG 0 Rank 2] Process group watchdog thread terminated with exception: [Rank 2] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=8, OpType=ALLREDUCE, NumelIn=91459, NumelOut=91459, Timeout(ms)=600000) ran for 600026 milliseconds before timing out.
+Exception raised from checkTimeout at /lus/eagle/projects/datascience/balin/Nek/GNN/env/pytorch/torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:565 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0xa9 (0x1482fa8a5729 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libc10.so)
+frame #1: <unknown function> + 0x1033061 (0x1482fb93c061 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #2: c10d::ProcessGroupNCCL::WorkNCCL::checkTimeout(std::optional<std::chrono::duration<long, std::ratio<1l, 1000l> > >) + 0x1d1 (0x1482fb915721 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #3: c10d::ProcessGroupNCCL::watchdogHandler() + 0x1e5 (0x1482fb915bf5 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #4: c10d::ProcessGroupNCCL::ncclCommWatchdog() + 0xfd (0x1482fb916a2d in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #5: <unknown function> + 0xd3e95 (0x14833a484e95 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/bin/../lib/libstdc++.so.6)
+frame #6: <unknown function> + 0xa6ea (0x148343da96ea in /lib64/libpthread.so.0)
+frame #7: clone + 0x41 (0x148343b6950f in /lib64/libc.so.6)
+
+Exception raised from ncclCommWatchdog at /lus/eagle/projects/datascience/balin/Nek/GNN/env/pytorch/torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:1418 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0xa9 (0x1482fa8a5729 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libc10.so)
+frame #1: <unknown function> + 0x1033061 (0x1482fb93c061 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #2: <unknown function> + 0xccf010 (0x1482fb5d8010 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #3: <unknown function> + 0xd3e95 (0x14833a484e95 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/bin/../lib/libstdc++.so.6)
+frame #4: <unknown function> + 0xa6ea (0x148343da96ea in /lib64/libpthread.so.0)
+frame #5: clone + 0x41 (0x148343b6950f in /lib64/libc.so.6)
+
+[rank0]:[E ProcessGroupNCCL.cpp:563] [Rank 0] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=8, OpType=ALLREDUCE, NumelIn=91459, NumelOut=91459, Timeout(ms)=600000) ran for 600034 milliseconds before timing out.
+[rank0]:[E ProcessGroupNCCL.cpp:1537] [PG 0 Rank 0] Timeout at NCCL work: 8, last enqueued NCCL work: 8, last completed NCCL work: 7.
+[rank0]:[E ProcessGroupNCCL.cpp:577] [Rank 0] Some NCCL operations have failed or timed out. Due to the asynchronous nature of CUDA kernels, subsequent GPU operations might run on corrupted/incomplete data.
+[rank0]:[E ProcessGroupNCCL.cpp:583] [Rank 0] To avoid data inconsistency, we are taking the entire process down.
+[rank0]:[E ProcessGroupNCCL.cpp:1414] [PG 0 Rank 0] Process group watchdog thread terminated with exception: [Rank 0] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=8, OpType=ALLREDUCE, NumelIn=91459, NumelOut=91459, Timeout(ms)=600000) ran for 600034 milliseconds before timing out.
+Exception raised from checkTimeout at /lus/eagle/projects/datascience/balin/Nek/GNN/env/pytorch/torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:565 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0xa9 (0x146920216729 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libc10.so)
+frame #1: <unknown function> + 0x1033061 (0x1468d35bc061 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #2: c10d::ProcessGroupNCCL::WorkNCCL::checkTimeout(std::optional<std::chrono::duration<long, std::ratio<1l, 1000l> > >) + 0x1d1 (0x1468d3595721 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #3: c10d::ProcessGroupNCCL::watchdogHandler() + 0x1e5 (0x1468d3595bf5 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #4: c10d::ProcessGroupNCCL::ncclCommWatchdog() + 0xfd (0x1468d3596a2d in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #5: <unknown function> + 0xd3e95 (0x146933684e95 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/bin/../lib/libstdc++.so.6)
+frame #6: <unknown function> + 0xa6ea (0x14693cf596ea in /lib64/libpthread.so.0)
+frame #7: clone + 0x41 (0x14693cd1950f in /lib64/libc.so.6)
+
+terminate called after throwing an instance of 'c10::DistBackendError'
+  what():  [PG 0 Rank 0] Process group watchdog thread terminated with exception: [Rank 0] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=8, OpType=ALLREDUCE, NumelIn=91459, NumelOut=91459, Timeout(ms)=600000) ran for 600034 milliseconds before timing out.
+Exception raised from checkTimeout at /lus/eagle/projects/datascience/balin/Nek/GNN/env/pytorch/torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:565 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0xa9 (0x146920216729 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libc10.so)
+frame #1: <unknown function> + 0x1033061 (0x1468d35bc061 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #2: c10d::ProcessGroupNCCL::WorkNCCL::checkTimeout(std::optional<std::chrono::duration<long, std::ratio<1l, 1000l> > >) + 0x1d1 (0x1468d3595721 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #3: c10d::ProcessGroupNCCL::watchdogHandler() + 0x1e5 (0x1468d3595bf5 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #4: c10d::ProcessGroupNCCL::ncclCommWatchdog() + 0xfd (0x1468d3596a2d in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #5: <unknown function> + 0xd3e95 (0x146933684e95 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/bin/../lib/libstdc++.so.6)
+frame #6: <unknown function> + 0xa6ea (0x14693cf596ea in /lib64/libpthread.so.0)
+frame #7: clone + 0x41 (0x14693cd1950f in /lib64/libc.so.6)
+
+Exception raised from ncclCommWatchdog at /lus/eagle/projects/datascience/balin/Nek/GNN/env/pytorch/torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:1418 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0xa9 (0x146920216729 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libc10.so)
+frame #1: <unknown function> + 0x1033061 (0x1468d35bc061 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #2: <unknown function> + 0xccf010 (0x1468d3258010 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #3: <unknown function> + 0xd3e95 (0x146933684e95 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/bin/../lib/libstdc++.so.6)
+frame #4: <unknown function> + 0xa6ea (0x14693cf596ea in /lib64/libpthread.so.0)
+frame #5: clone + 0x41 (0x14693cd1950f in /lib64/libc.so.6)
+
+[rank4]:[E ProcessGroupNCCL.cpp:563] [Rank 4] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=9, OpType=REDUCE, NumelIn=1, NumelOut=1, Timeout(ms)=600000) ran for 600059 milliseconds before timing out.
+[rank4]:[E ProcessGroupNCCL.cpp:1537] [PG 0 Rank 4] Timeout at NCCL work: 9, last enqueued NCCL work: 9, last completed NCCL work: 8.
+[rank4]:[E ProcessGroupNCCL.cpp:577] [Rank 4] Some NCCL operations have failed or timed out. Due to the asynchronous nature of CUDA kernels, subsequent GPU operations might run on corrupted/incomplete data.
+[rank4]:[E ProcessGroupNCCL.cpp:583] [Rank 4] To avoid data inconsistency, we are taking the entire process down.
+[rank4]:[E ProcessGroupNCCL.cpp:1414] [PG 0 Rank 4] Process group watchdog thread terminated with exception: [Rank 4] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=9, OpType=REDUCE, NumelIn=1, NumelOut=1, Timeout(ms)=600000) ran for 600059 milliseconds before timing out.
+Exception raised from checkTimeout at /lus/eagle/projects/datascience/balin/Nek/GNN/env/pytorch/torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:565 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0xa9 (0x148198092729 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libc10.so)
+frame #1: <unknown function> + 0x1033061 (0x1481435bc061 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #2: c10d::ProcessGroupNCCL::WorkNCCL::checkTimeout(std::optional<std::chrono::duration<long, std::ratio<1l, 1000l> > >) + 0x1d1 (0x148143595721 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #3: c10d::ProcessGroupNCCL::watchdogHandler() + 0x1e5 (0x148143595bf5 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #4: c10d::ProcessGroupNCCL::ncclCommWatchdog() + 0xfd (0x148143596a2d in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #5: <unknown function> + 0xd3e95 (0x1481a2e84e95 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/bin/../lib/libstdc++.so.6)
+frame #6: <unknown function> + 0xa6ea (0x1481ac6636ea in /lib64/libpthread.so.0)
+frame #7: clone + 0x41 (0x1481ac42350f in /lib64/libc.so.6)
+
+[rank5]:[E ProcessGroupNCCL.cpp:563] [Rank 5] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=9, OpType=REDUCE, NumelIn=1, NumelOut=1, Timeout(ms)=600000) ran for 600031 milliseconds before timing out.
+terminate called after throwing an instance of 'c10::DistBackendError'
+  what():  [PG 0 Rank 4] Process group watchdog thread terminated with exception: [Rank 4] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=9, OpType=REDUCE, NumelIn=1, NumelOut=1, Timeout(ms)=600000) ran for 600059 milliseconds before timing out.
+Exception raised from checkTimeout at /lus/eagle/projects/datascience/balin/Nek/GNN/env/pytorch/torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:565 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0xa9 (0x148198092729 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libc10.so)
+frame #1: <unknown function> + 0x1033061 (0x1481435bc061 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #2: c10d::ProcessGroupNCCL::WorkNCCL::checkTimeout(std::optional<std::chrono::duration<long, std::ratio<1l, 1000l> > >) + 0x1d1 (0x148143595721 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #3: c10d::ProcessGroupNCCL::watchdogHandler() + 0x1e5 (0x148143595bf5 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #4: c10d::ProcessGroupNCCL::ncclCommWatchdog() + 0xfd (0x148143596a2d in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #5: <unknown function> + 0xd3e95 (0x1481a2e84e95 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/bin/../lib/libstdc++.so.6)
+frame #6: <unknown function> + 0xa6ea (0x1481ac6636ea in /lib64/libpthread.so.0)
+frame #7: clone + 0x41 (0x1481ac42350f in /lib64/libc.so.6)
+
+Exception raised from ncclCommWatchdog at /lus/eagle/projects/datascience/balin/Nek/GNN/env/pytorch/torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:1418 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0xa9 (0x148198092729 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libc10.so)
+frame #1: <unknown function> + 0x1033061 (0x1481435bc061 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #2: <unknown function> + 0xccf010 (0x148143258010 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #3: <unknown function> + 0xd3e95 (0x1481a2e84e95 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/bin/../lib/libstdc++.so.6)
+frame #4: <unknown function> + 0xa6ea (0x1481ac6636ea in /lib64/libpthread.so.0)
+frame #5: clone + 0x41 (0x1481ac42350f in /lib64/libc.so.6)
+
+[rank5]:[E ProcessGroupNCCL.cpp:1537] [PG 0 Rank 5] Timeout at NCCL work: 9, last enqueued NCCL work: 9, last completed NCCL work: 8.
+[rank5]:[E ProcessGroupNCCL.cpp:577] [Rank 5] Some NCCL operations have failed or timed out. Due to the asynchronous nature of CUDA kernels, subsequent GPU operations might run on corrupted/incomplete data.
+[rank5]:[E ProcessGroupNCCL.cpp:583] [Rank 5] To avoid data inconsistency, we are taking the entire process down.
+[rank5]:[E ProcessGroupNCCL.cpp:1414] [PG 0 Rank 5] Process group watchdog thread terminated with exception: [Rank 5] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=9, OpType=REDUCE, NumelIn=1, NumelOut=1, Timeout(ms)=600000) ran for 600031 milliseconds before timing out.
+Exception raised from checkTimeout at /lus/eagle/projects/datascience/balin/Nek/GNN/env/pytorch/torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:565 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0xa9 (0x14bd6059c729 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libc10.so)
+frame #1: <unknown function> + 0x1033061 (0x14bd2b93c061 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #2: c10d::ProcessGroupNCCL::WorkNCCL::checkTimeout(std::optional<std::chrono::duration<long, std::ratio<1l, 1000l> > >) + 0x1d1 (0x14bd2b915721 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #3: c10d::ProcessGroupNCCL::watchdogHandler() + 0x1e5 (0x14bd2b915bf5 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #4: c10d::ProcessGroupNCCL::ncclCommWatchdog() + 0xfd (0x14bd2b916a2d in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #5: <unknown function> + 0xd3e95 (0x14bd6ae84e95 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/bin/../lib/libstdc++.so.6)
+frame #6: <unknown function> + 0xa6ea (0x14bd746dd6ea in /lib64/libpthread.so.0)
+frame #7: clone + 0x41 (0x14bd7449d50f in /lib64/libc.so.6)
+
+terminate called after throwing an instance of 'c10::DistBackendError'
+  what():  [PG 0 Rank 5] Process group watchdog thread terminated with exception: [Rank 5] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=9, OpType=REDUCE, NumelIn=1, NumelOut=1, Timeout(ms)=600000) ran for 600031 milliseconds before timing out.
+Exception raised from checkTimeout at /lus/eagle/projects/datascience/balin/Nek/GNN/env/pytorch/torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:565 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0xa9 (0x14bd6059c729 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libc10.so)
+frame #1: <unknown function> + 0x1033061 (0x14bd2b93c061 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #2: c10d::ProcessGroupNCCL::WorkNCCL::checkTimeout(std::optional<std::chrono::duration<long, std::ratio<1l, 1000l> > >) + 0x1d1 (0x14bd2b915721 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #3: c10d::ProcessGroupNCCL::watchdogHandler() + 0x1e5 (0x14bd2b915bf5 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #4: c10d::ProcessGroupNCCL::ncclCommWatchdog() + 0xfd (0x14bd2b916a2d in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #5: <unknown function> + 0xd3e95 (0x14bd6ae84e95 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/bin/../lib/libstdc++.so.6)
+frame #6: <unknown function> + 0xa6ea (0x14bd746dd6ea in /lib64/libpthread.so.0)
+frame #7: clone + 0x41 (0x14bd7449d50f in /lib64/libc.so.6)
+
+Exception raised from ncclCommWatchdog at /lus/eagle/projects/datascience/balin/Nek/GNN/env/pytorch/torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:1418 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0xa9 (0x14bd6059c729 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libc10.so)
+frame #1: <unknown function> + 0x1033061 (0x14bd2b93c061 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #2: <unknown function> + 0xccf010 (0x14bd2b5d8010 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #3: <unknown function> + 0xd3e95 (0x14bd6ae84e95 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/bin/../lib/libstdc++.so.6)
+frame #4: <unknown function> + 0xa6ea (0x14bd746dd6ea in /lib64/libpthread.so.0)
+frame #5: clone + 0x41 (0x14bd7449d50f in /lib64/libc.so.6)
+
+[rank6]:[E ProcessGroupNCCL.cpp:563] [Rank 6] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=9, OpType=REDUCE, NumelIn=1, NumelOut=1, Timeout(ms)=600000) ran for 600082 milliseconds before timing out.
+[rank6]:[E ProcessGroupNCCL.cpp:1537] [PG 0 Rank 6] Timeout at NCCL work: 9, last enqueued NCCL work: 9, last completed NCCL work: 8.
+[rank6]:[E ProcessGroupNCCL.cpp:577] [Rank 6] Some NCCL operations have failed or timed out. Due to the asynchronous nature of CUDA kernels, subsequent GPU operations might run on corrupted/incomplete data.
+[rank6]:[E ProcessGroupNCCL.cpp:583] [Rank 6] To avoid data inconsistency, we are taking the entire process down.
+[rank6]:[E ProcessGroupNCCL.cpp:1414] [PG 0 Rank 6] Process group watchdog thread terminated with exception: [Rank 6] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=9, OpType=REDUCE, NumelIn=1, NumelOut=1, Timeout(ms)=600000) ran for 600082 milliseconds before timing out.
+Exception raised from checkTimeout at /lus/eagle/projects/datascience/balin/Nek/GNN/env/pytorch/torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:565 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0xa9 (0x1479ec39c729 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libc10.so)
+frame #1: <unknown function> + 0x1033061 (0x1479b55bc061 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #2: c10d::ProcessGroupNCCL::WorkNCCL::checkTimeout(std::optional<std::chrono::duration<long, std::ratio<1l, 1000l> > >) + 0x1d1 (0x1479b5595721 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #3: c10d::ProcessGroupNCCL::watchdogHandler() + 0x1e5 (0x1479b5595bf5 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #4: c10d::ProcessGroupNCCL::ncclCommWatchdog() + 0xfd (0x1479b5596a2d in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #5: <unknown function> + 0xd3e95 (0x1479f7884e95 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/bin/../lib/libstdc++.so.6)
+frame #6: <unknown function> + 0xa6ea (0x147a0115c6ea in /lib64/libpthread.so.0)
+frame #7: clone + 0x41 (0x147a00f1c50f in /lib64/libc.so.6)
+
+terminate called after throwing an instance of 'c10::DistBackendError'
+  what():  [PG 0 Rank 6] Process group watchdog thread terminated with exception: [Rank 6] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=9, OpType=REDUCE, NumelIn=1, NumelOut=1, Timeout(ms)=600000) ran for 600082 milliseconds before timing out.
+Exception raised from checkTimeout at /lus/eagle/projects/datascience/balin/Nek/GNN/env/pytorch/torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:565 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0xa9 (0x1479ec39c729 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libc10.so)
+frame #1: <unknown function> + 0x1033061 (0x1479b55bc061 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #2: c10d::ProcessGroupNCCL::WorkNCCL::checkTimeout(std::optional<std::chrono::duration<long, std::ratio<1l, 1000l> > >) + 0x1d1 (0x1479b5595721 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #3: c10d::ProcessGroupNCCL::watchdogHandler() + 0x1e5 (0x1479b5595bf5 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #4: c10d::ProcessGroupNCCL::ncclCommWatchdog() + 0xfd (0x1479b5596a2d in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #5: <unknown function> + 0xd3e95 (0x1479f7884e95 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/bin/../lib/libstdc++.so.6)
+frame #6: <unknown function> + 0xa6ea (0x147a0115c6ea in /lib64/libpthread.so.0)
+frame #7: clone + 0x41 (0x147a00f1c50f in /lib64/libc.so.6)
+
+Exception raised from ncclCommWatchdog at /lus/eagle/projects/datascience/balin/Nek/GNN/env/pytorch/torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:1418 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0xa9 (0x1479ec39c729 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libc10.so)
+frame #1: <unknown function> + 0x1033061 (0x1479b55bc061 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #2: <unknown function> + 0xccf010 (0x1479b5258010 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #3: <unknown function> + 0xd3e95 (0x1479f7884e95 in /lus/eagle/projects/datascience/balin/Nek/GNN/env/gnn_nccl/bin/../lib/libstdc++.so.6)
+frame #4: <unknown function> + 0xa6ea (0x147a0115c6ea in /lib64/libpthread.so.0)
+frame #5: clone + 0x41 (0x147a00f1c50f in /lib64/libc.so.6)
+
+x3006c0s1b0n0.hsn.cm.polaris.alcf.anl.gov: rank 7 died from signal 6 and dumped core
+Mon 05 Aug 2024 10:24:06 PM UTC
