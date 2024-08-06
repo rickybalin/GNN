@@ -3,7 +3,7 @@
 #SBATCH -J gnn_scale
 #SBATCH -o gnn_scale-%j.o
 #SBATCH -e gnn_scale-%j.e
-#SBATCH -t 00:30:00
+#SBATCH -t 01:00:00
 #SBATCH -p batch
 #SBATCH -N 64
 
@@ -37,10 +37,18 @@ export MIOPEN_CUSTOM_CACHE_DIR=${MIOPEN_USER_DB_PATH}
 rm -rf ${MIOPEN_USER_DB_PATH}
 mkdir -p ${MIOPEN_USER_DB_PATH}
 
-export NCCL_SOCKET_IFNAME=hsn0
+# AWS plugin
+export LD_LIBRARY_PATH=/lustre/orion/world-shared/stf218/sajal/software/aws-ofi-rccl/src/.libs/:${LD_LIBRARY_PATH}
+
+export NCCL_SOCKET_IFNAME=hsn0,hsn1,hsn2,hsn3
 export NCCL_NET_GDR_LEVEL=PHB
 export NCCL_CROSS_NIC=1
 export NCCL_COLLNET_ENABLE=1
+#export NCCL_DEBUG=info
+
+export FI_CXI_DEFAULT_CQ_SIZE=131072
+export FI_CXI_DISABLE_HOST_REGISTER=1
+export FI_MR_CACHE_MONITOR=userfaultfd
 
 NODES=$(echo $SLURM_NNODES)
 PROCS_PER_NODE=8

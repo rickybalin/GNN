@@ -3,7 +3,7 @@
 #SBATCH -J gnn_scale
 #SBATCH -o gnn_scale-%j.o
 #SBATCH -e gnn_scale-%j.e
-#SBATCH -t 00:30:00
+#SBATCH -t 02:00:00
 #SBATCH -p batch
 #SBATCH -N 16
 
