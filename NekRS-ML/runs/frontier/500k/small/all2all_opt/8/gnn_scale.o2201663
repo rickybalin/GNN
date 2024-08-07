@@ -1,0 +1,977 @@
+
+Lmod is automatically replacing "cce/17.0.0" with "gcc-native/12.3".
+
+
+Lmod is automatically replacing "PrgEnv-cray/8.5.0" with "PrgEnv-gnu/8.5.0".
+
+
+Due to MODULEPATH changes, the following have been reloaded:
+  1) cray-libsci/23.12.5     2) cray-mpich/8.1.28     3) darshan-runtime/3.4.0-mpi
+
+Loaded modules:
+
+Currently Loaded Modules:
+  1) craype-x86-trento                      12) gcc-native/12.3
+  2) libfabric/1.15.2.0                     13) craype/2.7.31
+  3) craype-network-ofi                     14) cray-dsmml/0.2.2
+  4) perftools-base/23.12.0                 15) cray-mpich/8.1.28
+  5) xpmem/2.6.2-2.5_2.40__gd067c3f.shasta  16) cray-libsci/23.12.5
+  6) cray-pmi/6.1.13                        17) PrgEnv-gnu/8.5.0
+  7) Core/24.00                             18) darshan-runtime/3.4.0-mpi
+  8) tmux/3.2a                              19) miniforge3/23.11.0-0
+  9) hsi/default                            20) rocm/5.7.1
+ 10) lfs-wrapper/0.0.1                      21) craype-accel-amd-gfx90a
+ 11) DefApps
+
+ 
+
+
+Torch version: 2.2.2+rocm5.7
+NCCL version: (2, 17, 1)
+cuDNN version: 2020000
+Torch Geometric version: 2.5.3
+
+Number of nodes: 2
+Number of ML ranks per node: 8
+Number of ML total ranks: 16
+
+Running script /lustre/orion/csc613/proj-shared/balin/Nek/GNN/GNN/NekRS-ML/main.py
+with arguments hidden_channels=8 n_mlp_hidden_layers=2 epochs=120 backend=nccl halo_swap_mode=all_to_all_opt gnn_outputs_path=/lustre/orion/csc613/proj-shared/balin/Nek/GNN/weak_scale_data/500k_frontier/16/gnn_outputs_poly_5/ master_port=3442 master_addr=10.128.139.4
+
+Wed 07 Aug 2024 01:18:56 AM EDT
+/lustre/orion/csc613/proj-shared/balin/Nek/GNN/GNN/NekRS-ML/main.py:91: DeprecationWarning: The 'warn' method is deprecated, use 'warning' instead
+  if RANK == 0: log.warn('Found no XPU devices')
+Found no XPU devices
+[2024-08-07 01:19:05,674][__main__][INFO] - Hello from rank 7/16, local rank 7, on device cuda:7 out of 8.
+[2024-08-07 01:19:05,676][__main__][INFO] - Hello from rank 0/16, local rank 0, on device cuda:0 out of 8.
+[2024-08-07 01:19:05,676][__main__][INFO] - Hello from rank 2/16, local rank 2, on device cuda:2 out of 8.
+[2024-08-07 01:19:05,676][__main__][INFO] - Hello from rank 5/16, local rank 5, on device cuda:5 out of 8.
+[2024-08-07 01:19:05,676][__main__][INFO] - Hello from rank 3/16, local rank 3, on device cuda:3 out of 8.
+[2024-08-07 01:19:05,676][__main__][INFO] - Hello from rank 1/16, local rank 1, on device cuda:1 out of 8.
+[2024-08-07 01:19:05,676][__main__][INFO] - Hello from rank 4/16, local rank 4, on device cuda:4 out of 8.
+[2024-08-07 01:19:05,676][__main__][INFO] - Hello from rank 6/16, local rank 6, on device cuda:6 out of 8.
+[W socket.cpp:464] [c10d] The server socket cannot be initialized on [::]:3442 (errno: 97 - Address family not supported by protocol).
+[W socket.cpp:697] [c10d] The client socket cannot be initialized to connect to [frontier08892.frontier.olcf.ornl.gov]:3442 (errno: 97 - Address family not supported by protocol).
+[W socket.cpp:697] [c10d] The client socket cannot be initialized to connect to [frontier08892.frontier.olcf.ornl.gov]:3442 (errno: 97 - Address family not supported by protocol).
+[W socket.cpp:697] [c10d] The client socket cannot be initialized to connect to [frontier08892.frontier.olcf.ornl.gov]:3442 (errno: 97 - Address family not supported by protocol).
+[W socket.cpp:697] [c10d] The client socket cannot be initialized to connect to [frontier08892.frontier.olcf.ornl.gov]:3442 (errno: 97 - Address family not supported by protocol).
+[W socket.cpp:697] [c10d] The client socket cannot be initialized to connect to [frontier08892.frontier.olcf.ornl.gov]:3442 (errno: 97 - Address family not supported by protocol).
+[W socket.cpp:697] [c10d] The client socket cannot be initialized to connect to [frontier08892.frontier.olcf.ornl.gov]:3442 (errno: 97 - Address family not supported by protocol).
+[W socket.cpp:697] [c10d] The client socket cannot be initialized to connect to [frontier08892.frontier.olcf.ornl.gov]:3442 (errno: 97 - Address family not supported by protocol).
+[W socket.cpp:697] [c10d] The client socket cannot be initialized to connect to [frontier08892.frontier.olcf.ornl.gov]:3442 (errno: 97 - Address family not supported by protocol).
+[2024-08-07 01:19:05,817][__main__][INFO] - [RANK 6]: Loading positions and global node index
+[2024-08-07 01:19:05,821][__main__][INFO] - [RANK 2]: Loading positions and global node index
+[2024-08-07 01:19:05,832][__main__][INFO] - [RANK 5]: Loading positions and global node index
+[2024-08-07 01:19:05,836][__main__][INFO] - [RANK 1]: Loading positions and global node index
+[2024-08-07 01:19:05,845][__main__][INFO] - [RANK 3]: Loading positions and global node index
+[2024-08-07 01:19:05,862][__main__][INFO] - [RANK 6]: Loading edge index
+[2024-08-07 01:19:05,865][__main__][INFO] - [RANK 7]: Loading positions and global node index
+[2024-08-07 01:19:05,866][__main__][INFO] - [RANK 2]: Loading edge index
+[2024-08-07 01:19:05,875][__main__][INFO] - [RANK 5]: Loading edge index
+[2024-08-07 01:19:05,880][__main__][INFO] - [RANK 1]: Loading edge index
+[2024-08-07 01:19:05,881][__main__][INFO] - [RANK 4]: Loading positions and global node index
+[2024-08-07 01:19:05,889][__main__][INFO] - [RANK 3]: Loading edge index
+[2024-08-07 01:19:05,912][__main__][INFO] - [RANK 7]: Loading edge index
+[2024-08-07 01:19:05,933][__main__][INFO] - [RANK 4]: Loading edge index
+[2024-08-07 01:19:05,997][__main__][INFO] - [RANK 6]: Loading local unique mask
+[2024-08-07 01:19:06,004][__main__][INFO] - [RANK 2]: Loading local unique mask
+[2024-08-07 01:19:06,006][__main__][INFO] - [RANK 6]: Making the FULL GLL-based graph with overlapping nodes
+[2024-08-07 01:19:06,013][__main__][INFO] - [RANK 1]: Loading local unique mask
+[2024-08-07 01:19:06,014][__main__][INFO] - [RANK 2]: Making the FULL GLL-based graph with overlapping nodes
+[2024-08-07 01:19:06,014][__main__][INFO] - [RANK 5]: Loading local unique mask
+[2024-08-07 01:19:06,021][__main__][INFO] - [RANK 1]: Making the FULL GLL-based graph with overlapping nodes
+[2024-08-07 01:19:06,023][__main__][INFO] - [RANK 5]: Making the FULL GLL-based graph with overlapping nodes
+[2024-08-07 01:19:06,028][__main__][INFO] - [RANK 3]: Loading local unique mask
+[2024-08-07 01:19:06,037][__main__][INFO] - [RANK 3]: Making the FULL GLL-based graph with overlapping nodes
+[2024-08-07 01:19:06,049][__main__][INFO] - [RANK 7]: Loading local unique mask
+[2024-08-07 01:19:06,058][__main__][INFO] - [RANK 7]: Making the FULL GLL-based graph with overlapping nodes
+[2024-08-07 01:19:06,070][__main__][INFO] - [RANK 4]: Loading local unique mask
+[2024-08-07 01:19:06,079][__main__][INFO] - [RANK 4]: Making the FULL GLL-based graph with overlapping nodes
+[2024-08-07 01:19:08,464][__main__][INFO] - [RANK 1]: Making the REDUCED GLL-based graph with non-overlapping nodes
+[2024-08-07 01:19:08,705][__main__][INFO] - [RANK 6]: Making the REDUCED GLL-based graph with non-overlapping nodes
+[2024-08-07 01:19:08,708][__main__][INFO] - [RANK 5]: Making the REDUCED GLL-based graph with non-overlapping nodes
+[2024-08-07 01:19:08,725][__main__][INFO] - [RANK 2]: Making the REDUCED GLL-based graph with non-overlapping nodes
+[2024-08-07 01:19:08,750][__main__][INFO] - [RANK 7]: Making the REDUCED GLL-based graph with non-overlapping nodes
+[2024-08-07 01:19:08,760][__main__][INFO] - [RANK 3]: Making the REDUCED GLL-based graph with non-overlapping nodes
+[2024-08-07 01:19:08,760][__main__][INFO] - [RANK 4]: Making the REDUCED GLL-based graph with non-overlapping nodes
+[2024-08-07 01:19:08,821][__main__][INFO] - Hello from rank 10/16, local rank 2, on device cuda:2 out of 8.
+[2024-08-07 01:19:08,822][__main__][INFO] - Hello from rank 14/16, local rank 6, on device cuda:6 out of 8.
+[2024-08-07 01:19:08,822][__main__][INFO] - Hello from rank 12/16, local rank 4, on device cuda:4 out of 8.
+[2024-08-07 01:19:08,822][__main__][INFO] - Hello from rank 13/16, local rank 5, on device cuda:5 out of 8.
+[2024-08-07 01:19:08,822][__main__][INFO] - Hello from rank 8/16, local rank 0, on device cuda:0 out of 8.
+[2024-08-07 01:19:08,822][__main__][INFO] - Hello from rank 11/16, local rank 3, on device cuda:3 out of 8.
+[2024-08-07 01:19:08,822][__main__][INFO] - Hello from rank 15/16, local rank 7, on device cuda:7 out of 8.
+[2024-08-07 01:19:08,822][__main__][INFO] - Hello from rank 9/16, local rank 1, on device cuda:1 out of 8.
+[W socket.cpp:697] [c10d] The client socket cannot be initialized to connect to [frontier08892.frontier.olcf.ornl.gov]:3442 (errno: 97 - Address family not supported by protocol).
+[W socket.cpp:697] [c10d] The client socket cannot be initialized to connect to [frontier08892.frontier.olcf.ornl.gov]:3442 (errno: 97 - Address family not supported by protocol).
+[W socket.cpp:697] [c10d] The client socket cannot be initialized to connect to [frontier08892.frontier.olcf.ornl.gov]:3442 (errno: 97 - Address family not supported by protocol).
+[W socket.cpp:697] [c10d] The client socket cannot be initialized to connect to [frontier08892.frontier.olcf.ornl.gov]:3442 (errno: 97 - Address family not supported by protocol).
+[W socket.cpp:697] [c10d] The client socket cannot be initialized to connect to [frontier08892.frontier.olcf.ornl.gov]:3442 (errno: 97 - Address family not supported by protocol).
+[W socket.cpp:697] [c10d] The client socket cannot be initialized to connect to [frontier08892.frontier.olcf.ornl.gov]:3442 (errno: 97 - Address family not supported by protocol).
+[W socket.cpp:697] [c10d] The client socket cannot be initialized to connect to [frontier08892.frontier.olcf.ornl.gov]:3442 (errno: 97 - Address family not supported by protocol).
+[W socket.cpp:697] [c10d] The client socket cannot be initialized to connect to [frontier08892.frontier.olcf.ornl.gov]:3442 (errno: 97 - Address family not supported by protocol).
+[2024-08-07 01:19:08,931][__main__][INFO] - [RANK 9]: Loading positions and global node index
+[2024-08-07 01:19:08,934][__main__][INFO] - [RANK 11]: Loading positions and global node index
+[2024-08-07 01:19:08,939][__main__][INFO] - [RANK 8]: Loading positions and global node index
+[2024-08-07 01:19:08,946][__main__][INFO] - [RANK 13]: Loading positions and global node index
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+RUNNING WITH INPUTS:
+profile: false
+halo_test: false
+verbose: true
+seed: 12
+epochs: 120
+backend: nccl
+lr_init: 0.0001
+use_noise: true
+num_threads: 0
+logfreq: 10
+ckptfreq: 1000
+batch_size: 1
+test_batch_size: 1
+fp16_allreduce: false
+restart: false
+master_addr: 10.128.139.4
+master_port: 3442
+hidden_channels: 8
+n_mlp_hidden_layers: 2
+n_messagePassing_layers: 4
+rollout_steps: 1
+halo_swap_mode: all_to_all_opt
+plot_connectivity: false
+work_dir: ${hydra:runtime.cwd}
+data_dir: ${work_dir}/datasets/
+ckpt_dir: ${work_dir}/ckpt/
+model_dir: ${work_dir}/saved_models/
+profile_dir: ${work_dir}/outputs/profiles/test/
+gnn_outputs_path: /lustre/orion/csc613/proj-shared/balin/Nek/GNN/weak_scale_data/500k_frontier/16/gnn_outputs_poly_5/
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[2024-08-07 01:19:08,953][__main__][INFO] - [RANK 0]: Loading positions and global node index
+[2024-08-07 01:19:08,978][__main__][INFO] - [RANK 10]: Loading positions and global node index
+[2024-08-07 01:19:08,979][__main__][INFO] - [RANK 11]: Loading edge index
+[2024-08-07 01:19:08,986][__main__][INFO] - [RANK 9]: Loading edge index
+[2024-08-07 01:19:08,994][__main__][INFO] - [RANK 13]: Loading edge index
+[2024-08-07 01:19:08,995][__main__][INFO] - [RANK 8]: Loading edge index
+[2024-08-07 01:19:08,999][__main__][INFO] - [RANK 0]: Loading edge index
+[2024-08-07 01:19:09,002][__main__][INFO] - [RANK 14]: Loading positions and global node index
+[2024-08-07 01:19:09,022][__main__][INFO] - [RANK 15]: Loading positions and global node index
+[2024-08-07 01:19:09,031][__main__][INFO] - [RANK 10]: Loading edge index
+[2024-08-07 01:19:09,038][__main__][INFO] - [RANK 12]: Loading positions and global node index
+[2024-08-07 01:19:09,053][__main__][INFO] - [RANK 14]: Loading edge index
+[2024-08-07 01:19:09,087][__main__][INFO] - [RANK 15]: Loading edge index
+[2024-08-07 01:19:09,101][__main__][INFO] - [RANK 12]: Loading edge index
+[2024-08-07 01:19:09,124][__main__][INFO] - [RANK 11]: Loading local unique mask
+[2024-08-07 01:19:09,133][__main__][INFO] - [RANK 9]: Loading local unique mask
+[2024-08-07 01:19:09,134][__main__][INFO] - [RANK 11]: Making the FULL GLL-based graph with overlapping nodes
+[2024-08-07 01:19:09,141][__main__][INFO] - [RANK 13]: Loading local unique mask
+[2024-08-07 01:19:09,142][__main__][INFO] - [RANK 0]: Loading local unique mask
+[2024-08-07 01:19:09,142][__main__][INFO] - [RANK 9]: Making the FULL GLL-based graph with overlapping nodes
+[2024-08-07 01:19:09,151][__main__][INFO] - [RANK 0]: Making the FULL GLL-based graph with overlapping nodes
+[2024-08-07 01:19:09,151][__main__][INFO] - [RANK 13]: Making the FULL GLL-based graph with overlapping nodes
+[2024-08-07 01:19:09,169][__main__][INFO] - [RANK 8]: Loading local unique mask
+[2024-08-07 01:19:09,171][__main__][INFO] - [RANK 10]: Loading local unique mask
+[2024-08-07 01:19:09,180][__main__][INFO] - [RANK 8]: Making the FULL GLL-based graph with overlapping nodes
+[2024-08-07 01:19:09,180][__main__][INFO] - [RANK 10]: Making the FULL GLL-based graph with overlapping nodes
+[2024-08-07 01:19:09,192][__main__][INFO] - [RANK 14]: Loading local unique mask
+[2024-08-07 01:19:09,203][__main__][INFO] - [RANK 14]: Making the FULL GLL-based graph with overlapping nodes
+[2024-08-07 01:19:09,225][__main__][INFO] - [RANK 15]: Loading local unique mask
+[2024-08-07 01:19:09,234][__main__][INFO] - [RANK 15]: Making the FULL GLL-based graph with overlapping nodes
+[2024-08-07 01:19:09,238][__main__][INFO] - [RANK 12]: Loading local unique mask
+[2024-08-07 01:19:09,248][__main__][INFO] - [RANK 12]: Making the FULL GLL-based graph with overlapping nodes
+[2024-08-07 01:19:09,396][__main__][INFO] - [RANK 1]: Getting idx_reduced2full
+[2024-08-07 01:19:09,688][__main__][INFO] - [RANK 6]: Getting idx_reduced2full
+[2024-08-07 01:19:09,692][__main__][INFO] - [RANK 5]: Getting idx_reduced2full
+[2024-08-07 01:19:09,710][__main__][INFO] - [RANK 2]: Getting idx_reduced2full
+[2024-08-07 01:19:09,748][__main__][INFO] - [RANK 4]: Getting idx_reduced2full
+[2024-08-07 01:19:09,748][__main__][INFO] - [RANK 7]: Getting idx_reduced2full
+[2024-08-07 01:19:09,750][__main__][INFO] - [RANK 3]: Getting idx_reduced2full
+[2024-08-07 01:19:11,482][__main__][INFO] - [RANK 0]: Making the REDUCED GLL-based graph with non-overlapping nodes
+[2024-08-07 01:19:11,852][__main__][INFO] - [RANK 13]: Making the REDUCED GLL-based graph with non-overlapping nodes
+[2024-08-07 01:19:11,855][__main__][INFO] - [RANK 14]: Making the REDUCED GLL-based graph with non-overlapping nodes
+[2024-08-07 01:19:11,860][__main__][INFO] - [RANK 10]: Making the REDUCED GLL-based graph with non-overlapping nodes
+[2024-08-07 01:19:11,874][__main__][INFO] - [RANK 8]: Making the REDUCED GLL-based graph with non-overlapping nodes
+[2024-08-07 01:19:11,895][__main__][INFO] - [RANK 11]: Making the REDUCED GLL-based graph with non-overlapping nodes
+[2024-08-07 01:19:11,895][__main__][INFO] - [RANK 12]: Making the REDUCED GLL-based graph with non-overlapping nodes
+[2024-08-07 01:19:11,904][__main__][INFO] - [RANK 15]: Making the REDUCED GLL-based graph with non-overlapping nodes
+[2024-08-07 01:19:11,906][__main__][INFO] - [RANK 9]: Making the REDUCED GLL-based graph with non-overlapping nodes
+[2024-08-07 01:19:12,358][__main__][INFO] - [RANK 0]: Getting idx_reduced2full
+[2024-08-07 01:19:12,842][__main__][INFO] - [RANK 10]: Getting idx_reduced2full
+[2024-08-07 01:19:12,843][__main__][INFO] - [RANK 13]: Getting idx_reduced2full
+[2024-08-07 01:19:12,843][__main__][INFO] - [RANK 14]: Getting idx_reduced2full
+[2024-08-07 01:19:12,854][__main__][INFO] - [RANK 8]: Getting idx_reduced2full
+[2024-08-07 01:19:12,873][__main__][INFO] - [RANK 11]: Getting idx_reduced2full
+[2024-08-07 01:19:12,882][__main__][INFO] - [RANK 9]: Getting idx_reduced2full
+[2024-08-07 01:19:12,883][__main__][INFO] - [RANK 12]: Getting idx_reduced2full
+[2024-08-07 01:19:12,884][__main__][INFO] - [RANK 15]: Getting idx_reduced2full
+[2024-08-07 01:19:14,837][__main__][INFO] - [RANK 1]: Assembling halo_ids_list using reduced graph
+[2024-08-07 01:19:14,847][__main__][INFO] - [RANK 1]: Found 5 neighboring processes: [0 2 3 6 7]
+[2024-08-07 01:19:15,140][__main__][INFO] - [RANK 6]: Assembling halo_ids_list using reduced graph
+[2024-08-07 01:19:15,145][__main__][INFO] - [RANK 6]: Found 5 neighboring processes: [0 1 4 5 7]
+[2024-08-07 01:19:15,151][__main__][INFO] - [RANK 2]: Assembling halo_ids_list using reduced graph
+[2024-08-07 01:19:15,154][__main__][INFO] - [RANK 5]: Assembling halo_ids_list using reduced graph
+[2024-08-07 01:19:15,156][__main__][INFO] - [RANK 2]: Found 5 neighboring processes: [ 0  1  3 12 13]
+[2024-08-07 01:19:15,158][__main__][INFO] - [RANK 5]: Found 5 neighboring processes: [ 4  6  7 10 11]
+[2024-08-07 01:19:15,172][__main__][INFO] - [RANK 7]: Assembling halo_ids_list using reduced graph
+[2024-08-07 01:19:15,176][__main__][INFO] - [RANK 7]: Found 5 neighboring processes: [0 1 4 5 6]
+[2024-08-07 01:19:15,204][__main__][INFO] - [RANK 3]: Assembling halo_ids_list using reduced graph
+[2024-08-07 01:19:15,204][__main__][INFO] - [RANK 4]: Assembling halo_ids_list using reduced graph
+[2024-08-07 01:19:15,210][__main__][INFO] - [RANK 4]: Found 5 neighboring processes: [ 5  6  7 10 11]
+[2024-08-07 01:19:15,210][__main__][INFO] - [RANK 3]: Found 5 neighboring processes: [ 0  1  2 12 13]
+[2024-08-07 01:19:17,964][__main__][INFO] - [RANK 0]: Assembling halo_ids_list using reduced graph
+[2024-08-07 01:19:17,971][__main__][INFO] - [RANK 0]: Found 5 neighboring processes: [1 2 3 6 7]
+[2024-08-07 01:19:17,971][__main__][INFO] - In setup_data...
+Data(x=[560720, 3], y=[560720, 3], edge_index=[2, 3136160], pos=[560720, 3], global_ids=[528080], local_unique_mask=[528080], halo_unique_mask=[528080], local_ids=[884736], n_nodes_local=528080, n_nodes_halo=32640, halo_info=[32640, 4], edge_weight=[3136160], node_degree=[528080], edge_attr=[3136160, 4])
+[2024-08-07 01:19:18,231][__main__][INFO] - Done with setup_data
+[2024-08-07 01:19:18,233][__main__][INFO] - Done with build_masks
+[2024-08-07 01:19:18,265][__main__][INFO] - [RANK 14]: Assembling halo_ids_list using reduced graph
+[2024-08-07 01:19:18,265][__main__][INFO] - [RANK 13]: Assembling halo_ids_list using reduced graph
+[2024-08-07 01:19:18,266][__main__][INFO] - [RANK 10]: Assembling halo_ids_list using reduced graph
+[2024-08-07 01:19:18,275][__main__][INFO] - [RANK 10]: Found 5 neighboring processes: [ 4  5  8  9 11]
+[2024-08-07 01:19:18,275][__main__][INFO] - [RANK 13]: Found 5 neighboring processes: [ 2  3 12 14 15]
+[2024-08-07 01:19:18,275][__main__][INFO] - [RANK 14]: Found 5 neighboring processes: [ 8  9 12 13 15]
+[2024-08-07 01:19:18,302][__main__][INFO] - [RANK 15]: Assembling halo_ids_list using reduced graph
+[2024-08-07 01:19:18,306][__main__][INFO] - [RANK 15]: Found 5 neighboring processes: [ 8  9 12 13 14]
+[2024-08-07 01:19:18,307][__main__][INFO] - [RANK 9]: Assembling halo_ids_list using reduced graph
+[2024-08-07 01:19:18,312][__main__][INFO] - [RANK 9]: Found 5 neighboring processes: [ 8 10 11 14 15]
+[2024-08-07 01:19:18,316][__main__][INFO] - [RANK 12]: Assembling halo_ids_list using reduced graph
+[2024-08-07 01:19:18,321][__main__][INFO] - [RANK 12]: Found 5 neighboring processes: [ 2  3 13 14 15]
+[2024-08-07 01:19:18,332][__main__][INFO] - [RANK 11]: Assembling halo_ids_list using reduced graph
+[2024-08-07 01:19:18,337][__main__][INFO] - [RANK 11]: Found 5 neighboring processes: [ 4  5  8  9 10]
+[2024-08-07 01:19:18,376][__main__][INFO] - [RANK 8]: Assembling halo_ids_list using reduced graph
+[2024-08-07 01:19:18,381][__main__][INFO] - [RANK 8]: Found 5 neighboring processes: [ 9 10 11 14 15]
+[2024-08-07 01:19:21,914][__main__][INFO] - [RANK 8]: Created send and receive buffers for all_to_all_opt halo exchange:
+[2024-08-07 01:19:21,914][__main__][INFO] - [RANK 13]: Created send and receive buffers for all_to_all_opt halo exchange:
+[2024-08-07 01:19:21,914][__main__][INFO] - [RANK 15]: Created send and receive buffers for all_to_all_opt halo exchange:
+[2024-08-07 01:19:21,914][__main__][INFO] - [RANK 10]: Created send and receive buffers for all_to_all_opt halo exchange:
+[2024-08-07 01:19:21,914][__main__][INFO] - [RANK 12]: Created send and receive buffers for all_to_all_opt halo exchange:
+[2024-08-07 01:19:21,914][__main__][INFO] - [RANK 14]: Created send and receive buffers for all_to_all_opt halo exchange:
+[2024-08-07 01:19:21,914][__main__][INFO] - [RANK 11]: Created send and receive buffers for all_to_all_opt halo exchange:
+[2024-08-07 01:19:21,914][__main__][INFO] - [RANK 9]: Created send and receive buffers for all_to_all_opt halo exchange:
+[2024-08-07 01:19:21,914][__main__][INFO] - [RANK 8]: Send buffers of size [KB]: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 805.0, 102.5, 5.0, 0.0, 0.0, 102.5, 5.0]
+[2024-08-07 01:19:21,914][__main__][INFO] - [RANK 13]: Send buffers of size [KB]: [0.0, 0.0, 5.0, 102.5, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 805.0, 0.0, 5.0, 102.5]
+[2024-08-07 01:19:21,914][__main__][INFO] - [RANK 15]: Send buffers of size [KB]: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 5.0, 102.5, 0.0, 0.0, 5.0, 102.5, 805.0, 0.0]
+[2024-08-07 01:19:21,914][__main__][INFO] - [RANK 10]: Send buffers of size [KB]: [0.0, 0.0, 0.0, 0.0, 102.5, 5.0, 0.0, 0.0, 102.5, 5.0, 0.0, 805.0, 0.0, 0.0, 0.0, 0.0]
+[2024-08-07 01:19:21,914][__main__][INFO] - [RANK 8]: Receive buffers of size [KB]: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 805.0, 102.5, 5.0, 0.0, 0.0, 102.5, 5.0]
+[2024-08-07 01:19:21,914][__main__][INFO] - [RANK 12]: Send buffers of size [KB]: [0.0, 0.0, 102.5, 5.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 805.0, 102.5, 5.0]
+[2024-08-07 01:19:21,914][__main__][INFO] - [RANK 13]: Receive buffers of size [KB]: [0.0, 0.0, 5.0, 102.5, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 805.0, 0.0, 5.0, 102.5]
+[2024-08-07 01:19:21,914][__main__][INFO] - [RANK 14]: Send buffers of size [KB]: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 102.5, 5.0, 0.0, 0.0, 102.5, 5.0, 0.0, 805.0]
+[2024-08-07 01:19:21,915][__main__][INFO] - [RANK 15]: Receive buffers of size [KB]: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 5.0, 102.5, 0.0, 0.0, 5.0, 102.5, 805.0, 0.0]
+[2024-08-07 01:19:21,915][__main__][INFO] - [RANK 11]: Send buffers of size [KB]: [0.0, 0.0, 0.0, 0.0, 5.0, 102.5, 0.0, 0.0, 5.0, 102.5, 805.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+[2024-08-07 01:19:21,915][__main__][INFO] - [RANK 9]: Send buffers of size [KB]: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 805.0, 0.0, 5.0, 102.5, 0.0, 0.0, 5.0, 102.5]
+[2024-08-07 01:19:21,915][__main__][INFO] - [RANK 10]: Receive buffers of size [KB]: [0.0, 0.0, 0.0, 0.0, 102.5, 5.0, 0.0, 0.0, 102.5, 5.0, 0.0, 805.0, 0.0, 0.0, 0.0, 0.0]
+[2024-08-07 01:19:21,915][__main__][INFO] - [RANK 12]: Receive buffers of size [KB]: [0.0, 0.0, 102.5, 5.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 805.0, 102.5, 5.0]
+[2024-08-07 01:19:21,915][__main__][INFO] - [RANK 14]: Receive buffers of size [KB]: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 102.5, 5.0, 0.0, 0.0, 102.5, 5.0, 0.0, 805.0]
+[2024-08-07 01:19:21,915][__main__][INFO] - [RANK 11]: Receive buffers of size [KB]: [0.0, 0.0, 0.0, 0.0, 5.0, 102.5, 0.0, 0.0, 5.0, 102.5, 805.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+[2024-08-07 01:19:21,915][__main__][INFO] - [RANK 9]: Receive buffers of size [KB]: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 805.0, 0.0, 5.0, 102.5, 0.0, 0.0, 5.0, 102.5]
+[2024-08-07 01:19:21,947][__main__][INFO] - [RANK 0]: Created send and receive buffers for all_to_all_opt halo exchange:
+[2024-08-07 01:19:21,947][__main__][INFO] - [RANK 0]: Send buffers of size [KB]: [0.0, 805.0, 102.5, 5.0, 0.0, 0.0, 102.5, 5.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+[2024-08-07 01:19:21,947][__main__][INFO] - [RANK 0]: Receive buffers of size [KB]: [0.0, 805.0, 102.5, 5.0, 0.0, 0.0, 102.5, 5.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+[2024-08-07 01:19:21,948][__main__][INFO] - Done with build_buffers
+[2024-08-07 01:19:21,948][__main__][INFO] - In build_model...
+[2024-08-07 01:19:21,947][__main__][INFO] - [RANK 3]: Created send and receive buffers for all_to_all_opt halo exchange:
+[2024-08-07 01:19:21,947][__main__][INFO] - [RANK 6]: Created send and receive buffers for all_to_all_opt halo exchange:
+[2024-08-07 01:19:21,947][__main__][INFO] - [RANK 2]: Created send and receive buffers for all_to_all_opt halo exchange:
+[2024-08-07 01:19:21,947][__main__][INFO] - [RANK 5]: Created send and receive buffers for all_to_all_opt halo exchange:
+[2024-08-07 01:19:21,947][__main__][INFO] - [RANK 1]: Created send and receive buffers for all_to_all_opt halo exchange:
+[2024-08-07 01:19:21,948][__main__][INFO] - [RANK 3]: Send buffers of size [KB]: [5.0, 102.5, 805.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 5.0, 102.5, 0.0, 0.0]
+[2024-08-07 01:19:21,947][__main__][INFO] - [RANK 4]: Created send and receive buffers for all_to_all_opt halo exchange:
+[2024-08-07 01:19:21,948][__main__][INFO] - [RANK 6]: Send buffers of size [KB]: [102.5, 5.0, 0.0, 0.0, 102.5, 5.0, 0.0, 805.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+[2024-08-07 01:19:21,947][__main__][INFO] - [RANK 7]: Created send and receive buffers for all_to_all_opt halo exchange:
+[2024-08-07 01:19:21,948][__main__][INFO] - [RANK 2]: Send buffers of size [KB]: [102.5, 5.0, 0.0, 805.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 102.5, 5.0, 0.0, 0.0]
+[2024-08-07 01:19:21,948][__main__][INFO] - [RANK 5]: Send buffers of size [KB]: [0.0, 0.0, 0.0, 0.0, 805.0, 0.0, 5.0, 102.5, 0.0, 0.0, 5.0, 102.5, 0.0, 0.0, 0.0, 0.0]
+[2024-08-07 01:19:21,948][__main__][INFO] - [RANK 1]: Send buffers of size [KB]: [805.0, 0.0, 5.0, 102.5, 0.0, 0.0, 5.0, 102.5, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+[2024-08-07 01:19:21,948][__main__][INFO] - [RANK 3]: Receive buffers of size [KB]: [5.0, 102.5, 805.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 5.0, 102.5, 0.0, 0.0]
+[2024-08-07 01:19:21,948][__main__][INFO] - [RANK 4]: Send buffers of size [KB]: [0.0, 0.0, 0.0, 0.0, 0.0, 805.0, 102.5, 5.0, 0.0, 0.0, 102.5, 5.0, 0.0, 0.0, 0.0, 0.0]
+[2024-08-07 01:19:21,948][__main__][INFO] - [RANK 6]: Receive buffers of size [KB]: [102.5, 5.0, 0.0, 0.0, 102.5, 5.0, 0.0, 805.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+[2024-08-07 01:19:21,948][__main__][INFO] - [RANK 2]: Receive buffers of size [KB]: [102.5, 5.0, 0.0, 805.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 102.5, 5.0, 0.0, 0.0]
+[2024-08-07 01:19:21,948][__main__][INFO] - [RANK 5]: Receive buffers of size [KB]: [0.0, 0.0, 0.0, 0.0, 805.0, 0.0, 5.0, 102.5, 0.0, 0.0, 5.0, 102.5, 0.0, 0.0, 0.0, 0.0]
+[2024-08-07 01:19:21,948][__main__][INFO] - [RANK 7]: Send buffers of size [KB]: [5.0, 102.5, 0.0, 0.0, 5.0, 102.5, 805.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+[2024-08-07 01:19:21,948][__main__][INFO] - [RANK 1]: Receive buffers of size [KB]: [805.0, 0.0, 5.0, 102.5, 0.0, 0.0, 5.0, 102.5, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+[2024-08-07 01:19:21,948][__main__][INFO] - [RANK 4]: Receive buffers of size [KB]: [0.0, 0.0, 0.0, 0.0, 0.0, 805.0, 102.5, 5.0, 0.0, 0.0, 102.5, 5.0, 0.0, 0.0, 0.0, 0.0]
+[2024-08-07 01:19:21,948][__main__][INFO] - [RANK 7]: Receive buffers of size [KB]: [5.0, 102.5, 0.0, 0.0, 5.0, 102.5, 805.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+/lustre/orion/csc613/proj-shared/balin/Nek/GNN/env/gnn/lib/python3.10/site-packages/torch/optim/lr_scheduler.py:28: UserWarning: The verbose parameter is deprecated. Please use get_last_lr() to access the learning rate.
+  warnings.warn("The verbose parameter is deprecated. Please use get_last_lr() "
+/lustre/orion/csc613/proj-shared/balin/Nek/GNN/env/gnn/lib/python3.10/site-packages/torch/optim/lr_scheduler.py:28: UserWarning: The verbose parameter is deprecated. Please use get_last_lr() to access the learning rate.
+  warnings.warn("The verbose parameter is deprecated. Please use get_last_lr() "
+/lustre/orion/csc613/proj-shared/balin/Nek/GNN/env/gnn/lib/python3.10/site-packages/torch/optim/lr_scheduler.py:28: UserWarning: The verbose parameter is deprecated. Please use get_last_lr() to access the learning rate.
+  warnings.warn("The verbose parameter is deprecated. Please use get_last_lr() "
+/lustre/orion/csc613/proj-shared/balin/Nek/GNN/env/gnn/lib/python3.10/site-packages/torch/optim/lr_scheduler.py:28: UserWarning: The verbose parameter is deprecated. Please use get_last_lr() to access the learning rate.
+  warnings.warn("The verbose parameter is deprecated. Please use get_last_lr() "
+/lustre/orion/csc613/proj-shared/balin/Nek/GNN/env/gnn/lib/python3.10/site-packages/torch/optim/lr_scheduler.py:28: UserWarning: The verbose parameter is deprecated. Please use get_last_lr() to access the learning rate.
+  warnings.warn("The verbose parameter is deprecated. Please use get_last_lr() "
+/lustre/orion/csc613/proj-shared/balin/Nek/GNN/env/gnn/lib/python3.10/site-packages/torch/optim/lr_scheduler.py:28: UserWarning: The verbose parameter is deprecated. Please use get_last_lr() to access the learning rate.
+  warnings.warn("The verbose parameter is deprecated. Please use get_last_lr() "
+/lustre/orion/csc613/proj-shared/balin/Nek/GNN/env/gnn/lib/python3.10/site-packages/torch/optim/lr_scheduler.py:28: UserWarning: The verbose parameter is deprecated. Please use get_last_lr() to access the learning rate.
+  warnings.warn("The verbose parameter is deprecated. Please use get_last_lr() "
+/lustre/orion/csc613/proj-shared/balin/Nek/GNN/env/gnn/lib/python3.10/site-packages/torch/optim/lr_scheduler.py:28: UserWarning: The verbose parameter is deprecated. Please use get_last_lr() to access the learning rate.
+  warnings.warn("The verbose parameter is deprecated. Please use get_last_lr() "
+[2024-08-07 01:19:22,112][__main__][INFO] - Done with build_model
+/lustre/orion/csc613/proj-shared/balin/Nek/GNN/env/gnn/lib/python3.10/site-packages/torch/optim/lr_scheduler.py:28: UserWarning: The verbose parameter is deprecated. Please use get_last_lr() to access the learning rate.
+  warnings.warn("The verbose parameter is deprecated. Please use get_last_lr() "
+/lustre/orion/csc613/proj-shared/balin/Nek/GNN/env/gnn/lib/python3.10/site-packages/torch/optim/lr_scheduler.py:28: UserWarning: The verbose parameter is deprecated. Please use get_last_lr() to access the learning rate.
+  warnings.warn("The verbose parameter is deprecated. Please use get_last_lr() "
+/lustre/orion/csc613/proj-shared/balin/Nek/GNN/env/gnn/lib/python3.10/site-packages/torch/optim/lr_scheduler.py:28: UserWarning: The verbose parameter is deprecated. Please use get_last_lr() to access the learning rate.
+  warnings.warn("The verbose parameter is deprecated. Please use get_last_lr() "
+/lustre/orion/csc613/proj-shared/balin/Nek/GNN/env/gnn/lib/python3.10/site-packages/torch/optim/lr_scheduler.py:28: UserWarning: The verbose parameter is deprecated. Please use get_last_lr() to access the learning rate.
+  warnings.warn("The verbose parameter is deprecated. Please use get_last_lr() "
+/lustre/orion/csc613/proj-shared/balin/Nek/GNN/env/gnn/lib/python3.10/site-packages/torch/optim/lr_scheduler.py:28: UserWarning: The verbose parameter is deprecated. Please use get_last_lr() to access the learning rate.
+  warnings.warn("The verbose parameter is deprecated. Please use get_last_lr() "
+/lustre/orion/csc613/proj-shared/balin/Nek/GNN/env/gnn/lib/python3.10/site-packages/torch/optim/lr_scheduler.py:28: UserWarning: The verbose parameter is deprecated. Please use get_last_lr() to access the learning rate.
+  warnings.warn("The verbose parameter is deprecated. Please use get_last_lr() "
+/lustre/orion/csc613/proj-shared/balin/Nek/GNN/env/gnn/lib/python3.10/site-packages/torch/optim/lr_scheduler.py:28: UserWarning: The verbose parameter is deprecated. Please use get_last_lr() to access the learning rate.
+  warnings.warn("The verbose parameter is deprecated. Please use get_last_lr() "
+/lustre/orion/csc613/proj-shared/balin/Nek/GNN/env/gnn/lib/python3.10/site-packages/torch/optim/lr_scheduler.py:28: UserWarning: The verbose parameter is deprecated. Please use get_last_lr() to access the learning rate.
+  warnings.warn("The verbose parameter is deprecated. Please use get_last_lr() "
+[2024-08-07 01:19:22,290][__main__][INFO] - In writeGraphStatistics
+[2024-08-07 01:19:22,290][__main__][INFO] - [RANK 7] -- model save header : POLY_5_RANK_7_SIZE_16_SEED_12_3_4_8_3_2_4_all_to_all_opt
+[2024-08-07 01:19:22,290][__main__][INFO] - [RANK 1] -- model save header : POLY_5_RANK_1_SIZE_16_SEED_12_3_4_8_3_2_4_all_to_all_opt
+[2024-08-07 01:19:22,290][__main__][INFO] - [RANK 3] -- model save header : POLY_5_RANK_3_SIZE_16_SEED_12_3_4_8_3_2_4_all_to_all_opt
+[2024-08-07 01:19:22,290][__main__][INFO] - [RANK 6] -- model save header : POLY_5_RANK_6_SIZE_16_SEED_12_3_4_8_3_2_4_all_to_all_opt
+[2024-08-07 01:19:22,290][__main__][INFO] - [RANK 2] -- model save header : POLY_5_RANK_2_SIZE_16_SEED_12_3_4_8_3_2_4_all_to_all_opt
+[2024-08-07 01:19:22,290][__main__][INFO] - [RANK 0] -- model save header : POLY_5_RANK_0_SIZE_16_SEED_12_3_4_8_3_2_4_all_to_all_opt
+[2024-08-07 01:19:22,291][__main__][INFO] - [RANK 8] -- model save header : POLY_5_RANK_8_SIZE_16_SEED_12_3_4_8_3_2_4_all_to_all_opt
+[2024-08-07 01:19:22,291][__main__][INFO] - [RANK 12] -- model save header : POLY_5_RANK_12_SIZE_16_SEED_12_3_4_8_3_2_4_all_to_all_opt
+[2024-08-07 01:19:22,291][__main__][INFO] - [RANK 15] -- model save header : POLY_5_RANK_15_SIZE_16_SEED_12_3_4_8_3_2_4_all_to_all_opt
+[2024-08-07 01:19:22,291][__main__][INFO] - [RANK 9] -- model save header : POLY_5_RANK_9_SIZE_16_SEED_12_3_4_8_3_2_4_all_to_all_opt
+[2024-08-07 01:19:22,291][__main__][INFO] - [RANK 10] -- model save header : POLY_5_RANK_10_SIZE_16_SEED_12_3_4_8_3_2_4_all_to_all_opt
+[2024-08-07 01:19:22,291][__main__][INFO] - [RANK 13] -- model save header : POLY_5_RANK_13_SIZE_16_SEED_12_3_4_8_3_2_4_all_to_all_opt
+[2024-08-07 01:19:22,291][__main__][INFO] - [RANK 5] -- model save header : POLY_5_RANK_5_SIZE_16_SEED_12_3_4_8_3_2_4_all_to_all_opt
+[2024-08-07 01:19:22,292][__main__][INFO] - [RANK 14] -- model save header : POLY_5_RANK_14_SIZE_16_SEED_12_3_4_8_3_2_4_all_to_all_opt
+[2024-08-07 01:19:22,292][__main__][INFO] - [RANK 11] -- model save header : POLY_5_RANK_11_SIZE_16_SEED_12_3_4_8_3_2_4_all_to_all_opt
+[2024-08-07 01:19:22,292][__main__][INFO] - [RANK 4] -- model save header : POLY_5_RANK_4_SIZE_16_SEED_12_3_4_8_3_2_4_all_to_all_opt
+Directory created by root processor.
+[2024-08-07 01:19:22,293][__main__][INFO] - [RANK 0] -- number of local nodes: 528080, number of halo nodes: 32640, number of edges: 3136160
+[2024-08-07 01:19:22,293][__main__][INFO] - [RANK 2] -- number of local nodes: 528080, number of halo nodes: 32640, number of edges: 3136160
+[2024-08-07 01:19:22,293][__main__][INFO] - [RANK 8] -- number of local nodes: 528080, number of halo nodes: 32640, number of edges: 3136160
+[2024-08-07 01:19:22,293][__main__][INFO] - [RANK 5] -- number of local nodes: 528080, number of halo nodes: 32640, number of edges: 3136160
+[2024-08-07 01:19:22,293][__main__][INFO] - [RANK 9] -- number of local nodes: 528080, number of halo nodes: 32640, number of edges: 3136160
+[2024-08-07 01:19:22,293][__main__][INFO] - [RANK 6] -- number of local nodes: 528080, number of halo nodes: 32640, number of edges: 3136160
+[2024-08-07 01:19:22,293][__main__][INFO] - [RANK 11] -- number of local nodes: 528080, number of halo nodes: 32640, number of edges: 3136160
+[2024-08-07 01:19:22,293][__main__][INFO] - [RANK 13] -- number of local nodes: 528080, number of halo nodes: 32640, number of edges: 3136160
+[2024-08-07 01:19:22,293][__main__][INFO] - [RANK 12] -- number of local nodes: 528080, number of halo nodes: 32640, number of edges: 3136160
+[2024-08-07 01:19:22,293][__main__][INFO] - [RANK 15] -- number of local nodes: 528080, number of halo nodes: 32640, number of edges: 3136160
+[2024-08-07 01:19:22,293][__main__][INFO] - [RANK 10] -- number of local nodes: 528080, number of halo nodes: 32640, number of edges: 3136160
+[2024-08-07 01:19:22,293][__main__][INFO] - [RANK 14] -- number of local nodes: 528080, number of halo nodes: 32640, number of edges: 3136160
+[2024-08-07 01:19:22,293][__main__][INFO] - [RANK 3] -- number of local nodes: 528080, number of halo nodes: 32640, number of edges: 3136160
+[2024-08-07 01:19:22,293][__main__][INFO] - [RANK 4] -- number of local nodes: 528080, number of halo nodes: 32640, number of edges: 3136160
+[2024-08-07 01:19:22,293][__main__][INFO] - [RANK 1] -- number of local nodes: 528080, number of halo nodes: 32640, number of edges: 3136160
+[2024-08-07 01:19:22,293][__main__][INFO] - [RANK 7] -- number of local nodes: 528080, number of halo nodes: 32640, number of edges: 3136160
+[2024-08-07 01:19:27,653][__main__][INFO] - [0] [1/120: Batch 1 (100%)] epoch=1.0000 time[s]=5.3085 batch_loss=0.1112 running_loss=0.1112
+[2024-08-07 01:19:27,696][__main__][INFO] - [TRAIN]  loss=1.1118e-01  epoch_time=5.399 sec
+[2024-08-07 01:19:27,696][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:27,696][__main__][INFO] - ----------------------------------------------
+[2024-08-07 01:19:27,696][__main__][INFO] - ----------------------------------------------
+[2024-08-07 01:19:28,141][__main__][INFO] - [0] [2/120: Batch 1 (100%)] epoch=2.0000 time[s]=0.3413 batch_loss=0.1103 running_loss=0.1103
+[2024-08-07 01:19:28,141][__main__][INFO] - [TRAIN]  loss=1.1029e-01  epoch_time=0.4449 sec
+[2024-08-07 01:19:28,141][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:28,141][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:28,141][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:28,579][__main__][INFO] - [0] [3/120: Batch 1 (100%)] epoch=3.0000 time[s]=0.3277 batch_loss=0.1094 running_loss=0.1094
+[2024-08-07 01:19:28,579][__main__][INFO] - [TRAIN]  loss=1.0941e-01  epoch_time=0.438 sec
+[2024-08-07 01:19:28,580][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:28,580][__main__][INFO] - ----------------------------------------------
+[2024-08-07 01:19:28,580][__main__][INFO] - ----------------------------------------------
+[2024-08-07 01:19:29,019][__main__][INFO] - [0] [4/120: Batch 1 (100%)] epoch=4.0000 time[s]=0.3301 batch_loss=0.1085 running_loss=0.1085
+[2024-08-07 01:19:29,019][__main__][INFO] - [TRAIN]  loss=1.0853e-01  epoch_time=0.4396 sec
+[2024-08-07 01:19:29,019][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:29,020][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:29,020][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:29,461][__main__][INFO] - [0] [5/120: Batch 1 (100%)] epoch=5.0000 time[s]=0.3317 batch_loss=0.1077 running_loss=0.1077
+[2024-08-07 01:19:29,461][__main__][INFO] - [TRAIN]  loss=1.0766e-01  epoch_time=0.4413 sec
+[2024-08-07 01:19:29,461][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:29,461][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:29,461][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:29,897][__main__][INFO] - [0] [6/120: Batch 1 (100%)] epoch=6.0000 time[s]=0.3278 batch_loss=0.1068 running_loss=0.1068
+[2024-08-07 01:19:29,897][__main__][INFO] - [TRAIN]  loss=1.0680e-01  epoch_time=0.4357 sec
+[2024-08-07 01:19:29,897][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:29,897][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:29,897][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:30,333][__main__][INFO] - [0] [7/120: Batch 1 (100%)] epoch=7.0000 time[s]=0.3281 batch_loss=0.1060 running_loss=0.1060
+[2024-08-07 01:19:30,333][__main__][INFO] - [TRAIN]  loss=1.0597e-01  epoch_time=0.4358 sec
+[2024-08-07 01:19:30,333][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:30,333][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:30,333][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:30,769][__main__][INFO] - [0] [8/120: Batch 1 (100%)] epoch=8.0000 time[s]=0.3273 batch_loss=0.1052 running_loss=0.1052
+[2024-08-07 01:19:30,769][__main__][INFO] - [TRAIN]  loss=1.0516e-01  epoch_time=0.4358 sec
+[2024-08-07 01:19:30,769][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:30,769][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:30,769][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:31,206][__main__][INFO] - [0] [9/120: Batch 1 (100%)] epoch=9.0000 time[s]=0.3277 batch_loss=0.1044 running_loss=0.1044
+[2024-08-07 01:19:31,206][__main__][INFO] - [TRAIN]  loss=1.0437e-01  epoch_time=0.4368 sec
+[2024-08-07 01:19:31,206][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:31,206][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:31,206][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:31,643][__main__][INFO] - [0] [10/120: Batch 1 (100%)] epoch=10.0000 time[s]=0.3280 batch_loss=0.1036 running_loss=0.1036
+[2024-08-07 01:19:31,644][__main__][INFO] - [TRAIN]  loss=1.0361e-01  epoch_time=0.4371 sec
+[2024-08-07 01:19:31,644][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:31,644][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:31,644][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:32,082][__main__][INFO] - [0] [11/120: Batch 1 (100%)] epoch=11.0000 time[s]=0.3290 batch_loss=0.1029 running_loss=0.1029
+[2024-08-07 01:19:32,082][__main__][INFO] - [TRAIN]  loss=1.0286e-01  epoch_time=0.4379 sec
+[2024-08-07 01:19:32,082][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:32,082][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:32,082][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:32,521][__main__][INFO] - [0] [12/120: Batch 1 (100%)] epoch=12.0000 time[s]=0.3308 batch_loss=0.1021 running_loss=0.1021
+[2024-08-07 01:19:32,522][__main__][INFO] - [TRAIN]  loss=1.0214e-01  epoch_time=0.4393 sec
+[2024-08-07 01:19:32,522][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:32,522][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:32,522][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:32,957][__main__][INFO] - [0] [13/120: Batch 1 (100%)] epoch=13.0000 time[s]=0.3277 batch_loss=0.1014 running_loss=0.1014
+[2024-08-07 01:19:32,957][__main__][INFO] - [TRAIN]  loss=1.0144e-01  epoch_time=0.4352 sec
+[2024-08-07 01:19:32,957][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:32,957][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:32,957][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:33,392][__main__][INFO] - [0] [14/120: Batch 1 (100%)] epoch=14.0000 time[s]=0.3257 batch_loss=0.1008 running_loss=0.1008
+[2024-08-07 01:19:33,392][__main__][INFO] - [TRAIN]  loss=1.0076e-01  epoch_time=0.4348 sec
+[2024-08-07 01:19:33,392][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:33,392][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:33,392][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:33,830][__main__][INFO] - [0] [15/120: Batch 1 (100%)] epoch=15.0000 time[s]=0.3287 batch_loss=0.1001 running_loss=0.1001
+[2024-08-07 01:19:33,831][__main__][INFO] - [TRAIN]  loss=1.0011e-01  epoch_time=0.4382 sec
+[2024-08-07 01:19:33,831][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:33,831][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:33,831][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:34,267][__main__][INFO] - [0] [16/120: Batch 1 (100%)] epoch=16.0000 time[s]=0.3271 batch_loss=0.0995 running_loss=0.0995
+[2024-08-07 01:19:34,267][__main__][INFO] - [TRAIN]  loss=9.9479e-02  epoch_time=0.4365 sec
+[2024-08-07 01:19:34,267][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:34,268][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:34,268][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:34,703][__main__][INFO] - [0] [17/120: Batch 1 (100%)] epoch=17.0000 time[s]=0.3280 batch_loss=0.0989 running_loss=0.0989
+[2024-08-07 01:19:34,703][__main__][INFO] - [TRAIN]  loss=9.8873e-02  epoch_time=0.4356 sec
+[2024-08-07 01:19:34,703][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:34,703][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:34,703][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:35,140][__main__][INFO] - [0] [18/120: Batch 1 (100%)] epoch=18.0000 time[s]=0.3290 batch_loss=0.0983 running_loss=0.0983
+[2024-08-07 01:19:35,141][__main__][INFO] - [TRAIN]  loss=9.8291e-02  epoch_time=0.437 sec
+[2024-08-07 01:19:35,141][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:35,141][__main__][INFO] - ----------------------------------------------
+[2024-08-07 01:19:35,141][__main__][INFO] - ----------------------------------------------
+[2024-08-07 01:19:35,581][__main__][INFO] - [0] [19/120: Batch 1 (100%)] epoch=19.0000 time[s]=0.3316 batch_loss=0.0977 running_loss=0.0977
+[2024-08-07 01:19:35,582][__main__][INFO] - [TRAIN]  loss=9.7731e-02  epoch_time=0.4409 sec
+[2024-08-07 01:19:35,582][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:35,582][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:35,582][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:36,016][__main__][INFO] - [0] [20/120: Batch 1 (100%)] epoch=20.0000 time[s]=0.3264 batch_loss=0.0972 running_loss=0.0972
+[2024-08-07 01:19:36,016][__main__][INFO] - [TRAIN]  loss=9.7192e-02  epoch_time=0.4341 sec
+[2024-08-07 01:19:36,016][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:36,016][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:36,016][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:36,454][__main__][INFO] - [0] [21/120: Batch 1 (100%)] epoch=21.0000 time[s]=0.3290 batch_loss=0.0967 running_loss=0.0967
+[2024-08-07 01:19:36,455][__main__][INFO] - [TRAIN]  loss=9.6675e-02  epoch_time=0.4383 sec
+[2024-08-07 01:19:36,455][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:36,455][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:36,455][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:36,892][__main__][INFO] - [0] [22/120: Batch 1 (100%)] epoch=22.0000 time[s]=0.3301 batch_loss=0.0962 running_loss=0.0962
+[2024-08-07 01:19:36,893][__main__][INFO] - [TRAIN]  loss=9.6177e-02  epoch_time=0.4376 sec
+[2024-08-07 01:19:36,893][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:36,893][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:36,893][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:37,325][__main__][INFO] - [0] [23/120: Batch 1 (100%)] epoch=23.0000 time[s]=0.3248 batch_loss=0.0957 running_loss=0.0957
+[2024-08-07 01:19:37,325][__main__][INFO] - [TRAIN]  loss=9.5698e-02  epoch_time=0.4324 sec
+[2024-08-07 01:19:37,325][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:37,325][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:37,326][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:37,760][__main__][INFO] - [0] [24/120: Batch 1 (100%)] epoch=24.0000 time[s]=0.3269 batch_loss=0.0952 running_loss=0.0952
+[2024-08-07 01:19:37,760][__main__][INFO] - [TRAIN]  loss=9.5236e-02  epoch_time=0.4348 sec
+[2024-08-07 01:19:37,760][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:37,761][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:37,761][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:38,198][__main__][INFO] - [0] [25/120: Batch 1 (100%)] epoch=25.0000 time[s]=0.3298 batch_loss=0.0948 running_loss=0.0948
+[2024-08-07 01:19:38,199][__main__][INFO] - [TRAIN]  loss=9.4790e-02  epoch_time=0.4379 sec
+[2024-08-07 01:19:38,199][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:38,199][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:38,199][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:38,635][__main__][INFO] - [0] [26/120: Batch 1 (100%)] epoch=26.0000 time[s]=0.3264 batch_loss=0.0944 running_loss=0.0944
+[2024-08-07 01:19:38,636][__main__][INFO] - [TRAIN]  loss=9.4360e-02  epoch_time=0.4366 sec
+[2024-08-07 01:19:38,636][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:38,636][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:38,636][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:39,073][__main__][INFO] - [0] [27/120: Batch 1 (100%)] epoch=27.0000 time[s]=0.3271 batch_loss=0.0939 running_loss=0.0939
+[2024-08-07 01:19:39,074][__main__][INFO] - [TRAIN]  loss=9.3945e-02  epoch_time=0.4381 sec
+[2024-08-07 01:19:39,074][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:39,074][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:39,074][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:39,511][__main__][INFO] - [0] [28/120: Batch 1 (100%)] epoch=28.0000 time[s]=0.3264 batch_loss=0.0935 running_loss=0.0935
+[2024-08-07 01:19:39,512][__main__][INFO] - [TRAIN]  loss=9.3544e-02  epoch_time=0.4375 sec
+[2024-08-07 01:19:39,512][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:39,512][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:39,512][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:39,946][__main__][INFO] - [0] [29/120: Batch 1 (100%)] epoch=29.0000 time[s]=0.3257 batch_loss=0.0932 running_loss=0.0932
+[2024-08-07 01:19:39,946][__main__][INFO] - [TRAIN]  loss=9.3155e-02  epoch_time=0.4344 sec
+[2024-08-07 01:19:39,947][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:39,947][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:39,947][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:40,380][__main__][INFO] - [0] [30/120: Batch 1 (100%)] epoch=30.0000 time[s]=0.3256 batch_loss=0.0928 running_loss=0.0928
+[2024-08-07 01:19:40,381][__main__][INFO] - [TRAIN]  loss=9.2779e-02  epoch_time=0.434 sec
+[2024-08-07 01:19:40,381][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:40,381][__main__][INFO] - ----------------------------------------------
+[2024-08-07 01:19:40,381][__main__][INFO] - ----------------------------------------------
+[2024-08-07 01:19:40,819][__main__][INFO] - [0] [31/120: Batch 1 (100%)] epoch=31.0000 time[s]=0.3310 batch_loss=0.0924 running_loss=0.0924
+[2024-08-07 01:19:40,820][__main__][INFO] - [TRAIN]  loss=9.2414e-02  epoch_time=0.4388 sec
+[2024-08-07 01:19:40,820][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:40,820][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:40,820][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:41,257][__main__][INFO] - [0] [32/120: Batch 1 (100%)] epoch=32.0000 time[s]=0.3287 batch_loss=0.0921 running_loss=0.0921
+[2024-08-07 01:19:41,257][__main__][INFO] - [TRAIN]  loss=9.2058e-02  epoch_time=0.4372 sec
+[2024-08-07 01:19:41,257][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:41,258][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:41,258][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:41,693][__main__][INFO] - [0] [33/120: Batch 1 (100%)] epoch=33.0000 time[s]=0.3264 batch_loss=0.0917 running_loss=0.0917
+[2024-08-07 01:19:41,694][__main__][INFO] - [TRAIN]  loss=9.1710e-02  epoch_time=0.436 sec
+[2024-08-07 01:19:41,694][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:41,694][__main__][INFO] - ----------------------------------------------
+[2024-08-07 01:19:41,694][__main__][INFO] - ----------------------------------------------
+[2024-08-07 01:19:42,128][__main__][INFO] - [0] [34/120: Batch 1 (100%)] epoch=34.0000 time[s]=0.3270 batch_loss=0.0914 running_loss=0.0914
+[2024-08-07 01:19:42,129][__main__][INFO] - [TRAIN]  loss=9.1370e-02  epoch_time=0.435 sec
+[2024-08-07 01:19:42,129][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:42,129][__main__][INFO] - ----------------------------------------------
+[2024-08-07 01:19:42,129][__main__][INFO] - ----------------------------------------------
+[2024-08-07 01:19:42,564][__main__][INFO] - [0] [35/120: Batch 1 (100%)] epoch=35.0000 time[s]=0.3269 batch_loss=0.0910 running_loss=0.0910
+[2024-08-07 01:19:42,564][__main__][INFO] - [TRAIN]  loss=9.1037e-02  epoch_time=0.4349 sec
+[2024-08-07 01:19:42,564][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:42,564][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:42,564][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:43,002][__main__][INFO] - [0] [36/120: Batch 1 (100%)] epoch=36.0000 time[s]=0.3287 batch_loss=0.0907 running_loss=0.0907
+[2024-08-07 01:19:43,002][__main__][INFO] - [TRAIN]  loss=9.0711e-02  epoch_time=0.4378 sec
+[2024-08-07 01:19:43,002][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:43,002][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:43,002][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:43,436][__main__][INFO] - [0] [37/120: Batch 1 (100%)] epoch=37.0000 time[s]=0.3250 batch_loss=0.0904 running_loss=0.0904
+[2024-08-07 01:19:43,437][__main__][INFO] - [TRAIN]  loss=9.0391e-02  epoch_time=0.4343 sec
+[2024-08-07 01:19:43,437][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:43,437][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:43,437][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:43,873][__main__][INFO] - [0] [38/120: Batch 1 (100%)] epoch=38.0000 time[s]=0.3283 batch_loss=0.0901 running_loss=0.0901
+[2024-08-07 01:19:43,873][__main__][INFO] - [TRAIN]  loss=9.0076e-02  epoch_time=0.436 sec
+[2024-08-07 01:19:43,873][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:43,873][__main__][INFO] - ----------------------------------------------
+[2024-08-07 01:19:43,873][__main__][INFO] - ----------------------------------------------
+[2024-08-07 01:19:44,311][__main__][INFO] - [0] [39/120: Batch 1 (100%)] epoch=39.0000 time[s]=0.3267 batch_loss=0.0898 running_loss=0.0898
+[2024-08-07 01:19:44,311][__main__][INFO] - [TRAIN]  loss=8.9767e-02  epoch_time=0.4377 sec
+[2024-08-07 01:19:44,311][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:44,311][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:44,311][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:44,747][__main__][INFO] - [0] [40/120: Batch 1 (100%)] epoch=40.0000 time[s]=0.3277 batch_loss=0.0895 running_loss=0.0895
+[2024-08-07 01:19:44,747][__main__][INFO] - [TRAIN]  loss=8.9463e-02  epoch_time=0.4356 sec
+[2024-08-07 01:19:44,747][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:44,747][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:44,747][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:45,183][__main__][INFO] - [0] [41/120: Batch 1 (100%)] epoch=41.0000 time[s]=0.3278 batch_loss=0.0892 running_loss=0.0892
+[2024-08-07 01:19:45,183][__main__][INFO] - [TRAIN]  loss=8.9164e-02  epoch_time=0.4357 sec
+[2024-08-07 01:19:45,183][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:45,183][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:45,183][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:45,622][__main__][INFO] - [0] [42/120: Batch 1 (100%)] epoch=42.0000 time[s]=0.3278 batch_loss=0.0889 running_loss=0.0889
+[2024-08-07 01:19:45,622][__main__][INFO] - [TRAIN]  loss=8.8870e-02  epoch_time=0.439 sec
+[2024-08-07 01:19:45,622][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:45,622][__main__][INFO] - ----------------------------------------------
+[2024-08-07 01:19:45,623][__main__][INFO] - ----------------------------------------------
+[2024-08-07 01:19:46,059][__main__][INFO] - [0] [43/120: Batch 1 (100%)] epoch=43.0000 time[s]=0.3264 batch_loss=0.0886 running_loss=0.0886
+[2024-08-07 01:19:46,059][__main__][INFO] - [TRAIN]  loss=8.8581e-02  epoch_time=0.4363 sec
+[2024-08-07 01:19:46,059][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:46,059][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:46,059][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:46,495][__main__][INFO] - [0] [44/120: Batch 1 (100%)] epoch=44.0000 time[s]=0.3237 batch_loss=0.0883 running_loss=0.0883
+[2024-08-07 01:19:46,495][__main__][INFO] - [TRAIN]  loss=8.8298e-02  epoch_time=0.436 sec
+[2024-08-07 01:19:46,495][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:46,495][__main__][INFO] - ----------------------------------------------
+[2024-08-07 01:19:46,495][__main__][INFO] - ----------------------------------------------
+[2024-08-07 01:19:46,933][__main__][INFO] - [0] [45/120: Batch 1 (100%)] epoch=45.0000 time[s]=0.3284 batch_loss=0.0880 running_loss=0.0880
+[2024-08-07 01:19:46,933][__main__][INFO] - [TRAIN]  loss=8.8019e-02  epoch_time=0.4375 sec
+[2024-08-07 01:19:46,933][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:46,933][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:46,933][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:47,371][__main__][INFO] - [0] [46/120: Batch 1 (100%)] epoch=46.0000 time[s]=0.3284 batch_loss=0.0877 running_loss=0.0877
+[2024-08-07 01:19:47,371][__main__][INFO] - [TRAIN]  loss=8.7746e-02  epoch_time=0.4377 sec
+[2024-08-07 01:19:47,371][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:47,371][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:47,371][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:47,808][__main__][INFO] - [0] [47/120: Batch 1 (100%)] epoch=47.0000 time[s]=0.3282 batch_loss=0.0875 running_loss=0.0875
+[2024-08-07 01:19:47,809][__main__][INFO] - [TRAIN]  loss=8.7478e-02  epoch_time=0.4375 sec
+[2024-08-07 01:19:47,809][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:47,809][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:47,809][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:48,244][__main__][INFO] - [0] [48/120: Batch 1 (100%)] epoch=48.0000 time[s]=0.3262 batch_loss=0.0872 running_loss=0.0872
+[2024-08-07 01:19:48,245][__main__][INFO] - [TRAIN]  loss=8.7216e-02  epoch_time=0.4357 sec
+[2024-08-07 01:19:48,245][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:48,245][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:48,245][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:48,682][__main__][INFO] - [0] [49/120: Batch 1 (100%)] epoch=49.0000 time[s]=0.3295 batch_loss=0.0870 running_loss=0.0870
+[2024-08-07 01:19:48,682][__main__][INFO] - [TRAIN]  loss=8.6960e-02  epoch_time=0.4373 sec
+[2024-08-07 01:19:48,682][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:48,683][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:48,683][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:49,116][__main__][INFO] - [0] [50/120: Batch 1 (100%)] epoch=50.0000 time[s]=0.3250 batch_loss=0.0867 running_loss=0.0867
+[2024-08-07 01:19:49,116][__main__][INFO] - [TRAIN]  loss=8.6710e-02  epoch_time=0.4333 sec
+[2024-08-07 01:19:49,116][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:49,116][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:49,116][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:49,552][__main__][INFO] - [0] [51/120: Batch 1 (100%)] epoch=51.0000 time[s]=0.3250 batch_loss=0.0865 running_loss=0.0865
+[2024-08-07 01:19:49,552][__main__][INFO] - [TRAIN]  loss=8.6467e-02  epoch_time=0.436 sec
+[2024-08-07 01:19:49,552][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:49,552][__main__][INFO] - ----------------------------------------------
+[2024-08-07 01:19:49,552][__main__][INFO] - ----------------------------------------------
+[2024-08-07 01:19:49,987][__main__][INFO] - [0] [52/120: Batch 1 (100%)] epoch=52.0000 time[s]=0.3275 batch_loss=0.0862 running_loss=0.0862
+[2024-08-07 01:19:49,988][__main__][INFO] - [TRAIN]  loss=8.6230e-02  epoch_time=0.4353 sec
+[2024-08-07 01:19:49,988][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:49,988][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:49,988][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:50,435][__main__][INFO] - [0] [53/120: Batch 1 (100%)] epoch=53.0000 time[s]=0.3382 batch_loss=0.0860 running_loss=0.0860
+[2024-08-07 01:19:50,436][__main__][INFO] - [TRAIN]  loss=8.6001e-02  epoch_time=0.4478 sec
+[2024-08-07 01:19:50,436][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:50,436][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:50,436][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:50,874][__main__][INFO] - [0] [54/120: Batch 1 (100%)] epoch=54.0000 time[s]=0.3274 batch_loss=0.0858 running_loss=0.0858
+[2024-08-07 01:19:50,875][__main__][INFO] - [TRAIN]  loss=8.5780e-02  epoch_time=0.4387 sec
+[2024-08-07 01:19:50,875][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:50,875][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:50,875][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:51,314][__main__][INFO] - [0] [55/120: Batch 1 (100%)] epoch=55.0000 time[s]=0.3300 batch_loss=0.0856 running_loss=0.0856
+[2024-08-07 01:19:51,314][__main__][INFO] - [TRAIN]  loss=8.5567e-02  epoch_time=0.4389 sec
+[2024-08-07 01:19:51,314][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:51,314][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:51,314][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:51,747][__main__][INFO] - [0] [56/120: Batch 1 (100%)] epoch=56.0000 time[s]=0.3255 batch_loss=0.0854 running_loss=0.0854
+[2024-08-07 01:19:51,748][__main__][INFO] - [TRAIN]  loss=8.5363e-02  epoch_time=0.4333 sec
+[2024-08-07 01:19:51,748][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:51,748][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:51,748][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:52,181][__main__][INFO] - [0] [57/120: Batch 1 (100%)] epoch=57.0000 time[s]=0.3253 batch_loss=0.0852 running_loss=0.0852
+[2024-08-07 01:19:52,181][__main__][INFO] - [TRAIN]  loss=8.5168e-02  epoch_time=0.4334 sec
+[2024-08-07 01:19:52,181][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:52,181][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:52,181][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:52,620][__main__][INFO] - [0] [58/120: Batch 1 (100%)] epoch=58.0000 time[s]=0.3298 batch_loss=0.0850 running_loss=0.0850
+[2024-08-07 01:19:52,620][__main__][INFO] - [TRAIN]  loss=8.4983e-02  epoch_time=0.4389 sec
+[2024-08-07 01:19:52,621][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:52,621][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:52,621][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:53,053][__main__][INFO] - [0] [59/120: Batch 1 (100%)] epoch=59.0000 time[s]=0.3241 batch_loss=0.0848 running_loss=0.0848
+[2024-08-07 01:19:53,054][__main__][INFO] - [TRAIN]  loss=8.4807e-02  epoch_time=0.4331 sec
+[2024-08-07 01:19:53,054][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:53,054][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:53,054][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:53,490][__main__][INFO] - [0] [60/120: Batch 1 (100%)] epoch=60.0000 time[s]=0.3256 batch_loss=0.0846 running_loss=0.0846
+[2024-08-07 01:19:53,490][__main__][INFO] - [TRAIN]  loss=8.4641e-02  epoch_time=0.4359 sec
+[2024-08-07 01:19:53,490][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:53,490][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:53,490][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:53,921][__main__][INFO] - [0] [61/120: Batch 1 (100%)] epoch=61.0000 time[s]=0.3230 batch_loss=0.0845 running_loss=0.0845
+[2024-08-07 01:19:53,921][__main__][INFO] - [TRAIN]  loss=8.4486e-02  epoch_time=0.431 sec
+[2024-08-07 01:19:53,921][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:53,922][__main__][INFO] - ----------------------------------------------
+[2024-08-07 01:19:53,922][__main__][INFO] - ----------------------------------------------
+[2024-08-07 01:19:54,356][__main__][INFO] - [0] [62/120: Batch 1 (100%)] epoch=62.0000 time[s]=0.3259 batch_loss=0.0843 running_loss=0.0843
+[2024-08-07 01:19:54,357][__main__][INFO] - [TRAIN]  loss=8.4339e-02  epoch_time=0.435 sec
+[2024-08-07 01:19:54,357][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:54,357][__main__][INFO] - ----------------------------------------------
+[2024-08-07 01:19:54,357][__main__][INFO] - ----------------------------------------------
+[2024-08-07 01:19:54,793][__main__][INFO] - [0] [63/120: Batch 1 (100%)] epoch=63.0000 time[s]=0.3262 batch_loss=0.0842 running_loss=0.0842
+[2024-08-07 01:19:54,793][__main__][INFO] - [TRAIN]  loss=8.4203e-02  epoch_time=0.4361 sec
+[2024-08-07 01:19:54,793][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:54,793][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:54,793][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:55,231][__main__][INFO] - [0] [64/120: Batch 1 (100%)] epoch=64.0000 time[s]=0.3277 batch_loss=0.0841 running_loss=0.0841
+[2024-08-07 01:19:55,232][__main__][INFO] - [TRAIN]  loss=8.4075e-02  epoch_time=0.4384 sec
+[2024-08-07 01:19:55,232][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:55,232][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:55,232][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:55,667][__main__][INFO] - [0] [65/120: Batch 1 (100%)] epoch=65.0000 time[s]=0.3277 batch_loss=0.0840 running_loss=0.0840
+[2024-08-07 01:19:55,668][__main__][INFO] - [TRAIN]  loss=8.3957e-02  epoch_time=0.4356 sec
+[2024-08-07 01:19:55,668][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:55,668][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:55,668][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:56,106][__main__][INFO] - [0] [66/120: Batch 1 (100%)] epoch=66.0000 time[s]=0.3287 batch_loss=0.0838 running_loss=0.0838
+[2024-08-07 01:19:56,106][__main__][INFO] - [TRAIN]  loss=8.3846e-02  epoch_time=0.4379 sec
+[2024-08-07 01:19:56,106][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:56,106][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:56,106][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:56,545][__main__][INFO] - [0] [67/120: Batch 1 (100%)] epoch=67.0000 time[s]=0.3305 batch_loss=0.0837 running_loss=0.0837
+[2024-08-07 01:19:56,546][__main__][INFO] - [TRAIN]  loss=8.3743e-02  epoch_time=0.4395 sec
+[2024-08-07 01:19:56,546][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:56,546][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:56,546][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:56,984][__main__][INFO] - [0] [68/120: Batch 1 (100%)] epoch=68.0000 time[s]=0.3297 batch_loss=0.0836 running_loss=0.0836
+[2024-08-07 01:19:56,984][__main__][INFO] - [TRAIN]  loss=8.3647e-02  epoch_time=0.4381 sec
+[2024-08-07 01:19:56,984][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:56,984][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:56,984][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:57,417][__main__][INFO] - [0] [69/120: Batch 1 (100%)] epoch=69.0000 time[s]=0.3251 batch_loss=0.0836 running_loss=0.0836
+[2024-08-07 01:19:57,417][__main__][INFO] - [TRAIN]  loss=8.3558e-02  epoch_time=0.4328 sec
+[2024-08-07 01:19:57,417][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:57,417][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:57,417][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:57,851][__main__][INFO] - [0] [70/120: Batch 1 (100%)] epoch=70.0000 time[s]=0.3259 batch_loss=0.0835 running_loss=0.0835
+[2024-08-07 01:19:57,851][__main__][INFO] - [TRAIN]  loss=8.3474e-02  epoch_time=0.4339 sec
+[2024-08-07 01:19:57,852][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:57,852][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:57,852][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:58,287][__main__][INFO] - [0] [71/120: Batch 1 (100%)] epoch=71.0000 time[s]=0.3275 batch_loss=0.0834 running_loss=0.0834
+[2024-08-07 01:19:58,288][__main__][INFO] - [TRAIN]  loss=8.3395e-02  epoch_time=0.436 sec
+[2024-08-07 01:19:58,288][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:58,288][__main__][INFO] - ----------------------------------------------
+[2024-08-07 01:19:58,288][__main__][INFO] - ----------------------------------------------
+[2024-08-07 01:19:58,722][__main__][INFO] - [0] [72/120: Batch 1 (100%)] epoch=72.0000 time[s]=0.3268 batch_loss=0.0833 running_loss=0.0833
+[2024-08-07 01:19:58,723][__main__][INFO] - [TRAIN]  loss=8.3321e-02  epoch_time=0.4347 sec
+[2024-08-07 01:19:58,723][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:58,723][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:58,723][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:59,161][__main__][INFO] - [0] [73/120: Batch 1 (100%)] epoch=73.0000 time[s]=0.3291 batch_loss=0.0833 running_loss=0.0833
+[2024-08-07 01:19:59,162][__main__][INFO] - [TRAIN]  loss=8.3252e-02  epoch_time=0.4386 sec
+[2024-08-07 01:19:59,162][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:59,162][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:59,162][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:59,603][__main__][INFO] - [0] [74/120: Batch 1 (100%)] epoch=74.0000 time[s]=0.3303 batch_loss=0.0832 running_loss=0.0832
+[2024-08-07 01:19:59,603][__main__][INFO] - [TRAIN]  loss=8.3187e-02  epoch_time=0.4413 sec
+[2024-08-07 01:19:59,603][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:19:59,603][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:19:59,603][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:00,039][__main__][INFO] - [0] [75/120: Batch 1 (100%)] epoch=75.0000 time[s]=0.3276 batch_loss=0.0831 running_loss=0.0831
+[2024-08-07 01:20:00,039][__main__][INFO] - [TRAIN]  loss=8.3127e-02  epoch_time=0.4356 sec
+[2024-08-07 01:20:00,039][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:20:00,039][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:00,039][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:00,473][__main__][INFO] - [0] [76/120: Batch 1 (100%)] epoch=76.0000 time[s]=0.3260 batch_loss=0.0831 running_loss=0.0831
+[2024-08-07 01:20:00,474][__main__][INFO] - [TRAIN]  loss=8.3070e-02  epoch_time=0.4344 sec
+[2024-08-07 01:20:00,474][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:20:00,474][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:00,474][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:00,907][__main__][INFO] - [0] [77/120: Batch 1 (100%)] epoch=77.0000 time[s]=0.3257 batch_loss=0.0830 running_loss=0.0830
+[2024-08-07 01:20:00,908][__main__][INFO] - [TRAIN]  loss=8.3017e-02  epoch_time=0.4336 sec
+[2024-08-07 01:20:00,908][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:20:00,908][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:00,908][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:01,349][__main__][INFO] - [0] [78/120: Batch 1 (100%)] epoch=78.0000 time[s]=0.3320 batch_loss=0.0830 running_loss=0.0830
+[2024-08-07 01:20:01,350][__main__][INFO] - [TRAIN]  loss=8.2968e-02  epoch_time=0.4418 sec
+[2024-08-07 01:20:01,350][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:20:01,350][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:01,350][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:01,785][__main__][INFO] - [0] [79/120: Batch 1 (100%)] epoch=79.0000 time[s]=0.3266 batch_loss=0.0829 running_loss=0.0829
+[2024-08-07 01:20:01,786][__main__][INFO] - [TRAIN]  loss=8.2923e-02  epoch_time=0.4358 sec
+[2024-08-07 01:20:01,786][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:20:01,786][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:01,786][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:02,219][__main__][INFO] - [0] [80/120: Batch 1 (100%)] epoch=80.0000 time[s]=0.3243 batch_loss=0.0829 running_loss=0.0829
+[2024-08-07 01:20:02,219][__main__][INFO] - [TRAIN]  loss=8.2881e-02  epoch_time=0.4333 sec
+[2024-08-07 01:20:02,219][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:20:02,220][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:02,220][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:02,656][__main__][INFO] - [0] [81/120: Batch 1 (100%)] epoch=81.0000 time[s]=0.3274 batch_loss=0.0828 running_loss=0.0828
+[2024-08-07 01:20:02,656][__main__][INFO] - [TRAIN]  loss=8.2842e-02  epoch_time=0.4366 sec
+[2024-08-07 01:20:02,656][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:20:02,656][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:02,656][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:03,092][__main__][INFO] - [0] [82/120: Batch 1 (100%)] epoch=82.0000 time[s]=0.3244 batch_loss=0.0828 running_loss=0.0828
+[2024-08-07 01:20:03,092][__main__][INFO] - [TRAIN]  loss=8.2806e-02  epoch_time=0.4354 sec
+[2024-08-07 01:20:03,092][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:20:03,092][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:03,092][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:03,531][__main__][INFO] - [0] [83/120: Batch 1 (100%)] epoch=83.0000 time[s]=0.3311 batch_loss=0.0828 running_loss=0.0828
+[2024-08-07 01:20:03,531][__main__][INFO] - [TRAIN]  loss=8.2773e-02  epoch_time=0.4389 sec
+[2024-08-07 01:20:03,531][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:20:03,531][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:03,531][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:03,968][__main__][INFO] - [0] [84/120: Batch 1 (100%)] epoch=84.0000 time[s]=0.3259 batch_loss=0.0827 running_loss=0.0827
+[2024-08-07 01:20:03,968][__main__][INFO] - [TRAIN]  loss=8.2743e-02  epoch_time=0.4366 sec
+[2024-08-07 01:20:03,968][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:20:03,968][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:03,968][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:04,401][__main__][INFO] - [0] [85/120: Batch 1 (100%)] epoch=85.0000 time[s]=0.3250 batch_loss=0.0827 running_loss=0.0827
+[2024-08-07 01:20:04,402][__main__][INFO] - [TRAIN]  loss=8.2715e-02  epoch_time=0.4333 sec
+[2024-08-07 01:20:04,402][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:20:04,402][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:04,402][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:04,837][__main__][INFO] - [0] [86/120: Batch 1 (100%)] epoch=86.0000 time[s]=0.3283 batch_loss=0.0827 running_loss=0.0827
+[2024-08-07 01:20:04,838][__main__][INFO] - [TRAIN]  loss=8.2688e-02  epoch_time=0.4356 sec
+[2024-08-07 01:20:04,838][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:20:04,838][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:04,838][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:05,274][__main__][INFO] - [0] [87/120: Batch 1 (100%)] epoch=87.0000 time[s]=0.3272 batch_loss=0.0827 running_loss=0.0827
+[2024-08-07 01:20:05,274][__main__][INFO] - [TRAIN]  loss=8.2663e-02  epoch_time=0.4362 sec
+[2024-08-07 01:20:05,274][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:20:05,274][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:05,274][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:05,709][__main__][INFO] - [0] [88/120: Batch 1 (100%)] epoch=88.0000 time[s]=0.3264 batch_loss=0.0826 running_loss=0.0826
+[2024-08-07 01:20:05,710][__main__][INFO] - [TRAIN]  loss=8.2639e-02  epoch_time=0.4356 sec
+[2024-08-07 01:20:05,710][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:20:05,710][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:05,710][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:06,144][__main__][INFO] - [0] [89/120: Batch 1 (100%)] epoch=89.0000 time[s]=0.3255 batch_loss=0.0826 running_loss=0.0826
+[2024-08-07 01:20:06,145][__main__][INFO] - [TRAIN]  loss=8.2616e-02  epoch_time=0.4345 sec
+[2024-08-07 01:20:06,145][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:20:06,145][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:06,145][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:06,580][__main__][INFO] - [0] [90/120: Batch 1 (100%)] epoch=90.0000 time[s]=0.3262 batch_loss=0.0826 running_loss=0.0826
+[2024-08-07 01:20:06,580][__main__][INFO] - [TRAIN]  loss=8.2594e-02  epoch_time=0.435 sec
+[2024-08-07 01:20:06,580][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:20:06,580][__main__][INFO] - ----------------------------------------------
+[2024-08-07 01:20:06,580][__main__][INFO] - ----------------------------------------------
+[2024-08-07 01:20:07,015][__main__][INFO] - [0] [91/120: Batch 1 (100%)] epoch=91.0000 time[s]=0.3242 batch_loss=0.0826 running_loss=0.0826
+[2024-08-07 01:20:07,015][__main__][INFO] - [TRAIN]  loss=8.2573e-02  epoch_time=0.4349 sec
+[2024-08-07 01:20:07,015][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:20:07,015][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:07,015][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:07,450][__main__][INFO] - [0] [92/120: Batch 1 (100%)] epoch=92.0000 time[s]=0.3264 batch_loss=0.0826 running_loss=0.0826
+[2024-08-07 01:20:07,451][__main__][INFO] - [TRAIN]  loss=8.2552e-02  epoch_time=0.4352 sec
+[2024-08-07 01:20:07,451][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:20:07,451][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:07,451][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:07,886][__main__][INFO] - [0] [93/120: Batch 1 (100%)] epoch=93.0000 time[s]=0.3247 batch_loss=0.0825 running_loss=0.0825
+[2024-08-07 01:20:07,886][__main__][INFO] - [TRAIN]  loss=8.2532e-02  epoch_time=0.4352 sec
+[2024-08-07 01:20:07,886][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:20:07,886][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:07,886][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:08,326][__main__][INFO] - [0] [94/120: Batch 1 (100%)] epoch=94.0000 time[s]=0.3301 batch_loss=0.0825 running_loss=0.0825
+[2024-08-07 01:20:08,327][__main__][INFO] - [TRAIN]  loss=8.2513e-02  epoch_time=0.4404 sec
+[2024-08-07 01:20:08,327][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:20:08,327][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:08,327][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:08,765][__main__][INFO] - [0] [95/120: Batch 1 (100%)] epoch=95.0000 time[s]=0.3286 batch_loss=0.0825 running_loss=0.0825
+[2024-08-07 01:20:08,765][__main__][INFO] - [TRAIN]  loss=8.2494e-02  epoch_time=0.4379 sec
+[2024-08-07 01:20:08,765][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:20:08,765][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:08,765][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:09,201][__main__][INFO] - [0] [96/120: Batch 1 (100%)] epoch=96.0000 time[s]=0.3262 batch_loss=0.0825 running_loss=0.0825
+[2024-08-07 01:20:09,201][__main__][INFO] - [TRAIN]  loss=8.2475e-02  epoch_time=0.4359 sec
+[2024-08-07 01:20:09,201][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:20:09,201][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:09,202][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:09,637][__main__][INFO] - [0] [97/120: Batch 1 (100%)] epoch=97.0000 time[s]=0.3265 batch_loss=0.0825 running_loss=0.0825
+[2024-08-07 01:20:09,638][__main__][INFO] - [TRAIN]  loss=8.2458e-02  epoch_time=0.436 sec
+[2024-08-07 01:20:09,638][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:20:09,638][__main__][INFO] - ----------------------------------------------
+[2024-08-07 01:20:09,638][__main__][INFO] - ----------------------------------------------
+[2024-08-07 01:20:10,071][__main__][INFO] - [0] [98/120: Batch 1 (100%)] epoch=98.0000 time[s]=0.3261 batch_loss=0.0824 running_loss=0.0824
+[2024-08-07 01:20:10,072][__main__][INFO] - [TRAIN]  loss=8.2441e-02  epoch_time=0.434 sec
+[2024-08-07 01:20:10,072][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:20:10,072][__main__][INFO] - ----------------------------------------------
+[2024-08-07 01:20:10,072][__main__][INFO] - ----------------------------------------------
+[2024-08-07 01:20:10,508][__main__][INFO] - [0] [99/120: Batch 1 (100%)] epoch=99.0000 time[s]=0.3278 batch_loss=0.0824 running_loss=0.0824
+[2024-08-07 01:20:10,508][__main__][INFO] - [TRAIN]  loss=8.2424e-02  epoch_time=0.4359 sec
+[2024-08-07 01:20:10,508][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:20:10,508][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:10,508][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:10,951][__main__][INFO] - [0] [100/120: Batch 1 (100%)] epoch=100.0000 time[s]=0.3322 batch_loss=0.0824 running_loss=0.0824
+[2024-08-07 01:20:10,952][__main__][INFO] - [TRAIN]  loss=8.2407e-02  epoch_time=0.4432 sec
+[2024-08-07 01:20:10,952][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:20:10,952][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:10,952][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:11,389][__main__][INFO] - [0] [101/120: Batch 1 (100%)] epoch=101.0000 time[s]=0.3267 batch_loss=0.0824 running_loss=0.0824
+[2024-08-07 01:20:11,389][__main__][INFO] - [TRAIN]  loss=8.2391e-02  epoch_time=0.4373 sec
+[2024-08-07 01:20:11,389][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:20:11,389][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:11,389][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:11,824][__main__][INFO] - [0] [102/120: Batch 1 (100%)] epoch=102.0000 time[s]=0.3264 batch_loss=0.0824 running_loss=0.0824
+[2024-08-07 01:20:11,825][__main__][INFO] - [TRAIN]  loss=8.2375e-02  epoch_time=0.4355 sec
+[2024-08-07 01:20:11,825][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:20:11,825][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:11,825][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:12,260][__main__][INFO] - [0] [103/120: Batch 1 (100%)] epoch=103.0000 time[s]=0.3272 batch_loss=0.0824 running_loss=0.0824
+[2024-08-07 01:20:12,260][__main__][INFO] - [TRAIN]  loss=8.2359e-02  epoch_time=0.4351 sec
+[2024-08-07 01:20:12,260][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:20:12,260][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:12,260][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:12,697][__main__][INFO] - [0] [104/120: Batch 1 (100%)] epoch=104.0000 time[s]=0.3266 batch_loss=0.0823 running_loss=0.0823
+[2024-08-07 01:20:12,698][__main__][INFO] - [TRAIN]  loss=8.2342e-02  epoch_time=0.4373 sec
+[2024-08-07 01:20:12,698][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:20:12,698][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:12,698][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:13,139][__main__][INFO] - [0] [105/120: Batch 1 (100%)] epoch=105.0000 time[s]=0.3333 batch_loss=0.0823 running_loss=0.0823
+[2024-08-07 01:20:13,139][__main__][INFO] - [TRAIN]  loss=8.2326e-02  epoch_time=0.441 sec
+[2024-08-07 01:20:13,139][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:20:13,139][__main__][INFO] - ----------------------------------------------
+[2024-08-07 01:20:13,139][__main__][INFO] - ----------------------------------------------
+[2024-08-07 01:20:13,573][__main__][INFO] - [0] [106/120: Batch 1 (100%)] epoch=106.0000 time[s]=0.3264 batch_loss=0.0823 running_loss=0.0823
+[2024-08-07 01:20:13,574][__main__][INFO] - [TRAIN]  loss=8.2309e-02  epoch_time=0.4343 sec
+[2024-08-07 01:20:13,574][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:20:13,574][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:13,574][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:14,006][__main__][INFO] - [0] [107/120: Batch 1 (100%)] epoch=107.0000 time[s]=0.3245 batch_loss=0.0823 running_loss=0.0823
+[2024-08-07 01:20:14,006][__main__][INFO] - [TRAIN]  loss=8.2291e-02  epoch_time=0.4323 sec
+[2024-08-07 01:20:14,006][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:20:14,006][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:14,007][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:14,444][__main__][INFO] - [0] [108/120: Batch 1 (100%)] epoch=108.0000 time[s]=0.3277 batch_loss=0.0823 running_loss=0.0823
+[2024-08-07 01:20:14,445][__main__][INFO] - [TRAIN]  loss=8.2274e-02  epoch_time=0.4381 sec
+[2024-08-07 01:20:14,445][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:20:14,445][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:14,445][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:14,880][__main__][INFO] - [0] [109/120: Batch 1 (100%)] epoch=109.0000 time[s]=0.3276 batch_loss=0.0823 running_loss=0.0823
+[2024-08-07 01:20:14,880][__main__][INFO] - [TRAIN]  loss=8.2256e-02  epoch_time=0.4352 sec
+[2024-08-07 01:20:14,880][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:20:14,880][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:14,880][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:15,313][__main__][INFO] - [0] [110/120: Batch 1 (100%)] epoch=110.0000 time[s]=0.3248 batch_loss=0.0822 running_loss=0.0822
+[2024-08-07 01:20:15,313][__main__][INFO] - [TRAIN]  loss=8.2239e-02  epoch_time=0.4327 sec
+[2024-08-07 01:20:15,313][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:20:15,313][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:15,313][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:15,747][__main__][INFO] - [0] [111/120: Batch 1 (100%)] epoch=111.0000 time[s]=0.3257 batch_loss=0.0822 running_loss=0.0822
+[2024-08-07 01:20:15,747][__main__][INFO] - [TRAIN]  loss=8.2221e-02  epoch_time=0.4336 sec
+[2024-08-07 01:20:15,747][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:20:15,747][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:15,747][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:16,185][__main__][INFO] - [0] [112/120: Batch 1 (100%)] epoch=112.0000 time[s]=0.3283 batch_loss=0.0822 running_loss=0.0822
+[2024-08-07 01:20:16,186][__main__][INFO] - [TRAIN]  loss=8.2202e-02  epoch_time=0.4384 sec
+[2024-08-07 01:20:16,186][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:20:16,186][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:16,186][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:16,621][__main__][INFO] - [0] [113/120: Batch 1 (100%)] epoch=113.0000 time[s]=0.3260 batch_loss=0.0822 running_loss=0.0822
+[2024-08-07 01:20:16,621][__main__][INFO] - [TRAIN]  loss=8.2184e-02  epoch_time=0.4353 sec
+[2024-08-07 01:20:16,622][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:20:16,622][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:16,622][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:17,060][__main__][INFO] - [0] [114/120: Batch 1 (100%)] epoch=114.0000 time[s]=0.3280 batch_loss=0.0822 running_loss=0.0822
+[2024-08-07 01:20:17,060][__main__][INFO] - [TRAIN]  loss=8.2165e-02  epoch_time=0.4387 sec
+[2024-08-07 01:20:17,061][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:20:17,061][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:17,061][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:17,497][__main__][INFO] - [0] [115/120: Batch 1 (100%)] epoch=115.0000 time[s]=0.3275 batch_loss=0.0821 running_loss=0.0821
+[2024-08-07 01:20:17,497][__main__][INFO] - [TRAIN]  loss=8.2146e-02  epoch_time=0.4365 sec
+[2024-08-07 01:20:17,497][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:20:17,497][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:17,497][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:17,932][__main__][INFO] - [0] [116/120: Batch 1 (100%)] epoch=116.0000 time[s]=0.3261 batch_loss=0.0821 running_loss=0.0821
+[2024-08-07 01:20:17,932][__main__][INFO] - [TRAIN]  loss=8.2127e-02  epoch_time=0.4349 sec
+[2024-08-07 01:20:17,932][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:20:17,933][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:17,933][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:18,366][__main__][INFO] - [0] [117/120: Batch 1 (100%)] epoch=117.0000 time[s]=0.3262 batch_loss=0.0821 running_loss=0.0821
+[2024-08-07 01:20:18,367][__main__][INFO] - [TRAIN]  loss=8.2108e-02  epoch_time=0.4341 sec
+[2024-08-07 01:20:18,367][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:20:18,367][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:18,367][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:18,807][__main__][INFO] - [0] [118/120: Batch 1 (100%)] epoch=118.0000 time[s]=0.3314 batch_loss=0.0821 running_loss=0.0821
+[2024-08-07 01:20:18,808][__main__][INFO] - [TRAIN]  loss=8.2088e-02  epoch_time=0.4407 sec
+[2024-08-07 01:20:18,808][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:20:18,808][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:18,808][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:19,245][__main__][INFO] - [0] [119/120: Batch 1 (100%)] epoch=119.0000 time[s]=0.3268 batch_loss=0.0821 running_loss=0.0821
+[2024-08-07 01:20:19,245][__main__][INFO] - [TRAIN]  loss=8.2067e-02  epoch_time=0.4371 sec
+[2024-08-07 01:20:19,245][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:20:19,245][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:19,245][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:19,680][__main__][INFO] - [0] [120/120: Batch 1 (100%)] epoch=120.0000 time[s]=0.3252 batch_loss=0.0820 running_loss=0.0820
+[2024-08-07 01:20:19,680][__main__][INFO] - [TRAIN]  loss=8.2046e-02  epoch_time=0.4347 sec
+[2024-08-07 01:20:19,680][__main__][INFO] - [TEST] loss=0.0000e+00
+[2024-08-07 01:20:19,680][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:19,680][__main__][INFO] - -----------------------------------------------
+[2024-08-07 01:20:19,684][__main__][INFO] - 
+Performance data averaged over 16 ranks, 118 epochs and 118 iterations:
+[2024-08-07 01:20:19,685][__main__][INFO] - Total training time: 74.00324892997742
+[2024-08-07 01:20:19,685][__main__][INFO] - Training epoch [s] : min = 4.309821e-01 , max = 4.480560e-01 , avg = 4.367018e-01 , std = 2.450160e-03 
+[2024-08-07 01:20:19,685][__main__][INFO] - Training throughput [nodes/s] : min = 1.178603e+06 , max = 1.225294e+06 , avg = 1.209284e+06 , std = 6.745844e+03 
+[2024-08-07 01:20:19,685][__main__][INFO] - Average parallel training throughout [nodes/s] : 1.934854e+07
+[2024-08-07 01:20:19,685][__main__][INFO] - Training batch [s] : min = 3.210592e-01 , max = 3.490641e-01 , avg = 3.294061e-01 , std = 3.939290e-03 
+[2024-08-07 01:20:19,685][__main__][INFO] - Training batch throughput [nodes/s] : min = 1.512845e+06 , max = 1.644806e+06 , avg = 1.603354e+06 , std = 1.893039e+04 
+[2024-08-07 01:20:19,685][__main__][INFO] - Average parallel training batch throughout [nodes/s] : 2.565366e+07
+[2024-08-07 01:20:19,685][__main__][INFO] - forwardPass [s] : min = 1.436615e-01 , max = 1.768036e-01 , avg = 1.536400e-01 , std = 6.339403e-03 
+[2024-08-07 01:20:19,685][__main__][INFO] - backwardPass [s] : min = 1.532691e-01 , max = 1.687181e-01 , avg = 1.561555e-01 , std = 1.720998e-03 
+[2024-08-07 01:20:19,685][__main__][INFO] - loss [s] : min = 4.456043e-04 , max = 5.800724e-04 , avg = 4.843918e-04 , std = 1.674645e-05 
+[2024-08-07 01:20:19,685][__main__][INFO] - optimizerStep [s] : min = 1.204252e-03 , max = 1.731873e-03 , avg = 1.358898e-03 , std = 8.191272e-05 
+[2024-08-07 01:20:19,685][__main__][INFO] - dataTransfer [s] : min = 9.653568e-03 , max = 2.777267e-02 , avg = 1.698083e-02 , std = 3.666693e-03 
+[2024-08-07 01:20:19,685][__main__][INFO] - bufferInit [s] : min = 3.378391e-04 , max = 5.466938e-04 , avg = 3.795832e-04 , std = 2.734222e-05 
+[2024-08-07 01:20:19,685][__main__][INFO] - collectives [s] : min = 1.251698e-04 , max = 1.525879e-04 , avg = 1.335038e-04 , std = 3.224105e-06 
+Wed 07 Aug 2024 01:20:21 AM EDT
