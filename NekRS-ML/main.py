@@ -249,6 +249,8 @@ class Trainer:
 
         # ~~~~ Build model and move to gpu 
         self.model = self.build_model()
+        if RANK==0: 
+            log.info('Built model with %i trainable parameters' %(self.count_weights(self.model)))
         if WITH_CUDA or WITH_XPU:
             self.model.to(self.device)
         self.model.to(TORCH_FLOAT_DTYPE)
@@ -380,6 +382,12 @@ class Trainer:
                            name)
 
         return model
+
+    def count_weights(self, model) -> int:
+        """ Count the number of trainable parameters in the model
+        """
+        n_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
+        return n_params
 
     def build_optimizer(self, model: nn.Module) -> torch.optim.Optimizer:
         """

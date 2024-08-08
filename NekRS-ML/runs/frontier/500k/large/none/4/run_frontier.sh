@@ -1,10 +1,10 @@
 #!/bin/bash
 
-#module load PrgEnv-gnu/8.5.0
-#module load miniforge3/23.11.0-0
-#module load rocm/5.7.1
-#module load craype-accel-amd-gfx90a
-#source activate /lustre/orion/csc613/proj-shared/balin/Nek/GNN/env/gnn
+module load PrgEnv-gnu/8.5.0
+module load miniforge3/23.11.0-0
+module load rocm/5.7.1
+module load craype-accel-amd-gfx90a
+source activate /lustre/orion/csc613/proj-shared/balin/Nek/GNN/env/gnn
 
 echo Loaded modules:
 module list
