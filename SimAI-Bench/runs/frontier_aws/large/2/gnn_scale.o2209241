@@ -1,0 +1,220 @@
+
+Lmod is automatically replacing "cce/17.0.0" with "gcc-native/12.3".
+
+
+Lmod is automatically replacing "PrgEnv-cray/8.5.0" with "PrgEnv-gnu/8.5.0".
+
+
+Due to MODULEPATH changes, the following have been reloaded:
+  1) cray-libsci/23.12.5     2) cray-mpich/8.1.28     3) darshan-runtime/3.4.0-mpi
+
+Loaded modules:
+
+Currently Loaded Modules:
+  1) craype-x86-trento                      12) gcc-native/12.3
+  2) libfabric/1.15.2.0                     13) craype/2.7.31
+  3) craype-network-ofi                     14) cray-dsmml/0.2.2
+  4) perftools-base/23.12.0                 15) cray-mpich/8.1.28
+  5) xpmem/2.6.2-2.5_2.40__gd067c3f.shasta  16) cray-libsci/23.12.5
+  6) cray-pmi/6.1.13                        17) PrgEnv-gnu/8.5.0
+  7) Core/24.00                             18) darshan-runtime/3.4.0-mpi
+  8) tmux/3.2a                              19) miniforge3/23.11.0-0
+  9) hsi/default                            20) rocm/5.7.1
+ 10) lfs-wrapper/0.0.1                      21) craype-accel-amd-gfx90a
+ 11) DefApps
+
+ 
+
+
+Torch version: 2.2.2+rocm5.7
+NCCL version: (2, 17, 1)
+cuDNN version: 2020000
+Torch Geometric version: 2.5.3
+
+Number of nodes: 1
+Number of ML ranks per node: 4
+Number of ML total ranks: 4
+
+Running script /lustre/orion/csc613/proj-shared/balin/Nek/GNN/GNN/SimAI-Bench/main.py
+with arguments --device=cuda --iterations=150 --problem_size=large --master_addr=10.128.141.32 --master_port=3442
+
+Fri 09 Aug 2024 01:37:18 PM EDT
+Hello from rank 0/4, local rank 0 on frontier09027
+Hello from rank 2/4, local rank 2 on frontier09027
+Hello from rank 1/4, local rank 1 on frontier09027
+Hello from rank 3/4, local rank 3 on frontier09027
+[W socket.cpp:464] [c10d] The server socket cannot be initialized on [::]:3442 (errno: 97 - Address family not supported by protocol).
+[W socket.cpp:697] [c10d] The client socket cannot be initialized to connect to [frontier09027.frontier.olcf.ornl.gov]:3442 (errno: 97 - Address family not supported by protocol).
+[W socket.cpp:697] [c10d] The client socket cannot be initialized to connect to [frontier09027.frontier.olcf.ornl.gov]:3442 (errno: 97 - Address family not supported by protocol).
+[W socket.cpp:697] [c10d] The client socket cannot be initialized to connect to [frontier09027.frontier.olcf.ornl.gov]:3442 (errno: 97 - Address family not supported by protocol).
+[W socket.cpp:697] [c10d] The client socket cannot be initialized to connect to [frontier09027.frontier.olcf.ornl.gov]:3442 (errno: 97 - Address family not supported by protocol).
+
+Loaded data and model with 163491 parameters
+
+Running on device: cuda 
+
+
+Starting training loop ... 
+[0]: avg_loss = 2.647755e-02
+[1]: avg_loss = 2.543878e-02
+[2]: avg_loss = 2.453143e-02
+[3]: avg_loss = 2.366097e-02
+[4]: avg_loss = 2.300170e-02
+[5]: avg_loss = 2.240038e-02
+[6]: avg_loss = 2.174080e-02
+[7]: avg_loss = 2.095526e-02
+[8]: avg_loss = 2.013413e-02
+[9]: avg_loss = 1.936459e-02
+[10]: avg_loss = 1.859297e-02
+[11]: avg_loss = 1.780323e-02
+[12]: avg_loss = 1.701359e-02
+[13]: avg_loss = 1.626817e-02
+[14]: avg_loss = 1.561263e-02
+[15]: avg_loss = 1.501205e-02
+[16]: avg_loss = 1.452941e-02
+[17]: avg_loss = 1.413038e-02
+[18]: avg_loss = 1.380353e-02
+[19]: avg_loss = 1.352417e-02
+[20]: avg_loss = 1.321372e-02
+[21]: avg_loss = 1.288755e-02
+[22]: avg_loss = 1.256027e-02
+[23]: avg_loss = 1.223182e-02
+[24]: avg_loss = 1.187398e-02
+[25]: avg_loss = 1.152737e-02
+[26]: avg_loss = 1.120832e-02
+[27]: avg_loss = 1.092871e-02
+[28]: avg_loss = 1.069389e-02
+[29]: avg_loss = 1.052751e-02
+[30]: avg_loss = 1.043514e-02
+[31]: avg_loss = 1.041142e-02
+[32]: avg_loss = 1.044408e-02
+[33]: avg_loss = 1.050999e-02
+[34]: avg_loss = 1.058085e-02
+[35]: avg_loss = 1.063163e-02
+[36]: avg_loss = 1.064899e-02
+[37]: avg_loss = 1.063220e-02
+[38]: avg_loss = 1.058978e-02
+[39]: avg_loss = 1.053419e-02
+[40]: avg_loss = 1.047778e-02
+[41]: avg_loss = 1.043017e-02
+[42]: avg_loss = 1.039568e-02
+[43]: avg_loss = 1.037240e-02
+[44]: avg_loss = 1.035752e-02
+[45]: avg_loss = 1.035164e-02
+[46]: avg_loss = 1.035259e-02
+[47]: avg_loss = 1.035796e-02
+[48]: avg_loss = 1.036532e-02
+[49]: avg_loss = 1.037340e-02
+[50]: avg_loss = 1.038024e-02
+[51]: avg_loss = 1.038445e-02
+[52]: avg_loss = 1.038527e-02
+[53]: avg_loss = 1.038267e-02
+[54]: avg_loss = 1.037722e-02
+[55]: avg_loss = 1.036989e-02
+[56]: avg_loss = 1.036183e-02
+[57]: avg_loss = 1.035426e-02
+[58]: avg_loss = 1.034807e-02
+[59]: avg_loss = 1.034386e-02
+[60]: avg_loss = 1.034182e-02
+[61]: avg_loss = 1.034182e-02
+[62]: avg_loss = 1.034266e-02
+[63]: avg_loss = 1.034413e-02
+[64]: avg_loss = 1.034564e-02
+[65]: avg_loss = 1.034668e-02
+[66]: avg_loss = 1.034693e-02
+[67]: avg_loss = 1.034627e-02
+[68]: avg_loss = 1.034481e-02
+[69]: avg_loss = 1.034278e-02
+[70]: avg_loss = 1.034051e-02
+[71]: avg_loss = 1.033833e-02
+[72]: avg_loss = 1.033650e-02
+[73]: avg_loss = 1.033518e-02
+[74]: avg_loss = 1.033446e-02
+[75]: avg_loss = 1.033424e-02
+[76]: avg_loss = 1.033441e-02
+[77]: avg_loss = 1.033438e-02
+[78]: avg_loss = 1.033490e-02
+[79]: avg_loss = 1.033527e-02
+[80]: avg_loss = 1.033536e-02
+[81]: avg_loss = 1.033512e-02
+[82]: avg_loss = 1.033457e-02
+[83]: avg_loss = 1.033384e-02
+[84]: avg_loss = 1.033356e-02
+[85]: avg_loss = 1.033237e-02
+[86]: avg_loss = 1.033169e-02
+[87]: avg_loss = 1.033104e-02
+[88]: avg_loss = 1.033043e-02
+[89]: avg_loss = 1.032989e-02
+[90]: avg_loss = 1.032942e-02
+[91]: avg_loss = 1.032900e-02
+[92]: avg_loss = 1.032859e-02
+[93]: avg_loss = 1.032814e-02
+[94]: avg_loss = 1.032759e-02
+[95]: avg_loss = 1.032696e-02
+[96]: avg_loss = 1.032624e-02
+[97]: avg_loss = 1.032544e-02
+[98]: avg_loss = 1.032457e-02
+[99]: avg_loss = 1.032365e-02
+[100]: avg_loss = 1.032270e-02
+[101]: avg_loss = 1.032171e-02
+[102]: avg_loss = 1.032068e-02
+[103]: avg_loss = 1.031960e-02
+[104]: avg_loss = 1.031844e-02
+[105]: avg_loss = 1.031719e-02
+[106]: avg_loss = 1.031583e-02
+[107]: avg_loss = 1.031433e-02
+[108]: avg_loss = 1.031269e-02
+[109]: avg_loss = 1.031090e-02
+[110]: avg_loss = 1.030896e-02
+[111]: avg_loss = 1.030688e-02
+[112]: avg_loss = 1.030465e-02
+[113]: avg_loss = 1.030227e-02
+[114]: avg_loss = 1.029972e-02
+[115]: avg_loss = 1.029701e-02
+[116]: avg_loss = 1.029412e-02
+[117]: avg_loss = 1.029102e-02
+[118]: avg_loss = 1.028771e-02
+[119]: avg_loss = 1.028415e-02
+[120]: avg_loss = 1.028031e-02
+[121]: avg_loss = 1.027611e-02
+[122]: avg_loss = 1.027166e-02
+[123]: avg_loss = 1.026685e-02
+[124]: avg_loss = 1.026171e-02
+[125]: avg_loss = 1.025616e-02
+[126]: avg_loss = 1.025013e-02
+[127]: avg_loss = 1.024359e-02
+[128]: avg_loss = 1.023643e-02
+[129]: avg_loss = 1.022870e-02
+[130]: avg_loss = 1.022045e-02
+[131]: avg_loss = 1.021161e-02
+[132]: avg_loss = 1.020207e-02
+[133]: avg_loss = 1.019160e-02
+[134]: avg_loss = 1.017976e-02
+[135]: avg_loss = 1.016490e-02
+[136]: avg_loss = 1.014396e-02
+[137]: avg_loss = 1.012524e-02
+[138]: avg_loss = 1.010905e-02
+[139]: avg_loss = 1.009096e-02
+[140]: avg_loss = 1.007075e-02
+[141]: avg_loss = 1.004835e-02
+[142]: avg_loss = 1.002398e-02
+[143]: avg_loss = 9.998046e-03
+[144]: avg_loss = 9.970030e-03
+[145]: avg_loss = 9.939171e-03
+[146]: avg_loss = 9.905207e-03
+[147]: avg_loss = 9.869222e-03
+[148]: avg_loss = 9.830180e-03
+[149]: avg_loss = 9.787488e-03
+
+Performance data averaged over 4 ranks and 148 iterations:
+training_loop [s] : min = 1.399548e+02 , max = 1.408110e+02 , avg = 1.401721e+02 , std = 3.688861e-01 
+train_tot [s] : min = 1.363751e+02 , max = 1.363974e+02 , avg = 1.363905e+02 , std = 8.992675e-03 
+train_iter [s] : min = 8.178890e-01 , max = 1.043758e+00 , avg = 9.215574e-01 , std = 4.699492e-02 
+throughput_iter [s] : min = 9.580765e+05 , max = 1.222660e+06 , avg = 1.087821e+06 , std = 5.311333e+04 
+forward_pass [s] : min = 1.012945e-02 , max = 9.261494e-01 , avg = 2.006348e-01 , std = 2.120783e-01 
+loss [s] : min = 1.506160e-04 , max = 1.556609e-03 , avg = 2.520122e-04 , std = 1.988989e-04 
+backward_pass [s] : min = 2.152950e-02 , max = 7.289869e-01 , avg = 4.396185e-01 , std = 2.797869e-01 
+optimizer_step [s] : min = 2.748887e-03 , max = 2.279981e-01 , avg = 6.278672e-02 , std = 8.108175e-02 
+collectives [s] : min = 8.658500e-05 , max = 7.286360e-04 , avg = 1.302056e-04 , std = 5.975902e-05 
+Average parallel training throughout [nodes/s] : 4.351285e+06
+Fri 09 Aug 2024 01:39:47 PM EDT

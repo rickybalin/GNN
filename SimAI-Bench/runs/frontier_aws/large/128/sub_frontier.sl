@@ -1,10 +1,10 @@
 #!/bin/bash
-#SBATCH -N 256
+#SBATCH -N 32
 #SBATCH -A CSC613
 #SBATCH -J gnn_scale
-#SBATCH -o gnn_scale.o%j
-##SBATCH -e gnn_scale-%j.e
-#SBATCH -t 01:00:00
+#SBATCH -o gnn_scale-%j.o
+#SBATCH -e gnn_scale-%j.e
+#SBATCH -t 00:30:00
 #SBATCH -p batch
 
 cd $SLURM_SUBMIT_DIR
@@ -53,17 +53,8 @@ echo Number of ML ranks per node: $PROCS_PER_NODE
 echo Number of ML total ranks: $PROCS
 echo
 
-# Halo swap mode
-#HALO_SWAP_MODE=none
-HALO_SWAP_MODE=all_to_all
-#HALO_SWAP_MODE=all_to_all_opt
-#HALO_SWAP_MODE=send_recv
-
-# Data path weak scaling
-DATA_PATH=/lustre/orion/csc613/proj-shared/balin/Nek/GNN/weak_scale_data/500k_frontier/${PROCS}/gnn_outputs_poly_5/
-
-EXE=/lustre/orion/csc613/proj-shared/balin/Nek/GNN/GNN/NekRS-ML/main.py
-ARGS="epochs=70 backend=nccl halo_swap_mode=${HALO_SWAP_MODE} gnn_outputs_path=${DATA_PATH} master_port=3442 master_addr=${MASTER_ADDR}"
+EXE=/lustre/orion/csc613/proj-shared/balin/Nek/GNN/GNN/SimAI-Bench/main.py
+ARGS="--device=cuda --iterations=150 --problem_size=large --master_addr=${MASTER_ADDR} --master_port=3442"
 echo Running script $EXE
 echo with arguments $ARGS
 echo

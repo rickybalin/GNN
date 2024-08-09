@@ -1,0 +1,185 @@
+Loaded modules:
+
+Torch version: 2.2.2+rocm5.7
+NCCL version: (2, 17, 1)
+cuDNN version: 2020000
+Torch Geometric version: 2.5.3
+
+Number of nodes: 32
+Number of ML ranks per node: 8
+Number of ML total ranks: 256
+
+Running script /lustre/orion/csc613/proj-shared/balin/Nek/GNN/GNN/SimAI-Bench/main.py
+with arguments --device=cuda --iterations=150 --problem_size=large --master_addr=10.128.2.0 --master_port=3442
+
+Fri 09 Aug 2024 01:39:38 PM EDT
+
+Loaded data and model with 163491 parameters
+
+Running on device: cuda 
+
+
+Starting training loop ... 
+[0]: avg_loss = 1.183027e-02
+[1]: avg_loss = 6.493533e-02
+[2]: avg_loss = 1.089428e-02
+[3]: avg_loss = 1.138323e-02
+[4]: avg_loss = 1.097668e-02
+[5]: avg_loss = 1.442942e-02
+[6]: avg_loss = 1.129928e-02
+[7]: avg_loss = 1.177886e-02
+[8]: avg_loss = 1.166447e-02
+[9]: avg_loss = 1.109177e-02
+[10]: avg_loss = 1.080293e-02
+[11]: avg_loss = 1.072690e-02
+[12]: avg_loss = 1.069608e-02
+[13]: avg_loss = 1.045244e-02
+[14]: avg_loss = 1.040817e-02
+[15]: avg_loss = 1.045544e-02
+[16]: avg_loss = 1.046850e-02
+[17]: avg_loss = 1.045043e-02
+[18]: avg_loss = 1.041952e-02
+[19]: avg_loss = 1.157036e-02
+[20]: avg_loss = 1.069401e-02
+[21]: avg_loss = 1.092964e-02
+[22]: avg_loss = 1.087120e-02
+[23]: avg_loss = 1.059827e-02
+[24]: avg_loss = 1.042636e-02
+[25]: avg_loss = 1.041991e-02
+[26]: avg_loss = 1.051642e-02
+[27]: avg_loss = 1.055224e-02
+[28]: avg_loss = 1.049617e-02
+[29]: avg_loss = 1.043162e-02
+[30]: avg_loss = 1.041857e-02
+[31]: avg_loss = 1.044126e-02
+[32]: avg_loss = 1.045481e-02
+[33]: avg_loss = 1.043826e-02
+[34]: avg_loss = 1.040660e-02
+[35]: avg_loss = 1.038933e-02
+[36]: avg_loss = 1.039954e-02
+[37]: avg_loss = 1.042058e-02
+[38]: avg_loss = 1.042476e-02
+[39]: avg_loss = 1.040416e-02
+[40]: avg_loss = 1.037773e-02
+[41]: avg_loss = 1.036852e-02
+[42]: avg_loss = 1.038042e-02
+[43]: avg_loss = 1.039767e-02
+[44]: avg_loss = 1.040236e-02
+[45]: avg_loss = 1.039040e-02
+[46]: avg_loss = 1.037301e-02
+[47]: avg_loss = 1.036475e-02
+[48]: avg_loss = 1.037005e-02
+[49]: avg_loss = 1.038037e-02
+[50]: avg_loss = 1.038416e-02
+[51]: avg_loss = 1.037855e-02
+[52]: avg_loss = 1.037030e-02
+[53]: avg_loss = 1.036691e-02
+[54]: avg_loss = 1.036920e-02
+[55]: avg_loss = 1.037238e-02
+[56]: avg_loss = 1.037245e-02
+[57]: avg_loss = 1.036985e-02
+[58]: avg_loss = 1.036783e-02
+[59]: avg_loss = 1.036810e-02
+[60]: avg_loss = 1.036910e-02
+[61]: avg_loss = 1.036862e-02
+[62]: avg_loss = 1.036675e-02
+[63]: avg_loss = 1.036558e-02
+[64]: avg_loss = 1.036630e-02
+[65]: avg_loss = 1.036777e-02
+[66]: avg_loss = 1.036797e-02
+[67]: avg_loss = 1.036643e-02
+[68]: avg_loss = 1.036473e-02
+[69]: avg_loss = 1.036452e-02
+[70]: avg_loss = 1.036569e-02
+[71]: avg_loss = 1.036668e-02
+[72]: avg_loss = 1.036629e-02
+[73]: avg_loss = 1.036506e-02
+[74]: avg_loss = 1.036436e-02
+[75]: avg_loss = 1.036469e-02
+[76]: avg_loss = 1.036535e-02
+[77]: avg_loss = 1.036546e-02
+[78]: avg_loss = 1.036501e-02
+[79]: avg_loss = 1.036457e-02
+[80]: avg_loss = 1.036459e-02
+[81]: avg_loss = 1.036480e-02
+[82]: avg_loss = 1.036484e-02
+[83]: avg_loss = 1.036464e-02
+[84]: avg_loss = 1.036450e-02
+[85]: avg_loss = 1.036456e-02
+[86]: avg_loss = 1.036467e-02
+[87]: avg_loss = 1.036459e-02
+[88]: avg_loss = 1.036441e-02
+[89]: avg_loss = 1.036434e-02
+[90]: avg_loss = 1.036445e-02
+[91]: avg_loss = 1.036456e-02
+[92]: avg_loss = 1.036448e-02
+[93]: avg_loss = 1.036434e-02
+[94]: avg_loss = 1.036429e-02
+[95]: avg_loss = 1.036438e-02
+[96]: avg_loss = 1.036444e-02
+[97]: avg_loss = 1.036441e-02
+[98]: avg_loss = 1.036432e-02
+[99]: avg_loss = 1.036429e-02
+[100]: avg_loss = 1.036432e-02
+[101]: avg_loss = 1.036436e-02
+[102]: avg_loss = 1.036433e-02
+[103]: avg_loss = 1.036430e-02
+[104]: avg_loss = 1.036430e-02
+[105]: avg_loss = 1.036433e-02
+[106]: avg_loss = 1.036434e-02
+[107]: avg_loss = 1.036430e-02
+[108]: avg_loss = 1.036429e-02
+[109]: avg_loss = 1.036431e-02
+[110]: avg_loss = 1.036431e-02
+[111]: avg_loss = 1.036430e-02
+[112]: avg_loss = 1.036428e-02
+[113]: avg_loss = 1.036428e-02
+[114]: avg_loss = 1.036429e-02
+[115]: avg_loss = 1.036429e-02
+[116]: avg_loss = 1.036429e-02
+[117]: avg_loss = 1.036427e-02
+[118]: avg_loss = 1.036428e-02
+[119]: avg_loss = 1.036428e-02
+[120]: avg_loss = 1.036428e-02
+[121]: avg_loss = 1.036427e-02
+[122]: avg_loss = 1.036427e-02
+[123]: avg_loss = 1.036427e-02
+[124]: avg_loss = 1.036429e-02
+[125]: avg_loss = 1.036427e-02
+[126]: avg_loss = 1.036429e-02
+[127]: avg_loss = 1.036429e-02
+[128]: avg_loss = 1.036426e-02
+[129]: avg_loss = 1.036428e-02
+[130]: avg_loss = 1.036428e-02
+[131]: avg_loss = 1.036427e-02
+[132]: avg_loss = 1.036427e-02
+[133]: avg_loss = 1.036428e-02
+[134]: avg_loss = 1.036426e-02
+[135]: avg_loss = 1.036428e-02
+[136]: avg_loss = 1.036427e-02
+[137]: avg_loss = 1.036428e-02
+[138]: avg_loss = 1.036428e-02
+[139]: avg_loss = 1.036427e-02
+[140]: avg_loss = 1.036427e-02
+[141]: avg_loss = 1.036427e-02
+[142]: avg_loss = 1.036427e-02
+[143]: avg_loss = 1.036426e-02
+[144]: avg_loss = 1.036428e-02
+[145]: avg_loss = 1.036428e-02
+[146]: avg_loss = 1.036427e-02
+[147]: avg_loss = 1.036427e-02
+[148]: avg_loss = 1.036428e-02
+[149]: avg_loss = 1.036428e-02
+
+Performance data averaged over 256 ranks and 148 iterations:
+training_loop [s] : min = 1.396175e+02 , max = 1.407159e+02 , avg = 1.398151e+02 , std = 8.550387e-02 
+train_tot [s] : min = 1.355655e+02 , max = 1.356376e+02 , avg = 1.356141e+02 , std = 1.261016e-02 
+train_iter [s] : min = 7.678955e-01 , max = 1.048760e+00 , avg = 9.163113e-01 , std = 5.455608e-02 
+throughput_iter [s] : min = 9.535073e+05 , max = 1.302260e+06 , avg = 1.095046e+06 , std = 6.251681e+04 
+forward_pass [s] : min = 1.129509e-02 , max = 9.403462e-01 , avg = 2.608212e-01 , std = 2.104881e-01 
+loss [s] : min = 1.679050e-04 , max = 1.758396e-03 , avg = 2.770210e-04 , std = 1.151705e-04 
+backward_pass [s] : min = 2.318683e-02 , max = 7.325895e-01 , avg = 5.686838e-01 , std = 1.713106e-01 
+optimizer_step [s] : min = 3.098080e-03 , max = 2.295364e-01 , avg = 8.253448e-02 , std = 8.410990e-02 
+collectives [s] : min = 8.934300e-05 , max = 9.342340e-04 , avg = 1.573105e-04 , std = 7.900804e-05 
+Average parallel training throughout [nodes/s] : 2.803318e+08
+Fri 09 Aug 2024 01:42:16 PM EDT
