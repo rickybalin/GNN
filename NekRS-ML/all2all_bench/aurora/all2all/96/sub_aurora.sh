@@ -1,6 +1,6 @@
 #!/bin/bash -l
 #PBS -S /bin/bash
-#PBS -N gnn_scale
+#PBS -N all2all
 #PBS -l walltime=00:30:00
 #PBS -l select=16
 #PBS -k doe
