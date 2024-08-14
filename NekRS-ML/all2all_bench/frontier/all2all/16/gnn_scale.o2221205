@@ -1,0 +1,213 @@
+
+Lmod is automatically replacing "cce/17.0.0" with "gcc-native/12.3".
+
+
+Lmod is automatically replacing "PrgEnv-cray/8.5.0" with "PrgEnv-gnu/8.5.0".
+
+
+Due to MODULEPATH changes, the following have been reloaded:
+  1) cray-libsci/23.12.5     2) cray-mpich/8.1.28     3) darshan-runtime/3.4.0-mpi
+
+Loaded modules:
+
+Currently Loaded Modules:
+  1) craype-x86-trento                      12) gcc-native/12.3
+  2) libfabric/1.15.2.0                     13) craype/2.7.31
+  3) craype-network-ofi                     14) cray-dsmml/0.2.2
+  4) perftools-base/23.12.0                 15) cray-mpich/8.1.28
+  5) xpmem/2.6.2-2.5_2.40__gd067c3f.shasta  16) cray-libsci/23.12.5
+  6) cray-pmi/6.1.13                        17) PrgEnv-gnu/8.5.0
+  7) Core/24.00                             18) darshan-runtime/3.4.0-mpi
+  8) tmux/3.2a                              19) miniforge3/23.11.0-0
+  9) hsi/default                            20) rocm/5.7.1
+ 10) lfs-wrapper/0.0.1                      21) craype-accel-amd-gfx90a
+ 11) DefApps
+
+ 
+
+
+Torch version: 2.2.2+rocm5.7
+NCCL version: (2, 17, 1)
+cuDNN version: 2020000
+Torch Geometric version: 2.5.3
+
+Number of nodes: 4
+Number of ML ranks per node: 8
+Number of ML total ranks: 32
+
+Running script /lustre/orion/csc613/proj-shared/balin/Nek/GNN/GNN/NekRS-ML/all2all.py
+with arguments --all_to_all_buff=naive --iterations=50 --master_addr=10.128.158.28 --master_port=3442
+
+Wed 14 Aug 2024 05:48:43 PM EDT
+Running on CUDA devices
+Hello from rank 0/32, local rank 0, on device cuda:0 out of 8
+Hello from rank 1/32, local rank 1, on device cuda:1 out of 8
+Hello from rank 4/32, local rank 4, on device cuda:4 out of 8
+Hello from rank 6/32, local rank 6, on device cuda:6 out of 8
+Hello from rank 2/32, local rank 2, on device cuda:2 out of 8
+Hello from rank 3/32, local rank 3, on device cuda:3 out of 8
+Hello from rank 5/32, local rank 5, on device cuda:5 out of 8
+Hello from rank 7/32, local rank 7, on device cuda:7 out of 8
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+RUNNING WITH INPUTS:
+Namespace(all_to_all_buff='naive', num_nodes=32768, num_features=8, num_neighbors=1, neighbors='nearest', iterations=50, master_addr='10.128.158.28', master_port=3442)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+[W socket.cpp:464] [c10d] The server socket cannot be initialized on [::]:3442 (errno: 97 - Address family not supported by protocol).
+[W socket.cpp:697] [c10d] The client socket cannot be initialized to connect to [frontier10114.frontier.olcf.ornl.gov]:3442 (errno: 97 - Address family not supported by protocol).
+[W socket.cpp:697] [c10d] The client socket cannot be initialized to connect to [frontier10114.frontier.olcf.ornl.gov]:3442 (errno: 97 - Address family not supported by protocol).
+[W socket.cpp:697] [c10d] The client socket cannot be initialized to connect to [frontier10114.frontier.olcf.ornl.gov]:3442 (errno: 97 - Address family not supported by protocol).
+[RANK 3]: Created send and receive buffers for naive halo exchange:
+[RANK 4]: Created send and receive buffers for naive halo exchange:
+[RANK 3]: Send buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 3]: Receive buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 4]: Send buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 4]: Receive buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[W socket.cpp:697] [c10d] The client socket cannot be initialized to connect to [frontier10114.frontier.olcf.ornl.gov]:3442 (errno: 97 - Address family not supported by protocol).
+[RANK 7]: Created send and receive buffers for naive halo exchange:
+[RANK 7]: Send buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 7]: Receive buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[W socket.cpp:697] [c10d] The client socket cannot be initialized to connect to [frontier10114.frontier.olcf.ornl.gov]:3442 (errno: 97 - Address family not supported by protocol).
+[RANK 6]: Created send and receive buffers for naive halo exchange:
+[RANK 6]: Send buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 6]: Receive buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[W socket.cpp:697] [c10d] The client socket cannot be initialized to connect to [frontier10114.frontier.olcf.ornl.gov]:3442 (errno: 97 - Address family not supported by protocol).
+[RANK 1]: Created send and receive buffers for naive halo exchange:
+[RANK 1]: Send buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 1]: Receive buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[W socket.cpp:697] [c10d] The client socket cannot be initialized to connect to [frontier10114.frontier.olcf.ornl.gov]:3442 (errno: 97 - Address family not supported by protocol).
+[W socket.cpp:697] [c10d] The client socket cannot be initialized to connect to [frontier10114.frontier.olcf.ornl.gov]:3442 (errno: 97 - Address family not supported by protocol).
+[RANK 2]: Created send and receive buffers for naive halo exchange:
+[RANK 2]: Send buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 2]: Receive buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 5]: Created send and receive buffers for naive halo exchange:
+[RANK 5]: Send buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 5]: Receive buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+Hello from rank 24/32, local rank 0, on device cuda:0 out of 8
+Hello from rank 26/32, local rank 2, on device cuda:2 out of 8
+Hello from rank 29/32, local rank 5, on device cuda:5 out of 8
+Hello from rank 31/32, local rank 7, on device cuda:7 out of 8
+Hello from rank 25/32, local rank 1, on device cuda:1 out of 8
+Hello from rank 27/32, local rank 3, on device cuda:3 out of 8
+Hello from rank 28/32, local rank 4, on device cuda:4 out of 8
+Hello from rank 30/32, local rank 6, on device cuda:6 out of 8
+Hello from rank 8/32, local rank 0, on device cuda:0 out of 8
+Hello from rank 9/32, local rank 1, on device cuda:1 out of 8
+Hello from rank 11/32, local rank 3, on device cuda:3 out of 8
+Hello from rank 12/32, local rank 4, on device cuda:4 out of 8
+Hello from rank 13/32, local rank 5, on device cuda:5 out of 8
+Hello from rank 10/32, local rank 2, on device cuda:2 out of 8
+Hello from rank 14/32, local rank 6, on device cuda:6 out of 8
+Hello from rank 15/32, local rank 7, on device cuda:7 out of 8
+[W socket.cpp:697] [c10d] The client socket cannot be initialized to connect to [frontier10114.frontier.olcf.ornl.gov]:3442 (errno: 97 - Address family not supported by protocol).
+[W socket.cpp:697] [c10d] The client socket cannot be initialized to connect to [frontier10114.frontier.olcf.ornl.gov]:3442 (errno: 97 - Address family not supported by protocol).
+[W socket.cpp:697] [c10d] The client socket cannot be initialized to connect to [frontier10114.frontier.olcf.ornl.gov]:3442 (errno: 97 - Address family not supported by protocol).
+Hello from rank 16/32, local rank 0, on device cuda:0 out of 8
+[W socket.cpp:697] [c10d] The client socket cannot be initialized to connect to [frontier10114.frontier.olcf.ornl.gov]:3442 (errno: 97 - Address family not supported by protocol).
+Hello from rank 18/32, local rank 2, on device cuda:2 out of 8
+[W socket.cpp:697] [c10d] The client socket cannot be initialized to connect to [frontier10114.frontier.olcf.ornl.gov]:3442 (errno: 97 - Address family not supported by protocol).
+Hello from rank 21/32, local rank 5, on device cuda:5 out of 8
+[W socket.cpp:697] [c10d] The client socket cannot be initialized to connect to [frontier10114.frontier.olcf.ornl.gov]:3442 (errno: 97 - Address family not supported by protocol).
+Hello from rank 17/32, local rank 1, on device cuda:1 out of 8
+[W socket.cpp:697] [c10d] The client socket cannot be initialized to connect to [frontier10114.frontier.olcf.ornl.gov]:3442 (errno: 97 - Address family not supported by protocol).
+Hello from rank 19/32, local rank 3, on device cuda:3 out of 8
+[W socket.cpp:697] [c10d] The client socket cannot be initialized to connect to [frontier10114.frontier.olcf.ornl.gov]:3442 (errno: 97 - Address family not supported by protocol).
+Hello from rank 20/32, local rank 4, on device cuda:4 out of 8
+Hello from rank 22/32, local rank 6, on device cuda:6 out of 8
+Hello from rank 23/32, local rank 7, on device cuda:7 out of 8
+[RANK 26]: Created send and receive buffers for naive halo exchange:
+[RANK 30]: Created send and receive buffers for naive halo exchange:
+[RANK 24]: Created send and receive buffers for naive halo exchange:
+[RANK 27]: Created send and receive buffers for naive halo exchange:
+[RANK 29]: Created send and receive buffers for naive halo exchange:
+[RANK 31]: Created send and receive buffers for naive halo exchange:
+[RANK 25]: Created send and receive buffers for naive halo exchange:
+[RANK 26]: Send buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 26]: Receive buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 27]: Send buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 27]: Receive buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 28]: Created send and receive buffers for naive halo exchange:
+[RANK 28]: Send buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 28]: Receive buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 29]: Send buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 29]: Receive buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 30]: Send buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 30]: Receive buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 31]: Send buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 31]: Receive buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 24]: Send buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 24]: Receive buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 25]: Send buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 25]: Receive buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[W socket.cpp:697] [c10d] The client socket cannot be initialized to connect to [frontier10114.frontier.olcf.ornl.gov]:3442 (errno: 97 - Address family not supported by protocol).
+[W socket.cpp:697] [c10d] The client socket cannot be initialized to connect to [frontier10114.frontier.olcf.ornl.gov]:3442 (errno: 97 - Address family not supported by protocol).
+[W socket.cpp:697] [c10d] The client socket cannot be initialized to connect to [frontier10114.frontier.olcf.ornl.gov]:3442 (errno: 97 - Address family not supported by protocol).
+[W socket.cpp:697] [c10d] The client socket cannot be initialized to connect to [frontier10114.frontier.olcf.ornl.gov]:3442 (errno: 97 - Address family not supported by protocol).
+[W socket.cpp:697] [c10d] The client socket cannot be initialized to connect to [frontier10114.frontier.olcf.ornl.gov]:3442 (errno: 97 - Address family not supported by protocol).
+[W socket.cpp:697] [c10d] The client socket cannot be initialized to connect to [frontier10114.frontier.olcf.ornl.gov]:3442 (errno: 97 - Address family not supported by protocol).
+[W socket.cpp:697] [c10d] The client socket cannot be initialized to connect to [frontier10114.frontier.olcf.ornl.gov]:3442 (errno: 97 - Address family not supported by protocol).
+[RANK 17]: Created send and receive buffers for naive halo exchange:
+[RANK 20]: Created send and receive buffers for naive halo exchange:
+[RANK 16]: Created send and receive buffers for naive halo exchange:
+[RANK 17]: Send buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 19]: Created send and receive buffers for naive halo exchange:
+[RANK 21]: Created send and receive buffers for naive halo exchange:
+[RANK 22]: Created send and receive buffers for naive halo exchange:
+[RANK 23]: Created send and receive buffers for naive halo exchange:
+[RANK 17]: Receive buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 19]: Send buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 19]: Receive buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 21]: Send buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 21]: Receive buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 22]: Send buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 22]: Receive buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 16]: Send buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 16]: Receive buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 20]: Send buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 20]: Receive buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 23]: Send buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 23]: Receive buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[W socket.cpp:697] [c10d] The client socket cannot be initialized to connect to [frontier10114.frontier.olcf.ornl.gov]:3442 (errno: 97 - Address family not supported by protocol).
+[RANK 18]: Created send and receive buffers for naive halo exchange:
+[RANK 18]: Send buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 18]: Receive buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[W socket.cpp:697] [c10d] The client socket cannot be initialized to connect to [frontier10114.frontier.olcf.ornl.gov]:3442 (errno: 97 - Address family not supported by protocol).
+[W socket.cpp:697] [c10d] The client socket cannot be initialized to connect to [frontier10114.frontier.olcf.ornl.gov]:3442 (errno: 97 - Address family not supported by protocol).
+[W socket.cpp:697] [c10d] The client socket cannot be initialized to connect to [frontier10114.frontier.olcf.ornl.gov]:3442 (errno: 97 - Address family not supported by protocol).
+[W socket.cpp:697] [c10d] The client socket cannot be initialized to connect to [frontier10114.frontier.olcf.ornl.gov]:3442 (errno: 97 - Address family not supported by protocol).
+[W socket.cpp:697] [c10d] The client socket cannot be initialized to connect to [frontier10114.frontier.olcf.ornl.gov]:3442 (errno: 97 - Address family not supported by protocol).
+[W socket.cpp:697] [c10d] The client socket cannot be initialized to connect to [frontier10114.frontier.olcf.ornl.gov]:3442 (errno: 97 - Address family not supported by protocol).
+[W socket.cpp:697] [c10d] The client socket cannot be initialized to connect to [frontier10114.frontier.olcf.ornl.gov]:3442 (errno: 97 - Address family not supported by protocol).
+[W socket.cpp:697] [c10d] The client socket cannot be initialized to connect to [frontier10114.frontier.olcf.ornl.gov]:3442 (errno: 97 - Address family not supported by protocol).
+[RANK 0]: Created send and receive buffers for naive halo exchange:
+[RANK 0]: Send buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 0]: Receive buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 11]: Created send and receive buffers for naive halo exchange:
+[RANK 12]: Created send and receive buffers for naive halo exchange:
+[RANK 8]: Created send and receive buffers for naive halo exchange:
+[RANK 9]: Created send and receive buffers for naive halo exchange:
+[RANK 10]: Created send and receive buffers for naive halo exchange:
+[RANK 11]: Send buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 11]: Receive buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 13]: Created send and receive buffers for naive halo exchange:
+[RANK 13]: Send buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 13]: Receive buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 14]: Created send and receive buffers for naive halo exchange:
+[RANK 15]: Created send and receive buffers for naive halo exchange:
+[RANK 15]: Send buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 8]: Send buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 8]: Receive buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 9]: Send buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 9]: Receive buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 10]: Send buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 10]: Receive buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 12]: Send buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 12]: Receive buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 14]: Send buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 14]: Receive buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 15]: Receive buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+
+
+Average all2all time: 3.855264e-03 sec
+Wed 14 Aug 2024 05:49:18 PM EDT

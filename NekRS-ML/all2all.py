@@ -71,19 +71,6 @@ if WITH_DDP:
         DEVICE = torch.device('cpu')
         DEVICE_ID = 'cpu'
         if RANK == 0: print('Running on CPU devices',flush=True)
-
-    # pytorch will look for these
-    os.environ['RANK'] = str(RANK)
-    os.environ['WORLD_SIZE'] = str(SIZE)
-    # -----------------------------------------------------------
-    # NOTE: Get the hostname of the master node, and broadcast
-    # it to all other nodes It will want the master address too,
-    # which we'll broadcast:
-    # -----------------------------------------------------------
-    MASTER_ADDR = socket.gethostname() if RANK == 0 else None
-    MASTER_ADDR = MPI.COMM_WORLD.bcast(MASTER_ADDR, root=0)
-    os.environ['MASTER_ADDR'] = MASTER_ADDR
-    os.environ['MASTER_PORT'] = str(2345)
 else:
     SIZE = 1
     RANK = 0
@@ -202,6 +189,10 @@ def halo_test(args, neighbors, buffers) -> None:
         # Perform the all_to_all
         tic = perf_counter()
         distnn.all_to_all(buff_recv, buff_send)
+        if WITH_CUDA:
+            torch.cuda.synchronize()
+        elif WITH_XPU:
+            torch.xpu.synchronize()
         toc = perf_counter()
         times.append(toc-tic)
 
@@ -224,6 +215,8 @@ def main() -> None:
     parser.add_argument('--num_neighbors', default=1, type=int, help='Number of neighbors involved in the all_to_all')
     parser.add_argument('--neighbors', default='nearest', type=str, choices=['nearest','random'], help='Strategy for gathering neighbors')
     parser.add_argument('--iterations', default=20, type=int, help='Number of iterations to run')
+    parser.add_argument('--master_addr', default=None, type=str, help='Master address for torch.distributed')
+    parser.add_argument('--master_port', default=None, type=int, help='Master port for torch.distributed')
     args = parser.parse_args()
     if args.neighbors=='random':
         assert args.num_neighbors<=SIZE, 'Number of neighbors must be less than or equal to the number of ranks'
@@ -237,6 +230,18 @@ def main() -> None:
         print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n',flush=True)
 
     if WITH_DDP:
+        os.environ['RANK'] = str(RANK)
+        os.environ['WORLD_SIZE'] = str(SIZE)
+        if args.master_addr is not None:
+            MASTER_ADDR = str(args.master_addr) if RANK == 0 else None
+        else:
+            MASTER_ADDR = socket.gethostname() if RANK == 0 else None
+        MASTER_ADDR = MPI.COMM_WORLD.bcast(MASTER_ADDR, root=0)
+        os.environ['MASTER_ADDR'] = MASTER_ADDR
+        if args.master_port is not None:
+            os.environ['MASTER_PORT'] = str(args.master_port)
+        else:
+            os.environ['MASTER_PORT'] = str(2345)
         init_process_group(RANK, SIZE)
         
         random.seed(42+int(RANK))
