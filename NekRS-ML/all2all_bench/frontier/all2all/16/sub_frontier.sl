@@ -1,8 +1,8 @@
 #!/bin/bash
 #SBATCH -N 4
 #SBATCH -A CSC613
-#SBATCH -J gnn_scale
-#SBATCH -o gnn_scale.o%j
+#SBATCH -J all2all
+#SBATCH -o all2all.o%j
 ##SBATCH -e gnn_scale-%j.e
 #SBATCH -t 00:30:00
 #SBATCH -p batch
