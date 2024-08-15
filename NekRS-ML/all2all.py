@@ -197,8 +197,11 @@ def halo_test(args, neighbors, buffers) -> None:
         times.append(toc-tic)
 
     # Get stats, remove first two iterations
-    times.pop(0)
-    times.pop(0)
+    #if RANK==0: print(times)
+    #times.pop(0)
+    #times.pop(0)
+    # For Aurora, need to throw away first 10 iterations...
+    times = times[10:]
     avg_time = sum(times)/len(times)
     return avg_time
     

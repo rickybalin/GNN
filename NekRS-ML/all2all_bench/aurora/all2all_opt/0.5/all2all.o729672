@@ -19,28 +19,29 @@ Number of ML total ranks: 1
 Not setting oneCCL bindings
 
 Running script /flare/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/all2all.py
-with arguments --all_to_all_buff=optimized --iterations=50
+with arguments --all_to_all_buff=optimized --iterations=60
 
-Wed 14 Aug 2024 10:07:21 PM UTC
+Thu 15 Aug 2024 03:27:16 PM UTC
 Running on CUDA devices
 Running on XPU devices
 Hello from rank 0/1, local rank 0, on device xpu:0 out of 12
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 RUNNING WITH INPUTS:
-Namespace(all_to_all_buff='optimized', num_nodes=32768, num_features=8, num_neighbors=1, neighbors='nearest', iterations=50, master_addr=None, master_port=None)
+Namespace(all_to_all_buff='optimized', num_nodes=32768, num_features=8, num_neighbors=1, neighbors='nearest', iterations=60, master_addr=None, master_port=None)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 [0] neighbor list: [0]
 [RANK 0]: Created send and receive buffers for optimized halo exchange:
 [RANK 0]: Send buffers of size [MB]: [1.0]
 [RANK 0]: Receive buffers of size [MB]: [1.0]
-2024:08:14-22:07:26:(77198) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
-2024:08:14-22:07:26:(77198) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
-2024:08:14-22:07:26:(77198) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
-2024:08:14-22:07:26:(77198) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
-2024:08:14-22:07:26:(77198) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:08:15-15:27:21:( 3877) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2024:08:15-15:27:21:( 3877) |CCL_WARN| value of CCL_ALLTOALL changed to be topo (default:)
+2024:08:15-15:27:21:( 3877) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2024:08:15-15:27:21:( 3877) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:08:15-15:27:21:( 3877) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:08:15-15:27:21:( 3877) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
 
 
-Average all2all time: 6.394304e-05 sec
-Wed 14 Aug 2024 10:07:27 PM UTC
+Average all2all time: 5.171570e-05 sec
+Thu 15 Aug 2024 03:27:22 PM UTC

@@ -51,12 +51,12 @@ fi
 echo
 
 EXE=/flare/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/all2all.py
-ARGS="--all_to_all_buff=optimized --iterations=50"
+ARGS="--all_to_all_buff=optimized --iterations=60"
 echo Running script $EXE
 echo with arguments $ARGS
 echo
 echo `date`
-mpiexec --pmi=pmix --envall -n $PROCS --ppn $PROCS_PER_NODE --cpu-bind=${CPU_BIND} python $EXE ${ARGS}
+mpiexec --pmi=pmix --envall --env CCL_ALLTOALL=topo -n $PROCS --ppn $PROCS_PER_NODE --cpu-bind=${CPU_BIND} python $EXE ${ARGS}
 echo `date`
 
 

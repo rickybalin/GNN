@@ -19,9 +19,9 @@ Number of ML total ranks: 2
 Setting oneCCL bindings for 2 ranks per node
 
 Running script /flare/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/all2all.py
-with arguments --all_to_all_buff=naive
+with arguments --all_to_all_buff=naive --iterations=60
 
-Wed 14 Aug 2024 09:58:32 PM UTC
+Thu 15 Aug 2024 03:25:43 PM UTC
 Running on CUDA devices
 Running on XPU devices
 Hello from rank 0/2, local rank 0, on device xpu:0 out of 12
@@ -29,26 +29,28 @@ Hello from rank 1/2, local rank 1, on device xpu:1 out of 12
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 RUNNING WITH INPUTS:
-Namespace(all_to_all_buff='naive', num_nodes=32768, num_features=8, num_neighbors=1, neighbors='nearest', iterations=20, master_addr=None, master_port=None)
+Namespace(all_to_all_buff='naive', num_nodes=32768, num_features=8, num_neighbors=1, neighbors='nearest', iterations=60, master_addr=None, master_port=None)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 [RANK 1]: Created send and receive buffers for naive halo exchange:
+[RANK 1]: Send buffers of size [MB]: [1.0, 1.0]
+[RANK 1]: Receive buffers of size [MB]: [1.0, 1.0]
 [RANK 0]: Created send and receive buffers for naive halo exchange:
 [RANK 0]: Send buffers of size [MB]: [1.0, 1.0]
 [RANK 0]: Receive buffers of size [MB]: [1.0, 1.0]
-[RANK 1]: Send buffers of size [MB]: [1.0, 1.0]
-[RANK 1]: Receive buffers of size [MB]: [1.0, 1.0]
-2024:08:14-21:58:37:(75264) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
-2024:08:14-21:58:37:(75264) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
-2024:08:14-21:58:37:(75264) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
-2024:08:14-21:58:37:(75264) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
-2024:08:14-21:58:37:(75265) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
-2024:08:14-21:58:37:(75265) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
-2024:08:14-21:58:37:(75265) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
-2024:08:14-21:58:37:(75265) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
-2024:08:14-21:58:37:(75264) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
-2024:08:14-21:58:37:(75265) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:08:15-15:25:48:( 3211) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2024:08:15-15:25:48:( 3212) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2024:08:15-15:25:48:( 3212) |CCL_WARN| value of CCL_ALLTOALL changed to be topo (default:)
+2024:08:15-15:25:48:( 3212) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2024:08:15-15:25:48:( 3211) |CCL_WARN| value of CCL_ALLTOALL changed to be topo (default:)
+2024:08:15-15:25:48:( 3211) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2024:08:15-15:25:48:( 3211) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:08:15-15:25:48:( 3211) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:08:15-15:25:48:( 3212) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:08:15-15:25:48:( 3212) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:08:15-15:25:48:( 3211) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:08:15-15:25:48:( 3212) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
 
 
-Average all2all time: 3.259258e-04 sec
-Wed 14 Aug 2024 09:58:49 PM UTC
+Average all2all time: 2.052343e-04 sec
+Thu 15 Aug 2024 03:26:00 PM UTC

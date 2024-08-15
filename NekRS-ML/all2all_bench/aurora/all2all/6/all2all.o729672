@@ -19,126 +19,138 @@ Number of ML total ranks: 12
 Setting oneCCL bindings for 12 ranks per node
 
 Running script /flare/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/all2all.py
-with arguments --all_to_all_buff=naive
+with arguments --all_to_all_buff=naive --iterations=60
 
-Wed 14 Aug 2024 10:00:01 PM UTC
+Thu 15 Aug 2024 03:24:41 PM UTC
+Hello from rank 7/12, local rank 7, on device xpu:7 out of 12
+Hello from rank 4/12, local rank 4, on device xpu:4 out of 12
 Hello from rank 5/12, local rank 5, on device xpu:5 out of 12
+Hello from rank 3/12, local rank 3, on device xpu:3 out of 12
+Hello from rank 2/12, local rank 2, on device xpu:2 out of 12
 Hello from rank 1/12, local rank 1, on device xpu:1 out of 12
 Running on CUDA devices
 Running on XPU devices
-Hello from rank 4/12, local rank 4, on device xpu:4 out of 12
 Hello from rank 0/12, local rank 0, on device xpu:0 out of 12
-Hello from rank 2/12, local rank 2, on device xpu:2 out of 12
-Hello from rank 3/12, local rank 3, on device xpu:3 out of 12
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 RUNNING WITH INPUTS:
-Namespace(all_to_all_buff='naive', num_nodes=32768, num_features=8, num_neighbors=1, neighbors='nearest', iterations=20, master_addr=None, master_port=None)
+Namespace(all_to_all_buff='naive', num_nodes=32768, num_features=8, num_neighbors=1, neighbors='nearest', iterations=60, master_addr=None, master_port=None)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-[RANK 2]: Created send and receive buffers for naive halo exchange:
-[RANK 2]: Send buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
-[RANK 2]: Receive buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
-[RANK 1]: Created send and receive buffers for naive halo exchange:
-[RANK 1]: Send buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
-[RANK 1]: Receive buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
-[RANK 4]: Created send and receive buffers for naive halo exchange:
-[RANK 4]: Send buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
-[RANK 4]: Receive buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
-[RANK 5]: Created send and receive buffers for naive halo exchange:
-[RANK 5]: Send buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
-[RANK 5]: Receive buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
-[RANK 3]: Created send and receive buffers for naive halo exchange:
-[RANK 3]: Send buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
-[RANK 3]: Receive buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
-Hello from rank 7/12, local rank 7, on device xpu:7 out of 12
-Hello from rank 8/12, local rank 8, on device xpu:8 out of 12
-Hello from rank 9/12, local rank 9, on device xpu:9 out of 12
+Hello from rank 6/12, local rank 6, on device xpu:6 out of 12
 Hello from rank 11/12, local rank 11, on device xpu:11 out of 12
 Hello from rank 10/12, local rank 10, on device xpu:10 out of 12
-Hello from rank 6/12, local rank 6, on device xpu:6 out of 12
+Hello from rank 8/12, local rank 8, on device xpu:8 out of 12
 [RANK 7]: Created send and receive buffers for naive halo exchange:
 [RANK 7]: Send buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
 [RANK 7]: Receive buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 4]: Created send and receive buffers for naive halo exchange:
+[RANK 4]: Send buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 4]: Receive buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 1]: Created send and receive buffers for naive halo exchange:
+[RANK 1]: Send buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 1]: Receive buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 3]: Created send and receive buffers for naive halo exchange:
+[RANK 3]: Send buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 2]: Created send and receive buffers for naive halo exchange:
+[RANK 3]: Receive buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 2]: Send buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 2]: Receive buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 5]: Created send and receive buffers for naive halo exchange:
+[RANK 5]: Send buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 5]: Receive buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+Hello from rank 9/12, local rank 9, on device xpu:9 out of 12
+[RANK 6]: Created send and receive buffers for naive halo exchange:
+[RANK 6]: Send buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 6]: Receive buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
 [RANK 11]: Created send and receive buffers for naive halo exchange:
 [RANK 11]: Send buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
 [RANK 11]: Receive buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
-[RANK 9]: Created send and receive buffers for naive halo exchange:
+[RANK 10]: Created send and receive buffers for naive halo exchange:
+[RANK 10]: Send buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 10]: Receive buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
 [RANK 8]: Created send and receive buffers for naive halo exchange:
 [RANK 8]: Send buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
 [RANK 8]: Receive buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[RANK 9]: Created send and receive buffers for naive halo exchange:
 [RANK 9]: Send buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
 [RANK 9]: Receive buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
 [RANK 0]: Created send and receive buffers for naive halo exchange:
 [RANK 0]: Send buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
 [RANK 0]: Receive buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
-[RANK 10]: Created send and receive buffers for naive halo exchange:
-[RANK 10]: Send buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
-[RANK 10]: Receive buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
-[RANK 6]: Created send and receive buffers for naive halo exchange:
-[RANK 6]: Send buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
-[RANK 6]: Receive buffers of size [MB]: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
-2024:08:14-22:00:09:(75476) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
-2024:08:14-22:00:09:(75476) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
-2024:08:14-22:00:09:(75476) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
-2024:08:14-22:00:09:(75476) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
-2024:08:14-22:00:09:(75477) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
-2024:08:14-22:00:09:(75477) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
-2024:08:14-22:00:09:(75477) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
-2024:08:14-22:00:09:(75477) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
-2024:08:14-22:00:09:(75478) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
-2024:08:14-22:00:09:(75478) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
-2024:08:14-22:00:09:(75478) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
-2024:08:14-22:00:09:(75478) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
-2024:08:14-22:00:09:(75479) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
-2024:08:14-22:00:09:(75479) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
-2024:08:14-22:00:09:(75479) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
-2024:08:14-22:00:09:(75479) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
-2024:08:14-22:00:09:(75480) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
-2024:08:14-22:00:09:(75480) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
-2024:08:14-22:00:09:(75480) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
-2024:08:14-22:00:09:(75480) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
-2024:08:14-22:00:09:(75481) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
-2024:08:14-22:00:09:(75481) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
-2024:08:14-22:00:09:(75481) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
-2024:08:14-22:00:09:(75481) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
-2024:08:14-22:00:09:(75482) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
-2024:08:14-22:00:09:(75482) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
-2024:08:14-22:00:09:(75482) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
-2024:08:14-22:00:09:(75482) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
-2024:08:14-22:00:09:(75483) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
-2024:08:14-22:00:09:(75483) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
-2024:08:14-22:00:09:(75483) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
-2024:08:14-22:00:09:(75483) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
-2024:08:14-22:00:09:(75484) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
-2024:08:14-22:00:09:(75484) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
-2024:08:14-22:00:09:(75484) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
-2024:08:14-22:00:09:(75484) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
-2024:08:14-22:00:09:(75485) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
-2024:08:14-22:00:09:(75485) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
-2024:08:14-22:00:09:(75485) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
-2024:08:14-22:00:09:(75485) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
-2024:08:14-22:00:09:(75486) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
-2024:08:14-22:00:09:(75486) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
-2024:08:14-22:00:09:(75486) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
-2024:08:14-22:00:09:(75486) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
-2024:08:14-22:00:09:(75487) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
-2024:08:14-22:00:09:(75487) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
-2024:08:14-22:00:09:(75487) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
-2024:08:14-22:00:09:(75487) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
-2024:08:14-22:00:09:(75476) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
-2024:08:14-22:00:09:(75477) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
-2024:08:14-22:00:09:(75479) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
-2024:08:14-22:00:09:(75478) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
-2024:08:14-22:00:09:(75481) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
-2024:08:14-22:00:09:(75480) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
-2024:08:14-22:00:09:(75482) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
-2024:08:14-22:00:09:(75483) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
-2024:08:14-22:00:09:(75486) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
-2024:08:14-22:00:09:(75487) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
-2024:08:14-22:00:09:(75484) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
-2024:08:14-22:00:09:(75485) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:08:15-15:24:49:( 2550) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2024:08:15-15:24:49:( 2551) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2024:08:15-15:24:49:( 2551) |CCL_WARN| value of CCL_ALLTOALL changed to be topo (default:)
+2024:08:15-15:24:49:( 2553) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2024:08:15-15:24:49:( 2553) |CCL_WARN| value of CCL_ALLTOALL changed to be topo (default:)
+2024:08:15-15:24:49:( 2553) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2024:08:15-15:24:49:( 2550) |CCL_WARN| value of CCL_ALLTOALL changed to be topo (default:)
+2024:08:15-15:24:49:( 2550) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2024:08:15-15:24:49:( 2550) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:08:15-15:24:49:( 2550) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:08:15-15:24:49:( 2551) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2024:08:15-15:24:49:( 2551) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:08:15-15:24:49:( 2551) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:08:15-15:24:49:( 2552) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2024:08:15-15:24:49:( 2552) |CCL_WARN| value of CCL_ALLTOALL changed to be topo (default:)
+2024:08:15-15:24:49:( 2552) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2024:08:15-15:24:49:( 2552) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:08:15-15:24:49:( 2552) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:08:15-15:24:49:( 2554) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2024:08:15-15:24:49:( 2554) |CCL_WARN| value of CCL_ALLTOALL changed to be topo (default:)
+2024:08:15-15:24:49:( 2554) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2024:08:15-15:24:49:( 2554) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:08:15-15:24:49:( 2554) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:08:15-15:24:49:( 2553) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:08:15-15:24:49:( 2553) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:08:15-15:24:49:( 2555) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2024:08:15-15:24:49:( 2555) |CCL_WARN| value of CCL_ALLTOALL changed to be topo (default:)
+2024:08:15-15:24:49:( 2555) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2024:08:15-15:24:49:( 2555) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:08:15-15:24:49:( 2555) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:08:15-15:24:49:( 2556) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2024:08:15-15:24:49:( 2556) |CCL_WARN| value of CCL_ALLTOALL changed to be topo (default:)
+2024:08:15-15:24:49:( 2556) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2024:08:15-15:24:49:( 2556) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:08:15-15:24:49:( 2556) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:08:15-15:24:49:( 2557) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2024:08:15-15:24:49:( 2557) |CCL_WARN| value of CCL_ALLTOALL changed to be topo (default:)
+2024:08:15-15:24:49:( 2557) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2024:08:15-15:24:49:( 2557) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:08:15-15:24:49:( 2557) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:08:15-15:24:49:( 2558) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2024:08:15-15:24:49:( 2558) |CCL_WARN| value of CCL_ALLTOALL changed to be topo (default:)
+2024:08:15-15:24:49:( 2558) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2024:08:15-15:24:49:( 2558) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:08:15-15:24:49:( 2558) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:08:15-15:24:49:( 2559) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2024:08:15-15:24:49:( 2559) |CCL_WARN| value of CCL_ALLTOALL changed to be topo (default:)
+2024:08:15-15:24:49:( 2559) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2024:08:15-15:24:49:( 2559) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:08:15-15:24:49:( 2559) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:08:15-15:24:49:( 2560) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2024:08:15-15:24:49:( 2560) |CCL_WARN| value of CCL_ALLTOALL changed to be topo (default:)
+2024:08:15-15:24:49:( 2560) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2024:08:15-15:24:49:( 2560) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:08:15-15:24:49:( 2560) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:08:15-15:24:49:( 2561) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2024:08:15-15:24:49:( 2561) |CCL_WARN| value of CCL_ALLTOALL changed to be topo (default:)
+2024:08:15-15:24:49:( 2561) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2024:08:15-15:24:49:( 2561) |CCL_WARN| CCL_CONFIGURATION_PATH= is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:08:15-15:24:49:( 2561) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+2024:08:15-15:24:49:( 2552) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:08:15-15:24:49:( 2551) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:08:15-15:24:49:( 2554) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:08:15-15:24:49:( 2556) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:08:15-15:24:49:( 2550) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:08:15-15:24:49:( 2559) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:08:15-15:24:49:( 2553) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:08:15-15:24:49:( 2555) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:08:15-15:24:49:( 2557) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:08:15-15:24:49:( 2558) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:08:15-15:24:49:( 2561) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
+2024:08:15-15:24:49:( 2560) |CCL_WARN| MPI was initialized externally, CCL-MPI specific environment is ignored
 
 
-Average all2all time: 1.747657e-02 sec
-Wed 14 Aug 2024 10:00:22 PM UTC
+Average all2all time: 7.211559e-04 sec
+Thu 15 Aug 2024 03:25:03 PM UTC
