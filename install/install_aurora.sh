@@ -1,22 +1,16 @@
-#!/bin/bash 
+#!/bin/bash
 
-module load frameworks/2024.1
+module load frameworks/2024.2.1_u1
 
 python3 -m venv --clear _pyg --system-site-packages
 source _pyg/bin/activate
 
-export LD_LIBRARY_PATH=/opt/aurora/24.086.0/frameworks/aurora_nre_models_frameworks-2024.1/lib/python3.9/site-packages/torch/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=opt/aurora/24.180.0/frameworks/aurora_nre_models_frameworks-2024.2.1_u1/lib/python3.10/site-packages/torch/lib:$LD_LIBRARY_PATH
 
 # PyTorch Geometric and utils
 pip install torch_geometric==2.5.3 # match Polaris version
 
-# torch_scatter CPU only
-#git clone https://github.com/rusty1s/pytorch_scatter.git
-#cd pytorch_scatter
-#git checkout 2.1.1 
-#pip install .
-#cd ..
-
+## Below only needed if running the SimAI-Bench model
 # torch_cluster on CPU only
 git clone https://github.com/rusty1s/pytorch_cluster.git
 cd pytorch_cluster
