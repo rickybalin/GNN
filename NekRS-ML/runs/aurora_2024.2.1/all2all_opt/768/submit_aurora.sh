@@ -11,9 +11,9 @@
 
 cd $PBS_O_WORKDIR
 
-#module load frameworks
-module use /soft/datascience/frameworks_optimized/
-module load frameworks_optimized
+module load frameworks
+#module use /soft/datascience/frameworks_optimized/
+#module load frameworks_optimized
 source /flare/Aurora_deployment/balin/Nek/nekRSv24/venv/_pyg/bin/activate
 echo Loaded modules:
 module list
