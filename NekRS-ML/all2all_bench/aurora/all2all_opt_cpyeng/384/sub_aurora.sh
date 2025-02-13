@@ -1,19 +1,18 @@
 #!/bin/bash -l
 #PBS -S /bin/bash
-#PBS -N gnn_scale
+#PBS -N all2all
 #PBS -l walltime=00:30:00
-#PBS -l select=2
+#PBS -l select=64
+#PBS -l filesystems=home:flare
 #PBS -k doe
 #PBS -j oe
 #PBS -A Aurora_deployment
-#PBS -q lustre_scaling
-#PBS -V
+#PBS -q prod
 ##PBS -m be
-##PBS -M rbalin@anl.gov
 
 cd $PBS_O_WORKDIR
-module load frameworks/2024.2.1_u1
-source /lus/flare/projects/Aurora_deployment/balin/Nek/GNN/env/_pyg/bin/activate
+module use /soft/datascience/frameworks_optimized/
+module load frameworks_optimized
 echo Loaded modules:
 module list
 echo
@@ -45,10 +44,12 @@ export CCL_KVS_MODE=mpi
 
 export CCL_CONFIGURATION_PATH=""
 export CCL_CONFIGURATION=cpu_gpu_dpcpp
-export CCL_ROOT="/flare/Aurora_deployment/intel/ccl/ccl_3504f9b6_install"
-export LD_LIBRARY_PATH=/flare/Aurora_deployment/intel/ccl/ccl_3504f9b6_install/lib:$LD_LIBRARY_PATH
-export CPATH=/flare/Aurora_deployment/intel/ccl/ccl_3504f9b6_install/include:$CPATH
-export LIBRARY_PATH=/flare/Aurora_deployment/intel/ccl/ccl_3504f9b6_install/lib:$LIBRARY_PATH
+#export CCL_ROOT="/flare/Aurora_deployment/intel/ccl/ccl_3504f9b6_install"
+#export LD_LIBRARY_PATH=/flare/Aurora_deployment/intel/ccl/ccl_3504f9b6_install/lib:$LD_LIBRARY_PATH
+#export CPATH=/flare/Aurora_deployment/intel/ccl/ccl_3504f9b6_install/include:$CPATH
+#export LIBRARY_PATH=/flare/Aurora_deployment/intel/ccl/ccl_3504f9b6_install/lib:$LIBRARY_PATH
+
+export CCL_ALLTOALLV_MONOLITHIC_KERNEL=0
 
 export CPU_BIND="list:2-4:10-12:18-20:26-28:34-36:42-44:54-56:62-64:70-72:78-80:86-88:94-96"
 if [[ $PROCS_PER_NODE -eq 1 ]]; then
@@ -65,20 +66,8 @@ elif [[ $PROCS_PER_NODE -eq 12 ]]; then
 fi
 echo
 
-# CCL backend
-CCL_BACKEND=ccl
-
-# Halo swap mode
-HALO_SWAP_MODE=none
-#HALO_SWAP_MODE=all_to_all
-#HALO_SWAP_MODE=all_to_all_opt
-#HALO_SWAP_MODE=send_recv
-
-# Data path weak scaling
-DATA_PATH=/flare/Aurora_deployment/balin/Nek/GNN/weak_scale_data/500k_aurora/${PROCS}/gnn_outputs_poly_5/
-
-EXE=/flare/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/main.py
-ARGS="backend=${CCL_BACKEND} halo_swap_mode=${HALO_SWAP_MODE} gnn_outputs_path=${DATA_PATH}"
+EXE=/flare/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/all2all.py
+ARGS="--all_to_all_buff=optimized --iterations=60"
 echo Running script $EXE
 echo with arguments $ARGS
 echo

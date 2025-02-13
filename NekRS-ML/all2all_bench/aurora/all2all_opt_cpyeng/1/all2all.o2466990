@@ -1,0 +1,45 @@
+Loaded modules:
+
+Number of nodes: 1
+Number of ML ranks per node: 2
+Number of ML total ranks: 2
+
+Setting oneCCL bindings for 2 ranks per node
+
+Running script /flare/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/all2all.py
+with arguments --all_to_all_buff=optimized --iterations=60
+
+Thu 13 Feb 2025 12:01:16 AM UTC
+Running on CUDA devices
+Running on XPU devices
+Hello from rank 0/2, local rank 0, on device xpu:0 out of 12
+Hello from rank 1/2, local rank 1, on device xpu:1 out of 12
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+RUNNING WITH INPUTS:
+Namespace(all_to_all_buff='optimized', num_nodes=32768, num_features=8, num_neighbors=1, neighbors='nearest', iterations=60, master_addr=None, master_port=None)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+[1] neighbor list: [0, 0]
+[RANK 1]: Created send and receive buffers for optimized halo exchange:
+[RANK 1]: Send buffers of size [MB]: [1.0, 0]
+[RANK 1]: Receive buffers of size [MB]: [1.0, 0]
+[0] neighbor list: [1, 1]
+[RANK 0]: Created send and receive buffers for optimized halo exchange:
+[RANK 0]: Send buffers of size [MB]: [0, 1.0]
+[RANK 0]: Receive buffers of size [MB]: [0, 1.0]
+2025:02:13-00:01:20:(145901) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2025:02:13-00:01:20:(145901) |CCL_WARN| value of CCL_KVS_CONNECTION_TIMEOUT changed to be 600 (default:120)
+2025:02:13-00:01:20:(145901) |CCL_WARN| value of CCL_KVS_USE_MPI_RANKS changed to be 1 (default:0)
+2025:02:13-00:01:20:(145901) |CCL_WARN| value of CCL_ALLREDUCE changed to be topo (default:)
+2025:02:13-00:01:20:(145901) |CCL_WARN| value of CCL_ALLTOALL changed to be topo (default:)
+2025:02:13-00:01:20:(145901) |CCL_WARN| value of CCL_BCAST changed to be double_tree (default:)
+2025:02:13-00:01:20:(145901) |CCL_WARN| value of CCL_ALLREDUCE_SCALEOUT changed to be rabenseifner (default:)
+2025:02:13-00:01:20:(145901) |CCL_WARN| value of CCL_ALLTOALLV_MONOLITHIC_KERNEL changed to be 0 (default:1)
+2025:02:13-00:01:20:(145901) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2025:02:13-00:01:20:(145901) |CCL_WARN| value of CCL_ZE_CACHE_OPEN_IPC_HANDLES_THRESHOLD changed to be 1024 (default:1000)
+2025:02:13-00:01:20:(145901) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+
+
+Average all2all time: 1.883895e-04 sec
+Thu 13 Feb 2025 12:01:20 AM UTC

@@ -1,0 +1,95 @@
+Loaded modules:
+
+Number of nodes: 1
+Number of ML ranks per node: 12
+Number of ML total ranks: 12
+
+Setting oneCCL bindings for 12 ranks per node
+
+Running script /flare/Aurora_deployment/balin/Nek/GNN/GNN/NekRS-ML/all2all.py
+with arguments --all_to_all_buff=optimized --iterations=60
+
+Thu 13 Feb 2025 12:02:03 AM UTC
+Hello from rank 11/12, local rank 11, on device xpu:11 out of 12
+Hello from rank 7/12, local rank 7, on device xpu:7 out of 12
+Hello from rank 6/12, local rank 6, on device xpu:6 out of 12
+Hello from rank 4/12, local rank 4, on device xpu:4 out of 12
+Hello from rank 10/12, local rank 10, on device xpu:10 out of 12
+Hello from rank 1/12, local rank 1, on device xpu:1 out of 12
+Running on CUDA devices
+Running on XPU devices
+Hello from rank 0/12, local rank 0, on device xpu:0 out of 12
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+RUNNING WITH INPUTS:
+Namespace(all_to_all_buff='optimized', num_nodes=32768, num_features=8, num_neighbors=1, neighbors='nearest', iterations=60, master_addr=None, master_port=None)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+[6] neighbor list: [5, 7]
+[RANK 6]: Created send and receive buffers for optimized halo exchange:
+[RANK 6]: Send buffers of size [MB]: [0, 0, 0, 0, 0, 1.0, 0, 1.0, 0, 0, 0, 0]
+[RANK 6]: Receive buffers of size [MB]: [0, 0, 0, 0, 0, 1.0, 0, 1.0, 0, 0, 0, 0]
+Hello from rank 5/12, local rank 5, on device xpu:5 out of 12
+[4] neighbor list: [3, 5]
+[7] neighbor list: [6, 8]
+[1] neighbor list: [0, 2]
+Hello from rank 2/12, local rank 2, on device xpu:2 out of 12
+[RANK 4]: Created send and receive buffers for optimized halo exchange:
+[RANK 4]: Send buffers of size [MB]: [0, 0, 0, 1.0, 0, 1.0, 0, 0, 0, 0, 0, 0]
+[RANK 4]: Receive buffers of size [MB]: [0, 0, 0, 1.0, 0, 1.0, 0, 0, 0, 0, 0, 0]
+[RANK 1]: Created send and receive buffers for optimized halo exchange:
+[RANK 1]: Send buffers of size [MB]: [1.0, 0, 1.0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[RANK 1]: Receive buffers of size [MB]: [1.0, 0, 1.0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[RANK 7]: Created send and receive buffers for optimized halo exchange:
+[RANK 7]: Send buffers of size [MB]: [0, 0, 0, 0, 0, 0, 1.0, 0, 1.0, 0, 0, 0]
+[RANK 7]: Receive buffers of size [MB]: [0, 0, 0, 0, 0, 0, 1.0, 0, 1.0, 0, 0, 0]
+[5] neighbor list: [4, 6]
+[RANK 5]: Created send and receive buffers for optimized halo exchange:
+[RANK 5]: Send buffers of size [MB]: [0, 0, 0, 0, 1.0, 0, 1.0, 0, 0, 0, 0, 0]
+[RANK 5]: Receive buffers of size [MB]: [0, 0, 0, 0, 1.0, 0, 1.0, 0, 0, 0, 0, 0]
+Hello from rank 8/12, local rank 8, on device xpu:8 out of 12
+Hello from rank 3/12, local rank 3, on device xpu:3 out of 12
+Hello from rank 9/12, local rank 9, on device xpu:9 out of 12
+[2] neighbor list: [1, 3]
+[RANK 2]: Created send and receive buffers for optimized halo exchange:
+[RANK 2]: Send buffers of size [MB]: [0, 1.0, 0, 1.0, 0, 0, 0, 0, 0, 0, 0, 0]
+[RANK 2]: Receive buffers of size [MB]: [0, 1.0, 0, 1.0, 0, 0, 0, 0, 0, 0, 0, 0]
+[11] neighbor list: [10, 0]
+[RANK 11]: Created send and receive buffers for optimized halo exchange:
+[RANK 11]: Send buffers of size [MB]: [1.0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.0, 0]
+[RANK 11]: Receive buffers of size [MB]: [1.0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.0, 0]
+[3] neighbor list: [2, 4]
+[RANK 3]: Created send and receive buffers for optimized halo exchange:
+[RANK 3]: Send buffers of size [MB]: [0, 0, 1.0, 0, 1.0, 0, 0, 0, 0, 0, 0, 0]
+[RANK 3]: Receive buffers of size [MB]: [0, 0, 1.0, 0, 1.0, 0, 0, 0, 0, 0, 0, 0]
+[10] neighbor list: [9, 11]
+[RANK 10]: Created send and receive buffers for optimized halo exchange:
+[RANK 10]: Send buffers of size [MB]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 1.0, 0, 1.0]
+[RANK 10]: Receive buffers of size [MB]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 1.0, 0, 1.0]
+[8] neighbor list: [7, 9]
+[9] neighbor list: [8, 10]
+[RANK 8]: Created send and receive buffers for optimized halo exchange:
+[RANK 8]: Send buffers of size [MB]: [0, 0, 0, 0, 0, 0, 0, 1.0, 0, 1.0, 0, 0]
+[RANK 8]: Receive buffers of size [MB]: [0, 0, 0, 0, 0, 0, 0, 1.0, 0, 1.0, 0, 0]
+[RANK 9]: Created send and receive buffers for optimized halo exchange:
+[RANK 9]: Send buffers of size [MB]: [0, 0, 0, 0, 0, 0, 0, 0, 1.0, 0, 1.0, 0]
+[RANK 9]: Receive buffers of size [MB]: [0, 0, 0, 0, 0, 0, 0, 0, 1.0, 0, 1.0, 0]
+[0] neighbor list: [11, 1]
+[RANK 0]: Created send and receive buffers for optimized halo exchange:
+[RANK 0]: Send buffers of size [MB]: [0, 1.0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.0]
+[RANK 0]: Receive buffers of size [MB]: [0, 1.0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.0]
+2025:02:13-00:02:08:(146084) |CCL_WARN| value of CCL_KVS_MODE changed to be mpi (default:pmi)
+2025:02:13-00:02:08:(146084) |CCL_WARN| value of CCL_KVS_CONNECTION_TIMEOUT changed to be 600 (default:120)
+2025:02:13-00:02:08:(146084) |CCL_WARN| value of CCL_KVS_USE_MPI_RANKS changed to be 1 (default:0)
+2025:02:13-00:02:08:(146084) |CCL_WARN| value of CCL_ALLREDUCE changed to be topo (default:)
+2025:02:13-00:02:08:(146084) |CCL_WARN| value of CCL_ALLTOALL changed to be topo (default:)
+2025:02:13-00:02:08:(146084) |CCL_WARN| value of CCL_BCAST changed to be double_tree (default:)
+2025:02:13-00:02:08:(146084) |CCL_WARN| value of CCL_ALLREDUCE_SCALEOUT changed to be rabenseifner (default:)
+2025:02:13-00:02:08:(146084) |CCL_WARN| value of CCL_ALLTOALLV_MONOLITHIC_KERNEL changed to be 0 (default:1)
+2025:02:13-00:02:08:(146084) |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2025:02:13-00:02:08:(146084) |CCL_WARN| value of CCL_ZE_CACHE_OPEN_IPC_HANDLES_THRESHOLD changed to be 1024 (default:1000)
+2025:02:13-00:02:08:(146084) |CCL_WARN| CCL_KVS_GET_TIMEOUT=600 is unknown to and unused by oneCCL code but is present in the environment, check if it is not mistyped.
+
+
+Average all2all time: 4.629118e-04 sec
+Thu 13 Feb 2025 12:02:10 AM UTC
